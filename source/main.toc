@@ -1,0 +1,62 @@
+\contentsline {chapter}{List of Tables}{ix}{section*.3}
+\contentsline {chapter}{List of Figures}{x}{section*.4}
+\contentsline {chapter}{\chapternumberline {1}Introduction - Change, Adaptation and the Evolution of Evolvability}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Evolvability and Evolutionary Potential - Why Study It}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}What is Evolvability (and why is it so hard to pin down)}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Historical Conceptions of Evolvability}{3}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Modern Synthesis}{3}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Evolvability as a Distinct Concept}{5}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Theoretical Frameworks for the Evolution of Evolvability}{7}{subsection.1.3.3}
+\contentsline {section}{\numberline {1.4}So, what do I mean by Evolvability?}{8}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}What is Modularity?}{8}{subsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.1.1}Measuring Modularity}{9}{subsubsection.1.4.1.1}
+\contentsline {subsection}{\numberline {1.4.2}What is Robustness?}{10}{subsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.2.1}Measuring Robustness to Mutation}{11}{subsubsection.1.4.2.1}
+\contentsline {subsection}{\numberline {1.4.3}Predicting Short-Term Evolvability with Landscape Metrics}{13}{subsection.1.4.3}
+\contentsline {section}{\numberline {1.5}Digital Evolution}{15}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Avida}{17}{subsection.1.5.1}
+\contentsline {chapter}{\chapternumberline {2}Changing environments promote rapid adaptation in digital organisms}{19}{chapter.2}
+\contentsline {section}{\numberline {2.1}Background}{19}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Evolvability and Genetic Architecture}{20}{subsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Mutational Landscapes}{21}{subsubsection.2.1.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Changing environments create more paths to different kinds of phenotypes}{22}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Methods}{23}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Experimental Design}{23}{subsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.1.1}Cyclic and Stochastic Changing Environments}{25}{subsubsection.2.2.1.1}
+\contentsline {section}{\numberline {2.3}Results and Discussion}{26}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Cyclic Changing Environments}{27}{subsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.1.1}Evolutionary History and Population Structure}{27}{subsubsection.2.3.1.1}
+\contentsline {subsubsection}{\numberline {2.3.1.2}Genetic Architecture}{27}{subsubsection.2.3.1.2}
+\contentsline {subsubsection}{\numberline {2.3.1.3}Nearby mutational landscape}{28}{subsubsection.2.3.1.3}
+\contentsline {subsection}{\numberline {2.3.2}Stochastic Changing Environments}{29}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Long-Term Evolvability in Cyclic Changing Environments}{30}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}Conclusion}{31}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Limitations of Cyclic Changing Environments}{32}{subsection.2.4.1}
+\contentsline {chapter}{\chapternumberline {3}Changing Environments and Long Term Evolvability}{46}{chapter.3}
+\contentsline {section}{\numberline {3.1}Background}{46}{section.3.1}
+\contentsline {section}{\numberline {3.2}Methods}{46}{section.3.2}
+\contentsline {section}{\numberline {3.3}Results and Discussion}{46}{section.3.3}
+\contentsline {chapter}{\chapternumberline {4}Alternatives to the Grazing Hypothesis: Changing Environments Promote the Evolution of Horizontal Gene Transfer}{47}{chapter.4}
+\contentsline {subsubsection}{\numberline {4.0.0.1}Origins of HGT in nature}{47}{subsubsection.4.0.0.1}
+\contentsline {subsection}{\numberline {4.0.1}Methods}{48}{subsection.4.0.1}
+\contentsline {subsection}{\numberline {4.0.2}Results and Discussion}{49}{subsection.4.0.2}
+\contentsline {subsubsection}{\numberline {4.0.2.1}Changing environments elevate HGT use}{49}{subsubsection.4.0.2.1}
+\contentsline {subsubsection}{\numberline {4.0.2.2}Other mutation types are not elevated in response to HGT}{50}{subsubsection.4.0.2.2}
+\contentsline {subsubsection}{\numberline {4.0.2.3}Mutation fitness effect correlate with mutagen use}{50}{subsubsection.4.0.2.3}
+\contentsline {subsubsection}{\numberline {4.0.2.4}HGT mutations increase evolved probability of beneficial phenotype switching}{51}{subsubsection.4.0.2.4}
+\contentsline {subsubsection}{\numberline {4.0.2.5}HGT derives most benefit from on-cycle fragments, but not all}{52}{subsubsection.4.0.2.5}
+\contentsline {subsection}{\numberline {4.0.3}Discussion}{52}{subsection.4.0.3}
+\contentsline {chapter}{\chapternumberline {5}Horizontal Gene Transfer Promotes Long Term Evolution}{54}{chapter.5}
+\contentsline {section}{\numberline {5.1}Background}{54}{section.5.1}
+\contentsline {section}{\numberline {5.2}Methods}{54}{section.5.2}
+\contentsline {section}{\numberline {5.3}Results and Discussion}{54}{section.5.3}
+\contentsline {chapter}{\chapternumberline {6}Horizontal Gene Transfer As Most Preferred Mutation}{55}{chapter.6}
+\contentsline {section}{\numberline {6.1}Background}{55}{section.6.1}
+\contentsline {section}{\numberline {6.2}Methods}{55}{section.6.2}
+\contentsline {section}{\numberline {6.3}Results and Discussion}{55}{section.6.3}
+\contentsline {chapter}{Appendix}{56}{section*.6}
+\changetocdepth {-1}
+\contentsline {appendix}{\chapternumberline {}Your first appendix}{57}{appendix.A}
+\cftinsert {BIB}
+\changetocdepth {3}
+\contentsline {chapter}{Bibliography}{58}{section*.7}

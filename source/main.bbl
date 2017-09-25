@@ -1,0 +1,400 @@
+\begin{thebibliography}{10}
+
+\bibitem{smith_major_1995}
+John~Maynard Smith and Eors Szathmary.
+\newblock The major evolutionary transitions.
+\newblock {\em Nature}, 374(6519):227--32, March 1995.
+
+\bibitem{kirschner_evolvability_1998}
+Marc Kirschner and John Gerhart.
+\newblock Evolvability.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  95(15):8420--8427, 1998.
+
+\bibitem{dawkins_13_2003}
+Richard Dawkins.
+\newblock 13 - {The} evolution of evolvability.
+\newblock In Sanjeev Kumar and Peter~J. Bentley, editors, {\em On {Growth},
+  {Form} and {Computers}}, pages 239--255. Academic Press, London, 2003.
+
+\bibitem{altenberg_evolution_1994}
+Lee Altenberg.
+\newblock The evolution of evolvability in genetic programming.
+\newblock {\em Advances in genetic programming}, 3:47--74, 1994.
+
+\bibitem{fisher_genetical_1930}
+Ronald~Aylmer Fisher.
+\newblock {\em The genetical theory of natural selection.}
+\newblock Clarendon Press, Oxford, 1930.
+
+\bibitem{houle_comparing_1992}
+David Houle.
+\newblock Comparing {Evolvability} and {Variability} of {Quantitative}
+  {Traits}.
+\newblock {\em Genetics}, 130(1):195--204, 1992.
+
+\bibitem{belle_code_2002}
+Terry~Van Belle and David~H. Ackley.
+\newblock Code {Factoring} {And} {The} {Evolution} {Of} {Evolvability}.
+\newblock In {\em Proceedings of the {Genetic} and {Evolutionary} {Computation}
+  {Conference}}, {GECCO} '02, pages 1383--1390, San Francisco, CA, USA, 2002.
+  Morgan Kaufmann Publishers Inc.
+
+\bibitem{gunter_p._wagner_perspective:_1996}
+{Gunter P. Wagner} and Lee Altenberg.
+\newblock Perspective: complex adaptations and the evolution of evolvability.
+\newblock {\em Evolution}, pages 967--976, 1996.
+
+\bibitem{andreas_wagner_robustness_2005}
+{Andreas Wagner}.
+\newblock Robustness, evolvability, and neutrality.
+\newblock {\em FEBS letters}, 579(8):1772--1778, 2005.
+
+\bibitem{kitano_biological_2004}
+Hiroaki Kitano.
+\newblock Biological robustness.
+\newblock {\em Nature Reviews Genetics}, 5(11):826--837, November 2004.
+
+\bibitem{alberch_genes_1991}
+P.~Alberch.
+\newblock From genes to phenotype: dynamical systems and evolvability.
+\newblock {\em Genetica}, 84(1):5--11, 1991.
+
+\bibitem{brookfield_evolution:_2001}
+J.~F.~Y Brookfield.
+\newblock Evolution: {The} evolvability enigma.
+\newblock {\em Current Biology}, 11(3):R106--R108, February 2001.
+
+\bibitem{pigliucci_is_2008}
+Massimo Pigliucci.
+\newblock Is evolvability evolvable?
+\newblock {\em Nature Reviews Genetics}, 9(1):75--82, 2008.
+
+\bibitem{okasha_evolution_2006}
+Samir Okasha.
+\newblock {\em Evolution and the {Levels} of {Selection}}, volume~16.
+\newblock Clarendon Press Oxford, 2006.
+
+\bibitem{gould_spandrels_1979}
+Stephen~Jay Gould and Richard~C. Lewontin.
+\newblock The spandrels of {San} {Marco} and the {Panglossian} paradigm: a
+  critique of the adaptationist programme.
+\newblock {\em Proceedings of the Royal Society of London B: Biological
+  Sciences}, 205(1161):581--598, 1979.
+
+\bibitem{wright_evolution_1931}
+Sewall Wright.
+\newblock Evolution in {Mendelian} {Populations}.
+\newblock {\em Genetics}, 16(2):97--159, March 1931.
+
+\bibitem{hansen_measuring_2008}
+Thomas~F. Hansen and David Houle.
+\newblock Measuring and comparing evolvability and constraint in multivariate
+  characters.
+\newblock {\em Journal of evolutionary biology}, 21(5):1201--1219, 2008.
+
+\bibitem{price_low_1991}
+Trevor Price and Dolph Schluter.
+\newblock On the {Low} {Heritability} of {Life}-{History} {Traits}.
+\newblock {\em Evolution}, 45(4):853--861, 1991.
+
+\bibitem{hansen_heritability_2011}
+Thomas~F. Hansen, Christophe Pélabon, and David Houle.
+\newblock Heritability is not {Evolvability}.
+\newblock {\em Evolutionary Biology}, 38(3):258--277, June 2011.
+
+\bibitem{misevic_sexual_2006}
+Dusan Misevic, Charles Ofria, and Richard~E Lenski.
+\newblock Sexual {Reproduction} {Reshapes} the {Genetic} {Architecture} of
+  {Digital} {Organisms}.
+\newblock {\em Proceedings. Biological Sciences / The Royal Society},
+  273(1585):457--464, February 2006.
+
+\bibitem{gunter_p._wagner_pleiotropic_2011}
+{Günter P. Wagner} and Jianzhi Zhang.
+\newblock The pleiotropic structure of the genotype–phenotype map: the
+  evolvability of complex organisms.
+\newblock {\em Nature Reviews Genetics}, 12(3):204--213, 2011.
+
+\bibitem{ravasz_hierarchical_2002}
+E.~Ravasz, A.L. Somera, D.A. Mongru, Z.N. Oltvai, and A.-L. Barabasi.
+\newblock Hierarchical organization of modularity in metabolic networks.
+  ({Reports}).
+\newblock {\em Science}, 297(5586):1551+, August 2002.
+\newblock 1551.
+
+\bibitem{hansen_is_2003}
+Thomas~F Hansen.
+\newblock Is modularity necessary for evolvability?: {Remarks} on the
+  relationship between pleiotropy and evolvability.
+\newblock {\em Biosystems}, 69(2–3):83--94, May 2003.
+
+\bibitem{pavlicev_model_2012}
+Mihaela Pavlicev and Günter~P. Wagner.
+\newblock A model of developmental evolution: selection, pleiotropy and
+  compensation.
+\newblock {\em Trends in Ecology \& Evolution}, 27(6):316--322, June 2012.
+
+\bibitem{mezey_is_2000}
+Jason~G. Mezey, James~M. Cheverud, and Günter~P. Wagner.
+\newblock Is the {Genotype}-{Phenotype} {Map} {Modular}?: {A} {Statistical}
+  {Approach} {Using} {Mouse} {Quantitative} {Trait} {Loci} {Data}.
+\newblock {\em Genetics}, 156(1):305--311, September 2000.
+
+\bibitem{visser_perspective:_2003}
+J.~Arjan G. M.~de Visser, Joachim Hermisson, Günter~P. Wagner, Lauren~Ancel
+  Meyers, Homayoun Bagheri-Chaichian, Jeffrey~L. Blanchard, Lin Chao, James~M.
+  Cheverud, Santiago~F. Elena, Walter Fontana, Greg Gibson, Thomas~F. Hansen,
+  David Krakauer, Richard~C. Lewontin, Charles Ofria, Sean~H. Rice, George von
+  Dassow, Andreas Wagner, and Michael~C. Whitlock.
+\newblock Perspective: {Evolution} and {Detection} of {Genetic} {Robustness}.
+\newblock {\em Evolution}, 57(9):1959--1972, 2003.
+
+\bibitem{whitacre_degeneracy:_2010}
+James~M. Whitacre.
+\newblock Degeneracy: a link between evolvability, robustness and complexity in
+  biological systems.
+\newblock {\em Theoretical Biology and Medical Modelling}, 7(1):6, 2010.
+
+\bibitem{wagner_distributed_2005}
+Andreas Wagner.
+\newblock Distributed robustness versus redundancy as causes of mutational
+  robustness.
+\newblock {\em BioEssays}, 27(2):176--188, February 2005.
+
+\bibitem{baldwin_evolution_1981}
+Jack~E. Baldwin and Hans Krebs.
+\newblock The evolution of metabolic cycles.
+\newblock {\em Nature}, 291(5814):381--382, June 1981.
+
+\bibitem{stelling_robustness_2004}
+Jörg Stelling, Uwe Sauer, Zoltan Szallasi, Francis~J. Doyle~III, and John
+  Doyle.
+\newblock Robustness of {Cellular} {Functions}.
+\newblock {\em Cell}, 118(6):675--685, September 2004.
+
+\bibitem{wagner_road_2007}
+Gunter~P. Wagner, Mihaela Pavlicev, and James~M. Cheverud.
+\newblock The road to modularity.
+\newblock {\em Nature Reviews Genetics}, 8(12):921+, December 2007.
+\newblock 921.
+
+\bibitem{andreas_wagner_robustness_2008}
+{Andreas Wagner}.
+\newblock Robustness and evolvability: a paradox resolved.
+\newblock {\em Proceedings of the Royal Society of London B: Biological
+  Sciences}, 275(1630):91--100, 2008.
+
+\bibitem{ofria_evolution_2002}
+Charles Ofria and Christoph Adami.
+\newblock Evolution of genetic organization in digital organisms.
+\newblock In {\em Evolution as {Computation}}, pages 296--313. Springer, 2002.
+
+\bibitem{mckinley_harnessing_2008}
+P.~McKinley, B.~Cheng, C.~Ofria, D.~Knoester, B.~Beckmann, and H.~Goldsby.
+\newblock Harnessing {Digital} {Evolution}.
+\newblock {\em Computer}, 41(1):54--63, January 2008.
+
+\bibitem{ryan_evolution_1953}
+Francis~J. Ryan.
+\newblock Evolution observed.
+\newblock {\em Scientific American}, 189:78--82, 1953.
+
+\bibitem{lenski_long-term_1991}
+Richard~E. Lenski, Michael~R. Rose, Suzanne~C. Simpson, and Scott~C. Tadler.
+\newblock Long-term experimental evolution in {Escherichia} coli. {I}.
+  {Adaptation} and divergence during 2,000 generations.
+\newblock {\em The American Naturalist}, pages 1315--1341, 1991.
+
+\bibitem{anderson_outcrossing_2010}
+Jennifer~L. Anderson, Levi~T. Morran, and Patrick~C. Phillips.
+\newblock Outcrossing and the {Maintenance} of {Males} within {C}. elegans
+  {Populations}.
+\newblock {\em Journal of Heredity}, page esq003, January 2010.
+
+\bibitem{stearns_experimental_2000}
+S.~C. Stearns, M.~Ackermann, M.~Doebeli, and M.~Kaiser.
+\newblock Experimental evolution of aging, growth, and reproduction in
+  fruitflies.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  97(7):3309--3313, March 2000.
+
+\bibitem{khan_negative_2011}
+Aisha~I. Khan, Duy~M. Dinh, Dominique Schneider, Richard~E. Lenski, and Tim~F.
+  Cooper.
+\newblock Negative {Epistasis} {Between} {Beneficial} {Mutations} in an
+  {Evolving} {Bacterial} {Population}.
+\newblock {\em Science}, 332(6034):1193--1196, June 2011.
+
+\bibitem{szendro_quantitative_2013}
+Ivan~G. Szendro, Martijn~F. Schenk, Jasper Franke, Joachim Krug, and J.~Arjan
+  G. M.~de Visser.
+\newblock Quantitative analyses of empirical fitness landscapes.
+\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
+  2013(01):P01005, 2013.
+
+\bibitem{weinreich_darwinian_2006}
+Daniel~M. Weinreich, Nigel~F. Delaney, Mark~A. DePristo, and Daniel~L. Hartl.
+\newblock Darwinian evolution can follow only very few mutational paths to
+  fitter proteins.
+\newblock {\em Science}, 312(5770):111--114, 2006.
+
+\bibitem{nahum_tortoisehare_2015}
+Joshua~R. Nahum, Peter Godfrey-Smith, Brittany~N. Harding, Joseph~H. Marcus,
+  Jared Carlson-Stevermer, and Benjamin Kerr.
+\newblock A tortoise–hare pattern seen in adapting structured and
+  unstructured populations suggests a rugged fitness landscape in bacteria.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  112(24):7530--7535, June 2015.
+
+\bibitem{merz_fitness_2000}
+P.~Merz and B.~Freisleben.
+\newblock Fitness landscape analysis and memetic algorithms for the quadratic
+  assignment problem.
+\newblock {\em IEEE Transactions on Evolutionary Computation}, 4(4):337--352,
+  November 2000.
+
+\bibitem{humeau_paradiseo-mo:_2013}
+J.~Humeau, A.~Liefooghe, E.-G. Talbi, and S.~Verel.
+\newblock {ParadisEO}-{MO}: from fitness landscape analysis to efficient local
+  search algorithms.
+\newblock {\em Journal of Heuristics}, 19(6):881--915, June 2013.
+
+\bibitem{kallel_theoretical_2013}
+Leila Kallel, Bart Naudts, and Alex Rogers.
+\newblock {\em Theoretical aspects of evolutionary computing}.
+\newblock Springer Science \& Business Media, 2013.
+
+\bibitem{gavrilets_fitness_2004}
+Sergey Gavrilets.
+\newblock {\em Fitness landscapes and the origin of species ({MPB}-41)}.
+\newblock Princeton University Press Princeton, NJ, 2004.
+
+\bibitem{wilke_evolution_2001}
+Claus~O. Wilke, Jia~Lan Wang, Charles Ofria, Richard~E. Lenski, and Christoph
+  Adami.
+\newblock Evolution of digital organisms at high mutation rates leads to
+  survival of the flattest.
+\newblock {\em Nature}, 412(6844):331--3, July 2001.
+
+\bibitem{misevic_experiments_2010}
+Dusan Misevic, Charles Ofria, and Richard~E. Lenski.
+\newblock Experiments with {Digital} {Organisms} on the {Origin} and
+  {Maintenance} of {Sex} in {Changing} {Environments}.
+\newblock {\em The Journal of Heredity}, 101(suppl 1):S46--S54, March 2010.
+
+\bibitem{zaman_coevolution_2014}
+Luis Zaman, Justin~R. Meyer, Suhas Devangam, David~M. Bryson, Richard~E.
+  Lenski, and Charles Ofria.
+\newblock Coevolution drives the emergence of complex traits and promotes
+  evolvability.
+\newblock {\em PLoS Biol}, 12(12):e1002023, 2014.
+
+\bibitem{meyer_repeatability_2012}
+Justin~R. Meyer, Devin~T. Dobias, Joshua~S. Weitz, Jeffrey~E. Barrick, Ryan~T.
+  Quick, and Richard~E. Lenski.
+\newblock Repeatability and {Contingency} in the {Evolution} of a {Key}
+  {Innovation} in {Phage} {Lambda}.
+\newblock {\em Science}, 335(6067):428--432, January 2012.
+
+\bibitem{bayliss_simple_2001}
+Christopher~D. Bayliss, Dawn Field, and E.~Richard Moxon.
+\newblock The simple sequence contingency loci of {Haemophilus} influenzae and
+  {Neisseria} meningitidis.
+\newblock {\em Journal of Clinical Investigation}, 107(6):657--666, March 2001.
+
+\bibitem{lee_rate_2012}
+Heewook Lee, Ellen Popodi, Haixu Tang, and Patricia~L. Foster.
+\newblock Rate and molecular spectrum of spontaneous mutations in the bacterium
+  {Escherichia} coli as determined by whole-genome sequencing.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  109(41):E2774--E2783, October 2012.
+
+\bibitem{carter_role_2005}
+Ashley J.~R. Carter, Joachim Hermisson, and Thomas~F. Hansen.
+\newblock The role of epistatic gene interactions in the response to selection
+  and the evolution of evolvability.
+\newblock {\em Theoretical Population Biology}, 68(3):179--196, November 2005.
+
+\bibitem{kashtan_varying_2007}
+Nadav Kashtan, Elad Noor, and Uri Alon.
+\newblock Varying environments can speed up evolution.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  104(34):13711--13716, August 2007.
+
+\bibitem{connelly_negative_2015}
+Brian~D. Connelly, Katherine~J. Dickinson, Sarah~P. Hammarlund, and Benjamin
+  Kerr.
+\newblock Negative niche construction favors the evolution of cooperation.
+\newblock {\em Evolutionary Ecology}, pages 1--17, October 2015.
+
+\bibitem{mcclintock_significance_1993}
+Barbara McClintock.
+\newblock {\em The significance of responses of the genome to challenge}.
+\newblock Singapore: World Scientific Pub. Co, 1993.
+
+\bibitem{crombach_evolution_2008}
+Anton Crombach and Paulien Hogeweg.
+\newblock Evolution of {Evolvability} in {Gene} {Regulatory} {Networks}.
+\newblock {\em PLOS Comput Biol}, 4(7):e1000112, July 2008.
+
+\bibitem{goddard_sex_2005}
+Matthew~R. Goddard, H.~Charles~J. Godfray, and Austin Burt.
+\newblock Sex increases the efficacy of natural selection in experimental yeast
+  populations.
+\newblock {\em Nature}, 434(7033):636+, March 2005.
+\newblock 636.
+
+\bibitem{chen_dna_2004}
+Ines Chen and David Dubnau.
+\newblock {DNA} uptake during bacterial transformation.
+\newblock {\em Nature Reviews Microbiology}, 2(3):241+, March 2004.
+\newblock 241.
+
+\bibitem{lederberg_gene_1946}
+Joshua Lederberg and Edward~L. Tatum.
+\newblock Gene recombination in {Escherichia} coli.
+\newblock {\em Nature}, 158:558, 1946.
+
+\bibitem{zinder_genetic_1952}
+Norton~D. Zinder and Joshua Lederberg.
+\newblock Genetic {Exchange} in {Salmonella}.
+\newblock {\em Journal of Bacteriology}, 64(5):679--699, November 1952.
+
+\bibitem{lennox_transduction_1955}
+E.~S. Lennox.
+\newblock Transduction of linked genetic characters of the host by
+  bacteriophage {P}1.
+\newblock {\em Virology}, 1(2):190--206, July 1955.
+
+\bibitem{dagan_modular_2008}
+Tal Dagan, Yael Artzy-Randrup, and William Martin.
+\newblock Modular {Networks} and {Cumulative} {Impact} of {Lateral} {Transfer}
+  in {Prokaryote} {Genome} {Evolution}.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 105(29):10039--10044, 2008.
+
+\bibitem{davies_origins_1997}
+J.~E. Davies.
+\newblock Origins, acquisition and dissemination of antibiotic resistance
+  determinants.
+\newblock {\em Ciba Foundation Symposium}, 207:15--27; discussion 27--35, 1997.
+
+\bibitem{martinez_antibiotics_2008}
+José~L. Martínez.
+\newblock Antibiotics and {Antibiotic} {Resistance} {Genes} in {Natural}
+  {Environments}.
+\newblock {\em Science}, 321(5887):365--367, 2008.
+
+\bibitem{vos_why_2009}
+Michiel Vos.
+\newblock Why do bacteria engage in homologous recombination?
+\newblock {\em Trends in Microbiology}, 17(6):226--232, June 2009.
+
+\bibitem{redfield_evolution_1997}
+R.~J. Redfield, M.~R. Schrag, and A.~M. Dean.
+\newblock The {Evolution} of {Bacterial} {Transformation}: {Sex} with {Poor}
+  {Relations}.
+\newblock {\em Genetics}, 146(1):27--38, May 1997.
+
+\end{thebibliography}
