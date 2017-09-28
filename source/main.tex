@@ -438,6 +438,18 @@ In the context of changing environments, the expected fitness value ($E(w)$), an
 
 % We will experimentally relate these measurements to the realized genomic diffusion rate, and to other measures of robustness to identify patterns in the mutational landscape that result in high evolvability while controlling for varying levels of phenotypic frequency.
 
+\section{Changing environments create more paths to different kinds of phenotypes}
+%=sustained directional selection for adaptation
+Sustained directional selection adjusts the composition of phenotypes and genotypes in a population \cite{wright_evolution_1931}, typically moving that population across the mutational landscape to local regions of higher fitness. When populations find a fitness peak, they tend to cluster there, and exploration of that region of the landscape slows dramatically.
+
+%=CE promotes exploration
+In changing environments, however, the direction of selection is not fixed and peaks are not stable.  Instead, as the environment changes, populations are driven to explore new regions of the mutational landscape \cite{kashtan_varying_2007,connelly_negative_2015}. As they proceed, populations accumulate and carry with the genetic material acquired in prior explorations and adaptations, and use this history as raw material for new adaptation \cite{mcclintock_significance_1993}. Indeed, earlier work has shown that changing environments promote evolvability in many contexts, without compromising robustness \cite{crombach_evolution_2008,wilke_evolution_2001}. Strength of selection is also an important component of this exploration, since the harshness of the environment drives the speed with which organisms adapt to new conditions \cite{goddard_sex_2005}.
+
+%=CE not only drives exploration, but changes surrounding mutational landscape environment
+In this thesis, we show how changing environments not only drive exploration of the mutational landscape, but also select for populations whose genetic architectures are qualitatively different than those from populations evolved in static environmental conditions. In particular, we show that populations evolved under harsh, cyclically-changing environments have many more changes along their phylogenetic histories than those evolved in static or benign changing environments. Organisms evolved in these populations also contain reservoirs of pseudogene-like vestigial loci that were acquired and deactivated through repeated adaptation and fixation cycles. As a result, populations evolved in these harsh cyclically-changing environments are low in standing neutral diversity at the population level, but they still connect locally with many more phenotypically-interesting regions of the mutational landscape than more diverse populations evolved in static or benign environments.
+
+%=TODO MORE HERE about other things CE can or can't do
+
 \section{Digital Evolution}
 
 %=DE for studying evolution
@@ -547,11 +559,6 @@ and major transitions\cite{smith_major_1995}. For the purposes this chapter, we 
 %=how it affects short term evo
 In the short-term, this kind of evolvability determines a population's response to selection. This kind of evolvability depends primarily on the organization and interrelation of information in the genome; that is, the genetic architecture, and the resulting genotype-to-phenotype map \cite{gunter_p._wagner_perspective:_1996}. An example of evolvable architecture can be found in some bacterial genomes that contain highly mutable genome regions, called contingency loci. Small sets of insertions or deletions to these regions create transcription frameshifts that alter the expression of nearby coding regions, thus allowing populations to easily switch phenotypes via minor mutations. Contingency loci are most often seen in the genomes of pathogens, which are subject to frequent environmental shifts caused by the host immune system \cite{bayliss_simple_2001}. Thus, these populations are able to produce large amounts of heritable variation despite the reduction in population diversity resulting from population bottlenecks.
 
-%=how it affects long-term evo
-For longer timescales, evolvability is concerned more with variability generation and exploration of neutral spaces. Populations that exhibit this kind of evolvability would possess genomes with genetic architectures that more easily traverse the mutational landscape along neutral roads and thereby discover new fitness peaks while avoiding crossing fitness valleys. This kind of evolvability would allow populations to more easily colonize new ecological niches and form new clades\cite{kirschner_evolvability_1998,brookfield_evolution:_2001}.
-
-%=connection between short/long term evo non-obvious
-Despite some common features, the relationship between short-term and long-term evolvability is not obvious. Architectural features and evolutionary pressures that might convey short-term evolvability may not be the same as those that confer longer-term evolvability\cite{pigliucci_is_2008}. For example, features that promote rapid adaptation to a harsh fluctuating environment might reduce fitness in constant or benign fluctuating environments as compared to that of wild-type invaders. Alternately, the adaptation to harsh fluctuating environments and the resulting bottlenecks would potentially reduce diversity to the point where large amounts of neutral novelty generation could not occur.
 
 \subsubsection{Mutational Landscapes}
 %=how mutational landscapes relate
@@ -573,15 +580,7 @@ Further, response to selection is likely to be weaker in regions of the landscap
 %=[TODO, does this belong right here?]
 In order to assess the potential of different regions of the fitness landscape to promote or hinder evolvability, we will use both the \textbf{Genomic Diffusion Rate} ($D_g$)\ref{eq:genomic_diffusion_rate} and the \textbf{Phenotypic Diffusion Rate} ($D_p$)\ref{eq:phenotypic_diffusion_rate}, as normalized across changing environments\ref{eq:expected_fitness_value}.
 
-\subsection{Changing environments create more paths to different kinds of phenotypes}
-%=sustained directional selection for adaptation
-Sustained directional selection adjusts the composition of phenotypes and genotypes in a population \cite{wright_evolution_1931}, typically moving that population across the mutational landscape to local regions of higher fitness. When populations find a fitness peak, they tend to cluster there, and exploration of that region of the landscape slows dramatically.
 
-%=CE promotes exploration
-In changing environments, however, the direction of selection is not fixed and peaks are not stable.  Instead, as the environment changes, populations are driven to explore new regions of the mutational landscape \cite{kashtan_varying_2007,connelly_negative_2015}. As they proceed, populations accumulate and carry with the genetic material acquired in prior explorations and adaptations, and use this history as raw material for new adaptation \cite{mcclintock_significance_1993}. Indeed, earlier work has shown that changing environments promote evolvability in many contexts, without compromising robustness \cite{crombach_evolution_2008,wilke_evolution_2001}. Strength of selection is also an important component of this exploration, since the harshness of the environment drives the speed with which organisms adapt to new conditions \cite{goddard_sex_2005}.
-
-%=CE not only drives exploration, but changes surrounding mutational landscape environment
-In this chapter, we show how changing environments not only drive exploration of the mutational landscape, but also select for populations whose genetic architectures are qualitatively different than those from populations evolved in static environmental conditions. In particular, we show that populations evolved under harsh, cyclically-changing environments have many more changes along their phylogenetic histories than those evolved in static or benign changing environments. Organisms evolved in these populations also contain reservoirs of pseudogene-like vestigial loci that were acquired and deactivated through repeated adaptation and fixation cycles. As a result, populations evolved in these harsh cyclically-changing environments are low in standing neutral diversity at the population level, but they still connect locally with many more phenotypically-interesting regions of the mutational landscape than more diverse populations evolved in static or benign environments.
 
 \section{Methods}
 
@@ -672,15 +671,15 @@ in the benign and control treatments led populations in them to have higher stan
 %@RCK - TODO fix figure below.
 
 %=[FIGURE - entropy][TODO - tidy up this figure]
-\begin{figure}[!h]
-%\includegraphics{figures/CE/control__entropy}
-\includegraphics[trim={-0.85cm 0 0.1cm 0.2cm},clip,width=0.5\columnwidth]{figures/CE/control__entropy}
-%\includegraphics{figures/CE/benign__entropy}
-\includegraphics[trim={0.25cm 0 0.1cm 0},clip,width=0.5\columnwidth]{figures/CE/benign__entropy}
-\includegraphics[trim={-0.85cm 0 0.1cm 0},clip,width=1\columnwidth]{figures/CE/harsh__entropy}
-\caption{{\textbf Population Per-site Entropy over time} of a representative sample population. Each vertical slice represents the per-site entropy of the population at each update, both by genetic locus (upper), and overall population mean (lower). Hotter colors (red/orange/yellow) indicate greater diversity at this locus, while cooler colors (blues) indicate the a locus is more consistent across the population. Mean population entropy indicates the relative diversity of the population at any given time, while the per-site entropy shows where in the genomes the population diversity is located.   %@CAO: I'm agreeing with Mike that we might want to make this two graphs.  I added a bit in the description about the cooler colors just to lead the reader by the hand as much as possible.
-}\label{fig:entropy}
-\end{figure}
+	\begin{figure}[!h]
+	%\includegraphics{figures/CE/control__entropy}
+	\includegraphics[trim={-0.85cm 0 0.1cm 0.2cm},clip,width=0.5\columnwidth]{figures/CE/control__entropy}
+	%\includegraphics{figures/CE/benign__entropy}
+	\includegraphics[trim={0.25cm 0 0.1cm 0},clip,width=0.5\columnwidth]{figures/CE/benign__entropy}
+	\includegraphics[trim={-0.85cm 0 0.1cm 0},clip,width=1\columnwidth]{figures/CE/harsh__entropy}
+	\caption{{\textbf Population Per-site Entropy over time} of a representative sample population. Each vertical slice represents the per-site entropy of the population at each update, both by genetic locus (upper), and overall population mean (lower). Hotter colors (red/orange/yellow) indicate greater diversity at this locus, while cooler colors (blues) indicate the a locus is more consistent across the population. Mean population entropy indicates the relative diversity of the population at any given time, while the per-site entropy shows where in the genomes the population diversity is located.   %@CAO: I'm agreeing with Mike that we might want to make this two graphs.  I added a bit in the description about the cooler colors just to lead the reader by the hand as much as possible.
+	}\label{fig:entropy}
+	\end{figure}
 
 
 \subsubsection{Genetic Architecture}
@@ -690,16 +689,16 @@ The selective shifts in both benign and harsh changing environments result in qu
 % @CAO: I'm not positive I understand this description for how things are laid out.  It might be worth putting a bit more detail here, and highlighting also that there is a lot more separation in the harsh environment (or so it seems).  Should we talk more here about why all of this is the case (highlighting that we are speculating) or will that come later?
 
 %=[FIGURE - task layout][TODO - polish this figure]
-\begin{figure}[!h]
-\setlength{\fboxsep}{0pt}%
-\setlength{\fboxrule}{0pt}%
-\fbox{\includegraphics[width=0.5625\columnwidth,trim={-0.82cm 0 5.5cm 0.25cm},clip]{figures/CE/control__whole_taskmap.png}}\fbox{\includegraphics[width=0.1875\columnwidth,trim={9.1cm 0.15cm 1.3cm 0},clip]{figures/CE/legend__whole_taskmap.png}}
-\fbox{\includegraphics[width=0.75\columnwidth,trim={0.2cm 0 2.3cm 0},clip]{figures/CE/benign__whole_taskmap.png}}
-\fbox{\includegraphics[width=0.75\columnwidth,trim={-0.82cm 0 5.2cm 0},clip]{figures/CE/harsh__whole_taskmap.png}}
-\caption{{\textbf Varying genetic architecture of XOR and EQU over time} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant.
-Positions along the Y-axis represent each genome locus; loci in an organism are colored based on the tasks that they code for. Sites in \textbf{red} are active sites that code for the XOR task only, sites in \textbf{blue} are active sites for the EQU task only, and \textbf{purple} sites code for both XOR and EQU. Knockouts to the sites in black are lethal to the organism. Sites in the lighter colors (tan, light blue, lavender) represent vestigial sites for XOR only, EQU only, or both tasks, respectively. As we proceed from left to right, we can see the evolutionary history of the final dominant genotype.}
-\label{fig:lineage}
-\end{figure}
+	\begin{figure}[!h]
+	\setlength{\fboxsep}{0pt}%
+	\setlength{\fboxrule}{0pt}%
+	\fbox{\includegraphics[width=0.5625\columnwidth,trim={-0.82cm 0 5.5cm 0.25cm},clip]{figures/CE/control__whole_taskmap.png}}\fbox{\includegraphics[width=0.1875\columnwidth,trim={9.1cm 0.15cm 1.3cm 0},clip]{figures/CE/legend__whole_taskmap.png}}
+	\fbox{\includegraphics[width=0.75\columnwidth,trim={0.2cm 0 2.3cm 0},clip]{figures/CE/benign__whole_taskmap.png}}
+	\fbox{\includegraphics[width=0.75\columnwidth,trim={-0.82cm 0 5.2cm 0},clip]{figures/CE/harsh__whole_taskmap.png}}
+	\caption{{\textbf Varying genetic architecture of XOR and EQU over time} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant.
+	Positions along the Y-axis represent each genome locus; loci in an organism are colored based on the tasks that they code for. Sites in \textbf{red} are active sites that code for the XOR task only, sites in \textbf{blue} are active sites for the EQU task only, and \textbf{purple} sites code for both XOR and EQU. Knockouts to the sites in black are lethal to the organism. Sites in the lighter colors (tan, light blue, lavender) represent vestigial sites for XOR only, EQU only, or both tasks, respectively. As we proceed from left to right, we can see the evolutionary history of the final dominant genotype.}
+	\label{fig:lineage}
+	\end{figure}
 
 %=arch of control, scattered XOR
 In contrast, the architecture of XOR and EQU remain tightly intertwined in the control, and site positions do not change substantially over the course of the experiment. In the benign treatment, many more regions that perform the fluctuating task (XOR) are scattered throughout the genome, but site positions remain relatively fixed throughout the run after an initial adaptive phase. In the harsh treatment, not only are the active sites scattered, but the positions of active sites change and proliferate wildly over time.
@@ -708,15 +707,15 @@ In contrast, the architecture of XOR and EQU remain tightly intertwined in the c
 Interestingly, populations evolved in both the benign and harsh treatments also show development of a large reservoir of formerly functional, now vestigial, sites; that is, sites that remain unchanged from when they were previously active in performing a task, but were disabled by a mutation elsewhere and are thus now neutral. These vestigial pseudogene-like sites appear to be important for allowing the organisms to quickly re-adapt as the fluctuations in the environment restore the previously-rewarded functions. (Fig~\ref{fig:CCE_func_vestigial})
 
 %=[FIGURE - functional vs vestigial sites][TODO - stats]
-\begin{figure}[!h]
-\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/CCE_func_vest__box.png}
-%% TODO - generate the stats
-\caption{{\textbf Number of functional and vestigial sites by treatment}. The harsh environment has a significantly larger number of vestigial sites for the fluctuating (EQU) task compared to the benign treatment or control, while having a comparable number of functional sites (One-Way ANOVA F(X,YYY) = ZZ.ZZ, p $<<$ 0.000QQ).%
-%old --- (One-Way ANOVA F(2,132) = 54.35, p $<<$ 0.0001).
-% @CAO: Just a reminder to do the stats!
-}
-\label{fig:CCE_func_vestigial} %% FIGURE 5
-\end{figure}
+	\begin{figure}[!h]
+	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/CCE_func_vest__box.png}
+	%% TODO - generate the stats
+	\caption{{\textbf Number of functional and vestigial sites by treatment}. The harsh environment has a significantly larger number of vestigial sites for the fluctuating (EQU) task compared to the benign treatment or control, while having a comparable number of functional sites (One-Way ANOVA F(X,YYY) = ZZ.ZZ, p $<<$ 0.000QQ).%
+	%old --- (One-Way ANOVA F(2,132) = 54.35, p $<<$ 0.0001).
+	% @CAO: Just a reminder to do the stats!
+	}
+	\label{fig:CCE_func_vestigial} %% FIGURE 5
+	\end{figure}
 
 \subsubsection{Nearby mutational landscape}
 %=one-step survey of the mutational landscape [TODO - fix wording to clarify]
@@ -725,22 +724,22 @@ In order to identify the role that these pseudogene-like structures play, we per
 % @RCK: Yes, that's what this means. "More often, above". I can clarify. -- TODO
 
 %=[FIGURE - Frac 1-step][TODO STATS]
-\begin{figure}[!h] %% FIGURE 6
-\includegraphics[trim={0.2cm 0 0 0.2cm},clip,width=0.75\columnwidth]{figures/CE/CCE_frac_1step__box.png}
-%% TODO - stats
-\caption{{\textbf A survey of the single-step mutational neighborhood} around organisms that performed the fluctuating task. Note that in both the benign and harsh treatments, there were significantly more mutants that lost the EQU task as compared to the control (Wilcoxon Rank Sum Test: Z = X.XX and Y.YY respectively, p $<<$ 0.000ZZ). This result indicates that it was easier for the organisms in both treatments to turn off the EQU task in response to one mutation. %
-% old -- (Wilcoxon Rank Sum Test: Z = -6.59 and -6.70 respectively, p $<<$ 0.0001)
-}\label{fig:CCE_single_step}
+	\begin{figure}[!h] %% FIGURE 6
+	\includegraphics[trim={0.2cm 0 0 0.2cm},clip,width=0.75\columnwidth]{figures/CE/CCE_frac_1step__box.png}
+	%% TODO - stats
+	\caption{{\textbf A survey of the single-step mutational neighborhood} around organisms that performed the fluctuating task. Note that in both the benign and harsh treatments, there were significantly more mutants that lost the EQU task as compared to the control (Wilcoxon Rank Sum Test: Z = X.XX and Y.YY respectively, p $<<$ 0.000ZZ). This result indicates that it was easier for the organisms in both treatments to turn off the EQU task in response to one mutation. %
+	% old -- (Wilcoxon Rank Sum Test: Z = -6.59 and -6.70 respectively, p $<<$ 0.0001)
+	}\label{fig:CCE_single_step}
 
-\end{figure}
+	\end{figure}
 %=[FIGURE - Frac 2-step][TODO STATS]
-\begin{figure}[!h] %% FIGURE 7
-\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CCE_frac_2step__box.png}
-%TODO - stats
-\caption{{\textbf A survey of the two-step mutational neighborhood} of the organisms that lost EQU function in the one-step survey. We found that in both the harsh and benign treatments, there were significantly more organisms that regained function in response to mutation than the control. (Wilcoxon Rank Sum Test: Z = X.XX and Y.YY respectively, p $<<$ 0.000Z). This result indicates that it was easier for the organisms in both fluctuating environments to regain the task in response to one additional mutation.
-%(Wilcoxon Rank Sum Test: Z = -6.11 and -7.38 respectively, p $<<$ 0.0001)
-}\label{fig:CCE_two_step}
-\end{figure}
+	\begin{figure}[!h] %% FIGURE 7
+	\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CCE_frac_2step__box.png}
+	%TODO - stats
+	\caption{{\textbf A survey of the two-step mutational neighborhood} of the organisms that lost EQU function in the one-step survey. We found that in both the harsh and benign treatments, there were significantly more organisms that regained function in response to mutation than the control. (Wilcoxon Rank Sum Test: Z = X.XX and Y.YY respectively, p $<<$ 0.000Z). This result indicates that it was easier for the organisms in both fluctuating environments to regain the task in response to one additional mutation.
+	%(Wilcoxon Rank Sum Test: Z = -6.11 and -7.38 respectively, p $<<$ 0.0001)
+	}\label{fig:CCE_two_step}
+	\end{figure}
 
 %=measured D_g, D_p, found similarity in D_g, increase in D_p 
 We also measured the proportion of non-deleterious mutants in the nearby fitness landscape. We found that between all treatments, this proportion
@@ -753,13 +752,13 @@ remained approximately the same. However, we found that the proportion of these 
 % @RCK - NOTE TO SELF -- see about joining vestigial sites paper with Matt's bias work. Are vestigial sites useful because they are random building blocks available (equivalent to mutational bias), or is there a deeper functional structure. Does order matter?
 
 %=[FIGURE D_g D_p][TODO STATS]
-\begin{figure}[!h] %% FIGURE 8
-\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CCE_D_g_D_p__box.png}
-% TODO -- stats
-\caption{{\textbf Genomic and Phenotypic Diffusion Rates}, showing the probabilities of producing offspring that are genotypically ($D_g$) or phenotypically ($D_p$) distinct from the parent, while not reducing fitness.
-Note that while overall neutral exploration capacity remains relatively stable between treatments, phenotypic exploration capacity is increased in both treatments, but especially in the Harsh treatment. (Wilcoxon Rank Sum Test: Z = XX and XX respectively, p $<<$ 0.0001). This result indicates that changing environments promote the phenotypic evolvability of populations in particular.
-}\label{fig:CCE_diffusion_rate}
-\end{figure}
+	\begin{figure}[!h] %% FIGURE 8
+	\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CCE_D_g_D_p__box.png}
+	% TODO -- stats
+	\caption{{\textbf Genomic and Phenotypic Diffusion Rates}, showing the probabilities of producing offspring that are genotypically ($D_g$) or phenotypically ($D_p$) distinct from the parent, while not reducing fitness.
+	Note that while overall neutral exploration capacity remains relatively stable between treatments, phenotypic exploration capacity is increased in both treatments, but especially in the Harsh treatment. (Wilcoxon Rank Sum Test: Z = XX and XX respectively, p $<<$ 0.0001). This result indicates that changing environments promote the phenotypic evolvability of populations in particular.
+	}\label{fig:CCE_diffusion_rate}
+	\end{figure}
 
 
 
@@ -772,11 +771,11 @@ Contrary to our expectations, stochastic changing environments were no more effe
 
 %=[FIGURE - D_g/p]
 %=[TODO STATS]
-\begin{figure}[!h] %% FIGURE 12
-\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CSE_D_g_D_p__box.png}
-\caption{{\textbf Genomic and Phenotypic Diffusion Rates} in stochastic changing environments, showing the probabilities of producing offspring that are genotypically and phenotypically different from the parent, while remaining fitness neutral or better. As in the cyclic environment $D_g$ remains stable, at comparable levels (TODO STATS), however, the mean is significantly lower (TODO STATS). This result shows that stochastic environments are not as effective as cyclic environments at increasing the probability that organisms will produce phenotypically different, yet neutral offspring.
-}\label{fig:CSE_diffusion_rate}
-\end{figure}
+	\begin{figure}[!h] %% FIGURE 12
+	\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CSE_D_g_D_p__box.png}
+	\caption{{\textbf Genomic and Phenotypic Diffusion Rates} in stochastic changing environments, showing the probabilities of producing offspring that are genotypically and phenotypically different from the parent, while remaining fitness neutral or better. As in the cyclic environment $D_g$ remains stable, at comparable levels (TODO STATS), however, the mean is significantly lower (TODO STATS). This result shows that stochastic environments are not as effective as cyclic environments at increasing the probability that organisms will produce phenotypically different, yet neutral offspring.
+	}\label{fig:CSE_diffusion_rate}
+	\end{figure}
 
 %=1 and 2-step, slightly reduced
 Similarly, both the overall fraction of 1-step mutants that lost EQU, and the fraction of 2nd-step regaining of EQU, were slightly reduced in comparison to the cyclic treatments. This result indicates that stochastic harsh environment was slightly less effective at promoting evolution toward areas of the mutational landscape where such mutations were common.
@@ -784,16 +783,16 @@ Similarly, both the overall fraction of 1-step mutants that lost EQU, and the fr
 
 %=[FIGURES - 1 & 2-step]
 %=[TODO STATS]
-\begin{figure}[!h] %% FIGURE 10
-\includegraphics[trim={0.2cm 0 0 0.2cm},clip,width=0.75\columnwidth]{figures/CE/CSE_frac_1step__filtered__box.png}
-\caption{{\textbf A survey of the single-step mutational neighborhood} in the stochastic changing environment around organisms that performed the fluctuating task. Again, in the static and benign treatments, values are comparable to the cyclic changing environment (TODO STATS). However, in the harsh treatment, the means for both loss of the fluctuating task (EQU) and loss of both task were slight reduced. (TODO STATS). This result indicates that in the context of a harsh treatment, stochastic environmental change is less effective at moving organisms to areas of the fitness landscape where they can more easily switch task expression. %
-}\label{fig:CSE_single_step}
-\end{figure}
-\begin{figure}[!h] %% FIGURE 11
-\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CSE_frac_2step__box.png}
-\caption{{\textbf A survey of the two-step mutational neighborhood} in the stochastic changing environment of the organisms that lost EQU function in the one-step survey. Similarly to the result in Fig~\ref{fig:CSE_single_step}, we found that the fraction of organisms regaining the fluctuating task from a single additional mutation in the harsh treatment were reduced compared to the cyclic harsh treatment. (TODO STATS). This result confirms that the harsh stochastic environment is less effective than the cyclic harsh at promoting evolvability.
-}\label{fig:CSE_two_step}
-\end{figure}
+	\begin{figure}[!h] %% FIGURE 10
+	\includegraphics[trim={0.2cm 0 0 0.2cm},clip,width=0.75\columnwidth]{figures/CE/CSE_frac_1step__filtered__box.png}
+	\caption{{\textbf A survey of the single-step mutational neighborhood} in the stochastic changing environment around organisms that performed the fluctuating task. Again, in the static and benign treatments, values are comparable to the cyclic changing environment (TODO STATS). However, in the harsh treatment, the means for both loss of the fluctuating task (EQU) and loss of both task were slight reduced. (TODO STATS). This result indicates that in the context of a harsh treatment, stochastic environmental change is less effective at moving organisms to areas of the fitness landscape where they can more easily switch task expression. %
+	}\label{fig:CSE_single_step}
+	\end{figure}
+	\begin{figure}[!h] %% FIGURE 11
+	\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CSE_frac_2step__box.png}
+	\caption{{\textbf A survey of the two-step mutational neighborhood} in the stochastic changing environment of the organisms that lost EQU function in the one-step survey. Similarly to the result in Fig~\ref{fig:CSE_single_step}, we found that the fraction of organisms regaining the fluctuating task from a single additional mutation in the harsh treatment were reduced compared to the cyclic harsh treatment. (TODO STATS). This result confirms that the harsh stochastic environment is less effective than the cyclic harsh at promoting evolvability.
+	}\label{fig:CSE_two_step}
+	\end{figure}
 
 %=discussion of function vs vestigial
 %=[TODO STATS]
@@ -801,59 +800,18 @@ The greatest differences between the cyclic and stochastic treatments appeared i
 
 %=[FIGURE - func vestigial sites]
 %=[TODO STATS]
-\begin{figure}[!h]
-\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/CSE_func_vest__filtered__box.png}
-\caption{{\textbf Number of functional and vestigial sites by treatment} in a stochastic changing environment. The vestigial site counts remain comparable to the cyclic environment (TODO STATS), however, there was a reduction in functional site counts for XOR+EQU overlapping sites in the stochastic harsh environment as compared to the cyclic harsh environment (TODO STATS), as well as an overall reduction in the number of vestigial sites. (TODO STATS)%
-%-old (One-Way ANOVA F(2,132) = 54.35, p $<<$ 0.0001).
-}
-\label{fig:CSE_func_vestigial} %% FIGURE 9
-\end{figure}
+	\begin{figure}[!h]
+	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/CSE_func_vest__filtered__box.png}
+	\caption{{\textbf Number of functional and vestigial sites by treatment} in a stochastic changing environment. The vestigial site counts remain comparable to the cyclic environment (TODO STATS), however, there was a reduction in functional site counts for XOR+EQU overlapping sites in the stochastic harsh environment as compared to the cyclic harsh environment (TODO STATS), as well as an overall reduction in the number of vestigial sites. (TODO STATS)%
+	%-old (One-Way ANOVA F(2,132) = 54.35, p $<<$ 0.0001).
+	}
+	\label{fig:CSE_func_vestigial} %% FIGURE 9
+	\end{figure}
 
 %=hypothesyze these effect driven by variance in timespans
 %We hypothesize that these effects were driven by the inconsistent time spans between the population experiencing a given environmental condition in the stochastic treatments. Especially long time spans without a reward for a task, even if rare, could allow vestigial sites to drift away, thus pushing subsequent evolution closer to the control treatment. However, due to the rarity of such events, the effects of drift would be relatively limited.
 Together, from these measures, we conclude that stochastic environments exert slightly less evolutionary pressure to move toward regions of the mutational landscape that are more congenial to neutral phenotypic exploration and evolvability. We hypothesize that this dynamic may be due to the randomly-occurring environmental changes may either occur too rapidly for a response to selection, or too slowly, such that drift may cause the information contained in vestigial sites to mutate away. While the environment, on average, experiences as many changes as in the cyclic experiment, the distribution of the length of those environment periods may be very different. Thus, we can conclude that our stochastic changing environment is not more effective than a cyclic changing environment, and under harsh conditions, may actually be slightly worse for promoting the evolution of evolvability.
 
-\subsection{Long-Term Evolvability in Cyclic Changing Environments}
-%=choice of CE has dramatic effects - forced march
-The second phase of our experiments demonstrates that the harshness of fluctuation has a dramatic effect on long-term evolvability, landscape exploration and task discovery.\footnote{Outcomes between the stochastic and cyclic changing environments were qualitatively similar in the second phase, therefore we will focus on the cyclic changing environment. More detail on the results of the stochastic environments in phase 2 may be found in the supplemental materials.} In the first phase of the experiments, despite the logic-77 tasks not being rewarded, both changing-environment treatments discover more new tasks than the control. The harsh changing environment treatments in particular discover significantly more logic-77 tasks than either the benign treatment, or the control. (Fig~\ref{fig:overall_task_discovery}. We hypothesize that this effect may be due to the large phylogenetic depth of the harsh-evolved populations, where the repeated bottlenecks drive the populations along a kind of forced march across the mutational landscape.
-
-%=[FIGURE - overall task discovery]
-%=[TODO Tidy up figure]
-%=[TODO STATS]
-\begin{figure}[!h]
-\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/901_overall_task_discovery.png}
-\caption{{\textbf Number of new logic-77 tasks discovered over time}. [TODO DESCRIPTION AND STATS]%
-}
-\label{fig:overall_task_discovery}
-\end{figure}
-
-%=post-reward exploration - strength of selection differences
-Despite the initial success of the harsh-evolved populations' random walk across the fitness landscape, once selection for the logic-77 tasks is engaged at the start of phase 2, the benign and control treatments out-perform the harsh-evolved populations in task discovery. In particular, those populations where the harsh changing environment continues, significantly under-perform in task exploration as compared to the benign-evolved populations, and are comparable to the control rate. (Fig~\ref{fig:postreward_task_discovery}). We hypothesize that this effect is due to the relative differences in the strength of selection between the harsh changing environment and the directional selection toward the logic-77 tasks. The pressure to gain and lose the fluctuating task is much stronger than the pressure to acquire the logic-77 tasks, thereby depressing the rate at which they are found, and keeping it comparable to the pre-phase 2 rate. In contrast, the benign environment, with its comparatively weaker strength of selection for EQU task gain and loss, experiences a comparatively stronger selective pressure to acquire logic-77 tasks, while still benefiting from the increased exploration rate conveyed by the benign changing environment. (Fig~\ref{fig:composite_task_discovery} lower left)
-
-%=[FIGURE - postreward task discovery]
-%=[TODO Tidy up figure]
-%=[TODO STATS]
-\begin{figure}[!h]
-\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/901_postreward_all_task_discovery.png}
-\caption{{\textbf Number of new logic-77 tasks discovered beginning in phase 2}. [TODO DESCRIPTION AND STATS]%
-}
-\label{fig:postreward_task_discovery}
-\end{figure}
-
-%=disentangling direct effects from architectural byproducts
-Of additional interest is the comparison of task discovery rates between the benign changing environment populations A and B (Fig~\ref{fig:composite_task_discovery} lower right). The A population continues to be subject to the benign changing environment, where as the B population is only subject to directional selection toward the evolution of XOR, EQU, and the Logic-77 tasks. The task discovery rate for the A population is slightly higher than for B, but the effect is not statistically significant. Both, however, still perform better than the control treatment. Thus, this result is suggests that there are architectural features conferred by the changing environment that are helpful for long-term evolvability, even after the changes have stopped, and that this effect is distinct from the direct effects of the changing direction of selection. Further research is needed to fully untangle these effects.
-
-
-
-%=[FIGURE - overall task discovery]
-%=[TODO Tidy up figure]
-%=[TODO STATS]
-\begin{figure}[!h]
-\includegraphics[trim={0 0 0 0}, clip, width=1\columnwidth]{figures/CE/901_postreward_composites_task_discovery.png}
-\caption{{\textbf Detail of task discovery rates over time}. [TODO DESCRIPTION AND STATS]%
-}
-\label{fig:composite_task_discovery}
-\end{figure}
 
 \section{Conclusion}
 %=direction of selection drives exploration and gathers history
@@ -870,18 +828,7 @@ than cyclic changing environments, even if, on average, the amount of time spent
 
 Finally, we have shown that changing environments both directly and indirectly influence long-term evolvability by directly driving exploration across the fitness landscape, and also by creating genetic architectures that increase the rate of new task discovery in novel environments. We hypothesize that these effects are driven by the presence of the accumulation of pseudogene-like structures that provide cryptic functionality. In our experiments, the increased rate of task discovery is significant, though relatively small, but we expect that future experiments focused on this specific effect might yield more conclusive results. 
 
-\subsection{Limitations of Cyclic Changing Environments}
-%=CE can be a re-tread, but not as much as feared 
-Changing environments produce a set of selective pressures that speed up exploration of genotype space, while also building reservoirs of partial functionality that may be co-opted in the evolution of more complex structures. These features make changing environments useful for both their explanatory power in natural evolution, and as practical tools in the Artificial Life toolkit.
-Ultimately, however, cyclic changing environments only re-tread existing phenotypic ground, and though genotypic exploration is faster than under purely directional or stabilizing selection, the space explored remains constrained by the type of phenotypes that are selected. Despite this constraint, however, we see that, particularly under harsh conditions, a lot of novel genotypic ground may be explored, even without direct selection for novelty. 
 
-%=better/different methods
-Even so, there must exist methods of exploring genotype space that do not suffer from these limitations at all.
-For example, perhaps repeated bottlenecking of populations could promote faster traversal of the fitness landscape in quasi-random directions. More ambitiously, perhaps these kinds of environments could be coupled with dynamically increasing open-ended complexity goals.
-
-%=understanding is vital, conslusion paragraph
-%=TODO Tweak below?
-Understanding the mechanisms by which select environmental conditions alter fitness landscapes is vital to understanding the forces that promote evolvability and increase complexity. In particular, understanding the role of vestigial sites may help us untangle how robustness can promote evolvability. Are these vestigial sites inactive remnants, reservoirs of function, or are they part of a complex compensatory framework supporting and buffering the expression of the phenotype? Or both? Changing environments provide one view into these dynamics, but we must explore further to find other mechanisms for exploring and exploiting genotype space.
 
 
 \chapter{Changing Environments and the Evolution of Horizontal Gene Transfer}
@@ -928,11 +875,19 @@ For experimental conditions corresponding to the second set of hypotheses, I wil
 %=TODO, fill this in.
 
 \subsection{Changing environments elevate HGT use}
-Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
-* No bonus, static - uptake remains low
-* Bonus, static - uptake increases
-* No bonus, CE - uptake higher than no bonus static
-* Bonus, CE - uptake higher than either BonusStatic or NoBonusCE
+%Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
+%* No bonus, static - uptake remains low
+%* Bonus, static - uptake increases
+%* No bonus, CE - uptake higher than no bonus static
+%* Bonus, CE - uptake higher than either BonusStatic or NoBonusCE
+
+We measured HGT fragment uptake in four conditions (see table %=TODO REF TO THE METHODS TABLE
+), plus of pair of non-HGT controls. Without a bonus, in a static environment, fragment uptake remains low as compared to the non-HGT control. This indicates that HGT in a static environment is largely deleterious\ref{fig:hgt_inst_execution}. However, in a harsh changing environment, fragment uptake is elevated. This shows that in the context of a harsh changing environment, the integration of new genetic material is beneficial.
+
+We also found that, regardless of whether the environment is static or changing, when a bonus to fragment uptake is provided (analogous to the nutritive benefit granted by natural competence in biological organisms), fragment uptake also increases. In order to investigate the relationship between the effects granted by a nutritive bonus and the benefit of fragment recombination in a changing environment, we selected a bonus level that increased fragment uptake in a static environment to a level comparable to the increase seen in changing environments without a bonus. We then combined these factors, giving a bonus, plus using a changing environment. We saw that the resulting uptake level increases largely additively. This indicates that the benefits granted by a grazing bonus are largely independent of the benefits conveyed by integrating new genetic material. 
+
+%We thus conclude that not only is HGT evolution possible absent a grazing bonus, but that should a changing environment occur, that there are additional incentives to perform HGT.
+Thus, not only is HGT evolution possible absent a bonus, the benefit stacks with that of a grazing bonus, proving a more likely scenario by which HGT might evolve. %bleh
 
 \begin{figure}[h!]
 \begin{center}
@@ -1040,8 +995,129 @@ Under Stress, Natural Competence increases
 \chapter{Changing Environments and Long Term Evolvability}
 
 \section{Background}
+
+%=how it affects long-term evo
+For longer timescales, evolvability is concerned more with variability generation and exploration of neutral spaces. Populations that exhibit this kind of evolvability would possess genomes with genetic architectures that more easily traverse the mutational landscape along neutral roads and thereby discover new fitness peaks while avoiding crossing fitness valleys. This kind of evolvability would allow populations to more easily colonize new ecological niches and form new clades\cite{kirschner_evolvability_1998,brookfield_evolution:_2001}.
+
+%=connection between short/long term evo non-obvious
+Despite some common features, the relationship between short-term and long-term evolvability is not obvious. Architectural features and evolutionary pressures that might convey short-term evolvability may not be the same as those that confer longer-term evolvability\cite{pigliucci_is_2008}. For example, features that promote rapid adaptation to a harsh fluctuating environment might reduce fitness in constant or benign fluctuating environments as compared to that of wild-type invaders. Alternately, the adaptation to harsh fluctuating environments and the resulting bottlenecks would potentially reduce diversity to the point where large amounts of neutral novelty generation could not occur.
+
+
 \section{Methods}
+
+
+\subsection{Experimental Design}
+%=design for experimental environment (CCE vs SCE, and short vs long)
+In order to examine the dynamics and mechanisms of evolving populations in changing environments, we performed two sets of experiments (cyclic vs stochastic changing environments), each divided into two phases (short-term evolvability vs. long-term evolvability). The cyclic environments are designed to simulate predictable cycles of change, such as day/night or seasonal cycles, whereas the stochastic environments represents less predictable oscillations in environmental states, such as random weather patterns, or climactic changes. The first phase of each set of experiments allows organisms to adapt to a predictable set of environments, whereas the second phase introduces the change-evolved populations to a completely new environment. Thus, the first phase explores short-term evolvability dynamics, and the second phase addresses the relationship between short-term and long-term evolvability. See Table~\ref{treatments}
+
+%=[TABLE - experimental treatments]
+\begin{table}[]
+\centering
+\caption{{\textbf Experimental Treatments}}
+\label{treatments-h}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Treatment\\ Name\end{tabular}}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Cycle}}}                     & \multicolumn{1}{c|}{\textbf{Phase 1}}                                                     & \multicolumn{2}{c|}{\textbf{Phase 2}}                                                                                                 \\ \cline{4-6} 
+\multicolumn{2}{|c|}{}                                                                                   & \multicolumn{1}{c|}{}                                                    & \multicolumn{1}{c|}{\textbf{Tasks}}                                                       & \multicolumn{1}{c|}{\textbf{Tasks}}                                                            & \multicolumn{1}{c|}{\textbf{Cycle?}} \\ \hline
+%row1
+\multicolumn{2}{|l|}{Control}                                                                          & \multicolumn{1}{l|}{n/a}                                                                      & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}XOR and EQU \\ (constant)\end{tabular}}                         & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}XOR and EQU \\ (constant)\end{tabular}}                              & \multicolumn{1}{l|}{N}               \\ \midrule
+%row2
+\multirow{2}{*}{CCE-Benign}                                      & A                                     & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Cyclic\\ Benign\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct 0/+)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct 0/+)\\ Logic 77 (constant)\end{tabular} & Y                                    \\ \cline{2-2} \cline{5-6} 
+                                                                 & B                                     &                                                                          &                                                                                           & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (constant)\\ Logic-77 (constant)\end{tabular}  & N                                    \\ \hline
+%row3
+\multirow{2}{*}{CCE-Harsh}                                      & A                                     & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Cyclic\\ Harsh\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct -/+)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct -/+)\\ Logic 77 (constant)\end{tabular} & Y                                    \\ \cline{2-2} \cline{5-6} 
+                                                                 & B                                     &                                                                          &                                                                                           & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (constant)\\ Logic-77 (constant)\end{tabular}  & N                                    \\ \hline
+%row4
+\multirow{2}{*}{SCE-Benign\ddag}                                      & A                                     & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Stochastic\\ Benign\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct 0/+)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct 0/+)\\ Logic 77 (constant)\end{tabular} & Y                                   \\ \cline{2-2} \cline{5-6} 
+                                                                 & B                                     &                                                                          &                                                                                           & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (constant)\\ Logic-77 (constant)\end{tabular}  & N                                  \\ \hline
+%row5
+\multirow{2}{*}{SCE-Harsh\ddag}                                      & A                                     & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Stochastic\\ Harsh\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct -/+)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct -/+)\\ Logic 77 (constant)\end{tabular} & Y                                   \\ \cline{2-2} \cline{5-6} 
+                                                                 & B                                     &                                                                          &                                                                                           & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (constant)\\ Logic-77 (constant)\end{tabular}  & N                                  \\ \hline
+                                                                 
+\end{tabular}
+\begin{flushleft} Experimental treatments. Four types of cyclic changing environment. Each is split into two treatments for phase two, one continuing with the changing environment, and one without. \ddag Results of the phase-2 long-term evolvability experiments in stochastic environments may be found in the supplementary materials. [\@RCK TODO - Tidy up this table]
+\end{flushleft}
+\label{treatments}
+\end{table}
+
+
+\subsubsection{Cyclic and Stochastic Changing Environments}
+%=explanation of the changing environment treatments - cyclic
+For the cyclic environment, we subjected a total of 150 replicate populations of digital organisms to two different treatments of two-phase cyclically changing environments, plus a static control. The environment cycles between equal-length periods of reward and punishment. Each cycle extends for 1000 updates, or roughly 30 generations. In the static control, there is no cycle. Rather, the rewards remain constant. The first phase of the experiment extends for 200 cycles, or 200,000 updates, approximately 6,000 generations.
+
+%=stochastic
+The stochastic changing environment experiment is similar to the cyclic environment, except that rather than the environment toggling every 500 updates, the environmental switch happens randomly, with a 0.002 probability of changing on every update. This averages, in the long term, to approximately one switch every 500 updates, but in the short term, the environmental switches are unpredictable.
+
+%=tasks
+In phase 1, we set up the system to detect organisms that performed XOR or EQU, two challenging bit-wise logical tasks. In the static control, XOR is rewarded with a CPU speed (and thus fitness) multiple of 8, while EQU is rewarded with a CPU speed multiple of 32. In the harsh treatment, as the cycle progresses, the XOR reward remains constant, while the EQU reward cycles between a 32-fold bonus and a correspondingly harsh 32-fold penalty (i.e., CPU speed is divided by 32 when EQU is performed in the off cycle). The benign treatment is nearly identical to the harsh treatment, except that the reward merely goes away in the off-cycle as opposed to incurring a severe penalty.
+
+%=differences between tasks
+In both environments, we identify EQU as the \textit{Fluctuating Task}. XOR, because it is rewarded continuously, is the \textit{Backbone Task}, and is used as a background for comparing the separation or intertwining of functional genetic components in the evolution of EQU. Further, the 4-fold difference in reward level between XOR and EQU encourages the evolution and maintenance of EQU when possible.
+
+%=long term evolvability - new task
+The second phase of the experiment continues the evolution of these populations, but introduces them to an entirely new set of rewarded bit-wise logical tasks: the Logic-77 environment. These new tasks use three bit-wise inputs rather than two, and are each rewarded with a constant 1.2-fold bonus to execution. This provides a mild selective pressure to evolve these task, but the benefits to performing them do not overwhelm the existing selective pressure to continue performing XOR or EQU.
+
+%=the organisms
+For all of the experiments described in this section, we held the individual genomes at a fixed length of 121\footnote{As part of our initial controls, we hand-wrote an organism with separated sections that performed XOR and EQU. This hand-written organism had 121 instructions and as such we used this genome length as a constraint for the evolve organisms as well.} instructions, but tested the new genomes for mutations after each successful replication event at a substitution probability of 0.00075 per site. We configured the Avida world to have local interactions on a toroidal grid that is 60-by-60 cells (3600 cells in total), and we seeded the initial populations with an ancestor that was previously evolved to perform XOR and EQU under a static reward. The genetic architecture for performing XOR and EQU is tightly intertwined in this ancestral organism, as it was evolved with no selective pressure for modularity.
+
 \section{Results and Discussion}
+
+\subsection{Long-Term Evolvability in Cyclic Changing Environments}
+%=choice of CE has dramatic effects - forced march
+The second phase of our experiments demonstrates that the harshness of fluctuation has a dramatic effect on long-term evolvability, landscape exploration and task discovery.\footnote{Outcomes between the stochastic and cyclic changing environments were qualitatively similar in the second phase, therefore we will focus on the cyclic changing environment. More detail on the results of the stochastic environments in phase 2 may be found in the supplemental materials.} In the first phase of the experiments, despite the logic-77 tasks not being rewarded, both changing-environment treatments discover more new tasks than the control. The harsh changing environment treatments in particular discover significantly more logic-77 tasks than either the benign treatment, or the control. (Fig~\ref{fig:overall_task_discovery}. We hypothesize that this effect may be due to the large phylogenetic depth of the harsh-evolved populations, where the repeated bottlenecks drive the populations along a kind of forced march across the mutational landscape.
+
+%=[FIGURE - overall task discovery]
+%=[TODO Tidy up figure]
+%=[TODO STATS]
+	\begin{figure}[!h]
+	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/901_overall_task_discovery.png}
+	\caption{{\textbf Number of new logic-77 tasks discovered over time}. [TODO DESCRIPTION AND STATS]%
+	}
+	\label{fig:overall_task_discovery}
+	\end{figure}
+
+%=post-reward exploration - strength of selection differences
+Despite the initial success of the harsh-evolved populations' random walk across the fitness landscape, once selection for the logic-77 tasks is engaged at the start of phase 2, the benign and control treatments out-perform the harsh-evolved populations in task discovery. In particular, those populations where the harsh changing environment continues, significantly under-perform in task exploration as compared to the benign-evolved populations, and are comparable to the control rate. (Fig~\ref{fig:postreward_task_discovery}). We hypothesize that this effect is due to the relative differences in the strength of selection between the harsh changing environment and the directional selection toward the logic-77 tasks. The pressure to gain and lose the fluctuating task is much stronger than the pressure to acquire the logic-77 tasks, thereby depressing the rate at which they are found, and keeping it comparable to the pre-phase 2 rate. In contrast, the benign environment, with its comparatively weaker strength of selection for EQU task gain and loss, experiences a comparatively stronger selective pressure to acquire logic-77 tasks, while still benefiting from the increased exploration rate conveyed by the benign changing environment. (Fig~\ref{fig:composite_task_discovery} lower left)
+
+%=[FIGURE - postreward task discovery]
+%=[TODO Tidy up figure]
+%=[TODO STATS]
+\begin{figure}[!h]
+\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/901_postreward_all_task_discovery.png}
+\caption{{\textbf Number of new logic-77 tasks discovered beginning in phase 2}. [TODO DESCRIPTION AND STATS]%
+}
+\label{fig:postreward_task_discovery}
+\end{figure}
+
+%=disentangling direct effects from architectural byproducts
+Of additional interest is the comparison of task discovery rates between the benign changing environment populations A and B (Fig~\ref{fig:composite_task_discovery} lower right). The A population continues to be subject to the benign changing environment, where as the B population is only subject to directional selection toward the evolution of XOR, EQU, and the Logic-77 tasks. The task discovery rate for the A population is slightly higher than for B, but the effect is not statistically significant. Both, however, still perform better than the control treatment. Thus, this result is suggests that there are architectural features conferred by the changing environment that are helpful for long-term evolvability, even after the changes have stopped, and that this effect is distinct from the direct effects of the changing direction of selection. Further research is needed to fully untangle these effects.
+
+
+
+%=[FIGURE - overall task discovery]
+%=[TODO Tidy up figure]
+%=[TODO STATS]
+\begin{figure}[!h]
+\includegraphics[trim={0 0 0 0}, clip, width=1\columnwidth]{figures/CE/901_postreward_composites_task_discovery.png}
+\caption{{\textbf Detail of task discovery rates over time}. [TODO DESCRIPTION AND STATS]%
+}
+\label{fig:composite_task_discovery}
+\end{figure}
+
+\chapter{Conclusion}
+
+\section{Limitations of Cyclic Changing Environments}
+%=CE can be a re-tread, but not as much as feared 
+Changing environments produce a set of selective pressures that speed up exploration of genotype space, while also building reservoirs of partial functionality that may be co-opted in the evolution of more complex structures. These features make changing environments useful for both their explanatory power in natural evolution, and as practical tools in the Artificial Life toolkit.
+Ultimately, however, cyclic changing environments only re-tread existing phenotypic ground, and though genotypic exploration is faster than under purely directional or stabilizing selection, the space explored remains constrained by the type of phenotypes that are selected. Despite this constraint, however, we see that, particularly under harsh conditions, a lot of novel genotypic ground may be explored, even without direct selection for novelty. 
+
+%=better/different methods
+Even so, there must exist methods of exploring genotype space that do not suffer from these limitations at all.
+For example, perhaps repeated bottlenecking of populations could promote faster traversal of the fitness landscape in quasi-random directions. More ambitiously, perhaps these kinds of environments could be coupled with dynamically increasing open-ended complexity goals.
+
+%=understanding is vital, conslusion paragraph
+%=TODO Tweak below?
+Understanding the mechanisms by which select environmental conditions alter fitness landscapes is vital to understanding the forces that promote evolvability and increase complexity. In particular, understanding the role of vestigial sites may help us untangle how robustness can promote evolvability. Are these vestigial sites inactive remnants, reservoirs of function, or are they part of a complex compensatory framework supporting and buffering the expression of the phenotype? Or both? Changing environments provide one view into these dynamics, but we must explore further to find other mechanisms for exploring and exploiting genotype space.
 
 
 \appendix
