@@ -883,13 +883,12 @@ For example, perhaps repeated bottlenecking of populations could promote faster 
 %=TODO Tweak below?
 Understanding the mechanisms by which select environmental conditions alter fitness landscapes is vital to understanding the forces that promote evolvability and increase complexity. In particular, understanding the role of vestigial sites may help us untangle how robustness can promote evolvability. Are these vestigial sites inactive remnants, reservoirs of function, or are they part of a complex compensatory framework supporting and buffering the expression of the phenotype? Or both? Changing environments provide one view into these dynamics, but we must explore further to find other mechanisms for exploring and exploiting genotype space.
 
-\chapter{Changing Environments and Long Term Evolvability}
+
+\chapter{Changing Environments and the Evolution of Horizontal Gene Transfer}
 
 \section{Background}
-\section{Methods}
-\section{Results and Discussion}
 
-\chapter{Alternatives to the Grazing Hypothesis: Changing Environments Promote the Evolution of Horizontal Gene Transfer}
+%Changing Environments Promote the Evolution of Horizontal Gene Transfer
 
 Horizontal Gene Transfer (HGT) is an umbrella term for the non-reproductive transfer of genetic material between organisms. Organisms may uptake genes directly from the environment (natural competence\cite{chen_dna_2004}), or else receive them via bacterial conjugation\cite{lederberg_gene_1946} or viral infection (transduction\cite{zinder_genetic_1952,lennox_transduction_1955}). The integrated fragments may either be decomposed inside the recipient cell for their nutrients, or integrated into their genomes. 
 
@@ -898,13 +897,13 @@ However, the origins and evolution of HGT mechanisms remain unclear.
 
 
 
-\subsubsection{Origins of HGT in nature}
+\subsection{Origins of HGT in nature}
 %=[TODO] - More about how this question is still open
 In prokaryotes, “natural competence” is an HGT mechanism by which organisms spontaneously uptake the DNA of dead organisms in the environment. These organisms benefit in several ways. 1) DNA is composed of a 5-carbon sugar, a phosphate, and nitrogen bases, materials that are useful for DNA synthesis and repair. 2) The organisms may also benefit from up-taking gene-fragments that confer new adaptive functionality into the genome\cite{vos_why_2009}. However, it is unclear whether the origins of these functions were developed solely in order to obtain nutrients, or if the acquisition of new functionality was selected for as well. While grazing for gene-fragments as nutrients certainly conveys an advantage, the possibility of integrating these gene fragments is clearly going to be disruptive to organisms more often than it is beneficial\cite{redfield_evolution_1997}. 
 
 In this chapter, I explore the environmental pressures that promote the use of horizontal gene transfer, and attempt to disambiguate between the grazing and new-function hypotheses.
 
-\subsection{Methods}
+\section{Methods}
 I propose to implement HGT within Avida and conduct experiments to test the hypotheses listed in the previous section (Figure \ref{fig:hgtprocess}). As organisms die in Avida runs with HGT enabled, fragments of their genomes will accumulate in reservoirs. The fragments in the reservoirs will deteriorate over time, with older genomes disappearing from the reservoir as new ones enter. Fragments for uptake will be randomly selected from the reservoir. 
 
 \begin{figure}[h!]
@@ -922,10 +921,13 @@ The energy bonus level, uptake mutagenic chance, and fragment size will be confi
 
 For experimental conditions corresponding to the second set of hypotheses, I will create a random mutation chance that triggers gene fragment uptake in the organism. This random chance will immediately integrate the fragment into the genome at a homologous location.
 
-\subsection{Results and Discussion}
+\section{Results and Discussion}
 %=[TODO - fill this in]
 
-\subsubsection{Changing environments elevate HGT use}
+%\subsection{Alternatives to the Grazing Hypothesis}
+%=TODO, fill this in.
+
+\subsection{Changing environments elevate HGT use}
 Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
 * No bonus, static - uptake remains low
 * Bonus, static - uptake increases
@@ -941,7 +943,7 @@ Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
 \end{figure}
 
 
-\subsubsection{Other mutation types are not elevated in response to HGT}
+\subsection{Other mutation types are not elevated in response to HGT}
 Measured use of mutagen instruction in static and changing environments
 * Die instruction (control)
 * Raised mut rate
@@ -959,7 +961,7 @@ Measured use of mutagen instruction in static and changing environments
 \end{center}
 \end{figure}
 
-\subsubsection{Mutation fitness effect correlate with mutagen use}
+\subsection{Mutation fitness effect correlate with mutagen use}
 Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
 * Measured fitness effects of different types of mutagens
   * Spatially-Dispersed Mutation Event
@@ -978,7 +980,7 @@ Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
 
 Fitness effects correlate with use of the mutagen.
 
-\subsubsection{HGT mutations increase evolved probability of beneficial phenotype switching}
+\subsection{HGT mutations increase evolved probability of beneficial phenotype switching}
 Measured proportion of mutations that convey beneficial phenotype change (with an increase in fitness) for different types of mutagens
 * Spatially-Dispersed Mutation Event
 * Localized Mutation Event
@@ -997,7 +999,7 @@ Measured proportion of mutations that convey beneficial phenotype change (with a
 HGT conveys greater proportions of beneficial phenotype-changing mutations than other mutagens.
 
 
-\subsubsection{HGT derives most benefit from on-cycle fragments, but not all}
+\subsection{HGT derives most benefit from on-cycle fragments, but not all}
 Measured fitness effects of HGT fragments that originated in a matching phase in a previous cycle vs fragments originating in the non-matching phase of the cycle.
 
 
@@ -1019,7 +1021,11 @@ Measured fitness effects of HGT fragments that originated in a matching phase in
 
 On-cycle fragments convey much of the benefit of HGT
 
-\subsection{Discussion}
+\subsection{Information content of fragments predicts HGT benefit}
+
+%=TODO FILL THIS IN
+
+\section{Discussion}
 
 CE selects for evolvability 
 * When sufficiently beneficial mechanisms exist, and 
@@ -1031,20 +1037,12 @@ Under Stress, Natural Competence increases
 * Avida has no such mechanism, so lack of fidelity does not account for an increase in HGT use. Instead, HGT can only increase due to selection.    
 
 
-
-
-
-\chapter{Horizontal Gene Transfer Promotes Long Term Evolution}
+\chapter{Changing Environments and Long Term Evolvability}
 
 \section{Background}
 \section{Methods}
 \section{Results and Discussion}
 
-\chapter{Horizontal Gene Transfer As Most Preferred Mutation}
-
-\section{Background}
-\section{Methods}
-\section{Results and Discussion}
 
 \appendix
 \chapter{Your first appendix}
