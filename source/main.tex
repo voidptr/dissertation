@@ -899,14 +899,19 @@ Thus, not only is HGT evolution possible absent a bonus, the benefit stacks with
 
 
 \subsection{Other mutation types are not elevated in response to HGT}
-Measured use of mutagen instruction in static and changing environments
-* Die instruction (control)
-* Raised mut rate
-* Spatially-Dispersed Mutation Event
-* Localized Mutation Event
-* Shuffled-Fragment HGT 
-* HGT
+% Measured use of mutagen instruction in static and changing environments
+% * Die instruction (control)
+% * Raised mut rate
+% * Spatially-Dispersed Mutation Event
+% * Localized Mutation Event
+% * Shuffled-Fragment HGT 
+% * HGT
 
+In order the compare the use of HGT aginst other kinds of mutation, we compared rates of non-bonus HGT fragment uptake against a execution of series of other mutation types (see table %=TODO
+), in both static and changing environments.\ref{fig:mutagen_execution} As expected, in the static environment, endogenously-controlled performance of all types of mutation (including HGT) is strongly suppressed. However, in harsh changing environment, HGT use dominates the other mutation types. Of particular interest is the decreasing use of HGT-like fragment insertions as information is destroyed, first by shuffling fragments (HGT-Shuffle), and then by replacing all fragment instructions with randomly selected instructions (HGT-Random). The latter performs comparably to the remaining mutation types: Mutation Events: Biased and Random, Mutation Rate Increase, and the Die control. This indicates that the information content of the fragment is an important predictor of the use of HGT. 
+
+Also of note is that the only difference between the Mutation Event: Sampled and HGT-Shuffle treatments is the localization of the mutation effect (HGT-Shuffle fragment insertion is applied to a single location, whereas the shuffled instructions are scattered randomly throughout the genome), however their use rates are significantly different. This indicates that not only is information content important, but that localization (clustering) of the mutation effect also matters.
+%This indicates that a combination of information content and localization of the mutation event matter for the beneficial nature of HGT.
 
 \begin{figure}[h!]
 \begin{center}
@@ -916,14 +921,28 @@ Measured use of mutagen instruction in static and changing environments
 \end{center}
 \end{figure}
 
+\subsubsection{Changing Environments Elevate All Instruction Use Due to Repeated Bottlenecks}
+
+Above, we observe that the Die mutagen control is also elevated in the changing environments treatment. This counterintuitive effect is due to the repeated bottlenecking of the populations subjected to the harsh changing environment.\ref{bottlenecks}. We observe that under increasingly harsh bottlenecks, rates of execution of the "die" instruction increase to levels comparable to what is seen in the changing environment treatments. Because not all instructions contained in an organism's genome are neccessarily executed (due to genetic flow-control structures), it is possible for any instruction to remain dormant. Thus, not all organisms with the "die" instruction in their genome will express it. Thus, the selective pressure of the environmental change may ultimately outweigh that of the die instruction if it is initially dormant in a genome that would survive a harsh environmental change and reproduce. 
+
+\begin{figure}[h!]
+\begin{center}
+%\includegraphics[width=0.7\columnwidth]{figures/HGT/bottlenecks.png}
+\caption{bleh
+}\label{fig:bottlenecks}
+\end{center}
+\end{figure}
+
 \subsection{Mutation fitness effect correlate with mutagen use}
-Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
-* Measured fitness effects of different types of mutagens
-  * Spatially-Dispersed Mutation Event
-  * Localized Mutation Event
-  * Shuffled-Fragment HGT
-  * HGT
-  * CE
+% Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
+% * Measured fitness effects of different types of mutagens
+%   * Spatially-Dispersed Mutation Event
+%   * Localized Mutation Event
+%   * Shuffled-Fragment HGT
+%   * HGT
+%   * CE
+
+Prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment. Why should HGT mutations be different? In order to address this question, we measured the average fitness effect of each mutation, and compared it to that mutation's usage rate in changing environments. We observed a correlation between the average fitness effect, and the use of the mutagen. We observed many more positive or neutral fitness effects from HGT-like instructions than the other mutagen types, which exhibited primarily neutral or negative mutation effects. This indicates that mutagen use is under direct selection\ref{fig:mutagen_use_vs_fitness_effect}
 
 \begin{figure}[h!]
 \begin{center}
@@ -933,15 +952,16 @@ Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
 \end{center}
 \end{figure}
 
-Fitness effects correlate with use of the mutagen.
+%Fitness effects correlate with use of the mutagen.
 
 \subsection{HGT mutations increase evolved probability of beneficial phenotype switching}
-Measured proportion of mutations that convey beneficial phenotype change (with an increase in fitness) for different types of mutagens
-* Spatially-Dispersed Mutation Event
-* Localized Mutation Event
-* Shuffled-Fragment HGT
-* HGT
+% Measured proportion of mutations that convey beneficial phenotype change (with an increase in fitness) for different types of mutagens
+% * Spatially-Dispersed Mutation Event
+% * Localized Mutation Event
+% * Shuffled-Fragment HGT
+% * HGT
 
+Further, we measured the proportion of mutations that produce beneficial phenotype changes.\ref{fig:mutagen_use_vs_fraction_beneficial} In the context of a changing environment, a mutation that switches your phenotype to match the environment should be strongly selected for. Indeed, we found that this proportion was significantly and substatially higher for HGT-like mutations than other mutation types, and that there was strong correlation between the proportion of beneficial phenotype-switching mutations and mutagen use. This correlation is much stronger than the correlation with fitness effect, indicating that the magnitude of the fitness effect is less important to selection than the sign of the effect.
 
 \begin{figure}[h!]
 \begin{center}
@@ -951,12 +971,21 @@ Measured proportion of mutations that convey beneficial phenotype change (with a
 \end{center}
 \end{figure}
 
-HGT conveys greater proportions of beneficial phenotype-changing mutations than other mutagens.
+%HGT conveys greater proportions of beneficial phenotype-changing mutations than other mutagens.
 
 
 \subsection{HGT derives most benefit from on-cycle fragments, but not all}
-Measured fitness effects of HGT fragments that originated in a matching phase in a previous cycle vs fragments originating in the non-matching phase of the cycle.
+%Measured fitness effects of HGT fragments that originated in a matching phase in a previous cycle vs fragments originating in the non-matching phase of the cycle.
 
+\begin{figure}[h!]
+\begin{center}
+%\includegraphics[width=0.7\columnwidth]{figures/HGT/fitness_effect_heatmap.png}
+\caption{bleh
+}\label{fig:fitness_effect_heatmap}
+\end{center}
+\end{figure}
+
+In order to understand the basis of the beneficial nature of HGT in changing environments, we performed a series of treatments where we replaced the fragments in the cell reservoirs with fragments that originated at the end of the matching phase of the cycle, the off-phase of the cycle, and from both phases, plus a non-replaced control.\ref{fig:fitness_effect_heatmap}\ref{fig:fitness_effect_by_cycle_phase_source}\ref{fig:beneficial_fraction_by_cycle_phase_source} We then measured the fitness effect of HGT mutations, as well as the fraction of beneficial phenotype-switching mutations. In the both-phase and non-replaced control, the mean fitness effect was largely neutral, while the on-phase fragments had a significantly positive mean fitness benefit, and the off-phase fragments were largely negative. Further, the control, both-phase and on-phase had a larger fraction of beneficial phenotype-switching mutants, whereas the off-phase treatment had few to no beneficial phenotype switches. This indicates that it is not only genetic disruption that is beneficial, but that the majority of the benefit of HGT derives from uptaking and integrating useful fragments of information from time-periods where organisms were already adapted to the environment, thus bypassing the need to evolve a new phenotype from scratch. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -974,11 +1003,12 @@ Measured fitness effects of HGT fragments that originated in a matching phase in
 \end{center}
 \end{figure}
 
-On-cycle fragments convey much of the benefit of HGT
+%On-cycle fragments convey much of the benefit of HGT
 
 \subsection{Information content of fragments predicts HGT benefit}
 
 %=TODO FILL THIS IN
+FILL THIS IN WITH THE THEORY PORTION
 
 \section{Discussion}
 
