@@ -4,8 +4,12 @@
 %
 \usepackage{graphicx}
 \usepackage[colorlinks=true, citecolor=black, linkcolor=black, urlcolor=blue]{hyperref}
-\usepackage{multirow}
+\usepackage{array,multirow}
 \usepackage{tabularx}
+\usepackage{hhline}
+\usepackage{makecell}
+\renewcommand\theadalign{cb}
+\renewcommand\theadfont{\bfseries}
 %
 
 
@@ -592,30 +596,21 @@ In order to examine the dynamics and mechanisms of evolving populations in chang
 \begin{table}[]
 \centering
 \caption{{\textbf Experimental Treatments}}
-\label{treatments-h}
-\begin{tabular}{|l|l|l|l|l|l|}
+\label{ce-treatments-h}
+\begin{tabular}{|c|c||c|c|}
 \hline
-\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Treatment\\ Name\end{tabular}}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Cycle}}}                     & \multicolumn{1}{c|}{\textbf{Phase 1}}                                                     & \multicolumn{2}{c|}{\textbf{Phase 2}}                                                                                                 \\ \cline{4-6} 
-\multicolumn{2}{|c|}{}                                                                                   & \multicolumn{1}{c|}{}                                                    & \multicolumn{1}{c|}{\textbf{Tasks}}                                                       & \multicolumn{1}{c|}{\textbf{Tasks}}                                                            & \multicolumn{1}{c|}{\textbf{Cycle?}} \\ \hline
-%row1
-\multicolumn{2}{|l|}{Control}                                                                          & \multicolumn{1}{l|}{n/a}                                                                      & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}XOR and EQU \\ (constant)\end{tabular}}                         & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}XOR and EQU \\ (constant)\end{tabular}}                              & \multicolumn{1}{l|}{N}               \\ \midrule
-%row2
-\multirow{2}{*}{CCE-Benign}                                      & A                                     & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Cyclic\\ Benign\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct 0/+)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct 0/+)\\ Logic 77 (constant)\end{tabular} & Y                                    \\ \cline{2-2} \cline{5-6} 
-                                                                 & B                                     &                                                                          &                                                                                           & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (constant)\\ Logic-77 (constant)\end{tabular}  & N                                    \\ \hline
-%row3
-\multirow{2}{*}{CCE-Harsh}                                      & A                                     & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Cyclic\\ Harsh\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct -/+)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct -/+)\\ Logic 77 (constant)\end{tabular} & Y                                    \\ \cline{2-2} \cline{5-6} 
-                                                                 & B                                     &                                                                          &                                                                                           & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (constant)\\ Logic-77 (constant)\end{tabular}  & N                                    \\ \hline
-%row4
-\multirow{2}{*}{SCE-Benign\ddag}                                      & A                                     & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Stochastic\\ Benign\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct 0/+)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct 0/+)\\ Logic 77 (constant)\end{tabular} & Y                                   \\ \cline{2-2} \cline{5-6} 
-                                                                 & B                                     &                                                                          &                                                                                           & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (constant)\\ Logic-77 (constant)\end{tabular}  & N                                  \\ \hline
-%row5
-\multirow{2}{*}{SCE-Harsh\ddag}                                      & A                                     & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Stochastic\\ Harsh\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct -/+)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct -/+)\\ Logic 77 (constant)\end{tabular} & Y                                   \\ \cline{2-2} \cline{5-6} 
-                                                                 & B                                     &                                                                          &                                                                                           & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (constant)\\ Logic-77 (constant)\end{tabular}  & N                                  \\ \hline
-                                                                 
-\end{tabular}
-\begin{flushleft} Experimental treatments. Four types of cyclic changing environment. Each is split into two treatments for phase two, one continuing with the changing environment, and one without. \ddag Results of the phase-2 long-term evolvability experiments in stochastic environments may be found in the supplementary materials. [\@RCK TODO - Tidy up this table]
+\multirow{2}{*}{ \thead{Treatment} } & \multirow{2}{*}{ \thead{Changing \\ Environment} } & \multicolumn{2}{c|}{ \thead{Rewarded Tasks} } \\\cline{3-4}
+& & XOR & EQU \\\hhline{|=|=|=|=|}
+Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} \\\hline
+\makecell{CCE \\ Benign} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 to $2^5$} \\\hline
+\makecell{CCE \\ Harsh} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ to $2^5$} \\\hline
+\makecell{SCE \\ Benign} & Stochastic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 to $2^5$} \\\hline
+\makecell{SCE \\ Harsh} & Stochastic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ to $2^5$} \\\hline
+\end{tabular} 
+
+\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. In the first two treatments, the environment switches in a predictable cycle, whereas in the second two, the environment switches at random intervals. 
 \end{flushleft}
-\label{treatments}
+\label{ce-treatments}
 \end{table}
 
 
@@ -842,16 +837,21 @@ Horizontal Gene Transfer (HGT) is an umbrella term for the non-reproductive tran
 HGT has had a profound impact on the evolutionary history of both prokaryotes and eukaryotes, with one study showing approximately 81\% of genes in the sample "being involved in HGT at some point in their history"\cite{dagan_modular_2008}. For example, HGT appears to be the primary mechanism by which antibiotic resistance is conferred \cite{davies_origins_1997,martinez_antibiotics_2008} since most antibiotics are sourced from the environment, and the organisms that develop them are themselves resistant to the compounds.
 However, the origins and evolution of HGT mechanisms remain unclear. 
 
-
-
 \subsection{Origins of HGT in nature}
 %=[TODO] - More about how this question is still open
-In prokaryotes, “natural competence” is an HGT mechanism by which organisms spontaneously uptake the DNA of dead organisms in the environment. These organisms benefit in several ways. 1) DNA is composed of a 5-carbon sugar, a phosphate, and nitrogen bases, materials that are useful for DNA synthesis and repair. 2) The organisms may also benefit from up-taking gene-fragments that confer new adaptive functionality into the genome\cite{vos_why_2009}. However, it is unclear whether the origins of these functions were developed solely in order to obtain nutrients, or if the acquisition of new functionality was selected for as well. While grazing for gene-fragments as nutrients certainly conveys an advantage, the possibility of integrating these gene fragments is clearly going to be disruptive to organisms more often than it is beneficial\cite{redfield_evolution_1997}. 
+In prokaryotes, “natural competence” is an HGT mechanism by which organisms spontaneously uptake the DNA of dead organisms in the environment. These organisms benefit in several ways. 1) DNA is composed of a 5-carbon sugar, a phosphate, and nitrogen bases, materials that are useful for DNA synthesis and repair. 2) The organisms may also benefit from up-taking gene-fragments that confer new adaptive functionality into the genome\cite{vos_why_2009}. However, it is unclear whether the origins of these functions were developed solely in order to obtain nutrients, or if the acquisition of new functionality was selected for as well. While grazing for gene-fragments as nutrients certainly conveys an advantage, the possibility of integrating these gene fragments is clearly going to be disruptive to organisms more often than it is beneficial\cite{redfield_evolution_1997}.
 
-In this chapter, I explore the environmental pressures that promote the use of horizontal gene transfer, and attempt to disambiguate between the grazing and new-function hypotheses.
+In order to test this hypothesis, and address the question of whether there are circumstances where gene-fragment integration may be beneficial, we subjected populations of evolving digital organisms to a harsh changing environment, where there is a strong pressure to quickly switch your phenotype. We supplied organisms with an instruction that performs Horizontal Gene Transfer. That is, the instruction triggers uptake of a genetic fragment from the environment, and there is a chance that, rather than metabolizing the fragment for a bonus to execution speed, the fragment will instead be homologously recombined into the organism's genome. We show that in harsh changing environments, without any kind of bonus, organisms increase use of HGT as compared to execution in a static environment.
+
+\subsection{HGT Compared to Other Types of Mutations}
+
+Prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment[TODO CITE]. Why should HGT mutations be different? In order to address this question, we created instructions that create different kinds of mutational effects with similar per-instruction impact to HGT. We then performed experiments with these mutagenic instructions under the same conditions as our evaluation of HGT, in static vs changing environments. We not only found that these instructions are triggered at significantly lowered rates as compared to HGT, but that the use rate correlates significantly with the amount of useful information conveyed by the mutagen. 
+
 
 \section{Methods}
-I propose to implement HGT within Avida and conduct experiments to test the hypotheses listed in the previous section (Figure \ref{fig:hgtprocess}). As organisms die in Avida runs with HGT enabled, fragments of their genomes will accumulate in reservoirs. The fragments in the reservoirs will deteriorate over time, with older genomes disappearing from the reservoir as new ones enter. Fragments for uptake will be randomly selected from the reservoir. 
+In this chapter, we use Avida to test hypotheses about the origins of Horizontal Gene Transfer, as well as compare its mutational effects to other types of mutations. In Avida, HGT is triggered by the \textit{HGT-Uptake} instruction that, when executed, attempts to uptake a genome fragment from the individual cell reservoirs in the environment. As organisms die in Avida runs with HGT enabled, fragments of their genomes will accumulate in reservoirs. The fragments in the reservoirs will deteriorate over time, with older genomes disappearing from the reservoir as new ones enter. Fragments for uptake will be randomly selected from the reservoir.  
+
+Upon uptake, there is a probability that the fragment is not metabolized; instead, homologous recombination may occur (Figure \ref{fig:hgtprocess}).  
 
 \begin{figure}[h!]
 \begin{center}
@@ -861,12 +861,59 @@ I propose to implement HGT within Avida and conduct experiments to test the hypo
 \end{center}
 \end{figure}
 
-For the treatments corresponding to the first set of hypotheses, I will create two new mutagenic instructions to trigger uptake of fragments. One of these instructions will confer an energy bonus upon uptake, while the other will not. Both instructions will incur a random chance of recombining the fragment into the genome at a homologous location. % @RCK This jives with how natural competence works in biological organisms. Integration can't really happen without homologous recombination. 
-If the insertion occurs, no energy bonus will be given. 
+\subsection{Experimental Design}
 
-The energy bonus level, uptake mutagenic chance, and fragment size will be configurable per treatment. I will perform initial exploration to find reasonable configuration values before proceeding to conduct experiments.
+\subsubsection{Evolution of HGT - Alternatives to the Grazing Hypothesis}
 
-For experimental conditions corresponding to the second set of hypotheses, I will create a random mutation chance that triggers gene fragment uptake in the organism. This random chance will immediately integrate the fragment into the genome at a homologous location.
+For the treatments corresponding to the first set of hypotheses on the origins of horizontal gene transfer, we subjected populations of evolving digital organisms with HGT to harsh changing environments (Table~\ref{hgt-treatments-h}).
+
+%=[TABLE - experimental treatments]
+\begin{table}[]
+\centering
+\caption{{\textbf Experimental Treatments - Evolution of HGT}}
+\label{hgt-treatments-h}
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+\thead{Treatment} & \thead{Changing \\ Env. \\ Type} & \thead{HGT \\ Action} & \thead{Bonus} \\\hhline{|=|=|=|=|}
+Control & Static & None & n/a \\\hline
+\makecell{HGT \\ B0.0 \\ (Natural Competence \\ No Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probabilty} & n/a \\\hline
+\makecell{HGT \\ B0.0 \\ CE \\ (Natural Competence \\ No Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probabilty} & n/a \\\hline
+\makecell{HGT \\ B0.8 \\ (Natural Competence \\ with Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probabilty \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
+\makecell{HGT \\ B0.8 \\ CE \\ (Natural Competence \\ with Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probabilty \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
+\end{tabular} 
+
+\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases. The first phase is a normal changing environment similar to those found in Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
+\end{flushleft}
+\label{hgt-treatments}
+\end{table}
+
+
+\subsubsection{Comparing HGT to Other Mutation Types}
+
+For the treatments corresponding to the second set of hypotheses comparing the mutational effects of different types of mutations, we provided populations of evolving digital organisms with instructions that endogenously trigger different kinds of mutation events, then subjected them to harsh changing environments (Table~\ref{hgt_mut-treatments-h}).
+
+%=[TABLE - experimental treatments]
+\begin{table}[]
+\centering
+\caption{{\textbf Experimental Treatments - Mutation Types}}
+\label{hgt_mut-treatments-h}
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+\thead{Treatment} & \thead{Changing \\ Env. \\ Type} & \thead{HGT \\ Action} & \thead{Bonus} \\\hhline{|=|=|=|=|}
+Control & Static & None & n/a \\\hline
+\makecell{HGT \\ B0.0 \\ (Natural Competence \\ No Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probabilty} & n/a \\\hline
+\makecell{HGT \\ B0.0 \\ CE \\ (Natural Competence \\ No Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probabilty} & n/a \\\hline
+\makecell{HGT \\ B0.8 \\ (Natural Competence \\ with Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probabilty \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
+\makecell{HGT \\ B0.8 \\ CE \\ (Natural Competence \\ with Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probabilty \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
+\end{tabular} 
+
+
+\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases. The first phase is a normal changing environment similar to those found in Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
+\end{flushleft}
+\label{hgt_mut-treatments}
+\end{table}
 
 \section{Results and Discussion}
 %=[TODO - fill this in]
@@ -1038,36 +1085,32 @@ Despite some common features, the relationship between short-term and long-term 
 
 \subsection{Experimental Design}
 %=design for experimental environment (CCE vs SCE, and short vs long)
-In order to examine the dynamics and mechanisms of evolving populations in changing environments, we performed two sets of experiments (cyclic vs stochastic changing environments), each divided into two phases (short-term evolvability vs. long-term evolvability). The cyclic environments are designed to simulate predictable cycles of change, such as day/night or seasonal cycles, whereas the stochastic environments represents less predictable oscillations in environmental states, such as random weather patterns, or climactic changes. The first phase of each set of experiments allows organisms to adapt to a predictable set of environments, whereas the second phase introduces the change-evolved populations to a completely new environment. Thus, the first phase explores short-term evolvability dynamics, and the second phase addresses the relationship between short-term and long-term evolvability. See Table~\ref{treatments}
+In order to examine the dynamics and mechanisms of evolving populations in changing environments, we performed two sets of experiments (cyclic vs stochastic changing environments), each divided into two phases (short-term evolvability vs. long-term evolvability). The cyclic environments are designed to simulate predictable cycles of change, such as day/night or seasonal cycles, whereas the stochastic environments represents less predictable oscillations in environmental states, such as random weather patterns, or climactic changes. The first phase of each set of experiments allows organisms to adapt to a predictable set of environments, whereas the second phase introduces the change-evolved populations to a completely new environment. Thus, the first phase explores short-term evolvability dynamics, and the second phase addresses the relationship between short-term and long-term evolvability. See Table~\ref{cel-treatments-h}
 
 %=[TABLE - experimental treatments]
 \begin{table}[]
 \centering
 \caption{{\textbf Experimental Treatments}}
-\label{treatments-h}
-\begin{tabular}{|l|l|l|l|l|l|}
+\label{cel-treatments-h}
+
+\begin{tabular}{|c|c||c|c||c|c|c|}
+%\begin{tabular}{ccccccc}
 \hline
-\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Treatment\\ Name\end{tabular}}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Cycle}}}                     & \multicolumn{1}{c|}{\textbf{Phase 1}}                                                     & \multicolumn{2}{c|}{\textbf{Phase 2}}                                                                                                 \\ \cline{4-6} 
-\multicolumn{2}{|c|}{}                                                                                   & \multicolumn{1}{c|}{}                                                    & \multicolumn{1}{c|}{\textbf{Tasks}}                                                       & \multicolumn{1}{c|}{\textbf{Tasks}}                                                            & \multicolumn{1}{c|}{\textbf{Cycle?}} \\ \hline
-%row1
-\multicolumn{2}{|l|}{Control}                                                                          & \multicolumn{1}{l|}{n/a}                                                                      & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}XOR and EQU \\ (constant)\end{tabular}}                         & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}XOR and EQU \\ (constant)\end{tabular}}                              & \multicolumn{1}{l|}{N}               \\ \midrule
-%row2
-\multirow{2}{*}{CCE-Benign}                                      & A                                     & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Cyclic\\ Benign\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct 0/+)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct 0/+)\\ Logic 77 (constant)\end{tabular} & Y                                    \\ \cline{2-2} \cline{5-6} 
-                                                                 & B                                     &                                                                          &                                                                                           & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (constant)\\ Logic-77 (constant)\end{tabular}  & N                                    \\ \hline
-%row3
-\multirow{2}{*}{CCE-Harsh}                                      & A                                     & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Cyclic\\ Harsh\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct -/+)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct -/+)\\ Logic 77 (constant)\end{tabular} & Y                                    \\ \cline{2-2} \cline{5-6} 
-                                                                 & B                                     &                                                                          &                                                                                           & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (constant)\\ Logic-77 (constant)\end{tabular}  & N                                    \\ \hline
-%row4
-\multirow{2}{*}{SCE-Benign\ddag}                                      & A                                     & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Stochastic\\ Benign\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct 0/+)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct 0/+)\\ Logic 77 (constant)\end{tabular} & Y                                   \\ \cline{2-2} \cline{5-6} 
-                                                                 & B                                     &                                                                          &                                                                                           & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (constant)\\ Logic-77 (constant)\end{tabular}  & N                                  \\ \hline
-%row5
-\multirow{2}{*}{SCE-Harsh\ddag}                                      & A                                     & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Stochastic\\ Harsh\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct -/+)\end{tabular}} & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (fluct -/+)\\ Logic 77 (constant)\end{tabular} & Y                                   \\ \cline{2-2} \cline{5-6} 
-                                                                 & B                                     &                                                                          &                                                                                           & \begin{tabular}[c]{@{}l@{}}XOR (constant)\\ EQU (constant)\\ Logic-77 (constant)\end{tabular}  & N                                  \\ \hline
-                                                                 
-\end{tabular}
-\begin{flushleft} Experimental treatments. Four types of cyclic changing environment. Each is split into two treatments for phase two, one continuing with the changing environment, and one without. \ddag Results of the phase-2 long-term evolvability experiments in stochastic environments may be found in the supplementary materials. [\@RCK TODO - Tidy up this table]
+\multirow{3}{*}{ \thead{Treatment} } & \multirow{3}{*}{ \thead{Changing \\ Env. \\ Type} } & \multicolumn{5}{c|}{ \thead{Rewarded Tasks} } \\\cline{3-7}
+& & \multicolumn{2}{c||}{ \thead{Phase 1 \\ (0-200,000 Updates)} } & \multicolumn{3}{c|}{ \thead{Phase 2 \\ (200,000-400,000 Updates)} } \\\cline{3-7}
+& & XOR & EQU & XOR & EQU & \makecell{Logic-77 \\ (all)} \\\hhline{|=|=|=|=|=|=|=|}
+Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+Benign & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 to $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 to $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+\makecell{Benign \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 to $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+Harsh & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ to $2^5$} & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ to $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+\makecell{Harsh \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ to $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+\makecell{Harsh \\ to \\ Benign} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ to $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 to $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+\end{tabular} 
+
+
+\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases. The first phase is a normal changing environment similar to those found in Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
 \end{flushleft}
-\label{treatments}
+\label{cel-treatments}
 \end{table}
 
 
@@ -1151,7 +1194,9 @@ Understanding the mechanisms by which select environmental conditions alter fitn
 
 
 \appendix
-\chapter{Your first appendix}
+\chapter{Experimentally Deriving Parameters for HGT Recombination Probability and Bonus Levels}
+%=TODO
+[TODO FILL THIS IN with bonus sweeps]
 \backmatter
 \makebibliographypage
 \SingleSpacing
