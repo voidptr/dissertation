@@ -1,4 +1,6 @@
+%make the document class option "PhD,final" to remove todo list items
 \documentclass[PhD]{msu-thesis}
+
 
 % Your extra packages here
 %
@@ -8,9 +10,12 @@
 \usepackage{tabularx}
 \usepackage{hhline}
 \usepackage{makecell}
+\usepackage[obeyFinal]{todonotes}
 %\usepackage[toc,page]{appendix}
 \renewcommand\theadalign{cb}
 \renewcommand\theadfont{\bfseries}
+
+%\presetkeys{todonotes}{color=yellow!30, inline}{}
 %
 
 
@@ -20,7 +25,7 @@
 \title{Evolution and Evolvability in Changing Environments}
 \author{Rosangela Canino-Koning}
 \fieldofstudy{Computer Science} % should be in sentence case
-\dedication{This thesis is dedicated to Kendall.}
+\dedication{This thesis is dedicated to Kendall Koning.}
 \date{2017}
 %
 \begin{document}
@@ -29,8 +34,7 @@
 \maketitlepage
 %
 \begin{abstract}
-[TODO - rework abstract]
-%=[TODO - rework at the end]
+\todo[inline]{rework abstract}
 % The specific meaning of the term ``evolvability'' is heavily debated, but most definitions can be summarized as: the potential of populations and genomes to produce adaptive variation and complex structures in response to mutation and selection. Evolvability is thought to be created through the interplay of modularity and robustness. Indeed, modularity and robustness build upon each other, layer by layer, to form a framework that produces more powerful adaptive effects while reducing the impact of deleterious mutations.
 
 % In this comprehensive exam, I will describe some research that I have completed and propose additional projects that explore the interplay among evolvability, robustness, and modularity. Before delving into my own research, however, I begin in the first chapter by providing a survey of current literature on each of these topics, with emphases on how they are believed to arise, how they affect subsequent evolution, and how they relate to each other.
@@ -63,21 +67,28 @@ Your acknowledgements here
 \clearpage
 \listoffigures
 %
+\clearpage
+\todototoc
+\listoftodos
+%
 \mainmatter
 \chapter{Introduction - Change, Adaptation and the Evolution of Evolvability}
 \label{chap:introduction}
-%=[TODO - rework this to hang with the rest of it]
 \section{Evolvability and Evolutionary Potential - Why Study It} 
+%=evolutionary potential as evolvability
 The evolutionary potential of a genome is a controversial and nuanced topic, ultimately measurable only in retrospect once the evolutionary success of its descendants is known. Questions relating to evolutionary potential, however, are some of the biggest in Evolutionary Biology: What selective pressures drive organisms to become more evolvable? What aspects of genetic architecture influence evolutionary potential? How do we go about predicting longer-term evolutionary success?
 
+%=evolution of major transitions
 The evolution of sex, multi-cellularity, and other major transitions are characterized by significant changes in genetic architecture that appear to have facilitated the transitions\cite{smith_major_1995}. The adaptive radiations that accompanied Metazoan evolution were also accompanied by changes in genetic architecture that were carried along as species diversified and colonized new ecological niches\cite{kirschner_evolvability_1998}. The vast diversity of species and their complex ecological interplay depends fundamentally on the ability of populations to not only adapt to their environment, but also to create, explore, and exploit ecological niches.
 
+%=within EC evolvability matters
 Within evolutionary computation, evolvability is also fundamental. The ``representation problem'', which influences every aspect of evolutionary search, can be characterized as a problem of how to design the underlying genetic encoding such that genomes can not only express complex solutions, but can also be mutated in meaningful ways\cite{dawkins_13_2003}. In particular, good designs for genetic representations often involve increasing the probability that a recombination between potential solutions can produce a result that is not only viable, but more fit than either parent. The entire goal of the representation problem is to improve evolvability so that better solutions can be found. By definition, systems that exhibit good characteristics in evolvability produce good solutions more quickly, while avoiding premature convergence\cite{altenberg_evolution_1994} so adaptive evolution continues to as high a level as possible. Beyond the representation problem, many of the barriers to complexity are actually barriers to evolvability.
 
 \section{What is Evolvability (and why is it so hard to pin down)}
-
+%=what is evolvability?
 In its most abstract sense, evolvability appears to be a simple concept: the ability of genetic systems to produce adaptive variation. However, the devil is in the details. How, exactly do genetic systems generate adaptive variation? How do we measure this potential? Should all forms of variation count as evolvability? At what time-scales does evolvability act? And finally, how did it evolve in the first place? That is, are evolvable features under some form of direct selection, or are they by-products of other processes?
 
+%=evolvability at different scales
 Evolvability, in its details, must mean different things at different evolutionary scopes and timescales. 
 Depending on your perspective, evolvability can describe the response to selection at the population level\cite{fisher_genetical_1930,houle_comparing_1992}, the ability of populations to adapt to changing conditions\cite{belle_code_2002}, 
 larger phenomena such as variability generation\cite{gunter_p._wagner_perspective:_1996}, 
@@ -87,98 +98,115 @@ or even the potential to generate the larger clade-level innovations\cite{kirsch
 and major transitions\cite{smith_major_1995}. 
 Beyond that, there is a lot of confusion and controversy about the definitions and components of evolvability even within any one of these scopes\cite{pigliucci_is_2008}.
 
+%=can evolvability be acted upon directly?
 Finally, it is unclear whether evolvability is acted upon by direct selection, or whether it is a byproduct of other traits that are selected upon, or some combination of the two. At the individual level, it’s possible that some traits that support evolvability, such as robustness of developmental or cell processes\cite{kirschner_evolvability_1998} could have been selected for directly in response to adverse environmental conditions. However, at the population level, traits like neutral variation generation are more likely to have hitchhiked on the genomes of the adaptive variants that they produced. Finally, at the clade level, genetic structures that produced populations of adaptive variants with robust and flexible genetic architectures would have been more successful at adaptive radiations\cite{dawkins_13_2003}, and thus go on to found whole branches of life with those traits\cite{kirschner_evolvability_1998}. 
 
+%=selection at higher levels problematic
 Of course, we must be careful when invoking selection at higher levels than the individual. While there is some evidence to support clade-level selection in the evolution of evolvability \cite{okasha_evolution_2006}, caution should be applied when attributing evolutionary outcomes to higher levels of selection when random chance or lower levels of selection are adequately explanatory. Specifically, we need to be careful to avoid falling into the trap of adaptationism\cite{gould_spandrels_1979} by assuming that evolvability is an end in itself. Selection can only act on organisms and populations as they exist, and it is an error to assume that patterns identified in hind-sight are predictive of future evolution.
 
+%=evolvability at different scopes. historical narrative useful
 Evolvability is described at many different scopes and levels in the literature, each with varying amounts of detail and predictive power. As such, it may be best to avoid attempting to unify the concept, and rather acknowledge that “evolvability” is not a singular idea, but rather an overlapping and interrelated set of concepts relating to adaptation and evolutionary potential. In order to synthesize the large field of evolvability and understand how the distinct scopes and ideas connect together, a historical narrative is clearly useful.
 
 \section{Historical Conceptions of Evolvability}
 \subsection{Modern Synthesis}
-
+%=origins of evolvability
 The evolution of evolvability as a formalized theory originated with Dawkins\cite{dawkins_13_2003} and \\Albrech\cite{alberch_genes_1991}, though the underlying concept (as the response to selection, measured by heritability) existed much earlier, in the work of Fisher\cite{fisher_genetical_1930} and Wright\cite{wright_evolution_1931}. Fisher’s fundamental theorem of the response of a population to selection identified narrow-sense heritability ($h^2$) as a measure for how evolvable populations were. Evolvability as heritability ($h^2$) is a measure of the portion of the phenotypic variation in a population that can be accounted for by additive genetic effects. $h^2$ therefore is the component that directly relates to a population’s response to selection\cite{houle_comparing_1992}.
 
+%=eq - narrow-sense heritability
 \begin{equation}
 h^2 = \frac{Var_A}{Var_P}
 \end{equation}
 
+%=broad-sense heritability
 In contrast to narrow-sense heritability ($h^2$), broad-sense heritability ($H^2$) refers to the entire genetic contribution to a population’s variance, including dominance and epistasis. Because of these other contributors, it is unsuitable for isolating the response to selection. 
 
+%=breeder's eq
 As a measure of evolvability, narrow-sense heritability ($h^2$) was also used as a term in the breeder’s equation, in order to estimate the response of a population to artificial selection.
-% @CAO: The start of the preceding paragraph is the first time H^2 is mentioned; as such is seems strange to start it with a "While...", which implies that it's something the reader is getting referred back to (though I recognize that you're just contrasting to later in the sentence).  I recommend turning this sentence around, and possibly splitting it into two: first explicitly introduce broad-sense heritability, and then contrast it.
-% @RCK: Fixed, but bleh.
-% @CAO: This actually reads well to me.  Why don't you like it?
-% @RCK: Heh, reads ok to me too. Just tired last night. 
 
+%=eq - breeder's equation
 \begin{equation}
 R = {h^2}S
 \end{equation}
 
+%=limits of heritability as predictor
 Heritability, however, is not an ideal predictor for the response to selection because it fails to integrate factors such as the population distribution of variability in a trait\cite{houle_comparing_1992}. Heritability, being scaled by total population variation in a trait, would predict the same response to selection regardless of whether the standard deviation of variance of that trait was large or small, or where the mean of that trait lay.
 
+%=houle's additive genetic coeff of gen var
 Houle advocated for an alternative genetic variability measure that suffered from fewer of these problems: the Additive Genetic Coefficient of Genetic Variation ($CV_A$).
 
+%=houle's CV_A
 \begin{equation}
 CV_A = 100\sqrt{\frac{V_A}{\bar X}}
 \end{equation}
 
+%=CV_A is better than others
 Using $CV_A$ as the measure of genetic variability is superior to narrow-sense heritability because it scales additive genetic variance by the trait mean, rather than by total population variation. Thus, the additive variation component isn’t overwhelmed by large population trait variance\cite{hansen_measuring_2008}. Since life-history (fitness-related) traits tend to have large population variances, $h^2$ predicts that life-history traits have low heritability and thus low response to selection\cite{price_low_1991}. $CV_A$, however, being scaled by trait mean, predicts much higher response to selection for life-history traits\cite{hansen_heritability_2011,houle_comparing_1992}.
 
+%=CV_A has drawbacks
 $CV_A$ still suffers from significant drawbacks as predictors for adaptation and evolvability in a larger sense \cite{hansen_heritability_2011}. Both $h^2$ and $CV_A$ measures predict the response to selection based on the expressed trait variation in a population, under the current environmental conditions. They say nothing of the potential for cryptic variation that may be revealed in different genetic background, nor do they address differences in genetic architecture that may promote faster adaptation. Ultimately, $CV_A$ is best when examining the short-term response to selection in artificially-selected populations, in static environments, with low mutational load\cite{houle_comparing_1992}.
 
+%=short-term measures aren't great
 Clearly, such short-term, population-based measures are unsuitable for measuring larger patterns of the evolution of evolvability, especially over the long term.
 
-
-
 \subsection{Evolvability as a Distinct Concept}
-
+%=Dawkins re-framed evolvability as distinct idea
 Dawkins, in his foundational paper on evolvability and evolutionary constraint \cite{dawkins_13_2003}, re-framed the problem of evolvability in the context of computational evolution and development. Dawkins described a generative genetic system based on a few alleles, and rules that governed development based on the traits encoded in the alleles. Each allele would govern the execution of a generative rule, and the rules would interact with each other as they produced the phenotype. As he added new kinds of rules (constraints) into the generative process, he showed that the system produced more and more complexity.
 
+%=evolvability acts like biological generative constraints
 Dawkins used this example to draw parallels to biological generative developmental systems and how evolutionary constraints in development allow for more complex and robust phenotypes. Dawkins identified a few key themes that underlay the more powerful features of developmental systems. These systems would be organized in such a way as to facilitate cumulative effects. That is, innovations in constraints can build upon each other and are “cumulative in evolutionarily interesting ways”\cite{dawkins_13_2003}.
 
+%=embryologies
 Dawkins hypothesized that these kinds of generative developmental systems, or “embryologies” were the basis for evolvability, and that they must have evolved as a result of their intrinsic power to produce adaptive variation. Dawkins further suggested that the genetic systems that persisted were those that facilitated adaptive radiations into new or otherwise empty ecological niches.
 
+%=Alberch wanted more dynamical conception than rigid G2P mapping
 Alberch followed up Dawkins’ ideas with a more thorough accounting of how, exactly, these kinds of evolvable traits translate into an analyzable phenotype space\cite{alberch_genes_1991}. Alberch dismantled the concept of a simplistic, hierarchical genotype-to-phenotype mapping function and emphasized that developmental and cell metabolic systems are strongly dynamical, nonlinear systems, for which genes are just one part of the regulatory cycle. Because of the dynamic nature of cell processes, it was clear that the gene-centric, population genetics view was inadequate to fully describe the complexity of the processes involved, and how they translated complex parameters into phenotypes. To that end, a new framework for analysis was required.
 
+%=Alberch intorduced parameter spaces
 Alberch introduced the concept of “parameter spaces” to describe the variation in genotypic parameters that results in distinct phenotypes, while addressing the lack of one-to-one correlation between alleles (parameters) and phenotype. Parameter spaces are multidimensional spaces, divided by parameter thresholds (bifurcation boundaries) that form borders between phenotypes. The domains bounded by these thresholds include all of the parameter combinations that produce a given phenotype. Larger domains can be described as more stable than smaller domains, because there are larger ranges of neutral variation available before organisms tip into a different phenotype. Populations with distinct phenotypes and varying parameters can thus be visualized as blobs occupying areas in parameter space.
 
+%=evo potential encapsulated in parameter spaces
 Alberch contended that the “evolvability potential” of a dynamical system is encapsulated by the properties of the parameter space. Specifically, the topology of the bifurcation boundaries govern the ease with which the systems can produce both neutral and adaptive variation. Alberch asserted that the generative systems must have undergone selection that favors those systems that provide a good balance between exploration and stability, but provided no mechanism for that selection.
 
+%=Dawkins and Alberch started it, but not complete
 Dawkins and Alberch laid out a compelling case for the role generative developmental systems in facilitating evolvability, but their theoretical frameworks were far from complete.
 
 
-
 \subsection{Theoretical Frameworks for the Evolution of Evolvability}
-
+%=Wagner Altenberg expansion of G2P
 The Wagner and Altenberg paper on the evolution of evolvability significantly expanded the theoretical framework behind the evolution of the genotype-phenotype map\cite{gunter_p._wagner_perspective:_1996}. The authors draw on knowledge from computational evolution to inform their perspective on evolvability, since the problem of evolvability is central to the representation problem in evolutionary computer science. 
 
+%=Distinction between variation and variability (new)
 Initially, Wagner and Altenberg emphasized a distinction between variation and variability. \textit{Variation} is the realized diversity in a population, which is a concept that lies firmly within population genetics and the gene-centric modern synthesis. \textit{Variability}, on the other hand, is a concept that they introduced to describe the ability to generate new phenotypes in response to mutation or environmental change. Variability is a metric associated with a local neighborhood in a genotype to phenotype map, and depends on features of that map, including pleiotropy and modularity, and robustness and flexibility of biological processes.
 
-
+%=led to vast proliferation
 Wagner and Altenberg’s paper led to a vast proliferation of new work exploring the evolution of evolvability. Of particular note is the Kirschner and Gerhart 1998 paper\cite{kirschner_evolvability_1998}, which explored metazoan evolution for examples of traits that, in combination, acted to increase evolvability. The authors found numerous examples of new, evolvable features coinciding with adaptive radiations. The authors also develop a case for a combination of direct selection upon the individual for evolvability-enhancing features, and those traits persisting as by-products as a result of adaptive radiations, setting the stage for the evolution of more and more complex evolvable features.
 
 
 
 
 \section{So, what do I mean by Evolvability?}
-
+%=focus on variability
 As I described above, evolvability is a series of distinct, but overlapping concepts that are generally concerned with adaptation, variation, and/or novelty generation. For the purposes of my research, I am using the Wagner/Altenberg conception of evolvability, which focuses on variability (i.e., the generation of adaptive variation in response to mutation). Variability depends primarily on the organization and interrelation of the components of the genome; that is, the genetic architecture, and the resulting genotype-to-phenotype map.
 
+\todo{remove "proposal", revise this paragraph for my thesis statement.}
 The major features that influence this metric for evolvability appear to be modularity of functional components and phenotypic robustness to mutation and environmental perturbation. While there are other architectural features that are also likely to contribute to evolvability, they will not be the focus of this proposal.
 
 
 
 \subsection{What is Modularity?}
-
+%=degree to which traits are self-contained and decoupled
 Modularity is the degree to which traits are both self-contained and decoupled from each other. Modular organization can appear at different scales, from the reduction of overlap between unrelated gene regions (spatial modularity\cite{misevic_sexual_2006}), to the decoupling the mutational effects on distinct traits (functional modularity\cite{gunter_p._wagner_perspective:_1996}), to the composition of groups of related trait complexes (variational modularity \cite{gunter_p._wagner_pleiotropic_2011,ravasz_hierarchical_2002}).
 
+%=evo and robustness are thought to rely on modularity
 Features such as evolvability and robustness are thought to rely heavily on modularity\cite{gunter_p._wagner_perspective:_1996}. For example, traits with high functional modularity will have low pleiotropy and therefore should be able to evolve independently---a critical feature if individual traits need to quickly respond to changes in selection. Additionally, modular traits may be more easily re-purposed or co-opted by other traits to add new function\cite{ravasz_hierarchical_2002}.
 % @CAO: The technical term for this is "exaptation", but I don't see an obvious way to reword the text to use it.
 % @RCK: Leaving it alone for now.
 Conversely, spatially modular genomic regions, because they are more self-contained, tend to better resist disruption from recombination, thus increasing robustness\cite{misevic_sexual_2006}. 
 
+%=relationship between modularity and pleiotropy
 The relationship between modularity and pleiotropy is complex. At small scales, spatial modularity acts to directly reduce pleiotropy by reducing the number of traits affected by a single locus\cite{misevic_sexual_2006}. However, at higher scales, modularity may rely on pleiotropic links within groups of related trait complexes to enable those groups to evolve and optimize in concert\cite{gunter_p._wagner_pleiotropic_2011}. 
 
+%=modularity may not be only good for evolvability
 Despite the benefits described above, modularity, like many other variational trait complexes, may not be an unmitigated boon for evolvability. High levels of functional modularity may reduce the overall evolvability of a genotype by reducing the incidence of mutations of large effect and reducing the size of mutational targets\cite{hansen_is_2003}. Reducing the incidence of large changes reduces the likelyhood of the development of entirely new traits as a result of relatively few mutations. Thus, the evolvability benefit of modularity may be mediated by the scale and degree to which it occurs.
 % @CAO: Another reason modularity might be bad for evolvability is if it pushes down the probability that existing traits can interact to produce an entirely new and different trait.  I some sense, I think this might be a bigger issue for the evolution of complexity.
 % @RCK: I think this point is addressed by this paragraph.
@@ -187,14 +215,11 @@ Despite the benefits described above, modularity, like many other variational tr
 
 % @CAO: It would be interesting to conduct an experiment where modularity IS explicitly selected for and see how that alters the evolvability of genomes.  In fact, this would be doable with different modularity metrics.  (If you're not interested in this project, we should add it to the lab ideas page!)
 
-
-%% =======================================================================
-%% TODO - Consider removing this subsection, since we don't use it at all
-%% =======================================================================
 \subsubsection{Measuring Modularity}
-
+%=modularity at phenotypic level
 At the phenotypic level, modularity is assessed based on the functional independence of traits and trait complexes. Spatial modularity is correlated with functional modularity, though it is possible to have spatially modular genomes that are not functionally modular and vice-versa\cite{pavlicev_model_2012,mezey_is_2000}.  
 
+%=focus on spatial modularity 
 For the purposes of this research, I will focus on spatial modularity. Spatial modularity may be measured by calculating the proportion of traits that are affected by a given site in the genome, normalized by the number of sites that code for a trait \cite{misevic_sexual_2006}. Trivially, this can be measured by performing knock-out experiments to identify the sites that contribute to particular function.
 
 \begin{quote}
@@ -216,21 +241,25 @@ m_S = \frac{1}{\frac{1}{k} {\sum_{i=1}^{k} \frac{t_{k}}{T}}}
 
 
 \subsection{What is Robustness?}
-
+%=robustness is overlapping set of concepts
 Much like evolvability, robustness is a set of overlapping concepts concerned with the ability of a genotype to maintain a given phenotype despite an unexpected disruption\cite{kitano_biological_2004,visser_perspective:_2003}. Most commonly, robustness is studied in regard to either perturbations in the environment or else mutational disruptions. In the first case, the evolution of robustness to environmental disturbances depends heavily on the flexibility and decoupling of gene regulatory or signaling pathways\cite{kirschner_evolvability_1998}. For example, a gene-regulatory or signaling pathway that is loosely coupled may make use of signaling from multiple incoming paths, rather than depending on a single, rigid precursor. This type of arrangement is more likely to continue to function even if some part of the signaling path is disrupted. An example of this kind of robust arrangement is nerve conduction in vertebrates where axons connect several cells, thus routing signals in parallel, and avoiding single points of failure\cite{kirschner_evolvability_1998}.
 
+%=focus on mutational robustness
 For the purposes of my research, I will focus on the second case: mutational robustness. Distinct from robustness to environmental perturbation, robustness against mutation depends largely on degeneracy, redundancy, and regulatory decoupling\cite{kitano_biological_2004}. Degeneracy refers to a many-to-one relationship between an encoding and a product, such that several codes can produce a single output. Thus, there is a chance that mutations in the code will not alter the product. One example of this feature is codon degeneracy in biological organisms, where, depending on the hydropathy of the amino-acid, single, or even double mutations in some positions of the encoding do not affect the binding of the encoded amino-acid\cite{whitacre_degeneracy:_2010}.
 
+%=explanation of redundancy
 Similarly, redundancy refers to the duplication of function in multiple places in the genome, such that mutations altering function in one copy of a gene do not alter function in the other copy. Redundancy may also refer to redundancy of function within genes, such that if a mutation occurs in one portion of a gene, other neighboring portions of the protein will compensate, and the protein will retain its structure and function.\cite{wagner_distributed_2005} 
 
+%=explanation of regulatory decoupling
 Finally, regulatory decoupling allows for more than one kind regulatory precursor to provide inputs for a process\cite{wagner_distributed_2005}. Thus, if mutation were to damage one set of precursors, others can take their place and preserve function. An example of this kind of architecture is in the production of the acetate precursor for the Krebs cycle, which produces ATP in all aerobic organisms\cite{baldwin_evolution_1981}. Acetate can be derived from either carbohydrates, lipids, or proteins, thus if any of those pathways are damaged by mutation, acetate can still be produced from other sources, and ATP production can continue.
 
+%=modularity supports robustness
 It is worth noting that many of the architectural features that confer robustness to processes and genomes are based on arrangements of modular structures\cite{stelling_robustness_2004,wagner_road_2007}. In this way, much of robustness is facilitated by the evolution of modularity.
 
 
 
 \subsubsection{Measuring Robustness to Mutation}
-
+%=robustness can be measured
 Robustness to mutation can be assessed in multiple ways, either from the perspective of a specific phenotype, a specific genotype, or combinations of the two. From the perspective of an individual genotype, you can assess its robustness by calculating the proportion of mutations that produce a phenotype that is different from the one expressed by the target genotype\cite{andreas_wagner_robustness_2008}. In most cases it is easiest to focus on single-step mutations (to cover the 1-neighborhood in the fitness landscape), but sampling from the full distribution of mutation combinations that occur naturally will produce a more exact results.
 
 \begin{quote}
@@ -286,8 +315,10 @@ As indicated above, the features that confer robustness may also promote evolvab
 
 Historically, predicting this robust-yet-evolvable quality has been challenging. Previously-used measures for robustness that focus on counting the proportion of unique genotypes that compose a phenotype (Phenotypic Robustness \cite{andreas_wagner_robustness_2008}) are limited in their ability to predict the evolvability of a population, especially where phenotypic frequency is unknown. 
 
+%=D_g better estimate 
 In contrast, we will use Genomic Diffusion Rate, which is the probability that an offspring will be different from its parent, while expressing a neutral or positive fitness effect. This metric may be used to characterize overall population evolvability as it approximates the overall rate in which entirely new genotypes are encountered\cite{ofria_evolution_2002}. 
 
+%=How to calculate genomic diffusion rage
 To calculate the \textbf{Genomic Diffusion Rate} ($D_g$) in the local neighborhood of a genotype, first calculate its \textit{Fidelity} ($F$), or the probability of an offspring sharing this genotype with its parent, by measuring the probability that a single locus is not mutated ($1-\mu)$ and raising it to the power of the genome length ($l$). Next, measure the proportion of 1-step mutants that are neutral or beneficial when compared to the parent ($p_\nu$) as well as those that are detrimental or lethal ($p_d$), which must sum to one ($p_\nu + p_d = 1$).  The \textit{Neutral Fidelity} ($F_\nu$) of a genotype is thus the probability that no harmful mutations occur, assuming no epistasis. Finally, subtracting Fidelity from Neutral Fidelity will yield the overall probability of producing an neutral offspring with a different genotype, yet neutral or better fitness ($D_g$).
 
 \begin{eqnarray}
@@ -311,6 +342,7 @@ To calculate the \textbf{Genomic Diffusion Rate} ($D_g$) in the local neighborho
 
 %In order to address both of these issues, we will measure evolvability using a new measure, the Phenotypic Diffusion Rate, which characterizes the probability that an offspring will express a different, non-deleterious phenotype than its parent.
 
+%=introducing phenotypic diffusion rate
 Measures of neutral exploration, however, only show part of the picture. While some form of neutrality is necessary for exploring a fitness landscape, new phenotypes must be discovered to achieve higher local evolvability. In order to assess evolvability more specifically, we introduce a related measure, the \textbf{Phenotypic Diffusion Rate} ($D_p$), which represents the probability that an offspring will be fitness-neutral, but also express a different phenotype than its parent. To do so, we must first measure the proportion of one-step mutants that are \textit{phenotypically} neutral as compared to their parent ($p_{p\nu}$) and follow a similar procedure as above, first calculating the probability that a phenotype-changing mutation will occur ($\mu_{pheno}$), then the phenotypic-level fidelity ($F_{p\nu}$).
 \begin{eqnarray}
 \label{eq:phenotypic_mutation_rate}
@@ -327,119 +359,8 @@ Measures of neutral exploration, however, only show part of the picture. While s
 The difference between the overall neutral fidelity and the phenotype-preserving neutral fidelity ($F_\nu - F_{p\nu}$) yields the phenotypic diffusion rate.
 
 
-
-
-% \subsubsection{Characterizing Evolvability with Mutational Network Graphs}
-% \label{sec:network_metrics}
-
-% For a given population, the genotypes that compose a particular phenotype can be conceptualized as a graph of connected nodes in the mutational landscape. The evolutionary properties of this subset of the population are dependent on the characteristics of this graph. (See Figure~\ref{fig:mut_net_graph})
-
-% \begin{figure}
-% 	\centering
-% 	\begin{tikzpicture}
-% 	\tikzstyle{main}=[circle, minimum size = 5mm, thick, draw =black!80, node distance = 10mm]
-% 	\tikzstyle{connect}=[thick]
-% 	\tikzstyle{box}=[rectangle, draw=black!100]
-% 	\node[main, fill = white!100] (a) [            label=275:$A$] { };
-% 	\node[main]                   (b) [right=of a, label=275:$B$] {};
-% 	\node[main]                   (c) [right=of b, label=275:$C$] {};
-% 	\node[main]                   (d) [right=of c, label=275:$D$] {};
-% 	\node[main]                   (e) [right=of d, label=275:$E$] {};
-	
-% 	\node[main, fill = red!50]    (f) [below=of b, label=275:$f$] {};	
-% 	\node[main, fill = red!50]    (g) [below=of c, label=275:$g$] {};	
-% 	\node[main, fill = black!100] (h) [below=of d, label=275:$\alpha$] {};
-	
-% 	\node[main, fill = blue!50]   (i) [above=of b, label=275:$i$] {};
-% 	\node[main, fill = orange!50] (j) [above=of c, label=275:$j$] {};
-% 	\node[main, fill = black!100] (k) [above=of d, label=275:$\beta$] {};
-	
-% 	\path 
-% 	(a) edge [connect] (b)
-% 	(a) edge [connect] (f)
-% 	(a) edge [connect] (i)
-			
-% 	(b) edge [connect] (j)
-% 	(j) edge [connect] (c)
-% 	(b) edge [connect] (i)
-	
-% 	(c) edge [connect] (d)
-% 	(c) edge [connect] (g)
-	
-% 	(d) edge [connect] (k)
-% 	(d) edge [connect] (e)
-% 	(e) edge [connect] (h)
-	
-% 	(e) edge [connect] (k)
-% 	;
-
-% 	\end{tikzpicture}
-% 	\caption{Mutational Network Graph of a Population. Each node is a unique genetic sequence (genotype), and each node is connected to other nodes via single-step mutations. Nodes $A$-$E$ (colored white) are unique genotypes that have living exemplars in the target population, and that express the target phenotype. Nodes $\alpha$ and $\beta$ (colored black) are potential single-step mutants of living genotypes that would also express the target phenotype, but that do not themselves have living exemplars. Nodes $f$, $g$, $i$, and $j$ are also potential single-step mutants of various white nodes, but they express different phenotypes than the target phenotype. %
-% 	}
-% 	\label{fig:mut_net_graph}
-% \end{figure}
-
-% Each node within the phenotype represents a specific genetic sequence (a genotype), and it is connected to a subset of the other nodes in the phenotype by single-step mutations. For convenience, we will described nodes in the fitness landscape that are represented by \textit{living} members of the population as being ``colored white'', and identified as \textit{realized genotypes}.  Furthermore, we will describe potential mutants in the 1-neighborhood that also share the phenotype, but are NOT currently in the population as being ``colored black''. Finally, the rest of the 1-neighborhood around this phenotype is added to the graph, but colored uniquely based on their phenotype.
-
-% In order to characterize the shape of the mutational landscapes within a phenotype, and their corresponding relationship to evolvability, we will measure the properties of the realized genotype mutational graph, such as average and median node-connectedness, both within and outside the phenotype, both to realized and potential mutants. 
-
-% \begin{quote}
-
-% To measure Average Network Density, $D_K$:
-
-% \begin{enumerate}
-% \item enumerate all white nodes (set $K$)
-% \item count the proportion of edges to nodes within the phenotype (edges to other white nodes), for each white node in the graph ($\frac{D_k}{nm}$);
-% \item calculate the average across all nodes in set $K$ to reflect the relatedness and clustering of the realized genomes in the phenotype.
-% \end{enumerate}
-
-% \begin{equation}
-% D_{K} = {\frac{1}{k} \sum_{i=1}^{k}}\frac{D_k}{nm} 
-% \end{equation}
-
-% \end{quote}
-
-% Unrealized network robustness is an analogous measure to Phenotypic robustness ($r_P$) but focuses specifically on unrealized mutational robustness, not directly on realized neutral variation. This measure is therefore diagnostic of apparent variations in phenotypic frequency. 
-
-% \begin{quote}
-
-% To measure Unrealized Network Robustness, $U_K$:
-% \begin{enumerate}
-% \item enumerate all white nodes (set $K$)
-% \item count the proportion of edges to potential mutants within the phenotype (edges to black nodes), for each white node in the graph ($\frac{U_k}{nm}$);
-% \item calculate the average across all nodes in set $K$ to reflect the level of mutational robustness in the population for a given phenotype.
-% \end{enumerate}
-
-% \begin{equation}
-% U_{K} = {\frac{1}{k} \sum_{i=1}^{k}}\frac{U_k}{nm} 
-% \end{equation}
-% \end{quote}
-
-% Network evolvability is an analogous measure to Genomic Diffusion Rate, and is used to relate the new network measures to existing measures of evolvability.
-
-% \begin{quote}
-
-
-% To measure Network Evolvability, $E_K$:
-% \begin{enumerate}
-% \item enumerate all white nodes (set $K$)
-% \item for each white node, count the number of colored nodes ($C$)
-% \item for each white node, calculate the entropy of the edges to colored nodes, to identify the diversity of phenotypes available from that node: $e_k$.
-% \item normalize the entropy against the total number of colored node edges to reflect the probability of a genotype connecting to a variety of other phenotypes ($E_k=\frac{{e_{k}}*C}{nm}$).
-% \item calculate the average across all nodes in set K to reflect the level of evolvability in the population for a given phenotype.
-% \end{enumerate}
-
-% \begin{equation}
-% E_{K} = {\frac{1}{k} \sum_{i=1}^{k}} E_k 
-% \end{equation}
-
-% \end{quote}
-
-% We will experimentally relate these measurements to the realized genomic diffusion rate, and to other measures of robustness to identify patterns in the mutational landscape that result in high evolvability while controlling for varying levels of phenotypic frequency.
-
 \section{Changing Environments and Evolvability}
-%[TODO - section about how CE affects evolution and evolvability]
-%
+\todo{revise this}
 %\section{Changing environments create more paths to different kinds of phenotypes}
 %=sustained directional selection for adaptation
 Sustained directional selection adjusts the composition of phenotypes and genotypes in a population \cite{wright_evolution_1931}, typically moving that population across the mutational landscape to local regions of higher fitness. When populations find a fitness peak, they tend to cluster there, and exploration of that region of the landscape slows dramatically.
@@ -449,10 +370,9 @@ In changing environments, however, the direction of selection is not fixed and p
 
 %=CE not only drives exploration, but changes surrounding mutational landscape environment
 In this thesis, we show how changing environments not only drive exploration of the mutational landscape, but also select for populations whose genetic architectures are qualitatively different than those from populations evolved in static environmental conditions. In particular, we show that populations evolved under harsh, cyclically-changing environments have many more changes along their phylogenetic histories than those evolved in static or benign changing environments. Organisms evolved in these populations also contain reservoirs of pseudogene-like vestigial loci that were acquired and deactivated through repeated adaptation and fixation cycles. As a result, populations evolved in these harsh cyclically-changing environments are low in standing neutral diversity at the population level, but they still connect locally with many more phenotypically-interesting regions of the mutational landscape than more diverse populations evolved in static or benign environments.
+\todo[color=orange]{MORE HERE about other things CE can or can't do}
 
-%=TODO MORE HERE about other things CE can or can't do
-
-\subsubsection{Expected Value of Fitness Landscapes}
+\subsection{Expected Value of Fitness Landscapes}
 %=addressing expected fitness in fluctuating environments
 In the context of changing environments, the expected fitness value ($E(w)$), and thus the neutrality, of a mutant in the mutational landscape will vary depending on the environmental context. So, in one environment, a mutant may be highly fit, but the same allele may be highly deleterious in a different environment. In order to address this variation, all metrics must be normalized by the probability that a particular environment will occur ($P_i$). That is, the nearby mutational landscape must be evaluated in each possible environment, yielding a traditional fitness landscape. Then, the set of fitnesses of each mutant ($w_i$) in each environment must be aggregated according to the probability of that environment occurring.
 \begin{eqnarray}
@@ -477,8 +397,8 @@ Finally, we can precisely and perfectly map the mutational landscape around the 
 
 \subsection{Avida}
 
-Throughout the rest of this dissertation, I use the Avida digital evolution platform to explore the effects of changing environments on the evolvability of populations of digital organisms.  %
-%=[TODO - what goals? (see following sentence)]
+Throughout the rest of this thesis, I use the Avida digital evolution platform to explore the effects of changing environments on the evolvability of populations of digital organisms.  %
+\todo{what goals? (see following sentence)}
 %My goals for using it are to identify the evolutionary dynamics that produce evolvability, modularity, and robustness, to examine how these features interrelate, and to explore how these mechanisms affect the subsequent course of evolution.
 Avida is a software platform for performing evolution experiments with digital organisms in a virtual world.
 
@@ -492,7 +412,6 @@ Avida is a software platform for performing evolution experiments with digital o
 %=description of Avida organism
 An Avida organism is composed of a circular genome of assembly-like computer instructions that are executed in a virtual CPU (Fig~\ref{fig:cpu}). Populations of these organisms are placed in a toroidal world in individual cells where they are allowed to execute, reproduce, compete for space, mutate, and evolve.
 
-% @CAO: I feel like a lot of this paragraph repeats information from the last section that was more generically about digital evolution.  We should probably tighten it up here.
 %=Avida are self-replicating, but without perfect fidelity
 Organisms in Avida are self-replicating, and experience mutation. The genomes of the initial default organisms contain all of the instructions necessary for reproduction. However, the instructions are not copied into an offspring with perfect fidelity. By default, the reproductive copy instruction is faulty, meaning that it will probabilistically introduce errors (mutations) into the offspring genomes. These offspring organisms execute their own genomes even when different from their parent, and in turn pass on their inherited mutations, along with new mutations, to their own offspring (i.e., variation in the systems is heritable).
 
@@ -500,31 +419,13 @@ Organisms in Avida are self-replicating, and experience mutation. The genomes of
 Avida worlds can be space- or resource-constrained. Avida allows the experimenter to configure many aspects of the environment, thus subjecting the organisms to various kinds of selective pressures.  In many cases, these environments will include resources that can be metabolized by performing specific functions or activities, resulting in a boost to execution speed that gives the organisms a competitive advantage. However, even without explicit external pressures, organisms still experience an implicit pressure to execute more quickly and efficiently. The organisms that run fastest are typically able to also reproduce fastest, and thus out-compete their peers for space.
 
 %=Avida and paper download information
-%=[TODO - make the new git repos for the dis]
-Avida is available for download without cost from \url{http://avida.devosoft.org/}, and specific versions along with data-files to reproduce the experiments described in this paper may be found at \url{https://github.com/voidptr/avida} and \url{https://github.com/voidptr/ce_evolvability}.
-%%================ UPDATED - REMOVE ===============
-% Avida is a software platform for performing evolution experiments with digital organisms in a virtual world. The organisms are composed of a circular genome of assembly-like computer instructions that are executed in a virtual CPU (Figure \ref{fig:cpu}). Populations of these organisms are placed in a toroidal world in individual cells, where they are allowed to execute, reproduce, compete for space, mutate and evolve. 
- 
-% \begin{figure}[h!]
-% \begin{center}
-% \includegraphics[width=0.27999999999999997\columnwidth]{figures/methods/squishedCPU.png}
-% \caption{An example virtual CPU from Avida, with a circular genome (blue), three registers (purple), input and output handlers (tan), and an instruction pointer (yellow) indicating the next instruction to be executed.%
-% }\label{fig:cpu}
-% \end{center}
-% \end{figure}
+%=[ ] - TODO - populate the new git repos for the dis with data files, etc]
+Avida is available for download without cost from \url{http://avida.devosoft.org/}, and specific versions along with data-files to reproduce the experiments described in this thesis may be found at \url{https://github.com/voidptr/avida} and \url{https://github.com/voidptr/dissertation}.
 
-% Populations in Avida experience mutations and natural selection, leading them to evolve in an open-ended manner. Avida worlds are space constrained, meaning that organisms must continuously compete for space in which to reproduce. Avida allows the experimenter to configure many aspects of the environment, thus subjecting the organisms to various kinds of selective pressures.  In many cases, these environments will include resources that can be metabolized by performing specific functions or activities resulting in a boost to execution speed that gives the organisms a competitive advantage. Even without explicit external pressures, organisms still experience an implicit pressure to execute more quickly and efficiently. The organisms that run fastest are typically able to also reproduce fastest, and thus outcompete their peers for space. 
 
-% Populations are also subject to mutations. The genome in the initial default organism contains all of the instructions necessary for reproduction. However, the instructions are not copied into an offspring with perfect fidelity. By default, the reproductive copy instruction is faulty, meaning that it will probabilistically introduce errors (mutations) into the offspring genomes. These offspring organisms carry and execute the mutations to their genomes, and in turn pass them on, along with new mutations, to their own offspring (i.e., variation in the systems is heritable).
-
-% In order to perform the experiments described in later chapters, I made modifications to both the code and the default configurations in Avida.  My code modifications include changes to mutation operators to allow horizontal gene transfer, sexual reproduction, resource uptake and utilization, and reward mechanisms. Each of these modifications are described in more detail in later chapters.
-
-% Avida is available for download without cost from \url{http://avida.devosoft.org/}, and specific versions along with datafiles to reproduce the experiments described in this paper may be found at \url{https://github.com/voidptr/avida} and \url{https://github.com/voidptr/comprehensive_data}.
-
-% % @RCK: Fixed. The data url will include the data to generate the figures and scripts when I'm all done organizing it.
-% % @CAO (Leaving your last comment as a reminder)
-
-%%===============================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Changing environments promote rapid adaptation in digital organisms}
 \label{chap:ce-adaptation}
@@ -577,7 +478,7 @@ In the short-term, this kind of evolvability determines a population's response 
 Properties of genetic architectures such as evolvability and robustness are determined by the shape of the resulting mutational landscape \cite{andreas_wagner_robustness_2008}. Robust genetic architectures that can tolerate more mutations without altering their phenotype reside in mutational landscapes that connect to more neutral mutants. Similarly, architectures that more easily switch phenotypes in response to mutation without substantial reduction in fitness, reside in more evolvable regions of genotype-space.
 
 %=not all regions equally accessible
-It is worth noting that not all regions of the mutational landscape are equally accessible. Some genome regions may be more resistant to mutation than others \cite{lee_rate_2012}, thereby altering [\@RCK TODO] the probabilities of mutations occurring that lead into certain regions of the mutational landscape. This kind of differential probability may therefore moderate a population's diffusion through the mutational landscape.
+It is worth noting that not all regions of the mutational landscape are equally accessible. Some genome regions may be more resistant to mutation than others \cite{lee_rate_2012}, thereby altering \todo[noinline]{clarify} the probabilities of mutations occurring that lead into certain regions of the mutational landscape. This kind of differential probability may therefore moderate a population's diffusion through the mutational landscape.
 
 % @CAO: How would it be altered?  I'm not sure I understand the last couple of sentences here...
 % * <mjwiser@gmail.com> 2017-01-30T18:58:49.934Z:
@@ -586,10 +487,10 @@ It is worth noting that not all regions of the mutational landscape are equally 
 %
 % ^.
 % @RCK: Will look into it and clarify.
+
 %=response to selection may be weaker/stronger
 Further, response to selection is likely to be weaker in regions of the landscape where there are fewer available mutations that provide potentially adaptive traits, whereas response to selection will be stronger in regions where there are many adaptive variants available within a few mutational steps \cite{alberch_genes_1991,carter_role_2005}. This differential response to selection therefore constrains the ability of populations to diffuse across a fitness landscape.
 
-%=[TODO, does this belong right here?]
 In order to assess the potential of different regions of the fitness landscape to promote or hinder evolvability, we will use both the \textbf{Genomic Diffusion Rate} ($D_g$)\ref{eq:genomic_diffusion_rate} and the \textbf{Phenotypic Diffusion Rate} ($D_p$)\ref{eq:phenotypic_diffusion_rate}, as normalized across changing environments\ref{eq:expected_fitness_value}.
 
 
@@ -637,7 +538,7 @@ We set up the system to detect organisms that performed XOR or EQU, two challeng
 %=differences between tasks
 In both environments, we identify EQU as the \textit{Fluctuating Task}. XOR, because it is rewarded continuously, is the \textit{Backbone Task}, and is used as a background for comparing the separation or intertwining of functional genetic components in the evolution of EQU. Further, the 4-fold difference in reward level between XOR and EQU encourages the evolution and maintenance of EQU when possible.
 
-%=the organisms
+%=the organisms are ...
 For all of the experiments described in this section, we held the individual genomes at a fixed length of 121\footnote{As part of our initial controls, we hand-wrote an organism with separated sections that performed XOR and EQU. This hand-written organism had 121 instructions and as such we used this genome length as a constraint for the evolve organisms as well.} instructions, but tested the new genomes for mutations after each successful replication event at a substitution probability of 0.00075 per site. We configured the Avida world to have local interactions on a toroidal grid that is 60-by-60 cells (3600 cells in total), and we seeded the initial populations with an ancestor that was previously evolved to perform XOR and EQU under a static reward. The genetic architecture for performing XOR and EQU is tightly intertwined in this ancestral organism, as it was evolved with no selective pressure for modularity.
 
 
@@ -646,7 +547,8 @@ For all of the experiments described in this section, we held the individual gen
 Our experiments demonstrate that digital organisms that were evolved in changing environments differ substantially from those evolved in static environments in a number of ways. These differences include the number of mutations that fix in the lineage from the ancestor (the ``phylogenetic depth"), key metrics of their genetic architecture, and the presence of reservoirs of pseudogenes that change the nearby mutational landscape. These features represent adaptation to the larger regime of repeated environmental switching. We also show that while populations evolved in cyclic environments are slightly better adapted to change than those evolved in stochastic environments, in most measures of adaptation and short-term evolvability, these differences are generally not significant. This indicates that while regular periodicity may offer a slight advantage for adaptation, stochastic environments perform similarly in most respects. 
 
 \subsection{Cyclic Changing Environments}
-[TODO - add paragraph explaining that we'll look at two kinds of CE, and that we'll approach CCE first]
+\todo{revise this}
+We will begin by examining the characteristics of populations evolved in cyclic changing environments.
 
 \subsubsection{Evolutionary History and Population Structure}
 %=more phylogenetic depth
@@ -671,9 +573,8 @@ in the benign and control treatments led populations in them to have higher stan
 % I feel like this figure would be easier to talk about if you split it into three panels, and mention that each panel has both an upper and a lower part.  It would also probably be easier to read if the axes on the left were on the top panel, rather than the middle one; since you have two graphs in each panel, it doesn't make sense to just have a single axis label off to the side.  However, you probably *can* have only a single x axis label, since the axes are the same for all the panels, and for both graphs within a panel.
 %
 % ^.
-%@RCK - TODO fix figure below.
 
-%=[FIGURE - entropy][TODO - tidy up this figure]
+\todo{fix figure below}
 	\begin{figure}[!h]
 	%\includegraphics{figures/CE/control__entropy}
 	\includegraphics[trim={-0.85cm 0 0.1cm 0.2cm},clip,width=0.5\columnwidth]{figures/CE/control__entropy}
@@ -687,11 +588,11 @@ in the benign and control treatments led populations in them to have higher stan
 
 \subsubsection{Genetic Architecture}
 %=genetic architecture is different in benign and harsh vs control
-%=[TODO clarify wording]
+\todo{clarify wording}
 The selective shifts in both benign and harsh changing environments result in qualitatively different architectural styles from the static control environment. The task arrangements evolved under both experimental treatments are much more scattered throughout the genome than in the control. Specifically, the bulk of the sites responsible for performing the fluctuating task (EQU) did not overlap with the backbone task (XOR), except for a core region, which represents portions of the tasks that are shared between XOR and EQU. (Fig~\ref{fig:lineage})
 % @CAO: I'm not positive I understand this description for how things are laid out.  It might be worth putting a bit more detail here, and highlighting also that there is a lot more separation in the harsh environment (or so it seems).  Should we talk more here about why all of this is the case (highlighting that we are speculating) or will that come later?
 
-%=[FIGURE - task layout][TODO - polish this figure]
+\todo{polish this figure, task layout}
 	\begin{figure}[!h]
 	\setlength{\fboxsep}{0pt}%
 	\setlength{\fboxrule}{0pt}%
@@ -709,11 +610,12 @@ In contrast, the architecture of XOR and EQU remain tightly intertwined in the c
 %=reservoir of vestigial sites
 Interestingly, populations evolved in both the benign and harsh treatments also show development of a large reservoir of formerly functional, now vestigial, sites; that is, sites that remain unchanged from when they were previously active in performing a task, but were disabled by a mutation elsewhere and are thus now neutral. These vestigial pseudogene-like sites appear to be important for allowing the organisms to quickly re-adapt as the fluctuations in the environment restore the previously-rewarded functions. (Fig~\ref{fig:CCE_func_vestigial})
 
-%=[FIGURE - functional vs vestigial sites][TODO - stats]
+%=[FIGURE - functional vs vestigial sites]
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/CCE_func_vest__box.png}
 	%% TODO - generate the stats
-	\caption{{\textbf Number of functional and vestigial sites by treatment}. The harsh environment has a significantly larger number of vestigial sites for the fluctuating (EQU) task compared to the benign treatment or control, while having a comparable number of functional sites (One-Way ANOVA F(X,YYY) = ZZ.ZZ, p $<<$ 0.000QQ).%
+	\caption{{\textbf Number of functional and vestigial sites by treatment}. The harsh environment has a significantly larger number of vestigial sites for the fluctuating (EQU) task compared to the benign treatment or control, while having a comparable number of functional sites (One-Way ANOVA F(X,YYY) = ZZ.ZZ, p $<<$ 0.000QQ).
+	%\todo{stats}%
 	%old --- (One-Way ANOVA F(2,132) = 54.35, p $<<$ 0.0001).
 	% @CAO: Just a reminder to do the stats!
 	}
@@ -721,28 +623,33 @@ Interestingly, populations evolved in both the benign and harsh treatments also 
 	\end{figure}
 
 \subsubsection{Nearby mutational landscape}
+\todo{add figure of the nearby landscape showing how mutations relate 1 and 2 steps out.}
 
-[TODO - add figure of the nearby landscape showing how mutations relate 1 and 2 steps out.]
-
-%=one-step survey of the mutational landscape [TODO - fix wording to clarify]
+%=one-step survey of the mutational landscape 
+\todo{fix wording to clarify}
 In order to identify the role that these pseudogene-like structures play, we performed a survey of the single-step mutational landscape surrounding the most abundant genotype at the end of the experiment for each replicate population. This landscape contained 3,025 distinct mutants (121 loci with 25 possible mutations per locus) in each of the 50 replicates per treatment, for a total of nearly 450,000 mutants surveyed.We found that the availability of reservoirs of vestigial sites shifted the change-evolved organisms' position in the mutational neighborhood, such that a task that was lost due to mutation remains more accessible via one or two additional mutational steps. (Fig~\ref{fig:CCE_single_step}, ~\ref{fig:CCE_two_step})
 % @CAO: This last part doesn't make a lot of sense -- CLEARLY if a single mutation causes a task loss, the corresponding reverse mutation would cause that task to be regained.  As such, do you mean that there a MORE paths back to the task in the changing-environment treatments as compared to the static control?
 % @RCK: Yes, that's what this means. "More often, above". I can clarify. -- TODO
+\todo{Todo, clarify per Charles's comment above}
 
-%=[FIGURE - Frac 1-step][TODO STATS]
+%=[FIGURE - Frac 1-step]
+
 	\begin{figure}[!h] %% FIGURE 6
 	\includegraphics[trim={0.2cm 0 0 0.2cm},clip,width=0.75\columnwidth]{figures/CE/CCE_frac_1step__box.png}
 	%% TODO - stats
-	\caption{{\textbf A survey of the single-step mutational neighborhood} around organisms that performed the fluctuating task. Note that in both the benign and harsh treatments, there were significantly more mutants that lost the EQU task as compared to the control (Wilcoxon Rank Sum Test: Z = X.XX and Y.YY respectively, p $<<$ 0.000ZZ). This result indicates that it was easier for the organisms in both treatments to turn off the EQU task in response to one mutation. %
+	\caption{{\textbf A survey of the single-step mutational neighborhood} around organisms that performed the fluctuating task. Note that in both the benign and harsh treatments, there were significantly more mutants that lost the EQU task as compared to the control (Wilcoxon Rank Sum Test: Z = X.XX and Y.YY respectively, p $<<$ 0.000ZZ). This result indicates that it was easier for the organisms in both treatments to turn off the EQU task in response to one mutation. 
+	%\todo[noinline]{TODO STATS}%
 	% old -- (Wilcoxon Rank Sum Test: Z = -6.59 and -6.70 respectively, p $<<$ 0.0001)
 	}\label{fig:CCE_single_step}
 
 	\end{figure}
-%=[FIGURE - Frac 2-step][TODO STATS]
+%=[FIGURE - Frac 2-step]
+
 	\begin{figure}[!h] %% FIGURE 7
 	\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CCE_frac_2step__box.png}
 	%TODO - stats
 	\caption{{\textbf A survey of the two-step mutational neighborhood} of the organisms that lost EQU function in the one-step survey. We found that in both the harsh and benign treatments, there were significantly more organisms that regained function in response to mutation than the control. (Wilcoxon Rank Sum Test: Z = X.XX and Y.YY respectively, p $<<$ 0.000Z). This result indicates that it was easier for the organisms in both fluctuating environments to regain the task in response to one additional mutation.
+	%\todo[noinline]{TODO STATS}
 	%(Wilcoxon Rank Sum Test: Z = -6.11 and -7.38 respectively, p $<<$ 0.0001)
 	}\label{fig:CCE_two_step}
 	\end{figure}
@@ -751,18 +658,19 @@ In order to identify the role that these pseudogene-like structures play, we per
 We also measured the proportion of non-deleterious mutants in the nearby fitness landscape. We found that between all treatments, this proportion
 remained approximately the same. However, we found that the proportion of these mutants with different (potentially adaptive) phenotypes increased in the changing environments. In this way, the organisms from the changing environment treatments have an advantage over organisms from the control runs in terms of the short-term evolvability of the fluctuating task. This result indicates real adaptation, not only to resources in their local environment, but a direct adaptation to the environmental change. (Fig~\ref{fig:CCE_diffusion_rate})
 
-%=[TODO - add paragraph describing/speculating about why Benign loses EQU almost as well as Harsh]
+\todo{TODO - add paragraph describing/speculating about why Benign loses EQU almost as well as Harsh}
 % @CAO: I also get why we should expect to see EQU lost easily in the Harsh changing environment, but why is it also lost so easily in the benign environment.  Should we speculate here?  (Or do you below?)  More generally, why do you think this is the case?
 % @CAO: One other thought for how this result may happen.  Maybe in the control there is a pressure for EQU to evolve to be more robust, whereas the changing environment just doesn't give it time to evolve robustness.  I can't think of a way to easily disentangle those explanations though...
 % @RCK: clarify that benign are lost due to drift.
 % @RCK - NOTE TO SELF -- see about joining vestigial sites paper with Matt's bias work. Are vestigial sites useful because they are random building blocks available (equivalent to mutational bias), or is there a deeper functional structure. Does order matter?
 
-%=[FIGURE D_g D_p][TODO STATS]
+%=[FIGURE D_g D_p]
 	\begin{figure}[!h] %% FIGURE 8
 	\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CCE_D_g_D_p__box.png}
 	% TODO -- stats
 	\caption{{\textbf Genomic and Phenotypic Diffusion Rates}, showing the probabilities of producing offspring that are genotypically ($D_g$) or phenotypically ($D_p$) distinct from the parent, while not reducing fitness.
 	Note that while overall neutral exploration capacity remains relatively stable between treatments, phenotypic exploration capacity is increased in both treatments, but especially in the Harsh treatment. (Wilcoxon Rank Sum Test: Z = XX and XX respectively, p $<<$ 0.0001). This result indicates that changing environments promote the phenotypic evolvability of populations in particular.
+	%\todo{TODO STATS}
 	}\label{fig:CCE_diffusion_rate}
 	\end{figure}
 
@@ -770,17 +678,17 @@ remained approximately the same. However, we found that the proportion of these 
 
 
 \subsection{Stochastic Changing Environments}
-%[TODO - add headings below]
+\todo{add headings below}
+\todo{STATS for drop in SCE-Harsh $D_p$}
+\todo{reword below}
 %= contrary to expectations, SCE weren't better at evolvability (D_g/p)
-%=[TODO STATS for drop in SCE-Harsh D_p]
-%=[TODO REWORD BELOW]
 Contrary to our expectations, stochastic changing environments were no more effective at promoting evolvability than cyclically changing environments. In all measures of evolvability, the stochastic treatments performed similarly to the cyclically changing environments. There was a significant reduction [TODO STATS] in the Phenotypic Diffusion Rate ($D_P$) between the cyclic and stochastic harsh changing environments. Overall, $D_P$ showed much larger variances, but settled on a lower mean in the stochastic harsh treatment as compared to the cyclic harsh, indicating a much lower probability of the population producing offspring that would switch phenotypes neutrally. (Fig~\ref{fig:CSE_diffusion_rate})
 
 %=[FIGURE - D_g/p]
-%=[TODO STATS]
+\todo{stats}
 	\begin{figure}[!h] %% FIGURE 12
 	\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CSE_D_g_D_p__box.png}
-	\caption{{\textbf Genomic and Phenotypic Diffusion Rates} in stochastic changing environments, showing the probabilities of producing offspring that are genotypically and phenotypically different from the parent, while remaining fitness neutral or better. As in the cyclic environment $D_g$ remains stable, at comparable levels (TODO STATS), however, the mean is significantly lower (TODO STATS). This result shows that stochastic environments are not as effective as cyclic environments at increasing the probability that organisms will produce phenotypically different, yet neutral offspring.
+	\caption{{\textbf Genomic and Phenotypic Diffusion Rates} in stochastic changing environments, showing the probabilities of producing offspring that are genotypically and phenotypically different from the parent, while remaining fitness neutral or better. As in the cyclic environment $D_g$ remains stable, at comparable levels [todo stats], however, the mean is significantly lower[TODO stats]. This result shows that stochastic environments are not as effective as cyclic environments at increasing the probability that organisms will produce phenotypically different, yet neutral offspring.
 	}\label{fig:CSE_diffusion_rate}
 	\end{figure}
 
@@ -789,27 +697,26 @@ Similarly, both the overall fraction of 1-step mutants that lost EQU, and the fr
 (Fig~\ref{fig:CSE_single_step},~\ref{fig:CSE_two_step})
 
 %=[FIGURES - 1 & 2-step]
-%=[TODO STATS]
+\todo{stats}
 	\begin{figure}[!h] %% FIGURE 10
 	\includegraphics[trim={0.2cm 0 0 0.2cm},clip,width=0.75\columnwidth]{figures/CE/CSE_frac_1step__filtered__box.png}
-	\caption{{\textbf A survey of the single-step mutational neighborhood} in the stochastic changing environment around organisms that performed the fluctuating task. Again, in the static and benign treatments, values are comparable to the cyclic changing environment (TODO STATS). However, in the harsh treatment, the means for both loss of the fluctuating task (EQU) and loss of both task were slight reduced. (TODO STATS). This result indicates that in the context of a harsh treatment, stochastic environmental change is less effective at moving organisms to areas of the fitness landscape where they can more easily switch task expression. %
+	\caption{{\textbf A survey of the single-step mutational neighborhood} in the stochastic changing environment around organisms that performed the fluctuating task. Again, in the static and benign treatments, values are comparable to the cyclic changing environment [TODO stats]. However, in the harsh treatment, the means for both loss of the fluctuating task (EQU) and loss of both task were slight reduced [TODO stats]. This result indicates that in the context of a harsh treatment, stochastic environmental change is less effective at moving organisms to areas of the fitness landscape where they can more easily switch task expression.%
 	}\label{fig:CSE_single_step}
 	\end{figure}
 	\begin{figure}[!h] %% FIGURE 11
 	\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CSE_frac_2step__box.png}
-	\caption{{\textbf A survey of the two-step mutational neighborhood} in the stochastic changing environment of the organisms that lost EQU function in the one-step survey. Similarly to the result in Fig~\ref{fig:CSE_single_step}, we found that the fraction of organisms regaining the fluctuating task from a single additional mutation in the harsh treatment were reduced compared to the cyclic harsh treatment. (TODO STATS). This result confirms that the harsh stochastic environment is less effective than the cyclic harsh at promoting evolvability.
+	\caption{{\textbf A survey of the two-step mutational neighborhood} in the stochastic changing environment of the organisms that lost EQU function in the one-step survey. Similarly to the result in Fig~\ref{fig:CSE_single_step}, we found that the fraction of organisms regaining the fluctuating task from a single additional mutation in the harsh treatment were reduced compared to the cyclic harsh treatment[TODO stats]. This result confirms that the harsh stochastic environment is less effective than the cyclic harsh at promoting evolvability.
 	}\label{fig:CSE_two_step}
 	\end{figure}
 
 %=discussion of function vs vestigial
-%=[TODO STATS]
+\todo{stats}
 The greatest differences between the cyclic and stochastic treatments appeared in the number of functional and vestigial sites. While the functional site counts in the stochastic environment were, overall, relatively similar to those in the cyclic environment, the pattern was different for the vestigial sites. In the stochastic harsh treatment in particular, there was a small, but significant reduction in the number of XOR+EQU overlapping functional sites as compared to the cyclic treatment. Further, there was an overall reduction in the number of EQU-only vestigial sites. These features may provide a clue, indicating that architectural features that would promote the retention of EQU were less prevalent in the harsh stochastic environmental treatment. (Fig~\ref{fig:CSE_func_vestigial}) 
 
 %=[FIGURE - func vestigial sites]
-%=[TODO STATS]
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/CSE_func_vest__filtered__box.png}
-	\caption{{\textbf Number of functional and vestigial sites by treatment} in a stochastic changing environment. The vestigial site counts remain comparable to the cyclic environment (TODO STATS), however, there was a reduction in functional site counts for XOR+EQU overlapping sites in the stochastic harsh environment as compared to the cyclic harsh environment (TODO STATS), as well as an overall reduction in the number of vestigial sites. (TODO STATS)%
+	\caption{{\textbf Number of functional and vestigial sites by treatment} in a stochastic changing environment. The vestigial site counts remain comparable to the cyclic environment [TODO stats], however, there was a reduction in functional site counts for XOR+EQU overlapping sites in the stochastic harsh environment as compared to the cyclic harsh environment [TODO stats], as well as an overall reduction in the number of vestigial sites.%
 	%-old (One-Way ANOVA F(2,132) = 54.35, p $<<$ 0.0001).
 	}
 	\label{fig:CSE_func_vestigial} %% FIGURE 9
@@ -833,26 +740,30 @@ Surprisingly, stochastically changing environments slightly less effective at ex
 % @CAO: That said (and this argument goes to static environments too), if we claim that stochastic environments produce new phenotypes less frequently we can argue WHY we hypothesize that they'll be less effective at exploration.  In thinking about it, it feels like we should use these as ancestors for an entirely new environmental shift.  If we show that the organisms previously experiencing a cyclically changing environment do better with the new environment THEN we have strong evidence that stochastically changing environments are less effective at exploration.
 than cyclic changing environments, even if, on average, the amount of time spent in each environment was equal. We hypothesize this is because of more opportunity for drift to destroy the information contained in vestigial regions, as well as potentially fewer opportunities for populations to respond to selection.
 
-Finally, we have shown that changing environments both directly and indirectly influence long-term evolvability by directly driving exploration across the fitness landscape, and also by creating genetic architectures that increase the rate of new task discovery in novel environments. We hypothesize that these effects are driven by the presence of the accumulation of pseudogene-like structures that provide cryptic functionality. In our experiments, the increased rate of task discovery is significant, though relatively small, but we expect that future experiments focused on this specific effect might yield more conclusive results. 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \chapter{Changing Environments and the Evolution of Horizontal Gene Transfer}
 \label{evo-hgt}
 \section{Background}
 
-%Changing Environments Promote the Evolution of Horizontal Gene Transfer
+%=HGT umbrella term
+Horizontal Gene Transfer (HGT) is an umbrella \todo[noinline]{change to broad?} term for the non-reproductive transfer of genetic material between organisms. Organisms may uptake genes directly from the environment (natural competence\cite{chen_dna_2004}), or else receive them via bacterial conjugation\cite{lederberg_gene_1946} or viral infection (transduction\cite{zinder_genetic_1952,lennox_transduction_1955}). The integrated fragments may either be decomposed inside the recipient cell for their nutrients, or integrated into their genomes. 
 
-Horizontal Gene Transfer (HGT) is an umbrella term for the non-reproductive transfer of genetic material between organisms. Organisms may uptake genes directly from the environment (natural competence\cite{chen_dna_2004}), or else receive them via bacterial conjugation\cite{lederberg_gene_1946} or viral infection (transduction\cite{zinder_genetic_1952,lennox_transduction_1955}). The integrated fragments may either be decomposed inside the recipient cell for their nutrients, or integrated into their genomes. 
-
+%=HGT profound impact
 HGT has had a profound impact on the evolutionary history of both prokaryotes and eukaryotes, with one study showing approximately 81\% of genes in the sample "being involved in HGT at some point in their history"\cite{dagan_modular_2008}. For example, HGT appears to be the primary mechanism by which antibiotic resistance is conferred \cite{davies_origins_1997,martinez_antibiotics_2008} since most antibiotics are sourced from the environment, and the organisms that develop them are themselves resistant to the compounds.
 However, the origins and evolution of HGT mechanisms remain unclear. 
 
 \subsection{Origins of HGT in nature}
-%=[TODO] - More about how this question is still open
+\todo{More about how this question is still open}
+%=natural competence in prokaryotes and why HGT happens
 In prokaryotes, “natural competence” is an HGT mechanism by which organisms spontaneously uptake the DNA of dead organisms in the environment. These organisms benefit in several ways. 1) DNA is composed of a 5-carbon sugar, a phosphate, and nitrogen bases, materials that are useful for DNA synthesis and repair. 2) The organisms may also benefit from up-taking gene-fragments that confer new adaptive functionality into the genome\cite{vos_why_2009}. However, it is unclear whether the origins of these functions were developed solely in order to obtain nutrients, or if the acquisition of new functionality was selected for as well. While grazing for gene-fragments as nutrients certainly conveys an advantage, the possibility of integrating these gene fragments is clearly going to be disruptive to organisms more often than it is beneficial\cite{redfield_evolution_1997}.
 
+%=statement of hypotheses - grazing CE elevates HGT
 In order to test this hypothesis, and address the question of whether there are circumstances where gene-fragment integration may be beneficial, we subjected populations of evolving digital organisms to a harsh changing environment, where there is a strong pressure to quickly switch your phenotype. We supplied organisms with an instruction that performs Horizontal Gene Transfer. That is, the instruction triggers uptake of a genetic fragment from the environment, and there is a chance that, rather than metabolizing the fragment for a bonus to execution speed, the fragment will instead be homologously recombined into the organism's genome. We show that in harsh changing environments, without any kind of bonus, organisms increase use of HGT as compared to execution in a static environment.
 
 
@@ -860,11 +771,15 @@ In order to test this hypothesis, and address the question of whether there are 
 In this chapter, we use Avida to test hypotheses about the origins of Horizontal Gene Transfer. 
 
 \subsection{HGT in Avida}
-
+%=HGT triggered by instruction, and uptakes
+\todo{fixed-width font for HGT-Uptake and other Avida instruction names}
 In Avida, HGT is triggered by the \textit{HGT-Uptake} instruction that, when executed, attempts to uptake a genome fragment from the individual cell reservoirs in the environment. As organisms die in Avida runs with HGT enabled, fragments of their genomes will accumulate in reservoirs. The fragments in the reservoirs will deteriorate over time, with older genomes disappearing from the reservoir as new ones enter. Fragments for uptake will be randomly selected from the reservoir.  
 
+%=HGT uptake may recombine or be metabolized
 Upon uptake, there is a probability that the fragment is not metabolized; instead, homologous recombination may occur (Figure \ref{fig:hgtprocess}). Bonus levels, fragment sizes, and recombination probabilities were experimentally derived to arrive at a maximum use for the HGT instruction. See Appendix~\ref{appendix:hgt_sweep} for more details. 
 
+%=HGT and homologous recombination
+\todo{Citation TODOs}
 For all experiments described in this chapter, we used three \footnote{This value is derived from a calculation associating the average size of one avida instruction to about 100 nucleotides [TODO CITE]. In natural systems, for homologous recombination to occur, an average of 300 nucleotides must match on both ends of the fragment[TODO CITE]} instructions as the minimal homologous match length, and a 10\% recombination probability.
 
 \begin{figure}[h!]
@@ -875,27 +790,25 @@ For all experiments described in this chapter, we used three \footnote{This valu
 \end{center}
 \end{figure}
 
-% \subsubsection{Homologous Recombination}
-
-% In natural systems, homologous recombination of gene fragments can occur when a sufficient number of nucleotide sites the ends of the gene fragment match with those on a strand of DNA. HGT in Avida works similarly. 
-
 \subsubsection{Environmental Conditions}
-
+%=environmental rewards
 All experiments in this chapter compare outcomes between static environments, and harsh changing environments. Similarly to the experiments listed in the previous chapter (Table~\ref{ce-treatments-h}), task rewards in the harsh changing environment switch from a positive to a negative reward. For the HGT experiments, we did not establish a backbone task that was always rewarded. Rather, we divided the Logic 9 environment into two halves, and alternated positive and negative rewards for each task in each set. Thus, for the first phase of the cycle, the NOT, AND, OR, NOR, and EQU instructions were punished at $-2^1$, $-2^2$, $-2^3$, $-2^4$, and $-2^5$ respectively, while NAND, ORN, ANDN, and XOR were rewarded at $2^1$, $2^2$, $2^3$, and $2^4$. In the second phase of the cycle, these rewards flip, such that NOT, AND, OR, NOR, and EQU are rewarded, whereas NAND, ORN, ANDN, and XOR are punished.
 
+%=cycle length
 Each complete cycle lasts 1000 updates, and the whole experimental run continues for 200,000 updates.
 
+%=static environment
 The static environment rewards executions of all the Logic 9 tasks at their default levels, with no reward switching.
 
 
 
 \subsection{Experimental Design}
-
 %\subsubsection{Evolution of HGT - Alternatives to the Grazing Hypothesis}
-
+%=we subject populations for testing the grazing hypothesis
 For the treatments corresponding to the first set of hypotheses on the origins of horizontal gene transfer, we subjected four populations of evolving digital organisms with HGT to harsh changing environments (Table~\ref{hgt-treatments-h}), plus a fifth non-HGT control. The treatments correspond to the combination of two factors: static vs changing environment, and grazing bonus vs no bonus.
 
-%=[TABLE - experimental treatments]
+%=[TABLE - experimental treatments part 1]
+\todo{rename table}
 \begin{table}[]
 \centering
 \caption{{\textbf Experimental Treatments - Evolution of HGT}}
@@ -916,9 +829,11 @@ Control & Static & None & n/a \\\hline
 \label{hgt-treatments}
 \end{table}
 
+%=we test for the mechanisms of why CE promotes HGT
 For the second set of hypotheses, where we identify the mechanisms that promote the use of HGT, we manipulate the content of the reservoirs to contain fragments drawn from specific phases in the cyclically changing environment, such that fragments either match or do not match the environment (Table~\ref{hgt-treatments-h-reservoir}. We then measure HGT use, as well as average fitness effects of the HGT mutations, and the fraction of mutations that lead to beneficial phenotype switches.
 
 %=[TABLE - experimental treatments]
+\todo{rename table}
 \begin{table}[]
 \centering
 \caption{{\textbf Experimental Treatments - Effects of HGT}}
@@ -940,13 +855,10 @@ HGT & organism death \\\hline
 
 
 \section{Results and Discussion}
-[TODO - fill this in with a general overview of the argument]
+\todo{fill this in with a general overview of the argument}
 Our results show that both an uptake bonus and changing environment promote the use of HGT, and that the effects are largely additive.
-%=[TODO - fill this in with a general overview of the argument]
 
 %\subsection{Alternatives to the Grazing Hypothesis}
-%=TODO, fill this in.
-
 \subsection{Changing environments elevate HGT use}
 %Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
 %* No bonus, static - uptake remains low
@@ -954,17 +866,20 @@ Our results show that both an uptake bonus and changing environment promote the 
 %* No bonus, CE - uptake higher than no bonus static
 %* Bonus, CE - uptake higher than either BonusStatic or NoBonusCE
 
+%=measured fragment uptake, results summary
 We measured HGT fragment uptake in four conditions (see Table~\ref{hgt-treatments-h}), plus of pair of non-HGT controls. Without a bonus, in a static environment, fragment uptake remains low as compared to the non-HGT control. This indicates that HGT in a static environment is largely deleterious (Figure~\ref{fig:hgt_inst_execution}). However, in a harsh changing environment, fragment uptake is elevated. This shows that in the context of a harsh changing environment, the integration of new genetic material is beneficial. We also found that, regardless of whether the environment is static or changing, when a bonus to fragment uptake is provided (analogous to the nutritive benefit granted by natural competence in biological organisms), fragment uptake also increases. 
 
+%=measured fragment uptake wrl to bonus
 In order to investigate the relationship between the effects granted by a nutritive bonus and the benefit of fragment recombination in a changing environment, we selected a bonus level that increased fragment uptake in a static environment to a level comparable to the increase seen in changing environments without a bonus. We then combined these factors, giving a bonus, plus using a changing environment. We saw that the resulting uptake level increases largely additively. This indicates that the benefits granted by a grazing bonus are largely independent of the benefits conveyed by integrating new genetic material. 
 
 %We thus conclude that not only is HGT evolution possible absent a grazing bonus, but that should a changing environment occur, that there are additional incentives to perform HGT.
+%=conclusion sentence - hgt is promoted by HGT
 Thus, not only is HGT evolution possible absent a bonus, the benefit stacks with that of a grazing bonus, proving a more likely scenario by which HGT might evolve. %bleh
 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/hgt_inst_execution.png}
-\caption{bleh
+\caption{bleh%\todo{stats}\todo{caption}
 }\label{fig:hgt_inst_execution}
 \end{center}
 \end{figure}
@@ -975,73 +890,68 @@ Thus, not only is HGT evolution possible absent a bonus, the benefit stacks with
 \subsection{HGT derives most benefit from on-cycle fragments, but not all}
 %Measured fitness effects of HGT fragments that originated in a matching phase in a previous cycle vs fragments originating in the non-matching phase of the cycle.
 
-\begin{figure}[h!]
-\begin{center}
-%\includegraphics[width=0.7\columnwidth]{figures/HGT/fitness_effect_heatmap.png}
-\caption{bleh
-}\label{fig:fitness_effect_heatmap}
-\end{center}
-\end{figure}
-
+%=understanding why HGT is used
 In order to understand the basis of the beneficial nature of HGT in changing environments, we performed a series of treatments where we replaced the fragments in the cell reservoirs with fragments that originated at the end of the matching phase of the cycle, the off-phase of the cycle, and from both phases, plus a non-replaced control. (Figures~\ref{fig:fitness_effect_heatmap}, \ref{fig:hgt_use_by_cycle_phase_source}, \ref{fig:fitness_effect_by_cycle_phase_source}, \ref{fig:beneficial_fraction_by_cycle_phase_source})
 We then measured the levels of HGT use, the fitness effect of HGT mutations, as well as the fraction of beneficial phenotype-switching mutations. In the both-phase and non-replaced control, the mean fitness effect was largely neutral, while the on-phase fragments had a significantly positive mean fitness benefit, and the off-phase fragments were largely negative. Further, the control, both-phase and on-phase had a larger fraction of beneficial phenotype-switching mutants, whereas the off-phase treatment had few to no beneficial phenotype switches. This indicates that it is not only genetic disruption that is beneficial, but that the majority of the benefit of HGT derives from uptaking and integrating useful fragments of information from time-periods where organisms were already adapted to the environment, thus bypassing the need to evolve a new phenotype from scratch.
 
 \subsubsection{Expected Fitness Effects}
 
+%=measured fitness effect in normal HGT
 We measured the average fitness effects of fragments in a randomly selected replicate of the non-replaced HGT control treatment at the end of the last environmental cycle, and generated a distribution of fragments sorted the fragments by age and fitness-effect (Figures~\ref{fig:fitness_effect_heatmap}). We can see a clear pattern of more beneficial fitness effects from fragments of organisms originating in the matching cycle phase. 
-
-In order to quantify this result, we performed experiments where we replaced the fragments in the reservoir to contain only fragments originating in the matching phase, the off-phase, and mixture of both phases. We measured the mean expected fitness effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycle_phase_source}). We found that HGT mutations are, on average, neutral in both the non-replaced control and the replaced-"both" treatment. The average fitness effect in the "on-phase" treatment was mildly beneficial, while in the "off-phase" treatment, the effect was strongly deleterious. 
-
-In our environments, the largest fitness benefits should occur when a mutation leads to the acquisition of a new rewarded task, or the loss of a punished task. Mutations that convey phenotypic change should have the largest impact. We identified the phenotypic effect of each fragment by counting the number of times that fragments produced a beneficial phenotype change, vs all HGT mutations (Figure~\ref{fig:beneficial_fraction_by_cycle_phase_source}). We see that a significantly larger proportion of fragments in the "on-phase" treatment produce beneficial phenotype changes, as compared to fewer in the normal HGT and "both" treatments, and virtually zero in the "off-cycle" treatment. 
-
-These results suggests that any direct benefit of using HGT derives from uptaking fragments that match the cycle phase of the environment of the affected organism, and thus likely contains information that relates to that environment.
-
-Further, if fragments from the matching phase are indeed beneficial, you would expect to see an increase in HGT use in those treatments, as compared to those where the fitness effects are mixed or deleterious. And indeed (Figure~\ref{fig:hgt_use_by_cycle_phase_source}), we do observe just such an increase. Thus we can conclude that HGT in changing environments is most beneficial when the fragments in the environment contain information that would be beneficial in that environment. However, even when no such information is available, HGT use is not significantly depressed as compared to the control treatment. This suggests that despite the lack of exclusively match environmental information, that fragments could still provide some benefit. 
- 
-
 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/fitness_effect_heatmap.png}
-\caption{bleh
+\caption{bleh%\todo{stats}\todo{caption}
 }\label{fig:fitness_effect_heatmap}
 \end{center}
 \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/HGT/hgt_use_by_cycle_phase_source.png}
-\caption{bleh
-}\label{fig:hgt_use_by_cycle_phase_source}
-\end{center}
-\end{figure}
+%=manipuated reservoir to match or not match phase - measured effects 
+In order to quantify this result, we performed experiments where we replaced the fragments in the reservoir to contain only fragments originating in the matching phase, the off-phase, and mixture of both phases. We measured the mean expected fitness effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycle_phase_source}). We found that HGT mutations are, on average, neutral in both the non-replaced control and the replaced-"both" treatment. The average fitness effect in the "on-phase" treatment was mildly beneficial, while in the "off-phase" treatment, the effect was strongly deleterious. 
 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/fitness_effect_by_cycle_phase_source.png}
-\caption{bleh
+\caption{bleh%\todo{stats}\todo{caption}
 }\label{fig:fitness_effect_by_cycle_phase_source}
 \end{center}
 \end{figure}
 
+%=measured phenotypic change
+In our environments, the largest fitness benefits should occur when a mutation leads to the acquisition of a new rewarded task, or the loss of a punished task. Mutations that convey phenotypic change should have the largest impact. We identified the phenotypic effect of each fragment by counting the number of times that fragments produced a beneficial phenotype change, vs all HGT mutations (Figure~\ref{fig:beneficial_fraction_by_cycle_phase_source}). We see that a significantly larger proportion of fragments in the "on-phase" treatment produce beneficial phenotype changes, as compared to fewer in the normal HGT and "both" treatments, and virtually zero in the "off-cycle" treatment. 
+
+
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/beneficial_fraction_by_cycle_phase_source.png}
-\caption{bleh
+\caption{bleh%\todo{stats}\todo{caption}
 }\label{fig:beneficial_fraction_by_cycle_phase_source}
 \end{center}
 \end{figure}
 
-%On-cycle fragments convey much of the benefit of HGT
+%=benefit results from matching environment and information conveyed
+These results suggests that any direct benefit of using HGT derives from uptaking fragments that match the cycle phase of the environment of the affected organism, and thus likely contains information that relates to that environment. %otherwise, it wouldn't matter where the fragment came from
+
+%=see uptick in use when fragments match phase only.
+Further, if fragments from the matching phase are indeed beneficial, you would expect to see an increase in HGT use in those treatments, as compared to those where the fitness effects are mixed or deleterious. And indeed (Figure~\ref{fig:hgt_use_by_cycle_phase_source}), we do observe just such an increase. Thus we can conclude that HGT in changing environments is most beneficial when the fragments in the environment contain information that would be beneficial in that environment. However, even when no such information is available, HGT use is not significantly depressed as compared to the control treatment. This suggests that despite the lack of exclusively match environmental information, that fragments could still provide some benefit. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{figures/HGT/hgt_use_by_cycle_phase_source.png}
+\caption{bleh%\todo{stats}\todo{caption}
+}\label{fig:hgt_use_by_cycle_phase_source}
+\end{center}
+\end{figure}
+
+
 
 \subsection{Information content of fragments predicts HGT benefit}
+\todo[inline]{fill this in}
 
-%=TODO FILL THIS IN
-FILL THIS IN WITH THE THEORY PORTION
 
 \section{Conclusion}
-
-%[TODO - fill this out]
+\todo[inline]{fill this in}
 
 CE selects for evolvability 
 * When sufficiently beneficial mechanisms exist, and 
@@ -1054,20 +964,16 @@ Under Stress, Natural Competence increases
 
 
 
-
-
-
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Horizontal Gene Transfer vs Other Types of Mutation}
 \label{hgt-preferred}
 \section{Background}
+\todo{add more with some coverage of what research has already been done in this area, and where this all fits in the context}
 
 Prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment[TODO CITE]. Why should HGT mutations be different? In order to address this question, we created instructions that create different kinds of mutational effects with similar per-instruction impact to HGT. We then performed experiments with these mutagenic instructions under the same conditions as our evaluation of HGT, in static vs changing environments. We not only found that these instructions are triggered at significantly lowered rates as compared to HGT, but that the use rate correlates significantly with the amount of useful information conveyed by the mutagen. 
-
-[TODO - add more with some coverage of what research has already been done in this area, and where this all fits in the context]
 
 
 \section{Methods}
@@ -1136,7 +1042,7 @@ Die CE & Changing & \\\hline
 
 \section{Results and Discussion}
 Our research shows that only mutations containing useful information are elevated in response to changing environments. Intact-fragment HGT is used most, with shuffled-fragment used less, and the other, non information-bearing mutagen types used at the lowest levels.  
-%=[TODO - fill this in with an introduction to the argument we are making]
+\todo{fill this in with an introduction to the argument we are making}
 
 \subsection{Other mutation types are not elevated in response to HGT}
 % Measured use of mutagen instruction in static and changing environments
@@ -1147,12 +1053,13 @@ Our research shows that only mutations containing useful information are elevate
 % * Shuffled-Fragment HGT 
 % * HGT
 
-In order the compare the use of HGT aginst other kinds of mutation, we compared rates of non-bonus HGT fragment uptake against a execution of series of other mutation types (see table %=TODO
-), in both static and changing environments.\ref{fig:mutagen_execution} As expected, in the static environment, endogenously-controlled performance of all types of mutation (including HGT) is strongly suppressed. However, in harsh changing environment, HGT use dominates the other mutation types. Of particular interest is the decreasing use of HGT-like fragment insertions as information is destroyed, first by shuffling fragments (HGT-Shuffle), and then by replacing all fragment instructions with randomly selected instructions (HGT-Random). The latter performs comparably to the remaining mutation types: Mutation Events: Biased and Random, Mutation Rate Increase, and the Die control. This indicates that the information content of the fragment is an important predictor of the use of HGT. 
+In order the compare the use of HGT aginst other kinds of mutation, we compared rates of non-bonus HGT fragment uptake against a execution of series of other mutation types, in both static and changing environments.\ref{fig:mutagen_execution} As expected, in the static environment, endogenously-controlled performance of all types of mutation (including HGT) is strongly suppressed. However, in harsh changing environment, HGT use dominates the other mutation types. Of particular interest is the decreasing use of HGT-like fragment insertions as information is destroyed, first by shuffling fragments (HGT-Shuffle), and then by replacing all fragment instructions with randomly selected instructions (HGT-Random). The latter performs comparably to the remaining mutation types: Mutation Events: Biased and Random, Mutation Rate Increase, and the Die control. This indicates that the information content of the fragment is an important predictor of the use of HGT. 
 
 Also of note is that the only difference between the Mutation Event: Sampled and HGT-Shuffle treatments is the localization of the mutation effect (HGT-Shuffle fragment insertion is applied to a single location, whereas the shuffled instructions are scattered randomly throughout the genome), however their use rates are significantly different. This indicates that not only is information content important, but that localization (clustering) of the mutation effect also matters.
 %This indicates that a combination of information content and localization of the mutation event matter for the beneficial nature of HGT.
 
+\todo{stats}
+\todo{caption}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_execution.png}
@@ -1165,8 +1072,10 @@ Also of note is that the only difference between the Mutation Event: Sampled and
 
 Above, we observe that the Die mutagen control is also elevated in the changing environments treatment. This counterintuitive effect is due to the repeated bottlenecking of the populations subjected to the harsh changing environment.\ref{fig:bottlenecks}. We observe that under increasingly harsh bottlenecks, rates of execution of the "die" instruction increase to levels comparable to what is seen in the changing environment treatments. Because not all instructions contained in an organism's genome are neccessarily executed (due to genetic flow-control structures), it is possible for any instruction to remain dormant. Thus, not all organisms with the "die" instruction in their genome will express it. Thus, the selective pressure of the environmental change may ultimately outweigh that of the die instruction if it is initially dormant in a genome that would survive a harsh environmental change and reproduce. 
 
-[TODO -- add the figure for the bottlenecking!!]
+\missingfigure{add the figure for the bottlenecking!!}
 
+\todo{stats}
+\todo{caption}
 \begin{figure}[h!]
 \begin{center}
 %\includegraphics[width=0.7\columnwidth]{figures/HGT/bottlenecks.png}
@@ -1205,6 +1114,8 @@ Prior research has failed to show an increase in endogenously-controlled mutatio
 
 Further, we measured the proportion of mutations that produce beneficial phenotype changes.\ref{fig:mutagen_use_vs_fraction_beneficial} In the context of a changing environment, a mutation that switches your phenotype to match the environment should be strongly selected for. Indeed, we found that this proportion was significantly and substatially higher for HGT-like mutations than other mutation types, and that there was strong correlation between the proportion of beneficial phenotype-switching mutations and mutagen use. This correlation is much stronger than the correlation with fitness effect, indicating that the magnitude of the fitness effect is less important to selection than the sign of the effect.
 
+\todo{stats}
+\todo{caption}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_use_vs_fraction_beneficial.png}
@@ -1218,7 +1129,7 @@ Further, we measured the proportion of mutations that produce beneficial phenoty
 
 \section{Conclusion}
 
-[TODO - prose this out]
+\todo[inline]{prose this out}
 
 CE selects for evolvability 
 
@@ -1226,6 +1137,9 @@ CE selects for evolvability
 Under Stress, Natural Competence increases
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -1239,11 +1153,11 @@ For longer timescales, evolvability is concerned more with variability generatio
 %=connection between short/long term evo non-obvious
 Despite some common features, the relationship between short-term and long-term evolvability is not obvious. Architectural features and evolutionary pressures that might convey short-term evolvability may not be the same as those that confer longer-term evolvability\cite{pigliucci_is_2008}. For example, features that promote rapid adaptation to a harsh fluctuating environment might reduce fitness in constant or benign fluctuating environments as compared to that of wild-type invaders. Alternately, the adaptation to harsh fluctuating environments and the resulting bottlenecks would potentially reduce diversity to the point where large amounts of neutral novelty generation could not occur.
 
-[TODO - fill this in about the prior research done in this area]
+\todo[inline]{fill this in about the prior research done in this area}
 
 
 \section{Methods}
-[TODO - info about using Avida, but how we used existing code that matches with earlier chapters]
+\todo[inline]{info about using Avida, but how we used existing code that matches with earlier chapters}
 
 \subsection{Experimental Design}
 %=design for experimental environment (CCE vs SCE, and short vs long)
@@ -1283,9 +1197,7 @@ We took populations evolved under the experimental conditions detailed in Chapte
 %=the organisms
 Again, For all of the experiments described in this section, we held the individual genomes at a fixed length of 121\footnote{As part of our initial controls, we hand-wrote an organism with separated sections that performed XOR and EQU. This hand-written organism had 121 instructions and as such we used this genome length as a constraint for the evolve organisms as well.} instructions, but tested the new genomes for mutations after each successful replication event at a substitution probability of 0.00075 per site. We configured the Avida world to have local interactions on a toroidal grid that is 60-by-60 cells (3600 cells in total), and we seeded the initial populations with an ancestor that was previously evolved to perform XOR and EQU under a static reward. The genetic architecture for performing XOR and EQU is tightly intertwined in this ancestral organism, as it was evolved with no selective pressure for modularity.
 
-
-
-[TODO fill this in]
+\todo[inline]{TODO fill this in}
 
 \section{Results and Discussion}
 
@@ -1294,11 +1206,11 @@ Again, For all of the experiments described in this section, we held the individ
 The second phase of our experiments demonstrates that the harshness of fluctuation has a dramatic effect on long-term evolvability, landscape exploration and task discovery.\footnote{Outcomes between the stochastic and cyclic changing environments were qualitatively similar in the second phase, therefore we will focus on the cyclic changing environment. More detail on the results of the stochastic environments in phase 2 may be found in the supplemental materials.} In the first phase of the experiments, despite the logic-77 tasks not being rewarded, both changing-environment treatments discover more new tasks than the control. The harsh changing environment treatments in particular discover significantly more logic-77 tasks than either the benign treatment, or the control. (Fig~\ref{fig:overall_task_discovery}. We hypothesize that this effect may be due to the large phylogenetic depth of the harsh-evolved populations, where the repeated bottlenecks drive the populations along a kind of forced march across the mutational landscape.
 
 %=[FIGURE - overall task discovery]
-%=[TODO Tidy up figure]
-%=[TODO STATS]
+\todo{stats}
+\todo{caption}
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/901_overall_task_discovery.png}
-	\caption{{\textbf Number of new logic-77 tasks discovered over time}. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf {Number of new logic-77 tasks discovered over time}. [TODO DESCRIPTION AND STATS]%
 	}
 	\label{fig:overall_task_discovery}
 	\end{figure}
@@ -1307,11 +1219,11 @@ The second phase of our experiments demonstrates that the harshness of fluctuati
 Despite the initial success of the harsh-evolved populations' random walk across the fitness landscape, once selection for the logic-77 tasks is engaged at the start of phase 2, the benign and control treatments out-perform the harsh-evolved populations in task discovery. In particular, those populations where the harsh changing environment continues, significantly under-perform in task exploration as compared to the benign-evolved populations, and are comparable to the control rate. (Fig~\ref{fig:postreward_task_discovery}). We hypothesize that this effect is due to the relative differences in the strength of selection between the harsh changing environment and the directional selection toward the logic-77 tasks. The pressure to gain and lose the fluctuating task is much stronger than the pressure to acquire the logic-77 tasks, thereby depressing the rate at which they are found, and keeping it comparable to the pre-phase 2 rate. In contrast, the benign environment, with its comparatively weaker strength of selection for EQU task gain and loss, experiences a comparatively stronger selective pressure to acquire logic-77 tasks, while still benefiting from the increased exploration rate conveyed by the benign changing environment. (Fig~\ref{fig:composite_task_discovery} lower left)
 
 %=[FIGURE - postreward task discovery]
-%=[TODO Tidy up figure]
-%=[TODO STATS]
+\todo{stats}
+\todo{caption}
 \begin{figure}[!h]
 \includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/901_postreward_all_task_discovery.png}
-\caption{{\textbf Number of new logic-77 tasks discovered beginning in phase 2}. [TODO DESCRIPTION AND STATS]%
+\caption{\textbf{Number of new logic-77 tasks discovered beginning in phase 2}.%
 }
 \label{fig:postreward_task_discovery}
 \end{figure}
@@ -1322,22 +1234,24 @@ Of additional interest is the comparison of task discovery rates between the ben
 
 
 %=[FIGURE - overall task discovery]
-%=[TODO Tidy up figure]
-%=[TODO STATS]
+\todo{stats}
+\todo{caption}
 \begin{figure}[!h]
 \includegraphics[trim={0 0 0 0}, clip, width=1\columnwidth]{figures/CE/901_postreward_composites_task_discovery.png}
-\caption{{\textbf Detail of task discovery rates over time}. [TODO DESCRIPTION AND STATS]%
+\caption{{\textbf{Detail of task discovery rates over time}}. %
 }
 \label{fig:composite_task_discovery}
 \end{figure}
 
 \section{Conclusion}
+%=CE promotes task discovery
+Finally, we have shown that changing environments both directly and indirectly influence long-term evolvability by directly driving exploration across the fitness landscape, and also by creating genetic architectures that increase the rate of new task discovery in novel environments. We hypothesize that these effects are driven by the presence of the accumulation of pseudogene-like structures that provide cryptic functionality. In our experiments, the increased rate of task discovery is significant, though relatively small, but we expect that future experiments focused on this specific effect might yield more conclusive results. 
 
-[TODO fill this in, recapitulating the argument and framing]
+\todo[inline]{fill this in, recapitulating the argument and framing}
 
 \chapter{Conclusion}
 
-[TODO FILL THIS IN - Synthesis of all results and how it all fits together to paint a picture of how CE works.]
+\todo[inline]{FILL THIS IN - Synthesis of all results and how it all fits together to paint a picture of how CE works.}
 
 \section{Limitations of Cyclic Changing Environments}
 %=CE can be a re-tread, but not as much as feared 
@@ -1349,20 +1263,18 @@ Even so, there must exist methods of exploring genotype space that do not suffer
 For example, perhaps repeated bottlenecking of populations could promote faster traversal of the fitness landscape in quasi-random directions. More ambitiously, perhaps these kinds of environments could be coupled with dynamically increasing open-ended complexity goals.
 
 %=understanding is vital, conslusion paragraph
-%=TODO Tweak below?
+\todo{tweak below?}
 Understanding the mechanisms by which select environmental conditions alter fitness landscapes is vital to understanding the forces that promote evolvability and increase complexity. In particular, understanding the role of vestigial sites may help us untangle how robustness can promote evolvability. Are these vestigial sites inactive remnants, reservoirs of function, or are they part of a complex compensatory framework supporting and buffering the expression of the phenotype? Or both? Changing environments provide one view into these dynamics, but we must explore further to find other mechanisms for exploring and exploiting genotype space.
 
 
 \begin{appendices}
 \chapter{Experimentally Deriving Parameters for Changing Environment Cycle Lengths}
 \label{appendix:ce_sweep}
-%=TODO
-[TODO FILL THIS IN with bonus sweeps]
+\todo[inline]{FILL THIS IN with cycle length sweeps}
 
 \chapter{Experimentally Deriving Parameters for HGT Recombination Probability and Bonus Levels}
 \label{appendix:hgt_sweep}
-%=TODO
-[TODO FILL THIS IN with bonus sweeps]
+\todo[inline]{FILL THIS IN with bonus and probability sweeps}
 \end{appendices}
 \backmatter
 \makebibliographypage
