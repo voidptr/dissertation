@@ -127,7 +127,7 @@ Sustained directional selection adjusts the composition of phenotypes and genoty
 
 %=CE promotes exploration
 In changing environments, however, the direction of selection is not fixed and peaks are not stable.  Instead, as the environment changes, populations are driven to explore new regions of the mutational landscape \cite{kashtan_varying_2007,connelly_negative_2015}. As they proceed, populations accumulate and carry with the genetic material acquired in prior explorations and adaptations, and use this history as raw material for new adaptation \cite{mcclintock_significance_1993}. Indeed, earlier work has shown that changing environments promote evolvability in many contexts, without compromising robustness \cite{crombach_evolution_2008,wilke_evolution_2001}. Strength of selection is also an important component of this exploration, since the harshness of the environment drives the speed with which organisms adapt to new conditions \cite{goddard_sex_2005}.
-\todo[color=orange]{MORE HERE about other things CE can or can't do}
+\todo[color=orange, inline]{MORE HERE about other things CE can or can't do}
 
 % %=CE not only drives exploration, but changes surrounding mutational landscape environment
 % In this thesis, we show how changing environments not only drive exploration of the mutational landscape, but also select for populations whose genetic architectures are qualitatively different than those from populations evolved in static environmental conditions. In particular, we show that populations evolved under harsh, cyclically-changing environments have many more changes along their phylogenetic histories than those evolved in static or benign changing environments. Organisms evolved in these populations also contain reservoirs of pseudogene-like vestigial loci that were acquired and deactivated through repeated adaptation and fixation cycles. As a result, populations evolved in these harsh cyclically-changing environments are low in standing neutral diversity at the population level, but they still connect locally with many more phenotypically-interesting regions of the mutational landscape than more diverse populations evolved in static or benign environments.
@@ -216,7 +216,7 @@ Wagner and Altenberg’s paper led to a vast proliferation of new work exploring
 %=focus on variability
 As I described above, evolvability is a series of distinct, but overlapping concepts that are generally concerned with adaptation, variation, and/or novelty generation. For the purposes of my research, I am using the Wagner/Altenberg conception of evolvability, which focuses on variability (i.e., the generation of adaptive variation in response to mutation). Variability depends primarily on the organization and interrelation of the components of the genome; that is, the genetic architecture, and the resulting genotype-to-phenotype map.
 
-\todo{remove "proposal", revise this paragraph for my thesis statement.}
+\todo[inline]{remove "proposal", revise this paragraph for my thesis statement.}
 The major features that influence this metric for evolvability appear to be modularity of functional components and phenotypic robustness to mutation and environmental perturbation. While there are other architectural features that are also likely to contribute to evolvability, they will not be the focus of this proposal.
 
 
@@ -560,13 +560,11 @@ For all of the experiments described in this section, we held the individual gen
 
 
 \section{Results and Discussion}
-\todo[inline]{try to make the images intersperse with the text more. Not super sure how to do that}
 %=summary - we found that CE evolved populations are genetically distinct. Stochastic pretty similar to CCE
 Our experiments demonstrate that digital organisms that were evolved in changing environments differ substantially from those that evolved in static environments in a number of ways. These differences include the number of mutations that fix in the lineage from the ancestor (the ``phylogenetic depth"), key metrics of their genetic architecture, and the presence of reservoirs of pseudogenes that change the nearby mutational landscape. These features represent adaptation to the larger regime of repeated environmental switching. We also show that while populations evolved in cyclic environments are slightly better adapted to change than those that evolved in stochastic environments, in most measures of adaptation and short-term evolvability, these differences are generally not significant. This result indicates that while regular periodicity may offer a slight advantage for adaptation, stochastic environments perform similarly in most respects. 
 \todo[noinline]{look for un-anchored "this"s}
 
 \subsection{Cyclic Changing Environments}
-\todo{revise this}
 We will begin by examining the characteristics of populations evolved in cyclic changing environments.
 
 \subsubsection{Evolutionary History and Population Structure}
@@ -703,7 +701,6 @@ remained approximately the same. However, we found that the proportion of these 
 
 
 \subsection{Stochastic Changing Environments}
-\todo{add headings below}
 \todo[color=green]{STATS for drop in SCE-Harsh $D_p$}
 \todo{reword below}
 %= contrary to expectations, SCE weren't better at evolvability (D_g/p)
@@ -845,7 +842,7 @@ The static environment rewards executions of all the Logic 9 tasks at their defa
 For the treatments corresponding to the first set of hypotheses on the origins of horizontal gene transfer, we subjected four populations of evolving digital organisms with HGT to harsh changing environments (Table~\ref{hgt-treatments-h}), plus a fifth non-HGT control. The treatments correspond to the combination of two factors: static vs changing environment, and grazing bonus vs no bonus.
 
 %=[TABLE - experimental treatments part 1]
-\todo{rename table}
+
 \begin{table}[]
 \centering
 \caption{\textbf{Experimental Treatments - Evolution of HGT}}
@@ -1084,7 +1081,6 @@ Die CE & Changing & \\\hline
 
 \section{Results and Discussion}
 Our research shows that only mutations containing useful information are elevated in response to changing environments. Intact-fragment HGT is used most, with shuffled-fragment used less, and the other, non information-bearing mutagen types used at the lowest levels.  
-\todo[inline]{fill this in with an introduction to the argument we are making}
 
 \subsection{Other mutation types are not elevated in response to HGT}
 % Measured use of mutagen instruction in static and changing environments
@@ -1232,7 +1228,7 @@ We took populations evolved under the experimental conditions detailed in Chapte
 %=the organisms
 As in Chapter \ref{chap:ce-adaptation}, we held the individual genomes at a fixed length of 121 instructions, and applied mutations after each successful replication event at a substitution probability of 0.00075 per site. Again, we configured the Avida world to have local interactions on a toroidal grid that is 60-by-60 cells (3600 cells in total), and continued the evolution of populations where we left off in Chapter~\ref{chap:ce-adaptation}.
 
-\subsection{Complex Cyclic Changing Environment}
+\subsubsection{Complex Cyclic Changing Environment}
 The second set of experiments looks at the evolution of populations of organisms with variable-length genomes, evolved in a more complex cyclic changing environment. This environment and genetic structure derives from the experiments described in \ref{chap:evo-hgt}. However, these populations were evolved without a working HGT instruction.
 
 \todo{update table to match HGT}
@@ -1263,7 +1259,7 @@ The second set of experiments looks at the evolution of populations of organisms
 
 \todo[color=red,inline]{TODO fill this in with more detail of each treatment}
 
-\subsection{Complex Cyclic Changing Environment with HGT mutagen}
+\subsubsection{Complex Cyclic Changing Environment with HGT mutagen}
 The last set of experiments looks at the evolution of populations of organisms that evolved in a more complex cyclic changing environment, while having access to the HGT mutagen. These experiments are continuations of those described in \ref{chap:evo-hgt}, and continue the evolution of the populations evolved there.
 
 %=[TABLE - experimental treatments]
@@ -1361,7 +1357,7 @@ Interestingly, however, populations evolved in the harsh changing environment, w
 In the first phase of the experiments, despite the logic-77 tasks not being rewarded, both changing-environment treatments discover more new tasks than the control\todo{stats}. The harsh changing environment treatments in particular discover significantly more Logic-77 tasks than either the benign treatment\todo{stats}, or the control, despite these tasks not being rewarded (Fig~\ref{fig:overall_task_discovery}. We hypothesize that this effect may be due to the large phylogenetic depth of the harsh-evolved populations, where the repeated bottlenecks drive the populations along a kind of forced march across the mutational landscape. However, as the experiment proceeds, and Logic-77 rewards are introduced, this effect disappears, and benign environments quickly dominate in task discovery.\todo{stats}
 
 %=[FIGURE - overall task discovery]
-\todo{REPLACE THIS WITH THE ONE THAT HAS THE VIOLIN PLOT?}
+\todo[inline]{REPLACE THIS WITH THE ONE THAT HAS THE VIOLIN PLOT?}
 \todo[color=green]{stats}
 \todo{caption}
 	\begin{figure}[!h]
@@ -1392,7 +1388,6 @@ In the first phase of the experiments, despite the logic-77 tasks not being rewa
 % \end{figure}
 
 \subsection{Long Term Evolvability and Complex Changing Environments}
-\todo[color=red,inline]{Fill this in with the figures}
 
 \subsubsection{Benign changing environments outperform harsh environments in task discovery and task performance}
 Similar to the results of the simple environments, Benign-evolved populations out-perform Harsh-evolving populations in complex changing environments in measures of Task Performance (Fig~\ref{fig:complex-task_performance}) and Task Discovery (Fig~\ref{fig:complex-task_discovery}). Again, this suggests that, despite the differences in genome composition and environmental complexity, Benign changing environments, with their gentler selective pressures, or possibly with more intact chunks of undisturbed functionality in their genomes, leave more room for populations to acquire new tasks without the risk of harsh punishments. 
@@ -1423,7 +1418,6 @@ Similar to the results of the simple environments, Benign-evolved populations ou
 
 
 \subsection{Long Term Evolvability and Horizontal Gene Transfer}
-\todo[color=red,inline]{Fill this in with the figures}
 \todo{move below to the introduction about why we care about HGT}
 The addition of mutagens are thought to promote long-term evolvability[CITE] In this section we examine the long-term evolutionary dynamics of adding an HGT mutagen to populations introduced to a brand new, complex environment.
 
@@ -1519,7 +1513,7 @@ Ultimately, however, cyclic changing environments only re-tread existing phenoty
 Even so, there must exist methods of exploring genotype space that do not suffer from these limitations at all.
 For example, perhaps repeated bottlenecking of populations could promote faster traversal of the fitness landscape in quasi-random directions. More ambitiously, perhaps these kinds of environments could be coupled with dynamically increasing open-ended complexity goals.
 
-%=understanding is vital, conslusion paragraph
+%=understanding is vital, conclusion paragraph
 \todo{tweak below?}
 Understanding the mechanisms by which select environmental conditions alter fitness landscapes is vital to understanding the forces that promote evolvability and increase complexity. In particular, understanding the role of vestigial sites may help us untangle how robustness can promote evolvability. Are these vestigial sites inactive remnants, reservoirs of function, or are they part of a complex compensatory framework supporting and buffering the expression of the phenotype? Or both? Changing environments provide one view into these dynamics, but we must explore further to find other mechanisms for exploring and exploiting genotype space.
 
@@ -1529,12 +1523,72 @@ Understanding the mechanisms by which select environmental conditions alter fitn
 \chapter{Experimentally Deriving Parameters for Changing Environment Cycle Lengths}
 \label{appendix:ce_sweep}
 \todo[color=red,inline]{FILL THIS IN with cycle length sweeps}
+Cyclic changing environments have predictable cycles and thus have consistent periods of time that allow adaptation and fixation of traits. Too short a cycle, and traits are not able to fix. Too long a cycle and traits that are no longer selected for in one phase, but are useful in the other, become increasingly vulnerable to loss through genetic drift.
+
+In order to identify an optical cycle time to support our experiments, we surveyed a series of cycle lengths, and measured task performance rates in both benign and harsh changing environments (Fig~...\todo{figures})
+
+%=[FIGURE - complex environment task discovery]
+\todo[color=green]{stats}
+\todo{caption}
+	\begin{figure}[!h]
+	\missingfigure{$ce-task_performance_by_cycle_length control$}
+	\missingfigure{$ce-task_performance_by_cycle_length$ benign}
+	\missingfigure{$ce-task_performance_by_cycle_length$ harsh}
+	%\includegraphics[trim={0 0 0 0}, clip, width=0.35\columnwidth]{figures/A1/ce-task_performance_by_cycle_length__control.png}
+	%\includegraphics[trim={0 0 0 0}, clip, width=0.35\columnwidth]{figures/A1/ce-task_performance_by_cycle_length__benign.png}
+	%\includegraphics[trim={0 0 0 0}, clip, width=0.35\columnwidth]{figures/A1/ce-task_performance_by_cycle_length__harsh.png}
+	\caption{\textbf{Survey of task execution} for a series of cycle-lengths. [TODO DESCRIPTION AND STATS]%
+	}
+	\label{fig:lte-bonus_hgt_vs_task_performance}
+	\end{figure}
+
+We found that, of our surveyed values, a cycle time of 1000 updates (roughly 30 generations) both provided adequate time for traits to evolve and fix, but also not enough time for drift to destroy alternate-phase traits. Cycle times that were too short never acquired and fixed adaptive traits, while in too-long cycles, the fluctuating tasks would take much longer to re-evolve, and populations drifted away from the regions of the mutational landscape that contained them. 
 
 %%%%%%%% APPENDIX B
 \chapter{Experimentally Deriving Parameters for HGT Recombination Probability and Bonus Levels}
 \label{appendix:hgt_sweep}
 \todo[color=red,inline]{FILL THIS IN with bonus and probability sweeps}
 
+\section{Probability Sweep}
+
+%=[FIGURE - complex environment task discovery]
+\todo[color=green]{stats}
+\todo{caption}
+	\begin{figure}[!h]
+	%\missingfigure{$ce-task_performance_by_cycle_length$ harsh}
+	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/A2/hgt-probabilitysweep-hgtuse.png}
+	\caption{\textbf{Survey of hgt use} for a series of recombination probabilities. [TODO DESCRIPTION AND STATS]%
+	}
+	\label{fig:a2-hgt-probabilitysweep-hgtuse}
+	\end{figure}
+
+
+\section{Bonus Sweep}
+
+%=[FIGURE - complex environment task discovery]
+\todo[color=green]{stats}
+\todo{caption}
+	\begin{figure}[!h]
+	\missingfigure{survey of hgt use for a series of bonus values}
+	%\includegraphics[trim={0 0 0 0}, clip, width=0.35\columnwidth]{figures/A1/ce-task_performance_by_cycle_length__harsh.png}
+	\caption{\textbf{Survey of task execution} for a series of cycle-lengths. [TODO DESCRIPTION AND STATS]%
+	}
+	\label{fig:lte-bonus_hgt_vs_task_performance}
+	\end{figure}
+
+
+
+\section{Comparable Bonus Values}
+%=[FIGURE - complex environment task discovery]
+\todo[color=green]{stats}
+\todo{caption}
+	\begin{figure}[!h]
+	\missingfigure{selection of hgt bonus value matching CE no-bonus HGT use}
+	%\includegraphics[trim={0 0 0 0}, clip, width=0.35\columnwidth]{figures/A1/ce-task_performance_by_cycle_length__control.png}
+	\caption{\textbf{Survey of task execution} for a series of cycle-lengths. [TODO DESCRIPTION AND STATS]%
+	}
+	\label{fig:lte-bonus_hgt_vs_task_performance}
+	\end{figure}
 %%%%%%%% APPENDIX C
 \chapter{Changing Environments Elevate All Instruction Use Due to Repeated Bottlenecks}
 In Chapter \ref{chap:hgt-preferred}, we observe that the Die mutagen control is also elevated in the changing environments treatment. This counterintuitive effect is due to the repeated bottlenecking of the populations subjected to the harsh changing environment.\ref{fig:bottlenecks}. We observe that under increasingly harsh bottlenecks, rates of execution of the "die" instruction increase to levels comparable to what is seen in the changing environment treatments. Because not all instructions contained in an organism's genome are neccessarily executed (due to genetic flow-control structures), it is possible for any instruction to remain dormant. Thus, not all organisms with the "die" instruction in their genome will express it. Thus, the selective pressures of the environmental change may ultimately outweigh that of the die instruction if it is initially dormant in a genome that would survive a harsh environmental change and reproduce. 
