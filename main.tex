@@ -1522,41 +1522,51 @@ Understanding the mechanisms by which select environmental conditions alter fitn
 %%%%%%%% APPENDIX A
 \chapter{Experimentally Deriving Parameters for Changing Environment Cycle Lengths}
 \label{appendix:ce_sweep}
-\todo[color=red,inline]{FILL THIS IN with cycle length sweeps}
 Cyclic changing environments have predictable cycles and thus have consistent periods of time that allow adaptation and fixation of traits. Too short a cycle, and traits are not able to fix. Too long a cycle and traits that are no longer selected for in one phase, but are useful in the other, become increasingly vulnerable to loss through genetic drift.
 
-In order to identify an optical cycle time to support our experiments, we surveyed a series of cycle lengths, and measured task performance rates in both benign and harsh changing environments (Fig~...\todo{figures})
+In order to identify an optical cycle time to support our experiments, we surveyed a series of cycle lengths, and measured task performance rates in both benign and harsh changing environments (Fig~\ref{fig:a1-taskexpression}).
 
 %=[FIGURE - complex environment task discovery]
 \todo[color=green]{stats}
 \todo{caption}
 	\begin{figure}[!h]
-	\missingfigure{$ce-task_performance_by_cycle_length control$}
-	\missingfigure{$ce-task_performance_by_cycle_length$ benign}
-	\missingfigure{$ce-task_performance_by_cycle_length$ harsh}
-	%\includegraphics[trim={0 0 0 0}, clip, width=0.35\columnwidth]{figures/A1/ce-task_performance_by_cycle_length__control.png}
-	%\includegraphics[trim={0 0 0 0}, clip, width=0.35\columnwidth]{figures/A1/ce-task_performance_by_cycle_length__benign.png}
-	%\includegraphics[trim={0 0 0 0}, clip, width=0.35\columnwidth]{figures/A1/ce-task_performance_by_cycle_length__harsh.png}
+
+	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/A1/a1-taskexpression-control.png}
+	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/A1/a1-taskexpression-benign.png}
+	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/A1/a1-taskexpression-harsh.png}
 	\caption{\textbf{Survey of task execution} for a series of cycle-lengths. [TODO DESCRIPTION AND STATS]%
 	}
-	\label{fig:lte-bonus_hgt_vs_task_performance}
+	\label{fig:a1-taskexpression}
 	\end{figure}
 
-We found that, of our surveyed values, a cycle time of 1000 updates (roughly 30 generations) both provided adequate time for traits to evolve and fix, but also not enough time for drift to destroy alternate-phase traits. Cycle times that were too short never acquired and fixed adaptive traits, while in too-long cycles, the fluctuating tasks would take much longer to re-evolve, and populations drifted away from the regions of the mutational landscape that contained them. 
+We found that, of our surveyed values, a cycle time of 1000 updates (roughly 30 generations) both provided adequate time for traits to evolve and fix (and thus be performed by the entire population), but also not enough time for drift to destroy alternate-phase traits, thus minimizing the time required to re-evolve the task. Cycle times that were too short never acquired and fixed adaptive traits in the entire population, while as cycles got longer, the fluctuating tasks would take much longer to re-evolve, indicating that the populations had drifted away from the regions of the mutational landscape that contained them (Fig~\ref{fig:a1-timetofixation}). 
+
+%=[FIGURE - complex environment task discovery]
+\todo[color=green]{stats}
+\todo{caption}
+	\begin{figure}[!h]
+
+	\includegraphics[trim={0 0 0 0}, clip, width=0.85\columnwidth]{figures/A1/a1-timetofixation-harsh.png}
+	\caption{\textbf{Survey of task execution} for a series of cycle-lengths. [TODO DESCRIPTION AND STATS]%
+	}
+	\label{fig:a1-timetofixation}
+	\end{figure}
 
 %%%%%%%% APPENDIX B
 \chapter{Experimentally Deriving Parameters for HGT Recombination Probability and Bonus Levels}
 \label{appendix:hgt_sweep}
-\todo[color=red,inline]{FILL THIS IN with bonus and probability sweeps}
 
-\section{Probability Sweep}
+\section{Recombination Probability Sweep}
+In nature, the probabilityof horizontal gene transfer occuring varies wildly by species, environmental conditions, and mechanism of action. In order to identify an optimal probability of HGT uptake resulting in recombination, we performed aseries of experiments comparing different probabilities, coupled with a pair of basic grazing bonuses. Our initial grazing bonuses were based on the reward given for a similarly complex task - \texttt{NAND} - which only requires a single instruction, plus an \texttt{IO} instruction, to implement. \texttt{NAND} is typically rewarded with a bonus of $2^1$ to execution speed. Thus, performing HGT, which only requires a single instruction - \texttt{HGT-Uptake}, was rewarded similarly.
+
+The goal was to identify a probability of recombination that would, without a grazing bonus, result in a reduced HGT uptake level as compared to with a grazing bonus. Further, we wanted the recombination probability to not be so high as to result in mutational melt-down, thus frequently killing the populations. We found that a level of 0.1 probability met these characteristics. That is, recombination probabilities of less than 0.1 had similar HGT expression rates with and without a bonus, while probabilities above 0.1 tended to have many many fewer surviving populations (Fig~\ref{fig:a2-hgt-probabilitysweep-hgtuse}).
 
 %=[FIGURE - complex environment task discovery]
 \todo[color=green]{stats}
 \todo{caption}
 	\begin{figure}[!h]
 	%\missingfigure{$ce-task_performance_by_cycle_length$ harsh}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/A2/hgt-probabilitysweep-hgtuse.png}
+	\includegraphics[trim={0 0 0 0}, clip, width=0.85\columnwidth]{figures/A2/hgt-probabilitysweep-hgtuse.png}
 	\caption{\textbf{Survey of hgt use} for a series of recombination probabilities. [TODO DESCRIPTION AND STATS]%
 	}
 	\label{fig:a2-hgt-probabilitysweep-hgtuse}
@@ -1564,31 +1574,37 @@ We found that, of our surveyed values, a cycle time of 1000 updates (roughly 30 
 
 
 \section{Bonus Sweep}
-
+Similarly, in nature, the amount of nutritive benefit derived from uptaking DNA fragments from the environment is difficult to quantify. In avida, when populations are presented with instructions that provide a direct boost to execution speed, use of these instructions is strongly selected for. Populations rapidly fill their genomes with these instructions, to the exclusion of virtually all else. Thus, our goal in selecting potential bonus levels lay in finding a range of minimal value that would balance the presumably deleterious effects of the HGT uptake instruction, without completely overwhelming the balance of selective pressures we wished to apply to our experiments. As expected, and coupled with the recombination probability above, values around $2^1$ seemed to perform the best (Fig~\ref{fig:a2-hgt-bonussweep-hgtuse}). Above a value of $2^2$, there seem to be diminishing returns.
 %=[FIGURE - complex environment task discovery]
 \todo[color=green]{stats}
 \todo{caption}
 	\begin{figure}[!h]
-	\missingfigure{survey of hgt use for a series of bonus values}
-	%\includegraphics[trim={0 0 0 0}, clip, width=0.35\columnwidth]{figures/A1/ce-task_performance_by_cycle_length__harsh.png}
+	%\missingfigure{survey of hgt use for a series of bonus values}
+	\includegraphics[trim={0 0 0 0}, clip, width=0.85\columnwidth]{figures/A2/a2-hgt-bonussweep-hgtuse.png}
 	\caption{\textbf{Survey of task execution} for a series of cycle-lengths. [TODO DESCRIPTION AND STATS]%
 	}
-	\label{fig:lte-bonus_hgt_vs_task_performance}
+	\label{fig:a2-hgt-bonussweep-hgtuse}
 	\end{figure}
 
 
 
 \section{Comparable Bonus Values}
+For later experiments, in order to identify the relationship between HGT uptakes prompted by grazing bonus, and uptakes prompted by evolvability pressures in changing environments, we surveyed a series of bonuses to find a value that, in a static environment, would yield an HGT fragment uptake rate similar to that found in changing environments without a grazing bonus. We found that a bonus value of $2^{0.8}$ yielded similar HGT fragment uptake levels (Fig~\ref{fig:a2-hgt-bonusvsce-hgtuse}).
 %=[FIGURE - complex environment task discovery]
+\todo[inline]{fix up figure to include CE uptake value, plus less terrible}
 \todo[color=green]{stats}
 \todo{caption}
 	\begin{figure}[!h]
-	\missingfigure{selection of hgt bonus value matching CE no-bonus HGT use}
-	%\includegraphics[trim={0 0 0 0}, clip, width=0.35\columnwidth]{figures/A1/ce-task_performance_by_cycle_length__control.png}
-	\caption{\textbf{Survey of task execution} for a series of cycle-lengths. [TODO DESCRIPTION AND STATS]%
+	%\missingfigure{selection of hgt bonus value matching CE no-bonus HGT use}
+	\includegraphics[trim={0 0 0 0}, clip, width=0.85\columnwidth]{figures/A2/a2-hgt-bonusvsce-hgtuse.png}
+	\caption{\textbf{Survey of comparable bonus values} for a series of cycle-lengths. [TODO DESCRIPTION AND STATS]%
 	}
-	\label{fig:lte-bonus_hgt_vs_task_performance}
+	\label{fig:a2-hgt-bonusvsce-hgtuse}
 	\end{figure}
+
+
+
+
 %%%%%%%% APPENDIX C
 \chapter{Changing Environments Elevate All Instruction Use Due to Repeated Bottlenecks}
 In Chapter \ref{chap:hgt-preferred}, we observe that the Die mutagen control is also elevated in the changing environments treatment. This counterintuitive effect is due to the repeated bottlenecking of the populations subjected to the harsh changing environment.\ref{fig:bottlenecks}. We observe that under increasingly harsh bottlenecks, rates of execution of the "die" instruction increase to levels comparable to what is seen in the changing environment treatments. Because not all instructions contained in an organism's genome are neccessarily executed (due to genetic flow-control structures), it is possible for any instruction to remain dormant. Thus, not all organisms with the "die" instruction in their genome will express it. Thus, the selective pressures of the environmental change may ultimately outweigh that of the die instruction if it is initially dormant in a genome that would survive a harsh environmental change and reproduce. 
