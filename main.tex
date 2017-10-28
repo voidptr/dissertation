@@ -44,7 +44,7 @@
 \maketitlepage
 %
 \begin{abstract}
-\todo[inline]{rework abstract}
+\todo[inline, color=magenta]{rework abstract}
 % The specific meaning of the term ``evolvability'' is heavily debated, but most definitions can be summarized as: the potential of populations and genomes to produce adaptive variation and complex structures in response to mutation and selection. Evolvability is thought to be created through the interplay of modularity and robustness. Indeed, modularity and robustness build upon each other, layer by layer, to form a framework that produces more powerful adaptive effects while reducing the impact of deleterious mutations.
 
 % In this comprehensive exam, I will describe some research that I have completed and propose additional projects that explore the interplay among evolvability, robustness, and modularity. Before delving into my own research, however, I begin in the first chapter by providing a survey of current literature on each of these topics, with emphases on how they are believed to arise, how they affect subsequent evolution, and how they relate to each other.
@@ -65,10 +65,10 @@
 \makededicationpage
 %
 \clearpage
-\chapter*{Acknowledgements}
+\chapter*{Acknowledgments}
 \DoubleSpacing
-Your acknowledgements here
-\todo{acknowledgements}
+Your acknowledgments here
+\todo{acknowledgments}
 %
 \clearpage
 \SingleSpacing
@@ -127,7 +127,7 @@ Sustained directional selection adjusts the composition of phenotypes and genoty
 
 %=CE promotes exploration
 In changing environments, however, the direction of selection is not fixed and peaks are not stable.  Instead, as the environment changes, populations are driven to explore new regions of the mutational landscape \cite{kashtan_varying_2007,connelly_negative_2015}. As they proceed, populations accumulate and carry with the genetic material acquired in prior explorations and adaptations, and use this history as raw material for new adaptation \cite{mcclintock_significance_1993}. Indeed, earlier work has shown that changing environments promote evolvability in many contexts, without compromising robustness \cite{crombach_evolution_2008,wilke_evolution_2001}. Strength of selection is also an important component of this exploration, since the harshness of the environment drives the speed with which organisms adapt to new conditions \cite{goddard_sex_2005}.
-\todo[color=orange, inline]{MORE HERE about other things CE can or can't do}
+\todo[color=magenta, inline]{MORE HERE about other things CE can or can't do}
 
 % %=CE not only drives exploration, but changes surrounding mutational landscape environment
 % In this thesis, we show how changing environments not only drive exploration of the mutational landscape, but also select for populations whose genetic architectures are qualitatively different than those from populations evolved in static environmental conditions. In particular, we show that populations evolved under harsh, cyclically-changing environments have many more changes along their phylogenetic histories than those evolved in static or benign changing environments. Organisms evolved in these populations also contain reservoirs of pseudogene-like vestigial loci that were acquired and deactivated through repeated adaptation and fixation cycles. As a result, populations evolved in these harsh cyclically-changing environments are low in standing neutral diversity at the population level, but they still connect locally with many more phenotypically-interesting regions of the mutational landscape than more diverse populations evolved in static or benign environments.
@@ -216,7 +216,8 @@ Wagner and Altenberg’s paper led to a vast proliferation of new work exploring
 %=focus on variability
 As I described above, evolvability is a series of distinct, but overlapping concepts that are generally concerned with adaptation, variation, and/or novelty generation. For the purposes of my research, I am using the Wagner/Altenberg conception of evolvability, which focuses on variability (i.e., the generation of adaptive variation in response to mutation). Variability depends primarily on the organization and interrelation of the components of the genome; that is, the genetic architecture, and the resulting genotype-to-phenotype map.
 
-\todo[inline]{remove "proposal", revise this paragraph for my thesis statement.}
+\todo[inline]{remove "proposal"}
+\todo[inline, color=magenta]{revise this paragraph for my thesis statement.}
 The major features that influence this metric for evolvability appear to be modularity of functional components and phenotypic robustness to mutation and environmental perturbation. While there are other architectural features that are also likely to contribute to evolvability, they will not be the focus of this proposal.
 
 
@@ -235,7 +236,7 @@ Conversely, spatially modular genomic regions, because they are more self-contai
 The relationship between modularity and pleiotropy is complex. At small scales, spatial modularity acts to directly reduce pleiotropy by reducing the number of traits affected by a single locus\cite{misevic_sexual_2006}. However, at higher scales, modularity may rely on pleiotropic links within groups of related trait complexes to enable those groups to evolve and optimize in concert\cite{gunter_p._wagner_pleiotropic_2011}. 
 
 %=modularity may not be only good for evolvability
-Despite the benefits described above, modularity, like many other variational trait complexes, may not be an unmitigated boon for evolvability. High levels of functional modularity may reduce the overall evolvability of a genotype by reducing the incidence of mutations of large effect and reducing the size of mutational targets\cite{hansen_is_2003}. Reducing the incidence of large changes reduces the likelyhood of the development of entirely new traits as a result of relatively few mutations. Thus, the evolvability benefit of modularity may be mediated by the scale and degree to which it occurs.
+Despite the benefits described above, modularity, like many other variational trait complexes, may not be an unmitigated boon for evolvability. High levels of functional modularity may reduce the overall evolvability of a genotype by reducing the incidence of mutations of large effect and reducing the size of mutational targets\cite{hansen_is_2003}. Reducing the incidence of large changes reduces the likelihood of the development of entirely new traits as a result of relatively few mutations. Thus, the evolvability benefit of modularity may be mediated by the scale and degree to which it occurs.
 % @CAO: Another reason modularity might be bad for evolvability is if it pushes down the probability that existing traits can interact to produce an entirely new and different trait.  I some sense, I think this might be a bigger issue for the evolution of complexity.
 % @RCK: I think this point is addressed by this paragraph.
 % @CAO: The broader concept is captured, but it might be worth mentioning the production of entirely new traits more directly, since I think that's one of the most important aspects of evolvability.  Just saying "reducing the incidence of mutations of large effect" sounds like a purely good thing on the surface if your goal is to have evolution gradually fine-tune existing traits.
@@ -590,7 +591,7 @@ in the benign and control treatments led populations in them to have higher stan
 %
 % ^.
 
-\todo[inline]{fix figure below so that it's two separate figures. Separtae the mean entropy to its own figure.}
+\todo[inline]{fix figure below so that it's two separate figures. Separate the mean entropy to its own figure.}
 	\begin{figure}[!h]
 	%\includegraphics{figures/CE/control__entropy}
 	\includegraphics[trim={-0.85cm 0 0.1cm 0.2cm},clip,width=0.5\columnwidth]{figures/CE/control__entropy}
@@ -680,7 +681,7 @@ We also measured the proportion of non-deleterious mutants in the nearby fitness
 remained approximately the same. However, we found that the proportion of these mutants with different (potentially adaptive) phenotypes increased in the changing environments. In this way, the organisms from the changing environment treatments have an advantage over organisms from the control runs in terms of the short-term evolvability of the fluctuating task. This result indicates real adaptation, not only to resources in their local environment, but a direct adaptation to the environmental change. (Fig~\ref{fig:CCE_diffusion_rate})
 \todo[color=green]{add stats for this paragraph}
 
-\todo[inline]{TODO - add paragraph describing/speculating about why Benign loses EQU almost as well as Harsh}
+\todo[inline, color=magenta]{TODO - add paragraph describing/speculating about why Benign loses EQU almost as well as Harsh}
 % @CAO: I also get why we should expect to see EQU lost easily in the Harsh changing environment, but why is it also lost so easily in the benign environment.  Should we speculate here?  (Or do you below?)  More generally, why do you think this is the case?
 % @CAO: One other thought for how this result may happen.  Maybe in the control there is a pressure for EQU to evolve to be more robust, whereas the changing environment just doesn't give it time to evolve robustness.  I can't think of a way to easily disentangle those explanations though...
 % @RCK: clarify that benign are lost due to drift.
@@ -762,7 +763,7 @@ In cyclic changing environments, the direction of selection shifts frequently, a
 
 %@CAO - This argument clearly implies that evolvability is not actually selected for. It's merely a by-product of how changing environments naturally alter genomes by creating genetic reservoirs. I feel like this is a point that we might want to hilight further.
 %@RCK - agree.
-\todo[inline]{add a sentence emphasiszing that it's an indirect effect.}
+\todo[inline]{add a sentence emphasizing that it's an indirect effect.}
 
 %=by constrast static environments don't
 By contrast, in static (non-changing) environments, the majority of neutral mutations do not connect to as many phenotypically-interesting regions of genotype-space. There are far fewer pseudogene-like regions available that could regain functionality should conditions change. Thus, populations evolved in static environments are less evolvable in the short-term.
@@ -792,7 +793,7 @@ HGT has had a profound impact on the evolutionary history of both prokaryotes an
 However, the origins and evolution of HGT mechanisms remain unclear. 
 
 \subsection{Origins of HGT in nature}
-\todo[inline]{More about how this question is still open}
+\todo[inline, color=magenta]{More about how this question is still open}
 %=natural competence in prokaryotes and why HGT happens
 In prokaryotes, “natural competence” is an HGT mechanism by which organisms spontaneously uptake the DNA of dead organisms in the environment. These organisms benefit in several ways. 1) DNA is composed of a 5-carbon sugar, a phosphate, and nitrogen bases, materials that are useful for DNA synthesis and repair. 2) The organisms may also benefit from up-taking gene-fragments that confer new adaptive functionality into the genome \cite{vos_why_2009}. However, it is unclear whether the origins of uptake functions were developed solely in order to obtain nutrients, or if the acquisition of new functionality was selected for as well. While grazing for gene-fragments as nutrients certainly conveys an advantage, the possibility of integrating these gene fragments is likely to be disruptive to organisms more often than it is beneficial \cite{redfield_evolution_1997}.
 
@@ -852,10 +853,10 @@ For the treatments corresponding to the first set of hypotheses on the origins o
 \hline
 \thead{Treatment} & \thead{Changing \\ Env. \\ Type} & \thead{HGT \\ Action} & \thead{Bonus} \\\hhline{|=|=|=|=|}
 Control & Static & None & n/a \\\hline
-\makecell{HGT \\ B0.0 \\ (Natural Competence \\ No Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probabilty} & n/a \\\hline
-\makecell{HGT \\ B0.0 \\ CE \\ (Natural Competence \\ No Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probabilty} & n/a \\\hline
-\makecell{HGT \\ B0.8 \\ (Natural Competence \\ with Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probabilty \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
-\makecell{HGT \\ B0.8 \\ CE \\ (Natural Competence \\ with Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probabilty \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
+\makecell{HGT \\ B0.0 \\ (Natural Competence \\ No Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probability} & n/a \\\hline
+\makecell{HGT \\ B0.0 \\ CE \\ (Natural Competence \\ No Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probability} & n/a \\\hline
+\makecell{HGT \\ B0.8 \\ (Natural Competence \\ with Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probability \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
+\makecell{HGT \\ B0.8 \\ CE \\ (Natural Competence \\ with Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probability \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
 \end{tabular} 
 
 \begin{flushleft} Experimental treatments. Four treatments corresponding to the combination of two factors: Static vs Changing Environment, and Grazing Bonus vs No Grazing Bonus, plus a non-HGT control, where the HGT instruction is inert.  
@@ -889,8 +890,7 @@ HGT & organism death \\\hline
 
 
 \section{Results and Discussion}
-\todo[inline]{fill this in with a general overview of the argument}
-Our results show that both an uptake bonus and changing environment promote the use of HGT, and that the effects are largely additive.
+Our results show that both an uptake bonus and changing environment promote the use of HGT, and that the increases in uptake are largely additive. Further, we found that while on average, HGT mutations are neutral, that the majority of the benefits conveyed by HGT in changing environments come from fragments originating in periods of the cycle where the environment matched the current environment. This result indicates that it is the information content of the fragment that is valuable. Finally, we find that providing only fragments from the matching cycle elevates uptake rates significantly. 
 
 %\subsection{Alternatives to the Grazing Hypothesis}
 \subsection{Changing environments elevate HGT use}
@@ -983,23 +983,26 @@ Further, if fragments from the matching phase are indeed beneficial, you would e
 \end{figure}
 
 
-
-\subsection{Information content of fragments predicts HGT benefit}
-\todo[inline]{fill this in}
-
+%%%%%%%%%% EXTRA SECTION IF HAVE TIME
+%\subsection{Information content of fragments predicts HGT benefit}
+%\todo[inline, color=magenta]{fill this in - info theory predicts HGT benefit}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Conclusion}
-\todo[inline]{fill this in}
 %@CAO - Start with a comment along the lines of Avida confirming our expectations about HGT, and matching what we'd expect to see in natural populations.
-CE selects for evolvability 
-* When sufficiently beneficial mechanisms exist, and 
-* When change is directly selected for, as in a changing environment
-* Because HGT is much more beneficial than other types of mutation
-Under Stress, Natural Competence increases
-* In natural organisms, Natural Competence tends to be up-regulated, and recombination rates increase [cite]. 
-* This effect may occur because of loss of fidelity of DNA copying and repair mechanisms due to stress. 
-* Avida has no such mechanism, so lack of fidelity does not account for an increase in HGT use. Instead, HGT can only increase due to selection. 
+% CE selects for evolvability 
+% * When sufficiently beneficial mechanisms exist, and 
+% * When change is directly selected for, as in a changing environment
+% * Because HGT is much more beneficial than other types of mutation
+% Under Stress, Natural Competence increases
+% * In natural organisms, Natural Competence tends to be up-regulated, and recombination rates increase [cite]. 
+% * This effect may occur because of loss of fidelity of DNA copying and repair mechanisms due to stress. 
+% * Avida has no such mechanism, so lack of fidelity does not account for an increase in HGT use. Instead, HGT can only increase due to selection. 
+Our experiments confirm our expectations about the evolution of horizontal gene transfer, and match what we would expect to see in nature. First, we find that grazing bonuses, such as those conveyed by the uptake of nutrient-rich DNA fragments in natural systems, cause an elevation of use of the horizontal gene transfer instruction, regardless of the potential risk of recombining uptaken gene fragments. 
 
+Further, when there is direct selection for phenotypic change, - such as in a changing environment - we observe an increase in the use of the HGT instruction, even when no grazing bonus is offered. This indicates that it is the possibility of recombination itself that is being selected for. Beyond this, we find that it is not only the fact of the recombination that is beneficial, but the information contained in the fragment. We found that not only is most of the benefit conveyed by HGT derived from fragments that match the current environment, but that when we filter so that only those fragments are available, that use of the HGT instruction increases even further. 
+
+In natural systems, this pattern in evident in the acquisition of antibiotic resistance in bacteria, where resistance is acquired by the spread of resistance genes via horizontal gene transfer. Therefore, our results provide a key insight into how horizontal gene transfer mechanisms could be selected for, and evolve in natural systems.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1009,7 +1012,7 @@ Under Stress, Natural Competence increases
 \chapter{Horizontal Gene Transfer vs Other Types of Mutation}
 \label{chap:hgt-preferred}
 \section{Background}
-\todo[color=red,inline]{add more with some coverage of what research has already been done in this area, and where this all fits in the context}
+\todo[color=magenta,inline]{add more with some coverage of what research has already been done in this area, and where this all fits in the context}
 
 Prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment[TODO CITE]. Why should HGT mutations be different? In order to address this question, we created instructions that create different kinds of mutational effects with similar per-instruction impact to HGT. We then performed experiments with these mutagenic instructions under the same conditions as our evaluation of HGT, in static vs changing environments. We not only found that these instructions are triggered at significantly lowered rates as compared to HGT, but that the use rate correlates significantly with the amount of useful information conveyed by the mutagen. 
 
@@ -1017,7 +1020,7 @@ Prior research has failed to show an increase in endogenously-controlled mutatio
 \section{Methods}
 In this chapter, we use Avida to compare mutational effects of HGT to other types of mutations. As in the previous chapter, HGT is triggered by the \texttt{HGT-Uptake} instruction, and fragments are uptaken from reservoirs in the environment. 
 
-All experiments in this chapter compare outcomes between static environments, and harsh changing environments. Similarly to the experiments listed in the previous chapter, task rewards in the harsh changing environment switch from a positive to a negative reward between the divded set of tasks in the Logic 9 environment. Please refer to Table~\ref{hgt-treatments-h} for more details. Each complete cycle lasts 1000 updates, and the whole experimental run continues for 200,000 updates. Also as in the previous chapter, the static environment rewards executions of all the Logic 9 tasks at their default levels, with no reward switching.
+All experiments in this chapter compare outcomes between static environments, and harsh changing environments. Similarly to the experiments listed in the previous chapter, task rewards in the harsh changing environment switch from a positive to a negative reward between the divided set of tasks in the Logic 9 environment. Please refer to Table~\ref{hgt-treatments-h} for more details. Each complete cycle lasts 1000 updates, and the whole experimental run continues for 200,000 updates. Also as in the previous chapter, the static environment rewards executions of all the Logic 9 tasks at their default levels, with no reward switching.
 
 
 \subsection{Experimental Design}
@@ -1077,10 +1080,10 @@ Die CE & Changing & \\\hline
 \label{hgt_mut-treatments}
 \end{table}
 
-\todo[inline]{[TODO - more discussion of what each treatment is intended to cover]}
+\todo[inline, color=magenta]{TODO - more discussion of what each treatment is intended to cover.}
 
 \section{Results and Discussion}
-Our research shows that only mutations containing useful information are elevated in response to changing environments. Intact-fragment HGT is used most, with shuffled-fragment used less, and the other, non information-bearing mutagen types used at the lowest levels.  
+Our research shows that only mutations containing useful information are elevated in response to changing environments. Intact-fragment HGT is used most, with shuffled-fragment used less, and the other, non information-bearing mutagen types used at the lowest levels.  Further, we find a positive correlation between expected fitness and mutagen-use. That is, mutagens that have higher expected fitness effects are used more. Finally, we see a strong positive correlation between the fraction of mutations from a mutagen that provide a beneficial phenotype-altering change, and the use of that mutagen.
 
 \subsection{Other mutation types are not elevated in response to HGT}
 % Measured use of mutagen instruction in static and changing environments
@@ -1091,7 +1094,7 @@ Our research shows that only mutations containing useful information are elevate
 % * Shuffled-Fragment HGT 
 % * HGT
 
-In order the compare the use of HGT aginst other kinds of mutation, we compared rates of non-bonus HGT fragment uptake against a execution of series of other mutation types, in both static and changing environments.\ref{fig:mutagen_execution} As expected, in the static environment, endogenously-controlled performance of all types of mutation (including HGT) is strongly suppressed. However, in harsh changing environment, HGT use dominates the other mutation types. Of particular interest is the decreasing use of HGT-like fragment insertions as information is destroyed, first by shuffling fragments (HGT-Shuffle), and then by replacing all fragment instructions with randomly selected instructions (HGT-Random). The latter performs comparably to the remaining mutation types: Mutation Events: Biased and Random, Mutation Rate Increase, and the Die control. This indicates that the information content of the fragment is an important predictor of the use of HGT. 
+In order the compare the use of HGT against other kinds of mutation, we compared rates of non-bonus HGT fragment uptake against a execution of series of other mutation types, in both static and changing environments.\ref{fig:mutagen_execution} As expected, in the static environment, endogenously-controlled performance of all types of mutation (including HGT) is strongly suppressed. However, in harsh changing environment, HGT use dominates the other mutation types. Of particular interest is the decreasing use of HGT-like fragment insertions as information is destroyed, first by shuffling fragments (HGT-Shuffle), and then by replacing all fragment instructions with randomly selected instructions (HGT-Random). The latter performs comparably to the remaining mutation types: Mutation Events: Biased and Random, Mutation Rate Increase, and the Die control. This indicates that the information content of the fragment is an important predictor of the use of HGT. 
 
 Also of note is that the only difference between the Mutation Event: Sampled and HGT-Shuffle treatments is the localization of the mutation effect (HGT-Shuffle fragment insertion is applied to a single location, whereas the shuffled instructions are scattered randomly throughout the genome), however their use rates are significantly different. This indicates that not only is information content important, but that localization (clustering) of the mutation effect also matters.
 %This indicates that a combination of information content and localization of the mutation event matter for the beneficial nature of HGT.
@@ -1138,7 +1141,7 @@ Prior research has failed to show an increase in endogenously-controlled mutatio
 % * Shuffled-Fragment HGT
 % * HGT
 
-Further, we measured the proportion of mutations that produce beneficial phenotype changes.\ref{fig:mutagen_use_vs_fraction_beneficial} In the context of a changing environment, a mutation that switches your phenotype to match the environment should be strongly selected for. Indeed, we found that this proportion was significantly and substatially higher for HGT-like mutations than other mutation types, and that there was strong correlation between the proportion of beneficial phenotype-switching mutations and mutagen use. This correlation is much stronger than the correlation with fitness effect, indicating that the magnitude of the fitness effect is less important to selection than the sign of the effect.
+Further, we measured the proportion of mutations that produce beneficial phenotype changes.\ref{fig:mutagen_use_vs_fraction_beneficial} In the context of a changing environment, a mutation that switches your phenotype to match the environment should be strongly selected for. Indeed, we found that this proportion was significantly and substantially higher for HGT-like mutations than other mutation types, and that there was strong correlation between the proportion of beneficial phenotype-switching mutations and mutagen use. This correlation is much stronger than the correlation with fitness effect, indicating that the magnitude of the fitness effect is less important to selection than the sign of the effect.
 
 \todo[color=green]{stats}
 \todo{caption}
@@ -1154,13 +1157,12 @@ Further, we measured the proportion of mutations that produce beneficial phenoty
 
 
 \section{Conclusion}
+\todo[color=magenta,inline]{prose this out - Ch4 conclusion}
+%CE selects for evolvability 
+%* Because HGT is much more beneficial than other types of mutation
+%Under Stress, Natural Competence increases
 
-\todo[color=red,inline]{prose this out}
 
-CE selects for evolvability 
-
-* Because HGT is much more beneficial than other types of mutation
-Under Stress, Natural Competence increases
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1179,11 +1181,11 @@ For longer timescales, evolvability is concerned more with variability generatio
 %=connection between short/long term evo non-obvious
 Despite some common features, the relationship between short-term and long-term evolvability is not obvious. Architectural features and evolutionary pressures that might convey short-term evolvability may not be the same as those that confer longer-term evolvability\cite{pigliucci_is_2008}. For example, features that promote rapid adaptation to a harsh fluctuating environment might reduce fitness in constant or benign fluctuating environments as compared to that of wild-type invaders. Alternately, the adaptation to harsh fluctuating environments and the resulting bottlenecks would potentially reduce diversity to the point where large amounts of neutral novelty generation could not occur.
 
-\todo[color=red,inline]{fill this in about the prior research done in this area}
+\todo[color=magenta,inline]{ch5 - background - fill this in about the prior research done in this area}
 
 
 \section{Methods}
-\todo[inline]{info about using Avida, but how we used existing code that matches with earlier chapters}
+\todo[inline, color=magenta]{info about using Avida, but how we used existing code that matches with earlier chapters}
 
 \subsection{Experimental Design}
 %=design for experimental environment (CCE vs SCE, and short vs long)
@@ -1197,7 +1199,7 @@ With these experiments, we will explore the characteristics of these populations
 %=explanation of the changing environment treatments - cyclic
 We took populations evolved under the experimental conditions detailed in Chapter \ref{chap:ce-adaptation}, and introduced them to an entirely new set of rewarded bitwise logical tasks: the Logic-77 environment. 
 
-\todo[inline]{more details about each treatment}
+\todo[inline, color=magenta]{CH5 methods - more details about each treatment}
 
 	%=[TABLE - experimental treatments]
 	\begin{table}[]
@@ -1257,7 +1259,7 @@ The second set of experiments looks at the evolution of populations of organisms
 	\label{cel-treatments}
 	\end{table}
 
-\todo[color=red,inline]{TODO fill this in with more detail of each treatment}
+\todo[color=magenta,inline]{TODO fill this in with more detail of each treatment}
 
 \subsubsection{Complex Cyclic Changing Environment with HGT mutagen}
 The last set of experiments looks at the evolution of populations of organisms that evolved in a more complex cyclic changing environment, while having access to the HGT mutagen. These experiments are continuations of those described in \ref{chap:evo-hgt}, and continue the evolution of the populations evolved there.
@@ -1267,7 +1269,7 @@ The last set of experiments looks at the evolution of populations of organisms t
 \centering
 \caption{\textbf{Experimental Treatments - Complex Cyclic Changing Environments with HGT}}
 \label{cel-treatments-h}
-
+\todo[color=red, inline]{correct second half of the table with info about the bonus structures B0 and B0.8}
 	\begin{tabular}{|c|c||c|c||c|c|c|}
 	%\begin{tabular}{ccccccc}
 	\hline
@@ -1293,7 +1295,7 @@ The last set of experiments looks at the evolution of populations of organisms t
 	\label{cel-treatments}
 	\end{table}
 
-\todo[color=red,inline]{TODO fill this in with more detail of each treatment}
+\todo[color=magenta,inline]{TODO fill this in with more detail of each treatment}
 
 \subsection{Measuring Task Discovery and Task Performance}
 In order to assess how populations adapt to a brand new environment, we measure Task Performance and Task Discovery.
@@ -1328,7 +1330,7 @@ In contrast, the benign environment, with its comparatively weaker strength of s
 Interestingly, in those populations where we removed the harsh environmental change as we introduce Logic-77, we see that task exploration recovers somewhat and reaches a comparable level to the control\todo{stats}. This suggests that it is the active pressures of the harsh environment that depress task exploration, and not a penalty conveyed by architectural features that persist after selective pressures have changed.
 
 %=disentangling direct effects from architectural byproducts
-Of similar interest is the comparison of task discovery rates between the benign changing environment populations BenignCE and BenignQuiescent.\todo{make a figure to hilight this?}\todo{rename the populations A and B} The BenignCE populations continue to be subject to the benign changing environment, where as the BenignQuiescent populations are only subject to directional selection toward the evolution of XOR, EQU, and the Logic-77 tasks. The task discovery rate for the BenignCE population is slightly higher than for BenignQuiescent, but the effect is not statistically significant\todo{stast}. Both, however, still perform better than the control treatment\todo{stats}. Thus, this result suggests that there may be architectural features conferred by evolution in the changing environment that are helpful for long-term evolvability, even after the environmental changes have stopped, and that this effect is distinct from the direct effects of the changing direction of selection. %Further research is needed to fully untangle these effects.
+Of similar interest is the comparison of task discovery rates between the benign changing environment populations BenignCE and BenignQuiescent.\todo{make a figure to highlight this?}\todo{rename the populations A and B} The BenignCE populations continue to be subject to the benign changing environment, where as the BenignQuiescent populations are only subject to directional selection toward the evolution of XOR, EQU, and the Logic-77 tasks. The task discovery rate for the BenignCE population is slightly higher than for BenignQuiescent, but the effect is not statistically significant\todo{stats}. Both, however, still perform better than the control treatment\todo{stats}. Thus, this result suggests that there may be architectural features conferred by evolution in the changing environment that are helpful for long-term evolvability, even after the environmental changes have stopped, and that this effect is distinct from the direct effects of the changing direction of selection. %Further research is needed to fully untangle these effects.
 
  
 
@@ -1346,10 +1348,6 @@ Similar to task discovery, populations evolving in harsh changing environments p
 	}
 	\label{fig:lte-task_performance}
 	\end{figure}  
-
-% below is speculative!!!
-\todo[inline]{check on fresh data below about whether I actually want to make the next claim}
-Interestingly, however, populations evolved in the harsh changing environment, where change ceased upon introduction of Logic-77 rewards (HarshQuiescent) seem to out-perform all other environment types in task performance \todo{stats}. This effect may be due to a lingering architectural effect of evolving in harsh changing environments. Further research is needed to identify a mechanism for this effect.
 
 
 \subsubsection{Harsh changing environments drive populations across the mutational landscape}
@@ -1390,7 +1388,7 @@ In the first phase of the experiments, despite the logic-77 tasks not being rewa
 \subsection{Long Term Evolvability and Complex Changing Environments}
 
 \subsubsection{Benign changing environments outperform harsh environments in task discovery and task performance}
-Similar to the results of the simple environments, Benign-evolved populations out-perform Harsh-evolving populations in complex changing environments in measures of Task Performance (Fig~\ref{fig:complex-task_performance}) and Task Discovery (Fig~\ref{fig:complex-task_discovery}). Again, this suggests that, despite the differences in genome composition and environmental complexity, Benign changing environments, with their gentler selective pressures, or possibly with more intact chunks of undisturbed functionality in their genomes, leave more room for populations to acquire new tasks without the risk of harsh punishments. 
+Similar to the results of the simple environments, Benign-evolved populations out-perform Harsh-evolving populations in complex changing environments in measures of Task Performance (Fig~\ref{fig:complex-task_performance}) and Task Discovery (Fig~\ref{fig:complex-task_discovery}). Again, this result suggests that, despite the differences in genome composition and environmental complexity, Benign changing environments, with their gentler selective pressures, or possibly with more intact chunks of undisturbed functionality in their genomes, leave more room for populations to acquire new tasks without the risk of harsh punishments. 
 %MAYBE NOT?
 %Both types of Benign-evolved environment appear to out-perform the control, but the effect is not statistically significant.
 
@@ -1400,7 +1398,7 @@ Similar to the results of the simple environments, Benign-evolved populations ou
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-task_performance.png}
 	%\missingfigure{Complex CCE Task Performance}
-	\caption{\textbf{Number of new logic-77 tasks performed over time}. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Number of logic-77 tasks performed over time}. [TODO DESCRIPTION AND STATS]%
 	}
 	\label{fig:complex-task_performance}
 	\end{figure}
@@ -1415,6 +1413,10 @@ Similar to the results of the simple environments, Benign-evolved populations ou
 	}
 	\label{fig:complex-task_discovery}
 	\end{figure}
+
+% below is speculative!!!
+Interestingly, populations that were initially evolved in a harsh changing environment and then change ceased upon introduction of Logic-77 rewards (HarshQuiescent) seem to out-perform all other environment types in task performance (Fig~\ref{fig:complex-task_performance}) \todo{stats}. This effect may be due to a lingering architectural effect of evolving in harsh changing environments. Further research is needed to identify a mechanism for this effect.
+
 
 
 \subsection{Long Term Evolvability and Horizontal Gene Transfer}
@@ -1498,11 +1500,11 @@ Again, consistent with earlier results, populations with HGT follow the same pat
 %=CE promotes task discovery
 Finally, we have shown that changing environments both directly and indirectly influence long-term evolvability by directly driving exploration across the fitness landscape, and also by creating genetic architectures that increase the rate of new task discovery in novel environments. We hypothesize that these effects are driven by the presence of the accumulation of pseudogene-like structures that provide cryptic functionality. In our experiments, the increased rate of task discovery is significant, though relatively small, but we expect that future experiments focused on this specific effect might yield more conclusive results. 
 
-\todo[inline]{fill this in, recapitulating the argument and framing about balancing of fitness effects.}
+\todo[inline, color=magenta]{fill this in, recapitulating the argument and framing about balancing of fitness effects.}
 
 \chapter{Conclusion}
 \label{chap:conclusion}
-\todo[color=red,inline]{FILL THIS IN - Synthesis of all results and how it all fits together to paint a picture of how CE works.}
+\todo[color=magenta,inline]{FILL THIS IN - Synthesis of all results and how it all fits together to paint a picture of how CE works.}
 
 \section{Limitations of Cyclic Changing Environments}
 %=CE can be a re-tread, but not as much as feared 
@@ -1557,7 +1559,7 @@ We found that, of our surveyed values, a cycle time of 1000 updates (roughly 30 
 \label{appendix:hgt_sweep}
 
 \section{Recombination Probability Sweep}
-In nature, the probabilityof horizontal gene transfer occuring varies wildly by species, environmental conditions, and mechanism of action. In order to identify an optimal probability of HGT uptake resulting in recombination, we performed aseries of experiments comparing different probabilities, coupled with a pair of basic grazing bonuses. Our initial grazing bonuses were based on the reward given for a similarly complex task - \texttt{NAND} - which only requires a single instruction, plus an \texttt{IO} instruction, to implement. \texttt{NAND} is typically rewarded with a bonus of $2^1$ to execution speed. Thus, performing HGT, which only requires a single instruction - \texttt{HGT-Uptake}, was rewarded similarly.
+In nature, the probability of horizontal gene transfer occurring varies wildly by species, environmental conditions, and mechanism of action. In order to identify an optimal probability of HGT uptake resulting in recombination, we performed a series of experiments comparing different probabilities, coupled with a pair of basic grazing bonuses. Our initial grazing bonuses were based on the reward given for a similarly complex task - \texttt{NAND} - which only requires a single instruction, plus an \texttt{IO} instruction, to implement. \texttt{NAND} is typically rewarded with a bonus of $2^1$ to execution speed. Thus, performing HGT, which only requires a single instruction - \texttt{HGT-Uptake}, was rewarded similarly.
 
 The goal was to identify a probability of recombination that would, without a grazing bonus, result in a reduced HGT uptake level as compared to with a grazing bonus. Further, we wanted the recombination probability to not be so high as to result in mutational melt-down, thus frequently killing the populations. We found that a level of 0.1 probability met these characteristics. That is, recombination probabilities of less than 0.1 had similar HGT expression rates with and without a bonus, while probabilities above 0.1 tended to have many many fewer surviving populations (Fig~\ref{fig:a2-hgt-probabilitysweep-hgtuse}).
 
@@ -1574,7 +1576,7 @@ The goal was to identify a probability of recombination that would, without a gr
 
 
 \section{Bonus Sweep}
-Similarly, in nature, the amount of nutritive benefit derived from uptaking DNA fragments from the environment is difficult to quantify. In avida, when populations are presented with instructions that provide a direct boost to execution speed, use of these instructions is strongly selected for. Populations rapidly fill their genomes with these instructions, to the exclusion of virtually all else. Thus, our goal in selecting potential bonus levels lay in finding a range of minimal value that would balance the presumably deleterious effects of the HGT uptake instruction, without completely overwhelming the balance of selective pressures we wished to apply to our experiments. As expected, and coupled with the recombination probability above, values around $2^1$ seemed to perform the best (Fig~\ref{fig:a2-hgt-bonussweep-hgtuse}). Above a value of $2^2$, there seem to be diminishing returns.
+Similarly, in nature, the amount of nutritive benefit derived from uptaking DNA fragments from the environment is difficult to quantify. In Avida, when populations are presented with instructions that provide a direct boost to execution speed, use of these instructions is strongly selected for. Populations rapidly fill their genomes with these instructions, to the exclusion of virtually all else. Thus, our goal in selecting potential bonus levels lay in finding a range of minimal value that would balance the presumably deleterious effects of the HGT uptake instruction, without completely overwhelming the balance of selective pressures we wished to apply to our experiments. As expected, and coupled with the recombination probability above, values around $2^1$ seemed to perform the best (Fig~\ref{fig:a2-hgt-bonussweep-hgtuse}). Above a value of $2^2$, there seem to be diminishing returns.
 %=[FIGURE - complex environment task discovery]
 \todo[color=green]{stats}
 \todo{caption}
@@ -1607,7 +1609,7 @@ For later experiments, in order to identify the relationship between HGT uptakes
 
 %%%%%%%% APPENDIX C
 \chapter{Changing Environments Elevate All Instruction Use Due to Repeated Bottlenecks}
-In Chapter \ref{chap:hgt-preferred}, we observe that the Die mutagen control is also elevated in the changing environments treatment. This counterintuitive effect is due to the repeated bottlenecking of the populations subjected to the harsh changing environment.\ref{fig:bottlenecks}. We observe that under increasingly harsh bottlenecks, rates of execution of the "die" instruction increase to levels comparable to what is seen in the changing environment treatments. Because not all instructions contained in an organism's genome are neccessarily executed (due to genetic flow-control structures), it is possible for any instruction to remain dormant. Thus, not all organisms with the "die" instruction in their genome will express it. Thus, the selective pressures of the environmental change may ultimately outweigh that of the die instruction if it is initially dormant in a genome that would survive a harsh environmental change and reproduce. 
+In Chapter \ref{chap:hgt-preferred}, we observe that the Die mutagen control is also elevated in the changing environments treatment. This counterintuitive effect is due to the repeated bottlenecking of the populations subjected to the harsh changing environment.\ref{fig:bottlenecks}. We observe that under increasingly harsh bottlenecks, rates of execution of the "die" instruction increase to levels comparable to what is seen in the changing environment treatments. Because not all instructions contained in an organism's genome are necessarily executed (due to genetic flow-control structures), it is possible for any instruction to remain dormant. Thus, not all organisms with the "die" instruction in their genome will express it. Thus, the selective pressures of the environmental change may ultimately outweigh that of the die instruction if it is initially dormant in a genome that would survive a harsh environmental change and reproduce. 
 
 \todo{rework figure}
 \todo[color=green]{stats}
