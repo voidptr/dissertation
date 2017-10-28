@@ -1014,7 +1014,12 @@ In natural systems, this pattern in evident in the acquisition of antibiotic res
 \section{Background}
 \todo[color=magenta,inline]{add more with some coverage of what research has already been done in this area, and where this all fits in the context}
 
-Prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment[TODO CITE]. Why should HGT mutations be different? In order to address this question, we created instructions that create different kinds of mutational effects with similar per-instruction impact to HGT. We then performed experiments with these mutagenic instructions under the same conditions as our evaluation of HGT, in static vs changing environments. We not only found that these instructions are triggered at significantly lowered rates as compared to HGT, but that the use rate correlates significantly with the amount of useful information conveyed by the mutagen. 
+In both natural and artificial systems, populations evolve mechanisms to reduce or eliminate mutation [CITE - error correction], despite evidence that higher mutation rates may be optimal. In artificial systems, prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment[TODO CITE]. However, Horizontal Gene Transfer through Natural Competence seems to be exception to this rule.  
+
+%Why should HGT mutations be different? 
+In nature, Natural Competence is a highly regulated and refined mechanism for uptaking DNA fragments from the environment[CITE CITE CITE]. Clearly, natural evolution is acting to maintain and preserve these functions, despite the risk of bad recombinations. In the previous chapter, we showed that HGT is directly selected for in harsh changing environments. Our previous results suggest that despite the neutral to slightly deleterious fitness effects of HGT, HGT use is up-regulated. What makes HGT different from other types of mutagen? Is it the fitness effect? The information content of fragments? The potential for beneficial phenotype changes? How does HGT compare to other types of mutagen in these respects? Can these differences account for the increased selection for HGT? 
+
+In order to address these question, we created instructions that create different kinds of mutational effects with similar per-instruction impact to HGT. We then performed experiments with these mutagenic instructions under the same conditions as our evaluation of HGT, in static vs changing environments. We not only found that these instructions are triggered at significantly lowered rates as compared to HGT, but that the use rate correlates significantly with the amount of useful information conveyed by the mutagen. 
 
 
 \section{Methods}
@@ -1157,13 +1162,12 @@ Further, we measured the proportion of mutations that produce beneficial phenoty
 
 
 \section{Conclusion}
-\todo[color=magenta,inline]{prose this out - Ch4 conclusion}
 %CE selects for evolvability 
 %* Because HGT is much more beneficial than other types of mutation
 %Under Stress, Natural Competence increases
+Our experiments expand on our understanding of the evolution of horizontal gene transfer, and how it relates to other types of mutations in the context of changing environments. As expected, we find that the fitness effects of different types of mutations vary significantly, and that they predict the levels of use of that mutagen. In particular, we find a strong correlation between the fraction of mutations that produce a beneficial phenotype change, and the use of that mutagen. Thus, in the context of a changing environment, where there are strong selective pressures to change your phenotype, levels of HGT are elevated, while levels of other mutagens remain low.
 
-
-
+This result matches prior research that shows that populations will tend to depress the use of mutagens, even though, in the long-term, higher mutation rates are optimal [CITE]. This result is further evidence that selection tends to act in the short term. Thus, even though certain kinds of mutagens and architectural features may promote long-term evolvability, these features are hitchhiking on short-term adaptive benefits. Thus, our research shows that even though evolvability may evolve, it is not necessarily selected for in the long-term.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1505,6 +1509,10 @@ Finally, we have shown that changing environments both directly and indirectly i
 \chapter{Conclusion}
 \label{chap:conclusion}
 \todo[color=magenta,inline]{FILL THIS IN - Synthesis of all results and how it all fits together to paint a picture of how CE works.}
+
+%% todo add intro to this text
+This result matches prior research that shows that populations will tend to depress the use of mutagens, even though, in the long-term, higher mutation rates are optimal [CITE]. This result is further evidence that selection tends to act in the short term. Thus, even though certain kinds of mutagens and architectural features may promote long-term evolvability, these features are hitchhiking on short-term adaptive benefits. Thus, our research shows that even though evolvability may evolve, it is not necessarily selected for in the long-term.  
+
 
 \section{Limitations of Cyclic Changing Environments}
 %=CE can be a re-tread, but not as much as feared 
