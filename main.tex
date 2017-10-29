@@ -1012,12 +1012,11 @@ In natural systems, this pattern in evident in the acquisition of antibiotic res
 \chapter{Horizontal Gene Transfer vs Other Types of Mutation}
 \label{chap:hgt-preferred}
 \section{Background}
-\todo[color=magenta,inline]{add more with some coverage of what research has already been done in this area, and where this all fits in the context}
 
-In both natural and artificial systems, populations evolve mechanisms to reduce or eliminate mutation [CITE - error correction], despite evidence that higher mutation rates may be optimal. In artificial systems, prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment[TODO CITE]. However, Horizontal Gene Transfer through Natural Competence seems to be exception to this rule.  
+In both natural and artificial systems, populations evolve mechanisms to reduce or eliminate mutation \todo{cite - error correction}, despite evidence that higher mutation rates may be optimal. In artificial systems, prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment\todo{[TODO CITE]}. However, Horizontal Gene Transfer through Natural Competence seems to be exception to this rule.  
 
 %Why should HGT mutations be different? 
-In nature, Natural Competence is a highly regulated and refined mechanism for uptaking DNA fragments from the environment[CITE CITE CITE]. Clearly, natural evolution is acting to maintain and preserve these functions, despite the risk of bad recombinations. In the previous chapter, we showed that HGT is directly selected for in harsh changing environments. Our previous results suggest that despite the neutral to slightly deleterious fitness effects of HGT, HGT use is up-regulated. What makes HGT different from other types of mutagen? Is it the fitness effect? The information content of fragments? The potential for beneficial phenotype changes? How does HGT compare to other types of mutagen in these respects? Can these differences account for the increased selection for HGT? 
+In nature, Natural Competence is a highly regulated and refined mechanism for uptaking DNA fragments from the environment[CITE CITE CITE]. Clearly, natural evolution is acting to maintain and preserve these functions, despite the risk of bad recombinations. In the previous chapter, we showed that HGT is directly selected for in harsh changing environments. Despite the neutral to slightly deleterious fitness effects of recombination, HGT use is up-regulated. What makes HGT different from other types of mutagen? Is it the fitness effect? The information content of fragments? The potential for beneficial phenotype changes? How does HGT compare to other types of mutagen in these respects? Can these differences account for the increased selection for HGT? 
 
 In order to address these question, we created instructions that create different kinds of mutational effects with similar per-instruction impact to HGT. We then performed experiments with these mutagenic instructions under the same conditions as our evaluation of HGT, in static vs changing environments. We not only found that these instructions are triggered at significantly lowered rates as compared to HGT, but that the use rate correlates significantly with the amount of useful information conveyed by the mutagen. 
 
@@ -1186,14 +1185,16 @@ For longer timescales, evolvability is concerned more with variability generatio
 Despite some common features, the relationship between short-term and long-term evolvability is not obvious. Architectural features and evolutionary pressures that might convey short-term evolvability may not be the same as those that confer longer-term evolvability\cite{pigliucci_is_2008}. For example, features that promote rapid adaptation to a harsh fluctuating environment might reduce fitness in constant or benign fluctuating environments as compared to that of wild-type invaders. Alternately, the adaptation to harsh fluctuating environments and the resulting bottlenecks would potentially reduce diversity to the point where large amounts of neutral novelty generation could not occur.
 
 \todo[color=magenta,inline]{ch5 - background - fill this in about the prior research done in this area}
+Prior research has shown that...
 
+In this chapter, we examine how changing environments or novel mutagens affect long-term evolutionary potential. We introduce change-evolved populations from prior experiments with changing environments, and the evolution of HGT, to an entirely new environment, where we can assess long-term variability generation in the form of new task discovery and exploration.
 
 \section{Methods}
-\todo[inline, color=magenta]{info about using Avida, but how we used existing code that matches with earlier chapters}
+% For most experiments described in this chapter, we use populations of Avida organisms that were originally evolved in other experimental treatments with changing environments. We use populations evolved in Chapter~\ref{chap:ce-adaptation} to survey long-term evolutionary potential that originate in simple changing environments with a single fluctuating task. We use populations evolved in Chapter~\ref{chap:evo-hgt}, in a more complex changing environment, with the presence of the HGT instruction, evolved both with and without a bonus. And finally, we evolve a new set of populations that originate in a complex changing environment, but without exposure to HGT. 
 
 \subsection{Experimental Design}
 %=design for experimental environment (CCE vs SCE, and short vs long)
-In order to examine the dynamics and mechanisms of evolving populations in changing environments, we performed three sets of experiments. For each set of experiments, we take populations evolved in conditions where short-term evolvability pressures dominate, and we introduce the resulting populations to a completely new environment, with a new set of rewarded bitwise tasks to perform: Logic-77. These new tasks use three bitwise inputs rather than two, and are each rewarded with a constant 1.2-fold bonus to execution. This reward structure provides a mild selective pressure to evolve these task, but the benefits to performing them do not overwhelm the existing selective pressure to continue performing the tasks rewarded by the original changing environment. 
+In order to examine the long-term dynamics and mechanisms of evolving populations in changing environments, we performed three sets of experiments. For each set of experiments, we take populations evolved in conditions where short-term evolvability pressures dominate, and we introduce the resulting populations to a completely new environment, with a new set of rewarded bitwise tasks to perform: Logic-77. These new tasks use three bitwise inputs rather than two, and are each rewarded with a constant 1.2-fold bonus to execution. This reward structure provides a mild selective pressure to evolve these task, but the benefits to performing them do not overwhelm the existing selective pressure to continue performing the tasks rewarded by the original changing or static environment. 
 
 The first set of experiments examines the dynamics of organisms that originally evolved in simple changing environments. These are a continuation of the experiments described in Chapter~\ref{chap:ce-adaptation}. The second set of experiments takes populations evolved in a more complex changing environment where we evolve the organisms to switch back and forth between two halves of the Logic-9 task set. For the final set of experiments, we take populations that evolved in a complex changing environment, similar to the second set, but with the addition of the HGT mutagen. These are a continuation of experiments described in Chapter~\ref{chap:evo-hgt}.
 
@@ -1502,17 +1503,29 @@ Again, consistent with earlier results, populations with HGT follow the same pat
 \section{Conclusion}
 
 %=CE promotes task discovery
-Finally, we have shown that changing environments both directly and indirectly influence long-term evolvability by directly driving exploration across the fitness landscape, and also by creating genetic architectures that increase the rate of new task discovery in novel environments. We hypothesize that these effects are driven by the presence of the accumulation of pseudogene-like structures that provide cryptic functionality. In our experiments, the increased rate of task discovery is significant, though relatively small, but we expect that future experiments focused on this specific effect might yield more conclusive results. 
+Our experiments show that changing environments both directly and indirectly influence long-term evolvability by directly driving exploration across the fitness landscape, and also by creating genetic architectures that increase the rate of new task discovery in novel environments. We hypothesize that these effects are driven by the presence of the accumulated pseudogene-like structures that provide cryptic functionality. In our experiments, the increased rate of task discovery is significant, though relatively small, but we expect that future experiments focused on this specific effect might yield more conclusive results. 
 
 \todo[inline, color=magenta]{fill this in, recapitulating the argument and framing about balancing of fitness effects.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 6 - CONCLUSION %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \chapter{Conclusion}
 \label{chap:conclusion}
 \todo[color=magenta,inline]{FILL THIS IN - Synthesis of all results and how it all fits together to paint a picture of how CE works.}
 
-%% todo add intro to this text
-This result matches prior research that shows that populations will tend to depress the use of mutagens, even though, in the long-term, higher mutation rates are optimal [CITE]. This result is further evidence that selection tends to act in the short term. Thus, even though certain kinds of mutagens and architectural features may promote long-term evolvability, these features are hitchhiking on short-term adaptive benefits. Thus, our research shows that even though evolvability may evolve, it is not necessarily selected for in the long-term.  
+%=thesis sentence
+%=In chapter 2
+%=In chapter 3
+%=In chapter 4...
+This result matches prior research that shows that populations will tend to depress the use of mutagens, even though, in the long-term, higher mutation rates are optimal [CITE].  
 
+%=In chapter 5... 
+This result is further evidence that selection tends to act in the short term. Thus, even though certain kinds of mutagens and architectural features may promote long-term evolvability, these features are hitchhiking on short-term adaptive benefits. Thus, our research shows that even though evolvability may evolve, it is not necessarily selected for in the long-term. 
 
 \section{Limitations of Cyclic Changing Environments}
 %=CE can be a re-tread, but not as much as feared 
