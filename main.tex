@@ -788,17 +788,34 @@ than cyclic changing environments, even if, on average, the amount of time spent
 %=HGT umbrella term
 Horizontal Gene Transfer (HGT) is a broad term for the non-reproductive transfer of genetic material between organisms. Organisms may uptake genes directly from the environment (natural competence \cite{chen_dna_2004}), or else receive them via bacterial conjugation\cite{lederberg_gene_1946} or viral infection (transduction \cite{zinder_genetic_1952,lennox_transduction_1955}). The integrated fragments may either be decomposed inside the recipient cell for their nutrients, or integrated into their genomes. 
 
+%MJW: Being technical, just because this is a dissertation chapter:  The process by which organisms take up DNA directly is technically transformation; competence is the state of a cell capable of undergoing transformation.  You may or may not wish to mention gene transfer agents, which are essentially domesticated viruses encoded by certain types of bacteria -- their origins are viral, but they're now incorporated into the bacterial genome, and no longer capable of switching back to a viral lifestyle.
+
 %=HGT profound impact
 HGT has had a profound impact on the evolutionary history of both prokaryotes and eukaryotes, with one study showing approximately 81\% of genes in the sample "being involved in HGT at some point in their history" \cite{dagan_modular_2008}. For example, HGT appears to be the primary mechanism by which antibiotic resistance is conferred \cite{davies_origins_1997,martinez_antibiotics_2008} since most antibiotics are sourced from the environment, and the organisms that develop them are themselves resistant to the compounds.
 However, the origins and evolution of HGT mechanisms remain unclear. 
 
 \subsection{Origins of HGT in nature}
 \todo[inline, color=magenta]{More about how this question is still open}
+% MJW: In line with your todo, you can hammer here the same thing I mentioned in your conclusions for this chapter -- it's really hard, and possibly even impossible, to test these things in non-digital systems.
+
 %=natural competence in prokaryotes and why HGT happens
-In prokaryotes, “natural competence” is an HGT mechanism by which organisms spontaneously uptake the DNA of dead organisms in the environment. These organisms benefit in several ways. 1) DNA is composed of a 5-carbon sugar, a phosphate, and nitrogen bases, materials that are useful for DNA synthesis and repair. 2) The organisms may also benefit from up-taking gene-fragments that confer new adaptive functionality into the genome \cite{vos_why_2009}. However, it is unclear whether the origins of uptake functions were developed solely in order to obtain nutrients, or if the acquisition of new functionality was selected for as well. While grazing for gene-fragments as nutrients certainly conveys an advantage, the possibility of integrating these gene fragments is likely to be disruptive to organisms more often than it is beneficial \cite{redfield_evolution_1997}.
+In prokaryotes, “natural competence” is an HGT mechanism by which organisms spontaneously uptake the DNA of dead organisms in the environment. These organisms benefit in several ways. 1) DNA is composed of a 5-carbon sugar, a phosphate, and nitrogenous bases, materials that are useful for DNA synthesis and repair. 2) The organisms may also benefit from up-taking
+% MJW: You are inconsistent with hyphenation in uptake and up-taking.  I don't think you should have a hyphen here.
+gene fragments that confer new adaptive functionality into the genome \cite{vos_why_2009}. However, it is unclear whether the origins of uptake functions were developed solely in order to obtain nutrients, or if the acquisition of new functionality was selected for as well. While grazing for gene-fragments as nutrients certainly conveys an advantage, the possibility of integrating these gene fragments is likely to be disruptive to organisms more often than it is beneficial \cite{redfield_evolution_1997}.
+
+% MJW: I suggest expanding on this last sentence: why is it that integrating these fragments is likely to be disruptive more often than it is beneficial?  Also, how do either of those probabilities compare to it having no effect?
 
 %=statement of hypotheses - grazing CE elevates HGT
-In order to test this hypothesis, and address the question of whether there are circumstances where gene-fragment integration may be beneficial, we subjected populations of evolving digital organisms to a harsh changing environment, where there is a strong pressure to quickly switch your phenotype. We supplied organisms with an instruction that performs Horizontal Gene Transfer. That is, the instruction triggers uptake of a genetic fragment from the environment, and there is a chance that, rather than metabolizing the fragment for a bonus to execution speed, the fragment will instead be homologously recombined into the organism's genome. We show that in harsh changing environments, without any kind of bonus, organisms increase use of HGT as compared to execution in a static environment.
+In order to test this hypothesis
+% MJW: Identify what hypothesis you are testing.
+, and address the question of whether there are circumstances where gene-fragment 
+% MJW: I don't think that gene fragment is hyphenated
+integration may be beneficial, we subjected populations of evolving digital organisms to a harsh changing environment,
+% MJW: For the dissertation, this is probably fine, since you have a chapter about changing environments immediately before this one.  For a paper, we'll need to define what we mean by a harsh changing environment -- it's pretty standard nomenclature in the field of people who look at changing environments, but not all readers will know it.
+where there is a strong pressure to quickly switch phenotype. We supplied organisms with an instruction that performs Horizontal Gene Transfer (HGT).
+% MJW: I added the "(HGT)" because this is the first time you use the term.  However, I don't know if you'd rather include the specific command names, typeset in the way that we typically do for instructions.  But I think you either need an "(HGT)" or you need to the underline the appropriate captial letters, since you use the acronym in the last sentence of the paragraph.
+% MJW: UPDATE: I now see an HGT before this, though used without defining the acronym.
+That is, the instruction triggers uptake of a genetic fragment from the environment, and there is a chance that, rather than metabolizing the fragment for a bonus to execution speed, the fragment will instead be homologously recombined into the organism's genome. We show that in harsh changing environments, without any kind of bonus, organisms increase use of HGT as compared to execution in a static environment.
 
 
 \section{Methods}
@@ -810,12 +827,18 @@ In this chapter, we use Avida to test hypotheses about the origins of Horizontal
 In Avida, HGT is triggered by the \texttt{HGT-Uptake} instruction that, when executed, attempts to uptake a genome fragment from the individual cell reservoirs in the environment. As organisms die in Avida runs with HGT enabled, fragments of their genomes will accumulate in reservoirs. The fragments in the reservoirs will deteriorate over time, with older genomes disappearing from the reservoir as new ones enter. Fragments for uptake will be randomly selected from the reservoir.  
 
 \todo[inline]{look for and hunt down passive voice}
+% MJW: I'll point out that the entire previous paragraph is passive voice. Because it's you, Rose, I offer that often the easiest way to test whether a sentence is passive voice is if you can append "by zombies" to the end of it.  "Fragments for uptake will be randomly selected from the reservoir...by zombies."  It's slightly tortured for a few of the sentences, but it's something that is likely to stick with you.
 %=HGT uptake may recombine or be metabolized
-Upon uptake, there is a configurable probability that the fragment is not metabolized; instead, homologous recombination may occur (Figure \ref{fig:hgtprocess}). We performed experiments to derive bonus levels, fragment sizes, and recombination probabilities to arrive at a maximum use level for the HGT instruction. See Appendix~\ref{appendix:hgt_sweep} for more details. 
+Upon uptake, there is a configurable probability that the fragment is not metabolized;
+% MJW: This probability doesn't come into being upon uptake.  Maybe something more like "We have implemented a configurable probability that, when a fragment is uptaken (or, if you prefer, taken up), it is not metabolized;" (Since the rest of this chapter, at least, is being written in first person plural.  In reality, *you* implemented this, but it would be jarring to switch repeatedly between "I" and "we" within a chapter)
+instead, homologous recombination may occur (Figure \ref{fig:hgtprocess}). We performed experiments to derive bonus levels, fragment sizes, and recombination probabilities to arrive at a maximum use level for the HGT instruction. See Appendix~\ref{appendix:hgt_sweep} for more details. 
 
 %=HGT and homologous recombination
 \todo{Citation TODOs}
 For all experiments described in this chapter, we used three \footnote{This value is derived from a calculation associating the average size of one avida instruction to about 100 nucleotides [TODO CITE]. In natural systems, for homologous recombination to occur, an average of 300 nucleotides must match on both ends of the fragment[TODO CITE]} instructions as the minimal homologous match length, and a 10\% recombination probability.
+
+% MJW: Beyond merely citing something about number of nucleotides needed, I think it's worth explaining how we therefore chose 3 instructions in Avida.  26^3 is ~ 4^7, so if you're talking about an average of 300 nucleotides matching on each end, that would be way more restrictive than what we're doing.  A recent citation you can use is Optimal Cloning of PCR Fragments by Homologous Recombination in Escherichia coli by Ana Paula Jacobus and Jefferson Gross in PLOS ONE.  https://doi.org/10.1371/journal.pone.0119221  That one mentions in its abstract how 20bp is enough to assume identity.
+
 
 \begin{figure}[h!]
 \begin{center}
@@ -829,18 +852,22 @@ For all experiments described in this chapter, we used three \footnote{This valu
 %=environmental rewards
 All experiments in this chapter compare outcomes between static environments, and harsh changing environments. In a similar manner to the experiments listed in the previous chapter (Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}), task rewards in the harsh changing environment switch from a positive to a negative reward. For the HGT experiments, we did not establish a backbone task that was always rewarded. Rather, we divided the Logic 9 environment into two halves, and alternated positive and negative rewards for each task in each set. Thus, for the first phase of the cycle, the NOT, AND, OR, NOR, and EQU instructions were punished at $-2^1$, $-2^2$, $-2^3$, $-2^4$, and $-2^5$ respectively, while NAND, ORN, ANDN, and XOR were rewarded at $2^1$, $2^2$, $2^3$, and $2^4$. In the second phase of the cycle, these rewards flip, such that NOT, AND, OR, NOR, and EQU are rewarded, whereas NAND, ORN, ANDN, and XOR are punished.
 
+% MJW: I suggest explaining how you chose to divide the tasks; ie, there are 4 pairs of tasks of equivalent complexity, and for each pair you arbitrarily assigned one task to set 1 and the other task to set 2, and then EQU had to go somewhere.  Also, you can switch "were/are punished" with "we punished" and the like to remove passive voice.
+
 %=cycle length
 Each complete cycle lasts 1000 updates, and the whole experimental run continues for 200,000 updates.
 
 %=static environment
 The static environment rewards executions of all the Logic 9 tasks at their default levels, with no reward switching.
 
-
+% MJW: Why are the cycle length, static environment, and last sentence of the preceding paragraph in present tense, when the chapter in general is in past tense?
 
 \subsection{Experimental Design}
 %\subsubsection{Evolution of HGT - Alternatives to the Grazing Hypothesis}
 %=we subject populations for testing the grazing hypothesis
 For the treatments corresponding to the first set of hypotheses on the origins of horizontal gene transfer, we subjected four populations of evolving digital organisms with HGT to harsh changing environments (Table~\ref{hgt-treatments-h}), plus a fifth non-HGT control. The treatments correspond to the combination of two factors: static vs changing environment, and grazing bonus vs no bonus.
+
+% MJW: You're switching between past and present tense again.
 
 %=[TABLE - experimental treatments part 1]
 
@@ -892,6 +919,8 @@ HGT & organism death \\\hline
 \section{Results and Discussion}
 Our results show that both an uptake bonus and changing environment promote the use of HGT, and that the increases in uptake are largely additive. Further, we found that while on average, HGT mutations are neutral, that the majority of the benefits conveyed by HGT in changing environments come from fragments originating in periods of the cycle where the environment matched the current environment. This result indicates that it is the information content of the fragment that is valuable. Finally, we find that providing only fragments from the matching cycle elevates uptake rates significantly. 
 
+% MJW: This paragraph is essentially a bunch of numerical claims with no stats.  I'll be on the lookout for stats in the coming results -- I didn't see a statistical methods section in the methods -- but if they don't exist we need them; if they do, we probably want some sort of "(see below)".
+
 %\subsection{Alternatives to the Grazing Hypothesis}
 \subsection{Changing environments elevate HGT use}
 %Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
@@ -906,11 +935,14 @@ We measured HGT fragment uptake in four conditions (see Table~\ref{hgt-treatment
 %=measured fragment uptake wrl to bonus
 In order to investigate the relationship between the effects granted by a nutritive bonus and the benefit of fragment recombination in a changing environment, we selected a bonus level that increased fragment uptake in a static environment to a level comparable to the increase seen in changing environments without a bonus. We then combined these factors, giving a bonus, plus using a changing environment. We saw that the resulting uptake level increases largely additively. This indicates that the benefits granted by a grazing bonus are largely independent of the benefits conveyed by integrating new genetic material. 
 
+% MJW: The preceding paragraph reads like methods, no?
+
 %We thus conclude that not only is HGT evolution possible absent a grazing bonus, but that should a changing environment occur, that there are additional incentives to perform HGT.
 %=conclusion sentence - hgt is promoted by HGT
 Thus, not only is HGT evolution possible absent a bonus, the benefit stacks with that of a grazing bonus, proving a more likely scenario by which HGT might evolve. %bleh
 
 \todo[color=green]{stats}
+% MJW: Ding ding ding!  :)
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/hgt_inst_execution.png}
@@ -927,12 +959,16 @@ Thus, not only is HGT evolution possible absent a bonus, the benefit stacks with
 
 %=understanding why HGT is used
 In order to understand the basis of the beneficial nature of HGT in changing environments, we performed a series of treatments where we replaced the fragments in the cell reservoirs with fragments that originated at the end of the matching phase of the cycle, the off-phase of the cycle, and from both phases, plus a non-replaced control. (Figures~\ref{fig:fitness_effect_heatmap}, \ref{fig:hgt_use_by_cycle_phase_source}, \ref{fig:fitness_effect_by_cycle_phase_source}, \ref{fig:beneficial_fraction_by_cycle_phase_source})
-We then measured the levels of HGT use, the fitness effect of HGT mutations, as well as the fraction of beneficial phenotype-switching mutations. In the both-phase and non-replaced control, the mean fitness effect was largely neutral, while the on-phase fragments had a significantly positive mean fitness benefit, and the off-phase fragments were largely negative. Further, the control, both-phase and on-phase had a larger fraction of beneficial phenotype-switching mutants, whereas the off-phase treatment had few to no beneficial phenotype switches. This indicates that it is not only genetic disruption that is beneficial, but that the majority of the benefit of HGT derives from uptaking and integrating useful fragments of information from time-periods where organisms were already adapted to the environment, thus bypassing the need to evolve a new phenotype from scratch.
+We then measured the levels of HGT use, the fitness effect of HGT mutations, as well as the fraction of beneficial phenotype-switching mutations. In the both-phase and non-replaced control, the mean fitness effect was largely neutral, while the on-phase fragments had a significantly positive mean fitness benefit, and the off-phase fragments were largely negative. Further, the control, both-phase and on-phase had a larger fraction of beneficial phenotype-switching mutants
+% MJW: compared to what?  Than other treatments?  Than non-beneficial phenotype switches?  Than mutations which don't switch phenotypes? I don't actually know what comparison you're making here.
+, whereas the off-phase treatment had few to no beneficial phenotype switches. This indicates that it is not only genetic disruption that is beneficial, but that the majority of the benefit of HGT derives from uptaking and integrating useful fragments of information from time-periods where organisms were already adapted to the environment, thus bypassing the need to evolve a new phenotype from scratch.
 
 \subsubsection{Expected Fitness Effects}
 
 %=measured fitness effect in normal HGT
 We measured the average fitness effects of fragments in a randomly selected replicate of the non-replaced HGT control treatment at the end of the last environmental cycle, and generated a distribution of fragments sorted the fragments by age and fitness-effect (Figures~\ref{fig:fitness_effect_heatmap}). We can see a clear pattern of more beneficial fitness effects from fragments of organisms originating in the matching cycle phase. 
+
+% MJW: Have we done this for only one replicate?
 
 \todo[color=green]{stats}
 \begin{figure}[h!]
@@ -944,7 +980,9 @@ We measured the average fitness effects of fragments in a randomly selected repl
 \end{figure}
 
 %=manipuated reservoir to match or not match phase - measured effects 
-In order to quantify this result, we performed experiments where we replaced the fragments in the reservoir to contain only fragments originating in the matching phase, the off-phase, and mixture of both phases. We measured the mean expected fitness effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycle_phase_source}). We found that HGT mutations are, on average, neutral in both the non-replaced control and the replaced-"both" treatment. The average fitness effect in the "on-phase" treatment was mildly beneficial, while in the "off-phase" treatment, the effect was strongly deleterious. 
+In order to quantify this result, we performed experiments where we replaced the fragments in the reservoir to contain only fragments originating in the matching phase, the off-phase, and mixture of both phases. We measured the mean expected fitness 
+% MJW: Why "expected" fitness?
+effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycle_phase_source}). We found that HGT mutations are, on average, neutral in both the non-replaced control and the replaced-"both" treatment. The average fitness effect in the "on-phase" treatment was mildly beneficial, while in the "off-phase" treatment, the effect was strongly deleterious. 
 
 \todo[color=green]{stats}
 \begin{figure}[h!]
@@ -956,7 +994,11 @@ In order to quantify this result, we performed experiments where we replaced the
 \end{figure}
 
 %=measured phenotypic change
-In our environments, the largest fitness benefits should occur when a mutation leads to the acquisition of a new rewarded task, or the loss of a punished task. Mutations that convey phenotypic change should have the largest impact. We identified the phenotypic effect of each fragment by counting the number of times that fragments produced a beneficial phenotype change, vs all HGT mutations (Figure~\ref{fig:beneficial_fraction_by_cycle_phase_source}). We see that a significantly larger proportion of fragments in the "on-phase" treatment produce beneficial phenotype changes, as compared to fewer in the normal HGT and "both" treatments, and virtually zero in the "off-cycle" treatment. 
+In our environments, the largest fitness benefits should occur when a mutation leads to the acquisition of a new rewarded task, or the loss of a punished task. Mutations that convey phenotypic change should have the largest impact. 
+% MJW: Slightly redundant; you just specified which pheotypic changes have the largest impacts, and then said that things that result in phenotypic changes have the largest impacts.  If you change the order of these sentences, you can put the "In our environments" on what is currently the second sentence, and then lead in with "Specifically, " for what is currently the first sentence.
+We identified 
+% MJW: Isn't this quantification, not identification?
+the phenotypic effect of each fragment by counting the number of times that fragments produced a beneficial phenotype change, vs all HGT mutations (Figure~\ref{fig:beneficial_fraction_by_cycle_phase_source}). We see that a significantly larger proportion of fragments in the "on-phase" treatment produce beneficial phenotype changes, as compared to fewer in the normal HGT and "both" treatments, and virtually zero in the "off-cycle" treatment. 
 
 \todo[color=green]{stats}
 \begin{figure}[h!]
@@ -971,7 +1013,9 @@ In our environments, the largest fitness benefits should occur when a mutation l
 These results suggests that any direct benefit of using HGT derives from uptaking fragments that match the cycle phase of the environment of the affected organism, and thus likely contains information that relates to that environment. %otherwise, it wouldn't matter where the fragment came from
 
 %=see uptick in use when fragments match phase only.
-Further, if fragments from the matching phase are indeed beneficial, you would expect to see an increase in HGT use in those treatments, as compared to those where the fitness effects are mixed or deleterious. And indeed (Figure~\ref{fig:hgt_use_by_cycle_phase_source}), we do observe just such an increase. Thus we can conclude that HGT in changing environments is most beneficial when the fragments in the environment contain information that would be beneficial in that environment. However, even when no such information is available, HGT use is not significantly depressed as compared to the control treatment. This suggests that despite the lack of exclusively match environmental information, that fragments could still provide some benefit. 
+Further, if fragments from the matching phase are indeed beneficial, we would expect to see an increase in HGT use in those treatments, as compared to those where the fitness effects are mixed or deleterious. And indeed (Figure~\ref{fig:hgt_use_by_cycle_phase_source}), we do observe just such an increase. Thus we can conclude that HGT in 
+% MJW: I suggest adding the word "our" here; it's hard to conclude that this is a universal from studying one system.
+changing environments is most beneficial when the fragments in the environment contain information that would be beneficial in that environment. However, even when no such information is available, HGT use is not significantly depressed as compared to the control treatment. This suggests that despite the lack of exclusively match environmental information, that fragments could still provide some benefit. 
 
 \todo[color=green]{stats}
 \begin{figure}[h!]
@@ -1000,9 +1044,13 @@ Further, if fragments from the matching phase are indeed beneficial, you would e
 % * Avida has no such mechanism, so lack of fidelity does not account for an increase in HGT use. Instead, HGT can only increase due to selection. 
 Our experiments confirm our expectations about the evolution of horizontal gene transfer, and match what we would expect to see in nature. First, we find that grazing bonuses, such as those conveyed by the uptake of nutrient-rich DNA fragments in natural systems, cause an elevation of use of the horizontal gene transfer instruction, regardless of the potential risk of recombining uptaken gene fragments. 
 
-Further, when there is direct selection for phenotypic change, - such as in a changing environment - we observe an increase in the use of the HGT instruction, even when no grazing bonus is offered. This indicates that it is the possibility of recombination itself that is being selected for. Beyond this, we find that it is not only the fact of the recombination that is beneficial, but the information contained in the fragment. We found that not only is most of the benefit conveyed by HGT derived from fragments that match the current environment, but that when we filter so that only those fragments are available, that use of the HGT instruction increases even further. 
+Further, when there is direct selection for phenotypic change - such as in a changing environment - we observe an increase in the use of the HGT instruction, even when no grazing bonus is offered. This indicates that the possibility of recombination itself is being selected for. Beyond this, we find that it is not only the fact of the recombination that is beneficial, but the information contained in the fragment. We found that not only 
+% MJW: "not only" is getting a bit repetitive.  
+is most of the benefit conveyed by HGT derived from fragments that match the current environment, but that when we filter so that only those fragments are available, that use of the HGT instruction increases even further. 
 
 In natural systems, this pattern in evident in the acquisition of antibiotic resistance in bacteria, where resistance is acquired by the spread of resistance genes via horizontal gene transfer. Therefore, our results provide a key insight into how horizontal gene transfer mechanisms could be selected for, and evolve in natural systems.
+
+% MJW: I suggest explicitly making what probably seems like a really obvious point: Digital systems like Avida let us test things -- like the benefits and consequences of certain types of mutations being allowed -- in ways that are essentially impossible in organic systems.  This is something that, to a first approximation, we *can't* study in a wet system -- we can't create otherwise-identical systems in which one has HGT as a possibility and the other doesn't.  If we want experimental results to test theoretical predictions, digital systems are arguably the best way to do this -- any wetlab system would involve other differences between the environments too.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1013,40 +1061,70 @@ In natural systems, this pattern in evident in the acquisition of antibiotic res
 \label{chap:hgt-preferred}
 \section{Background}
 
-In both natural and artificial systems, populations evolve mechanisms to reduce or eliminate mutation \todo{cite - error correction}, despite evidence that higher mutation rates may be optimal. In artificial systems, prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment\todo{[TODO CITE]}. However, Horizontal Gene Transfer through Natural Competence seems to be exception to this rule.  
+In both natural and artificial systems, populations evolve mechanisms to reduce or eliminate mutation \todo{cite - error correction}, despite evidence that higher mutation rates may be optimal.
+% MJW: Possible citations: Jeff Clune's Avida work on reduction in mutation rate; Wielgoss et al 2013 PNAS paper that shows two independent clades in one of the LTEE populations that reduce the mutation rate in the hypermutator background.
+In artificial systems, prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment\todo{[TODO CITE]}. However, Horizontal Gene Transfer through Natural Competence seems to be exception to this rule.  
+% MJW: I don't think natural competence is capitalized, either here or in the next sentence.
 
 %Why should HGT mutations be different? 
-In nature, Natural Competence is a highly regulated and refined mechanism for uptaking DNA fragments from the environment[CITE CITE CITE]. Clearly, natural evolution is acting to maintain and preserve these functions, despite the risk of bad recombinations. In the previous chapter, we showed that HGT is directly selected for in harsh changing environments. Despite the neutral to slightly deleterious fitness effects of recombination, HGT use is up-regulated. What makes HGT different from other types of mutagen? Is it the fitness effect? The information content of fragments? The potential for beneficial phenotype changes? How does HGT compare to other types of mutagen in these respects? Can these differences account for the increased selection for HGT? 
+In nature, Natural Competence is a highly regulated and refined mechanism for uptaking DNA fragments from the environment[CITE CITE CITE]. 
+% MJW: Here are the DOIs for some citations: https://doi.org/10.1016/0168-9525(96)10014-7 ,  https://doi.org/10.1111/j.1574-6976.2012.00353.x , and also a 2009 J of Bacteriology paper titled A Novel Pheromone Quorum-Sensing System Controls the Development of Natural Competence in Streptococcus thermophilus and Streptococcus salivarius
+Clearly, natural evolution
+% MJW: Why use natural as an adjective here?
+is acting to maintain and preserve these functions, despite the risk of bad recombinations. In the previous chapter, we showed that HGT is directly selected for in harsh changing environments. Despite the neutral to slightly deleterious fitness effects of recombination, HGT use is up-regulated.
+% MJW: I don't think there is a hyphen here.
+What makes HGT different from other types of mutagen?
+% MJW: Pretty sure you mean mutation.
+Is it the fitness effect? The information content of fragments? The potential for beneficial phenotype changes? 
+% MJW: Maybe probability instead of potential?  I mean, pretty much any mutation has the *potential* to have a beneficial phenotypic change...
+How does HGT compare to other types of mutagen in these respects?
+% MJW: I think you mean mutation here too.
+Can these differences account for the increased selection for HGT? 
 
-In order to address these question, we created instructions that create different kinds of mutational effects with similar per-instruction impact to HGT. We then performed experiments with these mutagenic instructions under the same conditions as our evaluation of HGT, in static vs changing environments. We not only found that these instructions are triggered at significantly lowered rates as compared to HGT, but that the use rate correlates significantly with the amount of useful information conveyed by the mutagen. 
+In order to address these question, we created instructions that create different kinds of mutational effects with similar per-instruction impact to HGT. We then performed experiments with these mutagenic instructions under the same conditions as our evaluation of HGT, in static vs. changing environments. We found that not only are these instructions are triggered at significantly lowered rates as compared to HGT, but that the use rate correlates significantly with the amount of useful information conveyed by the mutagen. 
 
 
 \section{Methods}
 In this chapter, we use Avida to compare mutational effects of HGT to other types of mutations. As in the previous chapter, HGT is triggered by the \texttt{HGT-Uptake} instruction, and fragments are uptaken from reservoirs in the environment. 
 
-All experiments in this chapter compare outcomes between static environments, and harsh changing environments. Similarly to the experiments listed in the previous chapter, task rewards in the harsh changing environment switch from a positive to a negative reward between the divided set of tasks in the Logic 9 environment. Please refer to Table~\ref{hgt-treatments-h} for more details. Each complete cycle lasts 1000 updates, and the whole experimental run continues for 200,000 updates. Also as in the previous chapter, the static environment rewards executions of all the Logic 9 tasks at their default levels, with no reward switching.
+All experiments in this chapter compare outcomes between static environments and harsh changing environments. Similarly to the experiments in the previous chapter, task rewards in the harsh changing environment switch from a positive to a negative reward between the divided set of tasks in the Logic 9 environment. Please refer to Table~\ref{hgt-treatments-h} for more details. Each complete cycle lasts 1000 updates, and the whole experimental run continues for 200,000 updates.
+% MJW: I think if you use the comma for 200,000, you probably need it for 1,000 too.
+Also as in the previous chapter, the static environment rewards executions of all the Logic 9 tasks at their default levels, with no reward switching.
+% MJW: I think in most Avida work, Logic-9 is hyphenated
 
 
 \subsection{Experimental Design}
 
 \subsubsection{Alternative Mutagens}
+% MJW: I think this paragraph is mutations, not mutagens, again.
 
 In order to perform experiments comparing HGT to other types of mutagens, we modified the functioning of the HGT instruction to perform a new set of mutagenic functions which should have the same raw, per-instruction effect as the normal HGT instruction. All mutagens have the same 10\% execution probability and viable recombination site requirements as the default HGT instruction.
 
 \begin{itemize}
-	\item \textbf{HGT (Intact Fragment)}: The default HGT operation. A fragment is uptaken from the environment. There is a 10\% probability that the fragment is recombined into the organism's executing genome. The recombination occurs homologously - that is, three instructions at the beginning and end of the fragment must match exactly with locations on the genome. The first viable match is used. If no match is found, the recombination fails. If recombination succeeds, it replaces the content between the selected beginning and end match sites. This may result in the genome growing or shrinking, depending on the distance between the matches, and the length of the fragment.
+	\item \textbf{HGT (Intact Fragment)}: The default HGT operation. A fragment is uptaken from the environment. There is a 10\% probability that the fragment is recombined into the organism's executing genome. The recombination occurs homologously - that is, three instructions at the beginning and end of the fragment must match exactly with locations on the genome. The first viable match is used.
+% MJW: What, exactly, does this mean?  Do you start from a random place in the genome and find the first match?  Do you always start at position 1 (or 0, I suppose) and find the first match, which would bias you towards recombining earlier in the genome?  Can the matching three bases span across the first and last instructions?  Also: you probably want "valid", not "viable", since we use viable to mean something specific in Avida.  This applies to several of the other items in this list too.
+If no match is found, the recombination fails. If recombination succeeds, it replaces the content between the selected beginning and end match sites. This may result in the genome growing or shrinking, depending on the distance between the matches, and the length of the fragment.
+% MJW: Likewise here.  When searching for a match for the end of the fragment, do you always start from, say, exactly where the front edge perfect match stops?  Is there some formula that determines the first point at which you search for something? Do you assign all of the sites in the host genome a number, randomly permute that list of numbers, and then try each of them in turn as the starting point for a possible perfect match?
 	
-	\item \textbf{HGT Shuffle}: A fragment is uptaken from the environment, and a viable recombination site is found. Prior to recombination, the fragment is shuffled, and inserted at the selected site.
+	\item \textbf{HGT Shuffle}: A fragment is uptaken from the environment, and a viable recombination site is found.
+% MJW: I assume the same way as in the base?  Probably best to just say that.  Repeat this comment for the rest of the entries.
+Prior to recombination, the fragment is shuffled, and inserted at the selected site.
+% MJW: I suggest being more explicit about what you mean by shuffled.  Even if it's just "such that the inserted fragment has the exact same instructions as the originally chosen fragment, but the order of those instructions has been randomized".  Except that that, like this existing bit, is passive voice.
 
 	\item \textbf{HGT Random}: A fragment is uptaken from the environment, and a viable recombination site is found. Prior to recombination, the fragment is entirely replaced with an equal number of randomly selected instructions, and inserted at the selected site.
+    % MJW: Passive
 
 	\item \textbf{Mutation Event - Sampled}: A fragment is uptaken from the environment, and a viable recombination site is found. Rather than recombine, a number of point mutations are applied, matching the number of instructions in the fragment. The mutations applied are sampled from the selected fragment. This mutagen is analogous to the the \textbf{HGT Shuffle} mutagen, except that instead of having a shuffled fragment be applied in a single location, the instructions from the fragment are sampled and applied randomly throughout the genome.
+    % MJW: Sampled with no modifiers generally implies "with replacement". So if, say, the fragment were xgds, one possible result would be 4 new mutations in the genome: x, x, d, s (no g).  This may be what you did, but I want to be sure that it is.
 
 	\item \textbf{Mutation Event - Random}: A fragment is uptaken from the environment, and a viable recombination site is found. Rather than recombine, a number of random point mutations are applied, matching the number of instructions in the fragment. This mutagen is analogous to the \textbf{HGT Random} mutagen, except that, again, its effects are applied randomly throughout the genome.
+    % MJW: I think these are mutations again, not mutagens.
 
 	\item \textbf{Mutation Rate Increase}: A fragment is uptaken from the environment, and a viable recombination site is found. Rather than recombine, the point-mutation rate for the organism is increased such that it will experience an additional number of point mutations matching the number of instructions in the uptaken fragment.
+    % MJW: Is it that the it will experience this number of mutations, or that the expected number of mutations will be equal to the fragment size?
 
 	\item \textbf{Die}: A fragment is uptaken from the environment, and a viable recombination site is found. Rather than recombine, the organism dies.	
+    % MJW: Why find a valid recombination site, if you're just going to kill it?  Is it that if it fails to find a valid site, this doesn't kill the organism?
 \end{itemize}	
 
 \subsubsection{Comparing HGT to Other Mutation Types}
@@ -1062,7 +1140,9 @@ For the experiments comparing the mutational effects of different types of mutat
 
 \begin{tabular}{|c||c|c|}
 \hline
-\thead{Treatment} & \thead{Environment} & \thead{Mutagen} \\\hhline{|=|=|=|}
+\thead{Treatment} & \thead{Environment} & \thead{Mutagen} 
+% MJW: I think these are mutations again.
+\\\hhline{|=|=|=|}
 HGT & Static & \multirow{2}{*}{ HGT } \\\cline{1-2}
 HGT CE & Changing & \\\hline
 HGT-Shuffle & Static & \multirow{2}{*}{ \makecell{HGT-Shuffle} } \\\cline{1-2}
@@ -1089,6 +1169,8 @@ Die CE & Changing & \\\hline
 \section{Results and Discussion}
 Our research shows that only mutations containing useful information are elevated in response to changing environments. Intact-fragment HGT is used most, with shuffled-fragment used less, and the other, non information-bearing mutagen types used at the lowest levels.  Further, we find a positive correlation between expected fitness and mutagen-use. That is, mutagens that have higher expected fitness effects are used more. Finally, we see a strong positive correlation between the fraction of mutations from a mutagen that provide a beneficial phenotype-altering change, and the use of that mutagen.
 
+% MJW: I still think these are mutations, not mutagens.
+
 \subsection{Other mutation types are not elevated in response to HGT}
 % Measured use of mutagen instruction in static and changing environments
 % * Die instruction (control)
@@ -1098,9 +1180,16 @@ Our research shows that only mutations containing useful information are elevate
 % * Shuffled-Fragment HGT 
 % * HGT
 
-In order the compare the use of HGT against other kinds of mutation, we compared rates of non-bonus HGT fragment uptake against a execution of series of other mutation types, in both static and changing environments.\ref{fig:mutagen_execution} As expected, in the static environment, endogenously-controlled performance of all types of mutation (including HGT) is strongly suppressed. However, in harsh changing environment, HGT use dominates the other mutation types. Of particular interest is the decreasing use of HGT-like fragment insertions as information is destroyed, first by shuffling fragments (HGT-Shuffle), and then by replacing all fragment instructions with randomly selected instructions (HGT-Random). The latter performs comparably to the remaining mutation types: Mutation Events: Biased and Random, Mutation Rate Increase, and the Die control. This indicates that the information content of the fragment is an important predictor of the use of HGT. 
+In order the compare the use of HGT against other kinds of mutation, we compared rates of non-bonus HGT fragment uptake against a execution of series of other mutation types, in both static and changing environments.\ref{fig:mutagen_execution} As expected, in the static environment, endogenously-controlled performance of all types of mutation (including HGT) is strongly suppressed. However, in harsh changing environment, HGT use dominates the other mutation types. Of particular interest is the decreasing use of HGT-like fragment insertions as information is destroyed, first by shuffling fragments (HGT-Shuffle), and then by replacing all fragment instructions with randomly selected instructions (HGT-Random).
+% MJW: I don't know what you mean by "first" and "and then", since both commands presumably don't exist in the same treatment.
+The latter performs comparably to the remaining mutation types: Mutation Events: Biased and Random
+% MJW: You don't have anything currently called Mutation Event: Biased.  I assume this is the Sampled one?
+, Mutation Rate Increase, and the Die control. This indicates that the information content of the fragment is an important predictor of the use of HGT. 
 
-Also of note is that the only difference between the Mutation Event: Sampled and HGT-Shuffle treatments is the localization of the mutation effect (HGT-Shuffle fragment insertion is applied to a single location, whereas the shuffled instructions are scattered randomly throughout the genome), however their use rates are significantly different. This indicates that not only is information content important, but that localization (clustering) of the mutation effect also matters.
+Also of note is that the only difference between the Mutation Event: Sampled and HGT-Shuffle treatments is the localization of the mutation effect
+% MJW: This statement strongly implies that the Sampled is "Without replacement".
+(HGT-Shuffle fragment insertion is applied to a single location, whereas the shuffled instructions are scattered randomly throughout the genome), however their use rates are significantly different. This indicates that not only is information content important, but that localization (clustering) of the mutation effect also matters.
+% MJW: Consider expanding on this with speculation as to why it might matter.
 %This indicates that a combination of information content and localization of the mutation event matter for the beneficial nature of HGT.
 
 \todo[color=green]{stats}
@@ -1124,7 +1213,10 @@ Also of note is that the only difference between the Mutation Event: Sampled and
 %   * HGT
 %   * CE
 
-Prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment. Why should HGT mutations be different? In order to address this question, we measured the average fitness effect of each mutation, and compared it to that mutation's usage rate in changing environments. We observed a correlation between the average fitness effect, and the use of the mutagen. We observed many more positive or neutral fitness effects from HGT-like instructions than the other mutagen types, which exhibited primarily neutral or negative mutation effects. This indicates that mutagen use is under direct selection\ref{fig:mutagen_use_vs_fitness_effect}
+Prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment.
+% MJW: This sentence demands citations.  Presumably Jeff Clune's Avida work?
+Why should HGT mutations be different? In order to address this question, we measured the average fitness effect of each mutation, and compared it to that mutation's usage rate in changing environments. We observed a correlation between the average fitness effect, and the use of the mutagen. We observed many more positive or neutral fitness effects from HGT-like instructions than the other mutagen types, which exhibited primarily neutral or negative mutation effects. This indicates that mutagen use is under direct selection\ref{fig:mutagen_use_vs_fitness_effect}
+% MJW: I think these are mutations, again.
 
 \todo[color=green]{stats}
 \todo{caption}
@@ -1145,7 +1237,9 @@ Prior research has failed to show an increase in endogenously-controlled mutatio
 % * Shuffled-Fragment HGT
 % * HGT
 
-Further, we measured the proportion of mutations that produce beneficial phenotype changes.\ref{fig:mutagen_use_vs_fraction_beneficial} In the context of a changing environment, a mutation that switches your phenotype to match the environment should be strongly selected for. Indeed, we found that this proportion was significantly and substantially higher for HGT-like mutations than other mutation types, and that there was strong correlation between the proportion of beneficial phenotype-switching mutations and mutagen use. This correlation is much stronger than the correlation with fitness effect, indicating that the magnitude of the fitness effect is less important to selection than the sign of the effect.
+Further, 
+% MJW: I would recommend against starting the first sentence of a section or subsection with "Further", since the break pushes that antecedent substantially further away.
+we measured the proportion of mutations that produce beneficial phenotype changes.\ref{fig:mutagen_use_vs_fraction_beneficial} In the context of a changing environment, a mutation that switches an organism's phenotype to match the environment should be strongly selected for. Indeed, we found that this proportion was significantly and substantially higher for HGT-like mutations than other mutation types, and that there was strong correlation between the proportion of beneficial phenotype-switching mutations and mutagen use. This correlation is much stronger than the correlation with fitness effect, indicating that the magnitude of the fitness effect is less important to selection than the sign of the effect.
 
 \todo[color=green]{stats}
 \todo{caption}
@@ -1167,6 +1261,9 @@ Further, we measured the proportion of mutations that produce beneficial phenoty
 Our experiments expand on our understanding of the evolution of horizontal gene transfer, and how it relates to other types of mutations in the context of changing environments. As expected, we find that the fitness effects of different types of mutations vary significantly, and that they predict the levels of use of that mutagen. In particular, we find a strong correlation between the fraction of mutations that produce a beneficial phenotype change, and the use of that mutagen. Thus, in the context of a changing environment, where there are strong selective pressures to change your phenotype, levels of HGT are elevated, while levels of other mutagens remain low.
 
 This result matches prior research that shows that populations will tend to depress the use of mutagens, even though, in the long-term, higher mutation rates are optimal [CITE]. This result is further evidence that selection tends to act in the short term. Thus, even though certain kinds of mutagens and architectural features may promote long-term evolvability, these features are hitchhiking on short-term adaptive benefits. Thus, our research shows that even though evolvability may evolve, it is not necessarily selected for in the long-term.  
+
+% MJW: Since this is a conclusion section, it's worth taking a bit of space to drive home the major points, even if this seems a bit repetitive with the discussion section.  If I'm remembering the results correctly: Simply boosting the mutation rate doesn't cause the instruction to be notably enriched.  That means that the higher effective mutation rate caused by these HGT events is not what's driving things.  Causing that number of mutations to all localize to one region does cause the instruction's use to be elevated, so there's some advantage to this localization.  But there's a *much* higher use if there is also information content involved, either by enriching for those instructions in the actual fragment, or even moreso if the order of those instructions is preserved.  This means that primary beneficial effect of HGT we see is that it results in mutation events that contain more information content than other types of mutation events.
+% MJW: And, like in the previous chapter, either in this conclusion or at the end of the Discussion, and almost certainly in the Background section, you can hammer home "Yay digital evolution" by pointing out how unbelievably difficult this work would be in a physical system.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
