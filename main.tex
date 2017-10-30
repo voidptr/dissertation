@@ -43,7 +43,9 @@
 %
 \maketitlepage
 %
+
 \begin{abstract}
+\todo[inline]{prep a layman's abstract if I have time}
 \todo[inline, color=magenta]{rework abstract}
 % The specific meaning of the term ``evolvability'' is heavily debated, but most definitions can be summarized as: the potential of populations and genomes to produce adaptive variation and complex structures in response to mutation and selection. Evolvability is thought to be created through the interplay of modularity and robustness. Indeed, modularity and robustness build upon each other, layer by layer, to form a framework that produces more powerful adaptive effects while reducing the impact of deleterious mutations.
 
@@ -77,6 +79,9 @@ Your acknowledgments here
 \listoftables
 \clearpage
 \listoffigures
+%
+%\clearpage
+%\keytoabbreviations
 %
 \clearpage
 \todototoc
@@ -786,36 +791,41 @@ than cyclic changing environments, even if, on average, the amount of time spent
 \section{Background}
 
 %=HGT umbrella term
-Horizontal Gene Transfer (HGT) is a broad term for the non-reproductive transfer of genetic material between organisms. Organisms may uptake genes directly from the environment (natural competence \cite{chen_dna_2004}), or else receive them via bacterial conjugation\cite{lederberg_gene_1946} or viral infection (transduction \cite{zinder_genetic_1952,lennox_transduction_1955}). The integrated fragments may either be decomposed inside the recipient cell for their nutrients, or integrated into their genomes. 
+Horizontal Gene Transfer (HGT) is a broad term for the non-reproductive transfer of genetic material between organisms. Organisms may uptake genes directly from the environment (transformation via natural competence \cite{chen_dna_2004}), or else receive them via bacterial conjugation\cite{lederberg_gene_1946} or viral infection (transduction \cite{zinder_genetic_1952,lennox_transduction_1955}). In the case of transformation, the fragments may either be decomposed inside the recipient cell for their nutrients, or recombined into their genomes. 
 
 %MJW: Being technical, just because this is a dissertation chapter:  The process by which organisms take up DNA directly is technically transformation; competence is the state of a cell capable of undergoing transformation.  You may or may not wish to mention gene transfer agents, which are essentially domesticated viruses encoded by certain types of bacteria -- their origins are viral, but they're now incorporated into the bacterial genome, and no longer capable of switching back to a viral lifestyle.
+%@RCK: Corrected terminology
 
 %=HGT profound impact
 HGT has had a profound impact on the evolutionary history of both prokaryotes and eukaryotes, with one study showing approximately 81\% of genes in the sample "being involved in HGT at some point in their history" \cite{dagan_modular_2008}. For example, HGT appears to be the primary mechanism by which antibiotic resistance is conferred \cite{davies_origins_1997,martinez_antibiotics_2008} since most antibiotics are sourced from the environment, and the organisms that develop them are themselves resistant to the compounds.
 However, the origins and evolution of HGT mechanisms remain unclear. 
 
-\subsection{Origins of HGT in nature}
+\subsection{Origins of Horizontal Gene Transfer in nature}
 \todo[inline, color=magenta]{More about how this question is still open}
 % MJW: In line with your todo, you can hammer here the same thing I mentioned in your conclusions for this chapter -- it's really hard, and possibly even impossible, to test these things in non-digital systems.
 
 %=natural competence in prokaryotes and why HGT happens
-In prokaryotes, “natural competence” is an HGT mechanism by which organisms spontaneously uptake the DNA of dead organisms in the environment. These organisms benefit in several ways. 1) DNA is composed of a 5-carbon sugar, a phosphate, and nitrogenous bases, materials that are useful for DNA synthesis and repair. 2) The organisms may also benefit from up-taking
+In prokaryotes, ''transformation'' is an HGT mechanism by which organisms spontaneously uptake the DNA of dead organisms in the environment. Competent organisms benefit in several ways. 1) DNA is composed of a 5-carbon sugar, a phosphate, and nitrogenous bases, materials that are useful for DNA synthesis and repair. 2) The organisms may also benefit from taking up
 % MJW: You are inconsistent with hyphenation in uptake and up-taking.  I don't think you should have a hyphen here.
-gene fragments that confer new adaptive functionality into the genome \cite{vos_why_2009}. However, it is unclear whether the origins of uptake functions were developed solely in order to obtain nutrients, or if the acquisition of new functionality was selected for as well. While grazing for gene-fragments as nutrients certainly conveys an advantage, the possibility of integrating these gene fragments is likely to be disruptive to organisms more often than it is beneficial \cite{redfield_evolution_1997}.
-
+%@RCK: fixed everywhere it appears.
+gene fragments that confer new adaptive functionality into the genome \cite{vos_why_2009}. However, it is unclear whether the origins of transformation functions were developed solely in order to obtain nutrients (the Grazing Hypothesis), or if the acquisition of new functionality was selected for as well. While grazing for gene fragments as nutrients certainly conveys an advantage, the possibility of integrating these gene fragments is likely to be deleterious to organisms more often than it is beneficial \cite{redfield_evolution_1997}. For example, since the DNA would be originating from dead organisms, DNA fragments may be of low quality, and recombine deleterious mutations, or even remove competence altogether \cite{redfield_evolution_1997}. Alternately, errors in homologous recombination may apply fragments to random locations in the genome.    
 % MJW: I suggest expanding on this last sentence: why is it that integrating these fragments is likely to be disruptive more often than it is beneficial?  Also, how do either of those probabilities compare to it having no effect?
+% @RCK: Added additional sentence explaining the reasoning from Redfield's paper for this claim.
 
 %=statement of hypotheses - grazing CE elevates HGT
-In order to test this hypothesis
+In order to test the Grazing Hypothesis,
 % MJW: Identify what hypothesis you are testing.
-, and address the question of whether there are circumstances where gene-fragment 
+%@RCK: fixed
+, and address the question of whether there are circumstances where gene fragment 
 % MJW: I don't think that gene fragment is hyphenated
+%@RCK: fixed
 integration may be beneficial, we subjected populations of evolving digital organisms to a harsh changing environment,
 % MJW: For the dissertation, this is probably fine, since you have a chapter about changing environments immediately before this one.  For a paper, we'll need to define what we mean by a harsh changing environment -- it's pretty standard nomenclature in the field of people who look at changing environments, but not all readers will know it.
-where there is a strong pressure to quickly switch phenotype. We supplied organisms with an instruction that performs Horizontal Gene Transfer (HGT).
+where there is a strong selective pressure to quickly switch phenotype. We supplied organisms with an instruction that performs Horizontal Gene Transfer (\texttt{HGT-Uptake}).
 % MJW: I added the "(HGT)" because this is the first time you use the term.  However, I don't know if you'd rather include the specific command names, typeset in the way that we typically do for instructions.  But I think you either need an "(HGT)" or you need to the underline the appropriate captial letters, since you use the acronym in the last sentence of the paragraph.
 % MJW: UPDATE: I now see an HGT before this, though used without defining the acronym.
-That is, the instruction triggers uptake of a genetic fragment from the environment, and there is a chance that, rather than metabolizing the fragment for a bonus to execution speed, the fragment will instead be homologously recombined into the organism's genome. We show that in harsh changing environments, without any kind of bonus, organisms increase use of HGT as compared to execution in a static environment.
+%@RCK: fixed all
+That is, the instruction triggers uptake of a genetic fragment from the environment, and there is a probability that, rather than metabolizing the fragment for a bonus to execution speed, the fragment will instead be homologously recombined into the organism's genome. We show that in harsh changing environments, without any kind of bonus, organisms increase use of HGT as compared to execution in a static environment.
 
 
 \section{Methods}
@@ -823,22 +833,23 @@ In this chapter, we use Avida to test hypotheses about the origins of Horizontal
 
 \subsection{HGT in Avida}
 %=HGT triggered by instruction, and uptakes
-%\todo[color=blue]{fixed-width font for HGT-Uptake and other Avida instruction names}
 In Avida, HGT is triggered by the \texttt{HGT-Uptake} instruction that, when executed, attempts to uptake a genome fragment from the individual cell reservoirs in the environment. As organisms die in Avida runs with HGT enabled, fragments of their genomes will accumulate in reservoirs. The fragments in the reservoirs will deteriorate over time, with older genomes disappearing from the reservoir as new ones enter. Fragments for uptake will be randomly selected from the reservoir.  
 
 \todo[inline]{look for and hunt down passive voice}
 % MJW: I'll point out that the entire previous paragraph is passive voice. Because it's you, Rose, I offer that often the easiest way to test whether a sentence is passive voice is if you can append "by zombies" to the end of it.  "Fragments for uptake will be randomly selected from the reservoir...by zombies."  It's slightly tortured for a few of the sentences, but it's something that is likely to stick with you.
 %=HGT uptake may recombine or be metabolized
-Upon uptake, there is a configurable probability that the fragment is not metabolized;
+%Upon uptake, there is a configurable probability that the fragment is not metabolized;
+We have implemented a configurable probability that, when a fragment is taken up, it is not metabolized;
 % MJW: This probability doesn't come into being upon uptake.  Maybe something more like "We have implemented a configurable probability that, when a fragment is uptaken (or, if you prefer, taken up), it is not metabolized;" (Since the rest of this chapter, at least, is being written in first person plural.  In reality, *you* implemented this, but it would be jarring to switch repeatedly between "I" and "we" within a chapter)
+%@RCK: fixed
 instead, homologous recombination may occur (Figure \ref{fig:hgtprocess}). We performed experiments to derive bonus levels, fragment sizes, and recombination probabilities to arrive at a maximum use level for the HGT instruction. See Appendix~\ref{appendix:hgt_sweep} for more details. 
 
 %=HGT and homologous recombination
 \todo{Citation TODOs}
-For all experiments described in this chapter, we used three \footnote{This value is derived from a calculation associating the average size of one avida instruction to about 100 nucleotides [TODO CITE]. In natural systems, for homologous recombination to occur, an average of 300 nucleotides must match on both ends of the fragment[TODO CITE]} instructions as the minimal homologous match length, and a 10\% recombination probability.
+For all experiments described in this chapter, we used a 10\% recombination probability. Please refer to Appendix~\ref{appendix:hgt_sweep} for more information about the selection of this probability value. We also required three instructions as the minimal homologous match length on either side of the fragment. Three instructions on either side of the fragment ($26^6$ unique sequences) approximates the number of unique values keyed by 7 nucleotides ($4^7$ unique sequences). For the purposes of homologous recombination in plasmid cloning in E. coli, 20bp is enough to assume identity\cite{jacobus_optimal_2015}.   
 
 % MJW: Beyond merely citing something about number of nucleotides needed, I think it's worth explaining how we therefore chose 3 instructions in Avida.  26^3 is ~ 4^7, so if you're talking about an average of 300 nucleotides matching on each end, that would be way more restrictive than what we're doing.  A recent citation you can use is Optimal Cloning of PCR Fragments by Homologous Recombination in Escherichia coli by Ana Paula Jacobus and Jefferson Gross in PLOS ONE.  https://doi.org/10.1371/journal.pone.0119221  That one mentions in its abstract how 20bp is enough to assume identity.
-
+%@RCK: Applied
 
 \begin{figure}[h!]
 \begin{center}
@@ -961,7 +972,7 @@ Thus, not only is HGT evolution possible absent a bonus, the benefit stacks with
 In order to understand the basis of the beneficial nature of HGT in changing environments, we performed a series of treatments where we replaced the fragments in the cell reservoirs with fragments that originated at the end of the matching phase of the cycle, the off-phase of the cycle, and from both phases, plus a non-replaced control. (Figures~\ref{fig:fitness_effect_heatmap}, \ref{fig:hgt_use_by_cycle_phase_source}, \ref{fig:fitness_effect_by_cycle_phase_source}, \ref{fig:beneficial_fraction_by_cycle_phase_source})
 We then measured the levels of HGT use, the fitness effect of HGT mutations, as well as the fraction of beneficial phenotype-switching mutations. In the both-phase and non-replaced control, the mean fitness effect was largely neutral, while the on-phase fragments had a significantly positive mean fitness benefit, and the off-phase fragments were largely negative. Further, the control, both-phase and on-phase had a larger fraction of beneficial phenotype-switching mutants
 % MJW: compared to what?  Than other treatments?  Than non-beneficial phenotype switches?  Than mutations which don't switch phenotypes? I don't actually know what comparison you're making here.
-, whereas the off-phase treatment had few to no beneficial phenotype switches. This indicates that it is not only genetic disruption that is beneficial, but that the majority of the benefit of HGT derives from uptaking and integrating useful fragments of information from time-periods where organisms were already adapted to the environment, thus bypassing the need to evolve a new phenotype from scratch.
+, whereas the off-phase treatment had few to no beneficial phenotype switches. This indicates that it is not only genetic disruption that is beneficial, but that the majority of the benefit of HGT derives from taking up and integrating useful fragments of information from time-periods where organisms were already adapted to the environment, thus bypassing the need to evolve a new phenotype from scratch.
 
 \subsubsection{Expected Fitness Effects}
 
@@ -1010,7 +1021,7 @@ the phenotypic effect of each fragment by counting the number of times that frag
 \end{figure}
 
 %=benefit results from matching environment and information conveyed
-These results suggests that any direct benefit of using HGT derives from uptaking fragments that match the cycle phase of the environment of the affected organism, and thus likely contains information that relates to that environment. %otherwise, it wouldn't matter where the fragment came from
+These results suggests that any direct benefit of using HGT derives from taking up fragments that match the cycle phase of the environment of the affected organism, and thus likely contains information that relates to that environment. %otherwise, it wouldn't matter where the fragment came from
 
 %=see uptick in use when fragments match phase only.
 Further, if fragments from the matching phase are indeed beneficial, we would expect to see an increase in HGT use in those treatments, as compared to those where the fitness effects are mixed or deleterious. And indeed (Figure~\ref{fig:hgt_use_by_cycle_phase_source}), we do observe just such an increase. Thus we can conclude that HGT in 
@@ -1067,7 +1078,7 @@ In artificial systems, prior research has failed to show an increase in endogeno
 % MJW: I don't think natural competence is capitalized, either here or in the next sentence.
 
 %Why should HGT mutations be different? 
-In nature, Natural Competence is a highly regulated and refined mechanism for uptaking DNA fragments from the environment[CITE CITE CITE]. 
+In nature, Natural Competence is a highly regulated and refined mechanism for taking up DNA fragments from the environment[CITE CITE CITE]. 
 % MJW: Here are the DOIs for some citations: https://doi.org/10.1016/0168-9525(96)10014-7 ,  https://doi.org/10.1111/j.1574-6976.2012.00353.x , and also a 2009 J of Bacteriology paper titled A Novel Pheromone Quorum-Sensing System Controls the Development of Natural Competence in Streptococcus thermophilus and Streptococcus salivarius
 Clearly, natural evolution
 % MJW: Why use natural as an adjective here?
@@ -1694,7 +1705,7 @@ The goal was to identify a probability of recombination that would, without a gr
 
 
 \section{Bonus Sweep}
-Similarly, in nature, the amount of nutritive benefit derived from uptaking DNA fragments from the environment is difficult to quantify. In Avida, when populations are presented with instructions that provide a direct boost to execution speed, use of these instructions is strongly selected for. Populations rapidly fill their genomes with these instructions, to the exclusion of virtually all else. Thus, our goal in selecting potential bonus levels lay in finding a range of minimal value that would balance the presumably deleterious effects of the HGT uptake instruction, without completely overwhelming the balance of selective pressures we wished to apply to our experiments. As expected, and coupled with the recombination probability above, values around $2^1$ seemed to perform the best (Fig~\ref{fig:a2-hgt-bonussweep-hgtuse}). Above a value of $2^2$, there seem to be diminishing returns.
+Similarly, in nature, the amount of nutritive benefit derived from taking up DNA fragments from the environment is difficult to quantify. In Avida, when populations are presented with instructions that provide a direct boost to execution speed, use of these instructions is strongly selected for. Populations rapidly fill their genomes with these instructions, to the exclusion of virtually all else. Thus, our goal in selecting potential bonus levels lay in finding a range of minimal value that would balance the presumably deleterious effects of the HGT uptake instruction, without completely overwhelming the balance of selective pressures we wished to apply to our experiments. As expected, and coupled with the recombination probability above, values around $2^1$ seemed to perform the best (Fig~\ref{fig:a2-hgt-bonussweep-hgtuse}). Above a value of $2^2$, there seem to be diminishing returns.
 %=[FIGURE - complex environment task discovery]
 \todo[color=green]{stats}
 \todo{caption}
