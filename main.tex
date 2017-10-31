@@ -908,9 +908,10 @@ For all experiments described in this chapter, we used a 10\% recombination prob
 
 \subsubsection{Environmental Conditions}
 %=environmental rewards
-All experiments in this chapter compare outcomes between static environments, and harsh changing environments. In a similar manner to the experiments listed in the previous chapter (Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}), task rewards in the harsh changing environment switch from a positive to a negative reward. For the HGT experiments, we did not establish a backbone task that was always rewarded. Rather, we divided the Logic-9 environment into two halves, and alternated positive and negative rewards for each task in each set. Thus, for the first phase of the cycle, the \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU} instructions were punished at $-2^1$, $-2^2$, $-2^3$, $-2^4$, and $-2^5$ respectively, while NAND, ORN, ANDN, and XOR were rewarded at $2^1$, $2^2$, $2^3$, and $2^4$. In the second phase of the cycle, these rewards flip, such that \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU} are rewarded, whereas \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} are punished.
+All experiments in this chapter compare outcomes between static environments, and harsh changing environments. In a similar manner to the experiments listed in the previous chapter (Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}), task rewards in the harsh changing environment switch from a positive to a negative reward. For the HGT experiments, we did not establish a backbone task that was always rewarded. Rather, we divided the Logic-9 environment into two halves, and alternated positive and negative rewards for each task in each set. There are four pairs of tasks of equivalent complexity, and we randomly allocated one from each pair to an experimental group. We also assigned \texttt{EQU}, which is the most complex task, and has no equivalent, to a random group. Thus, for the first phase of the cycle, we punished the \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU} instructions at $-2^1$, $-2^2$, $-2^3$, $-2^4$, and $-2^5$ respectively, while rewarding \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} at $2^1$, $2^2$, $2^3$, and $2^4$. In the second phase of the cycle, these rewards flip, such that we reward \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU}, and punish \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR}.
 
 % MJW: I suggest explaining how you chose to divide the tasks; ie, there are 4 pairs of tasks of equivalent complexity, and for each pair you arbitrarily assigned one task to set 1 and the other task to set 2, and then EQU had to go somewhere.  Also, you can switch "were/are punished" with "we punished" and the like to remove passive voice.
+%@RCK: fixed
 
 %=cycle length
 Each complete cycle lasts 1,000 updates, and the whole experimental run continues for 200,000 updates.
@@ -975,9 +976,10 @@ HGT & organism death \\\hline
 
 
 \section{Results and Discussion}
-Our results show that both an uptake bonus and changing environment promote the use of HGT, and that the increases in uptake are largely additive. Further, we found that while on average, HGT mutations are neutral, that the majority of the benefits conveyed by HGT in changing environments come from fragments originating in periods of the cycle where the environment matched the current environment. This result indicates that it is the information content of the fragment that is valuable. Finally, we find that providing only fragments from the matching cycle elevates uptake rates significantly. 
-
+\todo[inline]{clarify whether a summary paragraph like this is even useful. or if it should be framed differently}
+Our results show that both an uptake bonus and changing environment promote the use of HGT, and that the increases in uptake are largely additive. Further, we found that while on average, HGT mutations are neutral, that the majority of the benefits conveyed by HGT in changing environments come from fragments originating in periods of the cycle where the environment matched the current environment. This result indicates that it is the information content of the fragment that is valuable. Finally, we find that providing only fragments from the matching cycle elevates uptake rates significantly.
 % MJW: This paragraph is essentially a bunch of numerical claims with no stats.  I'll be on the lookout for stats in the coming results -- I didn't see a statistical methods section in the methods -- but if they don't exist we need them; if they do, we probably want some sort of "(see below)".
+%@RCK: It's intended as the tip of the pyramid type summary paragraph. Should I even have something like this?
 
 %\subsection{Alternatives to the Grazing Hypothesis}
 \subsection{Changing environments elevate HGT use}
@@ -992,8 +994,9 @@ We measured HGT fragment uptake in four conditions (see Table~\ref{hgt-treatment
 
 %=measured fragment uptake wrl to bonus
 In order to investigate the relationship between the effects granted by a nutritive bonus and the benefit of fragment recombination in a changing environment, we selected a bonus level that increased fragment uptake in a static environment to a level comparable to the increase seen in changing environments without a bonus. We then combined these factors, giving a bonus, plus using a changing environment. We saw that the resulting uptake level increases largely additively. This indicates that the benefits granted by a grazing bonus are largely independent of the benefits conveyed by integrating new genetic material. 
-
 % MJW: The preceding paragraph reads like methods, no?
+%@RCK: Eh. I don't know. It's what we measured. Yes, we did a specific experiment, so that should be documented in methods. But I don't mind explaining the measure here.
+\todo[inline]{document the additive measuring thing in methods, per note}
 
 %We thus conclude that not only is HGT evolution possible absent a grazing bonus, but that should a changing environment occur, that there are additional incentives to perform HGT.
 %=conclusion sentence - hgt is promoted by HGT
@@ -1017,16 +1020,16 @@ Thus, not only is HGT evolution possible absent a bonus, the benefit stacks with
 
 %=understanding why HGT is used
 In order to understand the basis of the beneficial nature of HGT in changing environments, we performed a series of treatments where we replaced the fragments in the cell reservoirs with fragments that originated at the end of the matching phase of the cycle, the off-phase of the cycle, and from both phases, plus a non-replaced control. (Figures~\ref{fig:fitness_effect_heatmap}, \ref{fig:hgt_use_by_cycle_phase_source}, \ref{fig:fitness_effect_by_cycle_phase_source}, \ref{fig:beneficial_fraction_by_cycle_phase_source})
-We then measured the levels of HGT use, the fitness effect of HGT mutations, as well as the fraction of beneficial phenotype-switching mutations. In the both-phase and non-replaced control, the mean fitness effect was largely neutral, while the on-phase fragments had a significantly positive mean fitness benefit, and the off-phase fragments were largely negative. Further, the control, both-phase and on-phase had a larger fraction of beneficial phenotype-switching mutants
+We then measured the levels of HGT use, the fitness effect of HGT mutations, as well as the fraction of beneficial phenotype-switching mutations. In the both-phase and non-replaced control, the mean fitness effect was largely neutral, while the on-phase fragments had a significantly positive mean fitness benefit as compared to both the both-phase and non-replaced controls\todo{stats}. The off-phase fragments were largely negative when compared to the both-phase and non-replaced controls\todo{stats}. Further, the control, both-phase and on-phase all had a larger fraction of beneficial phenotype-switching mutants
 % MJW: compared to what?  Than other treatments?  Than non-beneficial phenotype switches?  Than mutations which don't switch phenotypes? I don't actually know what comparison you're making here.
-, whereas the off-phase treatment had few to no beneficial phenotype switches. This indicates that it is not only genetic disruption that is beneficial, but that the majority of the benefit of HGT derives from taking up and integrating useful fragments of information from time-periods where organisms were already adapted to the environment, thus bypassing the need to evolve a new phenotype from scratch.
+than the the off-phase treatment, which had few to no beneficial phenotype switches\todo{stats}. This indicates that it is not only genetic disruption that is beneficial, but that the majority of the benefit of HGT derives from taking up and integrating useful fragments of information from time-periods where organisms were already adapted to the environment, thus bypassing the need to evolve a new phenotype from scratch.
 
 \subsubsection{Expected Fitness Effects}
 
 %=measured fitness effect in normal HGT
-We measured the average fitness effects of fragments in a randomly selected replicate of the non-replaced HGT control treatment at the end of the last environmental cycle, and generated a distribution of fragments sorted the fragments by age and fitness-effect (Figures~\ref{fig:fitness_effect_heatmap}). We can see a clear pattern of more beneficial fitness effects from fragments of organisms originating in the matching cycle phase. 
-
+We calculated the average fitness effects of fragments in a randomly selected replicate of the non-replaced HGT control treatment at the end of the last environmental cycle, and generated a distribution of fragments sorted the fragments by age and fitness-effect (Figures~\ref{fig:fitness_effect_heatmap}). We can see a clear pattern of more beneficial fitness effects from fragments of organisms originating in the matching cycle phase. 
 % MJW: Have we done this for only one replicate?
+%@RCK: yes. It's an example of what they look like. Maybe we don't care that they look this way, but I like the figure :P
 
 \todo[color=green]{stats}
 \begin{figure}[h!]
@@ -1038,9 +1041,10 @@ We measured the average fitness effects of fragments in a randomly selected repl
 \end{figure}
 
 %=manipuated reservoir to match or not match phase - measured effects 
-In order to quantify this result, we performed experiments where we replaced the fragments in the reservoir to contain only fragments originating in the matching phase, the off-phase, and mixture of both phases. We measured the mean expected fitness 
+In order to quantify this result, we performed experiments where we replaced the fragments in the reservoir to contain only fragments originating in the matching phase, the off-phase, and mixture of both phases. We measured the mean fitness 
 % MJW: Why "expected" fitness?
-effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycle_phase_source}). We found that HGT mutations are, on average, neutral in both the non-replaced control and the replaced-"both" treatment. The average fitness effect in the "on-phase" treatment was mildly beneficial, while in the "off-phase" treatment, the effect was strongly deleterious. 
+%@RCK: fixed
+effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycle_phase_source}). We found that HGT mutations are, on average, neutral in both the non-replaced control and the replaced-"both" treatment. The average fitness effect in the "on-phase" treatment was mildly beneficial, while in the "off-phase" treatment, the effect was strongly deleterious\todo{stats}. 
 
 \todo[color=green]{stats}
 \begin{figure}[h!]
@@ -1052,13 +1056,15 @@ effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycl
 \end{figure}
 
 %=measured phenotypic change
-In our environments, the largest fitness benefits should occur when a mutation leads to the acquisition of a new rewarded task, or the loss of a punished task. Mutations that convey phenotypic change should have the largest impact. 
+In our environments, mutations that convey phenotypic change should have the largest impact. Specifically, the largest fitness benefits should occur when a mutation leads to the acquisition of a new rewarded task, or the loss of a punished task.  
 % MJW: Slightly redundant; you just specified which pheotypic changes have the largest impacts, and then said that things that result in phenotypic changes have the largest impacts.  If you change the order of these sentences, you can put the "In our environments" on what is currently the second sentence, and then lead in with "Specifically, " for what is currently the first sentence.
-We identified 
+%@RCK: fixed
+We quantified 
 % MJW: Isn't this quantification, not identification?
-the phenotypic effect of each fragment by counting the number of times that fragments produced a beneficial phenotype change, vs all HGT mutations (Figure~\ref{fig:beneficial_fraction_by_cycle_phase_source}). We see that a significantly larger proportion of fragments in the "on-phase" treatment produce beneficial phenotype changes, as compared to fewer in the normal HGT and "both" treatments, and virtually zero in the "off-cycle" treatment. 
+%@RCK: fixed
+the phenotypic effect of each fragment by counting the number of times that fragments produced a beneficial phenotype change, vs all HGT mutations (Figure~\ref{fig:beneficial_fraction_by_cycle_phase_source}). We see that a significantly larger proportion of fragments in the "on-phase" treatment produce beneficial phenotype changes, as compared to fewer in the normal HGT and "both" treatments, and virtually zero in the "off-cycle" treatment\todo{stats}. 
 
-\todo[color=green]{stats}
+\todo[color=green]{stats, caption}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/beneficial_fraction_by_cycle_phase_source.png}
@@ -1105,6 +1111,7 @@ Our experiments confirm our expectations about the evolution of horizontal gene 
 
 Further, when there is direct selection for phenotypic change - such as in a changing environment - we observe an increase in the use of the HGT instruction, even when no grazing bonus is offered. This indicates that the possibility of recombination itself is being selected for. Beyond this, we find that it is not only the fact of the recombination that is beneficial, but the information contained in the fragment. We found that 
 % MJW: "not only" is getting a bit repetitive.  
+%@RCK: fixed
 most of the benefit conveyed by HGT derived from fragments that match the current environment, but also that when we filter so that only those fragments are available, that use of the HGT instruction increases even further. 
 
 In natural systems, this pattern in evident in the acquisition of antibiotic resistance in bacteria, where resistance is acquired by the spread of resistance genes via horizontal gene transfer. Therefore, our results provide a key insight into how horizontal gene transfer mechanisms could be selected for, and evolve in natural systems.
@@ -1337,10 +1344,15 @@ We measured the proportion of mutations that produce beneficial phenotype change
 %Under Stress, Natural Competence increases
 Our experiments expand on our understanding of the evolution of horizontal gene transfer, and how it relates to other types of mutations in the context of changing environments. As expected, we find that the fitness effects of different types of mutations vary significantly, and that they predict the levels of use of that mutagen. In particular, we find a strong correlation between the fraction of mutations that produce a beneficial phenotype change, and the use of that mutagen. Thus, in the context of a changing environment, where there are strong selective pressures to change your phenotype, levels of HGT are elevated, while levels of other mutagens remain low.
 
-This result matches prior research that shows that populations will tend to depress the use of mutagens, even though, in the long-term, higher mutation rates are optimal [CITE]. This result is further evidence that selection tends to act in the short term. Thus, even though certain kinds of mutagens and architectural features may promote long-term evolvability, these features are hitchhiking on short-term adaptive benefits. Thus, our research shows that even though evolvability may evolve, it is not necessarily selected for in the long-term.  
+This result matches prior research that shows that populations will tend to depress the use of mutagens, even though, in the long-term, higher mutation rates are optimal [CITE]. This result is further evidence that selection tends to act in the short term. Thus, even though certain kinds of mutagens and architectural features may promote long-term evolvability, these features are hitchhiking on short-term adaptive benefits. Thus, our research shows that even though evolvability may evolve, it is not necessarily selected for in the long-term. 
 
+\todo{add a takeaway, as per the note below}
 % MJW: Since this is a conclusion section, it's worth taking a bit of space to drive home the major points, even if this seems a bit repetitive with the discussion section.  If I'm remembering the results correctly: Simply boosting the mutation rate doesn't cause the instruction to be notably enriched.  That means that the higher effective mutation rate caused by these HGT events is not what's driving things.  Causing that number of mutations to all localize to one region does cause the instruction's use to be elevated, so there's some advantage to this localization.  But there's a *much* higher use if there is also information content involved, either by enriching for those instructions in the actual fragment, or even moreso if the order of those instructions is preserved.  This means that primary beneficial effect of HGT we see is that it results in mutation events that contain more information content than other types of mutation events.
+
+\todo{does this (below) read ok?}
+As in the experiments described in the previous chapter, performing these kinds of experiments in an organic system would be extremely difficult. In particular, comparing the effects of different kinds of mutations, measuring their use, and isolating their fitness effects would be extremely difficult or even impossible. Digital evolution allows us to perform these kinds of experiments that otherwise could not be done in natural systems. 
 % MJW: And, like in the previous chapter, either in this conclusion or at the end of the Discussion, and almost certainly in the Background section, you can hammer home "Yay digital evolution" by pointing out how unbelievably difficult this work would be in a physical system.
+%@RCK: Added something. Someone please read over!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
