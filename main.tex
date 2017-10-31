@@ -80,8 +80,55 @@ Your acknowledgments here
 \clearpage
 \listoffigures
 %
-%\clearpage
-%\keytoabbreviations
+\clearpage
+\chapter
+*
+{Key to Abbreviations}
+\vspace{\cftparskip}
+\addcontentsline{toc}{chapter}{Key to Abbreviations}
+
+% \begin{table}
+% %\centering %% uncomment this if the "array" should be centered
+% \setlength\arraycolsep{10pt} % default value: 5pt
+% $\begin{array}{ll}           % "ll" sets up two left-aligned columns
+%     CE             & Changing Environment \\
+%     HGT            & Horizontal Gene Transfer \\
+% \end{array}$
+% \end{table}
+
+
+\begin{table}[ht]
+%\begin{tabular}[t]{ll}
+\begin{tabularx}{\textwidth}{lX}
+{CE} & Changing Environment \\
+\\
+{$CV_A$} & Additive Genetic Coefficient of Genetic Variation \\
+\\
+{$D_g$} & Genomic Diffusion Rate \\
+\\
+{$D_p$} & Phenotypic Diffusion Rate \\
+\\
+{$h^2$} & Narrow-sense Heritability \\
+\\
+{$H^2$} & Broad-sense Heritability \\
+\\
+{HGT} & Horizontal Gene Transfer \\
+\\
+{$m_S$} & Spatial Modularity \\
+\\
+{ME} & Mutational Event \\
+\\
+{MRI} & Mutation Rate Increase \\
+\\
+{$r_P$} & Phenotypic Robustness \\
+\\
+{$r_G$} & Genotypic Robustness \\
+\\
+{MWW} & Mann Whitney Wilcoxon \\
+\\
+
+\end{tabularx}
+\end{table}
 %
 \clearpage
 \todototoc
@@ -548,7 +595,7 @@ Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^3$} & \makecell
 
 \subsubsection{Cyclic and Stochastic Changing Environments}
 %=explanation of the changing environment treatments - cyclic
-For the cyclic environment, we subjected a total of 150 replicate populations of digital organisms to two different treatments of two-phase cyclically changing environments, plus a static control. The environment cycles between 500 updates of reward, and 500 updates of punishment; as such each full cycle is 1000 updates, or roughly 30 generations. We chose this cycle length after surveying a series of possible values in order to determine an optimal length of time. That is, long enough to allow adaptation to occur and spread through the population, but short enough to reduce the effects of drift destroying vestigial genetic information. For more details about this survey, please refer to Appendix \ref{appendix:ce_sweep}.
+For the cyclic environment, we subjected a total of 150 replicate populations of digital organisms to two different treatments of two-phase cyclically changing environments, plus a static control. The environment cycles between 500 updates of reward, and 500 updates of punishment; as such each full cycle is 1,000 updates, or roughly 30 generations. We chose this cycle length after surveying a series of possible values in order to determine an optimal length of time. That is, long enough to allow adaptation to occur and spread through the population, but short enough to reduce the effects of drift destroying vestigial genetic information. For more details about this survey, please refer to Appendix \ref{appendix:ce_sweep}.
 
 In the static control, there is no cycle. Rather, the rewards remain constant. The first phase of the experiment extends for 200 cycles, or 200,000 updates, approximately 6,000 generations.
 
@@ -846,7 +893,7 @@ instead, homologous recombination may occur (Figure \ref{fig:hgtprocess}). We pe
 
 %=HGT and homologous recombination
 \todo{Citation TODOs}
-For all experiments described in this chapter, we used a 10\% recombination probability. Please refer to Appendix~\ref{appendix:hgt_sweep} for more information about the selection of this probability value. We also required three instructions as the minimal homologous match length on either side of the fragment. Three instructions on either side of the fragment ($26^6$ unique sequences) approximates the number of unique values keyed by 7 nucleotides ($4^7$ unique sequences). For the purposes of homologous recombination in plasmid cloning in E. coli, 20bp is enough to assume identity\cite{jacobus_optimal_2015}.   
+For all experiments described in this chapter, we used a 10\% recombination probability. Please refer to Appendix~\ref{appendix:hgt_sweep} for more information about the selection of this probability value. We also required three instructions as the minimal homologous match length on either side of the fragment. Three instructions on either side of the fragment ($26^3$ unique sequences) approximates the number of unique values keyed by 7 nucleotides ($4^7$ unique sequences). For the purposes of homologous recombination in plasmid cloning in E. coli, 20bp is enough to assume identity\cite{jacobus_optimal_2015}.   
 
 % MJW: Beyond merely citing something about number of nucleotides needed, I think it's worth explaining how we therefore chose 3 instructions in Avida.  26^3 is ~ 4^7, so if you're talking about an average of 300 nucleotides matching on each end, that would be way more restrictive than what we're doing.  A recent citation you can use is Optimal Cloning of PCR Fragments by Homologous Recombination in Escherichia coli by Ana Paula Jacobus and Jefferson Gross in PLOS ONE.  https://doi.org/10.1371/journal.pone.0119221  That one mentions in its abstract how 20bp is enough to assume identity.
 %@RCK: Applied
@@ -861,15 +908,15 @@ For all experiments described in this chapter, we used a 10\% recombination prob
 
 \subsubsection{Environmental Conditions}
 %=environmental rewards
-All experiments in this chapter compare outcomes between static environments, and harsh changing environments. In a similar manner to the experiments listed in the previous chapter (Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}), task rewards in the harsh changing environment switch from a positive to a negative reward. For the HGT experiments, we did not establish a backbone task that was always rewarded. Rather, we divided the Logic 9 environment into two halves, and alternated positive and negative rewards for each task in each set. Thus, for the first phase of the cycle, the NOT, AND, OR, NOR, and EQU instructions were punished at $-2^1$, $-2^2$, $-2^3$, $-2^4$, and $-2^5$ respectively, while NAND, ORN, ANDN, and XOR were rewarded at $2^1$, $2^2$, $2^3$, and $2^4$. In the second phase of the cycle, these rewards flip, such that NOT, AND, OR, NOR, and EQU are rewarded, whereas NAND, ORN, ANDN, and XOR are punished.
+All experiments in this chapter compare outcomes between static environments, and harsh changing environments. In a similar manner to the experiments listed in the previous chapter (Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}), task rewards in the harsh changing environment switch from a positive to a negative reward. For the HGT experiments, we did not establish a backbone task that was always rewarded. Rather, we divided the Logic-9 environment into two halves, and alternated positive and negative rewards for each task in each set. Thus, for the first phase of the cycle, the \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU} instructions were punished at $-2^1$, $-2^2$, $-2^3$, $-2^4$, and $-2^5$ respectively, while NAND, ORN, ANDN, and XOR were rewarded at $2^1$, $2^2$, $2^3$, and $2^4$. In the second phase of the cycle, these rewards flip, such that \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU} are rewarded, whereas \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} are punished.
 
 % MJW: I suggest explaining how you chose to divide the tasks; ie, there are 4 pairs of tasks of equivalent complexity, and for each pair you arbitrarily assigned one task to set 1 and the other task to set 2, and then EQU had to go somewhere.  Also, you can switch "were/are punished" with "we punished" and the like to remove passive voice.
 
 %=cycle length
-Each complete cycle lasts 1000 updates, and the whole experimental run continues for 200,000 updates.
+Each complete cycle lasts 1,000 updates, and the whole experimental run continues for 200,000 updates.
 
 %=static environment
-The static environment rewards executions of all the Logic 9 tasks at their default levels, with no reward switching.
+The static environment rewards executions of all the Logic-9 tasks at their default levels, with no reward switching.
 
 % MJW: Why are the cycle length, static environment, and last sentence of the preceding paragraph in present tense, when the chapter in general is in past tense?
 
@@ -1024,9 +1071,10 @@ the phenotypic effect of each fragment by counting the number of times that frag
 These results suggests that any direct benefit of using HGT derives from taking up fragments that match the cycle phase of the environment of the affected organism, and thus likely contains information that relates to that environment. %otherwise, it wouldn't matter where the fragment came from
 
 %=see uptick in use when fragments match phase only.
-Further, if fragments from the matching phase are indeed beneficial, we would expect to see an increase in HGT use in those treatments, as compared to those where the fitness effects are mixed or deleterious. And indeed (Figure~\ref{fig:hgt_use_by_cycle_phase_source}), we do observe just such an increase. Thus we can conclude that HGT in 
+Further, if fragments from the matching phase are indeed beneficial, we would expect to see an increase in HGT use in those treatments, as compared to those where the fitness effects are mixed or deleterious. And indeed (Figure~\ref{fig:hgt_use_by_cycle_phase_source}), we do observe just such an increase. Thus we can conclude that HGT in our
 % MJW: I suggest adding the word "our" here; it's hard to conclude that this is a universal from studying one system.
-changing environments is most beneficial when the fragments in the environment contain information that would be beneficial in that environment. However, even when no such information is available, HGT use is not significantly depressed as compared to the control treatment. This suggests that despite the lack of exclusively match environmental information, that fragments could still provide some benefit. 
+%@RCK: fixed
+changing environments is most beneficial when the fragments in the environment contain information that would be beneficial in that environment. However, even when no such information is available, HGT use is not significantly depressed as compared to the control treatment. This suggests that despite the lack of exclusively matched environmental information, that fragments could still provide some benefit. 
 
 \todo[color=green]{stats}
 \begin{figure}[h!]
@@ -1055,14 +1103,16 @@ changing environments is most beneficial when the fragments in the environment c
 % * Avida has no such mechanism, so lack of fidelity does not account for an increase in HGT use. Instead, HGT can only increase due to selection. 
 Our experiments confirm our expectations about the evolution of horizontal gene transfer, and match what we would expect to see in nature. First, we find that grazing bonuses, such as those conveyed by the uptake of nutrient-rich DNA fragments in natural systems, cause an elevation of use of the horizontal gene transfer instruction, regardless of the potential risk of recombining uptaken gene fragments. 
 
-Further, when there is direct selection for phenotypic change - such as in a changing environment - we observe an increase in the use of the HGT instruction, even when no grazing bonus is offered. This indicates that the possibility of recombination itself is being selected for. Beyond this, we find that it is not only the fact of the recombination that is beneficial, but the information contained in the fragment. We found that not only 
+Further, when there is direct selection for phenotypic change - such as in a changing environment - we observe an increase in the use of the HGT instruction, even when no grazing bonus is offered. This indicates that the possibility of recombination itself is being selected for. Beyond this, we find that it is not only the fact of the recombination that is beneficial, but the information contained in the fragment. We found that 
 % MJW: "not only" is getting a bit repetitive.  
-is most of the benefit conveyed by HGT derived from fragments that match the current environment, but that when we filter so that only those fragments are available, that use of the HGT instruction increases even further. 
+most of the benefit conveyed by HGT derived from fragments that match the current environment, but also that when we filter so that only those fragments are available, that use of the HGT instruction increases even further. 
 
 In natural systems, this pattern in evident in the acquisition of antibiotic resistance in bacteria, where resistance is acquired by the spread of resistance genes via horizontal gene transfer. Therefore, our results provide a key insight into how horizontal gene transfer mechanisms could be selected for, and evolve in natural systems.
 
+\todo[inline]{review the below. too strong? too informal?}
+It is worth noting that most prior studies of HGT have been observational studies that look at existing traits and phylogenies and attempt to make inferences about the evolution of those traits on that basis. Performing experimental evolution studies of the evolution of HGT in organic systems is something that, to a first approximation, we simply can't study in a wet system. Digital evolution, on the other hand, allows us to test many hypotheses about the evolution of HGT, such as the explicit benefits and consequences of different types of mutations, as well as gives us an opportunity to compare granular fragment grazing bonuses and quantify their effects on evolutionary outcomes. These are experiments that we would not be able to perform any other way.   
 % MJW: I suggest explicitly making what probably seems like a really obvious point: Digital systems like Avida let us test things -- like the benefits and consequences of certain types of mutations being allowed -- in ways that are essentially impossible in organic systems.  This is something that, to a first approximation, we *can't* study in a wet system -- we can't create otherwise-identical systems in which one has HGT as a possibility and the other doesn't.  If we want experimental results to test theoretical predictions, digital systems are arguably the best way to do this -- any wetlab system would involve other differences between the environments too.
-
+%@RCK: Added something to that effect. Somebody give it a read-over?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1072,70 +1122,85 @@ In natural systems, this pattern in evident in the acquisition of antibiotic res
 \label{chap:hgt-preferred}
 \section{Background}
 
-In both natural and artificial systems, populations evolve mechanisms to reduce or eliminate mutation \todo{cite - error correction}, despite evidence that higher mutation rates may be optimal.
+In both natural and artificial systems, populations evolve mechanisms to reduce or eliminate mutation\cite{wielgoss_mutation_2013}, despite evidence that higher mutation rates may be optimal\cite{clune_natural_2008}.
 % MJW: Possible citations: Jeff Clune's Avida work on reduction in mutation rate; Wielgoss et al 2013 PNAS paper that shows two independent clades in one of the LTEE populations that reduce the mutation rate in the hypermutator background.
-In artificial systems, prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment\todo{[TODO CITE]}. However, Horizontal Gene Transfer through Natural Competence seems to be exception to this rule.  
+%@RCK: applied
+In artificial systems, prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment\todo{[TODO CITE]}. However, Horizontal Gene Transfer through transformation seems to be exception to this rule.  
 % MJW: I don't think natural competence is capitalized, either here or in the next sentence.
 
 %Why should HGT mutations be different? 
-In nature, Natural Competence is a highly regulated and refined mechanism for taking up DNA fragments from the environment[CITE CITE CITE]. 
+In nature, transformation is a highly regulated and refined mechanism for taking up DNA fragments from the environment \cite{solomon_whos_1996,seitz_cues_2013,fontaine_novel_2010}. 
 % MJW: Here are the DOIs for some citations: https://doi.org/10.1016/0168-9525(96)10014-7 ,  https://doi.org/10.1111/j.1574-6976.2012.00353.x , and also a 2009 J of Bacteriology paper titled A Novel Pheromone Quorum-Sensing System Controls the Development of Natural Competence in Streptococcus thermophilus and Streptococcus salivarius
-Clearly, natural evolution
+%@RCK: applied
+Clearly, evolution
 % MJW: Why use natural as an adjective here?
-is acting to maintain and preserve these functions, despite the risk of bad recombinations. In the previous chapter, we showed that HGT is directly selected for in harsh changing environments. Despite the neutral to slightly deleterious fitness effects of recombination, HGT use is up-regulated.
+%@RCK: removed
+is acting to maintain and preserve these functions, despite the risk of bad recombinations. In the previous chapter, we showed that HGT is directly selected for in harsh changing environments. Despite the neutral to slightly deleterious fitness effects of recombination, HGT use is upregulated.
 % MJW: I don't think there is a hyphen here.
-What makes HGT different from other types of mutagen?
+%@RCK: removed hypen
+What makes HGT different from other types of mutations?
 % MJW: Pretty sure you mean mutation.
-Is it the fitness effect? The information content of fragments? The potential for beneficial phenotype changes? 
+%@RCK: fixed
+Is it the fitness effect? The information content of fragments? The probability for beneficial phenotype changes? 
 % MJW: Maybe probability instead of potential?  I mean, pretty much any mutation has the *potential* to have a beneficial phenotypic change...
-How does HGT compare to other types of mutagen in these respects?
+%@RCK: changed
+How does HGT compare to other types of mutations in these respects?
 % MJW: I think you mean mutation here too.
+%@RCK: fixed
 Can these differences account for the increased selection for HGT? 
 
-In order to address these question, we created instructions that create different kinds of mutational effects with similar per-instruction impact to HGT. We then performed experiments with these mutagenic instructions under the same conditions as our evaluation of HGT, in static vs. changing environments. We found that not only are these instructions are triggered at significantly lowered rates as compared to HGT, but that the use rate correlates significantly with the amount of useful information conveyed by the mutagen. 
+In order to address these question, we created instructions that create different kinds of mutational effects with similar per-instruction impact to HGT. We then performed experiments with these mutagenic instructions under the same conditions as our evaluation of HGT, in static vs. changing environments. We found that not only are these instructions are triggered at significantly lowered rates as compared to HGT, but that the use rate correlates significantly with the amount of useful information conveyed by the mutation. 
 
 
 \section{Methods}
 In this chapter, we use Avida to compare mutational effects of HGT to other types of mutations. As in the previous chapter, HGT is triggered by the \texttt{HGT-Uptake} instruction, and fragments are uptaken from reservoirs in the environment. 
 
-All experiments in this chapter compare outcomes between static environments and harsh changing environments. Similarly to the experiments in the previous chapter, task rewards in the harsh changing environment switch from a positive to a negative reward between the divided set of tasks in the Logic 9 environment. Please refer to Table~\ref{hgt-treatments-h} for more details. Each complete cycle lasts 1000 updates, and the whole experimental run continues for 200,000 updates.
+All experiments in this chapter compare outcomes between static environments and harsh changing environments. Similarly to the experiments in the previous chapter, task rewards in the harsh changing environment switch from a positive to a negative reward between the divided set of tasks in the Logic-9 environment. Please refer to Table~\ref{hgt-treatments-h} for more details. Each complete cycle lasts 1,000 updates, and the whole experimental run continues for 200,000 updates.
 % MJW: I think if you use the comma for 200,000, you probably need it for 1,000 too.
-Also as in the previous chapter, the static environment rewards executions of all the Logic 9 tasks at their default levels, with no reward switching.
+%@RCK: fixed
+Also as in the previous chapter, the static environment rewards executions of all the Logic-9 tasks at their default levels, with no reward switching.
 % MJW: I think in most Avida work, Logic-9 is hyphenated
-
+%@RCK: fixed everywhere
 
 \subsection{Experimental Design}
 
-\subsubsection{Alternative Mutagens}
+\subsubsection{Alternative Mutagenic Instructions}
 % MJW: I think this paragraph is mutations, not mutagens, again.
-
+%@RCK: fixed
 In order to perform experiments comparing HGT to other types of mutagens, we modified the functioning of the HGT instruction to perform a new set of mutagenic functions which should have the same raw, per-instruction effect as the normal HGT instruction. All mutagens have the same 10\% execution probability and viable recombination site requirements as the default HGT instruction.
 
 \begin{itemize}
-	\item \textbf{HGT (Intact Fragment)}: The default HGT operation. A fragment is uptaken from the environment. There is a 10\% probability that the fragment is recombined into the organism's executing genome. The recombination occurs homologously - that is, three instructions at the beginning and end of the fragment must match exactly with locations on the genome. The first viable match is used.
+	\item \textbf{HGT (Intact Fragment)}: The default HGT operation. We uptake a fragment from the environment. We apply a 10\% probability that the fragment is recombined into the organism's executing genome. The recombination occurs homologously - that is, three instructions at the beginning and end of the fragment must match exactly with locations on the genome. We use the first valid match. We find valid matches by selecting a random location on the genome, then search from there. We loop around the whole genome, past the end and into the beginning, until we find a for the front three instructions of the fragment. Then, we begin searching for a match for the back three instructions of the fragment, starting at the edge of the front match. If a valid back-end match site is not found, we scan forward, looking for the next front-end match and repeat the process until all possible match sites on the genome are exhausted.
 % MJW: What, exactly, does this mean?  Do you start from a random place in the genome and find the first match?  Do you always start at position 1 (or 0, I suppose) and find the first match, which would bias you towards recombining earlier in the genome?  Can the matching three bases span across the first and last instructions?  Also: you probably want "valid", not "viable", since we use viable to mean something specific in Avida.  This applies to several of the other items in this list too.
+%@RCK: clarified to show random starting point, searching
 If no match is found, the recombination fails. If recombination succeeds, it replaces the content between the selected beginning and end match sites. This may result in the genome growing or shrinking, depending on the distance between the matches, and the length of the fragment.
 % MJW: Likewise here.  When searching for a match for the end of the fragment, do you always start from, say, exactly where the front edge perfect match stops?  Is there some formula that determines the first point at which you search for something? Do you assign all of the sites in the host genome a number, randomly permute that list of numbers, and then try each of them in turn as the starting point for a possible perfect match?
+%@RCK: yes, we start looking for the back-end match at the edge of the front match. We loop all the way around the genome looking for a viable spot.
 	
-	\item \textbf{HGT Shuffle}: A fragment is uptaken from the environment, and a viable recombination site is found.
+	\item \textbf{HGT Shuffle}: We uptake a fragment from the environment, and a valid recombination site is found, as above.
 % MJW: I assume the same way as in the base?  Probably best to just say that.  Repeat this comment for the rest of the entries.
-Prior to recombination, the fragment is shuffled, and inserted at the selected site.
+%@RCK: fixed
+Prior to recombination, we shuffle the fragment, with the order of each instruction randomized. We then insert the fragment at the selected site.
 % MJW: I suggest being more explicit about what you mean by shuffled.  Even if it's just "such that the inserted fragment has the exact same instructions as the originally chosen fragment, but the order of those instructions has been randomized".  Except that that, like this existing bit, is passive voice.
-
-	\item \textbf{HGT Random}: A fragment is uptaken from the environment, and a viable recombination site is found. Prior to recombination, the fragment is entirely replaced with an equal number of randomly selected instructions, and inserted at the selected site.
+%@RCK: fixed
+	\item \textbf{HGT Random}: We uptake a fragment from the environment, and find a valid recombination site, as above. Prior to recombination, we entirely replace the fragment with an equal number of randomly selected instructions, and insert it at the selected site.
     % MJW: Passive
-
-	\item \textbf{Mutation Event - Sampled}: A fragment is uptaken from the environment, and a viable recombination site is found. Rather than recombine, a number of point mutations are applied, matching the number of instructions in the fragment. The mutations applied are sampled from the selected fragment. This mutagen is analogous to the the \textbf{HGT Shuffle} mutagen, except that instead of having a shuffled fragment be applied in a single location, the instructions from the fragment are sampled and applied randomly throughout the genome.
+	%@RCK: fixed
+	\item \textbf{Mutation Event - Sampled}: We uptake a fragment from the environment, and find a valid recombination site, as above. Rather than recombine, we apply a number of point mutations in random locations throughout the genome. The number of applied mutations matches the number of instructions in the fragment. The mutations applied are sampled, with replacement, from the selected fragment. This mutagenic instruction is analogous to the the \textbf{HGT Shuffle} mutagen, except that instead of having a shuffled fragment be applied in a single location, the instructions from the fragment are sampled and applied randomly throughout the genome.
     % MJW: Sampled with no modifiers generally implies "with replacement". So if, say, the fragment were xgds, one possible result would be 4 new mutations in the genome: x, x, d, s (no g).  This may be what you did, but I want to be sure that it is.
+	%@RCK: clarified, sampled with replacement
 
-	\item \textbf{Mutation Event - Random}: A fragment is uptaken from the environment, and a viable recombination site is found. Rather than recombine, a number of random point mutations are applied, matching the number of instructions in the fragment. This mutagen is analogous to the \textbf{HGT Random} mutagen, except that, again, its effects are applied randomly throughout the genome.
+	\item \textbf{Mutation Event - Random}: We uptake a fragment from the environment, and find a valid recombination site, as above. Rather than recombine, we apply a number of random point mutations, matching the number of instructions in the fragment. This mutagenic instruction is analogous to the \textbf{HGT Random} mutagen, except that, again, its effects are applied randomly throughout the genome instead of at a single location.
     % MJW: I think these are mutations again, not mutagens.
+    %@RCK: fixed
 
-	\item \textbf{Mutation Rate Increase}: A fragment is uptaken from the environment, and a viable recombination site is found. Rather than recombine, the point-mutation rate for the organism is increased such that it will experience an additional number of point mutations matching the number of instructions in the uptaken fragment.
+	\item \textbf{Mutation Rate Increase}: We uptake a fragment from the environment, and find a valid recombination site, as above. Rather than recombine, we increase the point-mutation rate for the organism, such that it will experience an expected additional number of point mutations matching the number of instructions in the uptaken fragment.
     % MJW: Is it that the it will experience this number of mutations, or that the expected number of mutations will be equal to the fragment size?
+    %@RCK: expected. clarified.
 
-	\item \textbf{Die}: A fragment is uptaken from the environment, and a viable recombination site is found. Rather than recombine, the organism dies.	
+	\item \textbf{Die}: We uptake a fragment from the environment, and find a valid recombination site, as above. Rather than recombine, the organism dies.	
     % MJW: Why find a valid recombination site, if you're just going to kill it?  Is it that if it fails to find a valid site, this doesn't kill the organism?
+    %@RCK: Yup. We want to be able to compare the use rates, and that has to include all the times that instructions could and do fizzle.
 \end{itemize}	
 
 \subsubsection{Comparing HGT to Other Mutation Types}
@@ -1151,8 +1216,9 @@ For the experiments comparing the mutational effects of different types of mutat
 
 \begin{tabular}{|c||c|c|}
 \hline
-\thead{Treatment} & \thead{Environment} & \thead{Mutagen} 
+\thead{Treatment} & \thead{Environment} & \thead{Mutagenic Instructions} 
 % MJW: I think these are mutations again.
+%@RCK: fixed
 \\\hhline{|=|=|=|}
 HGT & Static & \multirow{2}{*}{ HGT } \\\cline{1-2}
 HGT CE & Changing & \\\hline
@@ -1175,32 +1241,30 @@ Die CE & Changing & \\\hline
 \label{hgt_mut-treatments}
 \end{table}
 
-\todo[inline, color=magenta]{TODO - more discussion of what each treatment is intended to cover.}
+%\todo[inline, color=magenta]{TODO - more discussion of what each treatment is intended to cover.}
+The goal of each treatment is to compare the use rates of each of the different mutagenic instruction across several factors. We can examine the effects of localization (concentrating mutations in a single area) by comparing the \texttt{HGT-Random} vs the \texttt{ME-Random} treatments. We can measure the effect of time-concentration (all mutations happening at once vs spread out over time) by comparing the \texttt{ME-Random} and \texttt{MRI} treatments. We can examine the effect of information content by comparing the \texttt{HGT}, \texttt{HGT-Shuffle}, and \texttt{ME-Sampled} treatments. We can identify a basement-level for mutagenic instruction use by comparing against the use of the entirely deleterious \texttt{Die} instruction.  Finally, we can compare all these factors with their environment by comparing the static vs changing environment treatments.
 
 \section{Results and Discussion}
-Our research shows that only mutations containing useful information are elevated in response to changing environments. Intact-fragment HGT is used most, with shuffled-fragment used less, and the other, non information-bearing mutagen types used at the lowest levels.  Further, we find a positive correlation between expected fitness and mutagen-use. That is, mutagens that have higher expected fitness effects are used more. Finally, we see a strong positive correlation between the fraction of mutations from a mutagen that provide a beneficial phenotype-altering change, and the use of that mutagen.
-
+Our research shows that only mutations containing useful information are elevated in response to changing environments. Intact-fragment HGT is used most, with shuffled-fragment (\texttt{HGT-Shuffle}) used less, and the other, non information-bearing mutagen types used at the lowest levels.  Further, we find a positive correlation between expected fitness and mutagenic instruction use. That is, mutagenic instructions that have higher expected fitness effects are used more. Finally, we see a strong positive correlation between the fraction of mutations from a mutagenic instruction that provides a beneficial phenotype-altering change, and the use of that instruction.
 % MJW: I still think these are mutations, not mutagens.
+%@RCK: fixed
 
 \subsection{Other mutation types are not elevated in response to HGT}
 % Measured use of mutagen instruction in static and changing environments
-% * Die instruction (control)
-% * Raised mut rate
-% * Spatially-Dispersed Mutation Event
-% * Localized Mutation Event
-% * Shuffled-Fragment HGT 
-% * HGT
-
-In order the compare the use of HGT against other kinds of mutation, we compared rates of non-bonus HGT fragment uptake against a execution of series of other mutation types, in both static and changing environments.\ref{fig:mutagen_execution} As expected, in the static environment, endogenously-controlled performance of all types of mutation (including HGT) is strongly suppressed. However, in harsh changing environment, HGT use dominates the other mutation types. Of particular interest is the decreasing use of HGT-like fragment insertions as information is destroyed, first by shuffling fragments (HGT-Shuffle), and then by replacing all fragment instructions with randomly selected instructions (HGT-Random).
+In order the compare the use of HGT against other kinds of mutation, we compared rates of non-bonus HGT fragment uptake against a execution of series of other mutation types, in both static and changing environments.\ref{fig:mutagen_execution} As expected, in the static environment, endogenously-controlled performance of all types of mutation (including HGT) is strongly suppressed. However, in harsh changing environment, HGT use dominates the other mutation types. Of particular interest is how the use of the HGT-like instructions are used most by order of information content. The intact-HGT instruction is used most, followed by the \texttt{HGT-Shuffle} instruction, and then followed by {HGT-Random}, where no information remains.\todo{stats}
 % MJW: I don't know what you mean by "first" and "and then", since both commands presumably don't exist in the same treatment.
-The latter performs comparably to the remaining mutation types: Mutation Events: Biased and Random
+%@RCK: clarfied
+The latter performs comparably to the remaining mutation types: Mutation Events: \texttt{ME-Sampled}, \texttt{ME-Random}
 % MJW: You don't have anything currently called Mutation Event: Biased.  I assume this is the Sampled one?
-, Mutation Rate Increase, and the Die control. This indicates that the information content of the fragment is an important predictor of the use of HGT. 
+%@RCK: fixed
+, \texttt{MRI} (Mutation Rate Increase), and the \texttt{Die} control.\todo{stats} This indicates that the information content of the fragment is an important predictor of the use of HGT. 
 
-Also of note is that the only difference between the Mutation Event: Sampled and HGT-Shuffle treatments is the localization of the mutation effect
+Also of note is that the only difference between the \texttt{ME-Sampled} and \texttt{HGT-Shuffle} treatments is the localization of the mutation effect
 % MJW: This statement strongly implies that the Sampled is "Without replacement".
-(HGT-Shuffle fragment insertion is applied to a single location, whereas the shuffled instructions are scattered randomly throughout the genome), however their use rates are significantly different. This indicates that not only is information content important, but that localization (clustering) of the mutation effect also matters.
+(\texttt{HGT-Shuffle} fragment insertion is applied to a single location, whereas with \texttt{ME-Sampled}, the instructions are scattered randomly throughout the genome), however their use rates are significantly different. This indicates that not only is information content important, but that localization (clustering) of the mutation effect also matters.
 % MJW: Consider expanding on this with speculation as to why it might matter.
+%@RCK: speculated :)
+We speculate that this effect may synergize with the level of modularity in a genome. If a genome is even slightly modular, there are gradients of relatedness between loci that decrease with physical distance. A single mutation is enough to disrupt a function. Thus, if all mutations are concentrated in one region, they would be more likely to affect fewer total functions.  Thus, concentrating mutations to a single area may limit the reach of the damage, so to speak, as opposed to hitting many different locations at once. We would expect this effect to increase as modularity of a genome increases.
 %This indicates that a combination of information content and localization of the mutation event matter for the beneficial nature of HGT.
 
 \todo[color=green]{stats}
@@ -1224,9 +1288,10 @@ Also of note is that the only difference between the Mutation Event: Sampled and
 %   * HGT
 %   * CE
 
-Prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment.
+Prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment\cite{clune_natural_2008}.
 % MJW: This sentence demands citations.  Presumably Jeff Clune's Avida work?
-Why should HGT mutations be different? In order to address this question, we measured the average fitness effect of each mutation, and compared it to that mutation's usage rate in changing environments. We observed a correlation between the average fitness effect, and the use of the mutagen. We observed many more positive or neutral fitness effects from HGT-like instructions than the other mutagen types, which exhibited primarily neutral or negative mutation effects. This indicates that mutagen use is under direct selection\ref{fig:mutagen_use_vs_fitness_effect}
+%@RCK: fixed
+Why should HGT mutations be different? In order to address this question, we measured the average fitness effect of each mutation, and compared it to that mutation's usage rate in changing environments. We observed a positive correlation between the average fitness effect, and the use of the mutagenic instruction\todo{stats}. We observed many more positive or neutral fitness effects from HGT-like instructions than the other mutagenic instruction types, which exhibited primarily neutral or negative mutation effects. This indicates that mutagenic instruction use is under direct selection (Fig~\ref{fig:mutagen_use_vs_fitness_effect}).
 % MJW: I think these are mutations, again.
 
 \todo[color=green]{stats}
@@ -1248,9 +1313,10 @@ Why should HGT mutations be different? In order to address this question, we mea
 % * Shuffled-Fragment HGT
 % * HGT
 
-Further, 
+%Further, 
 % MJW: I would recommend against starting the first sentence of a section or subsection with "Further", since the break pushes that antecedent substantially further away.
-we measured the proportion of mutations that produce beneficial phenotype changes.\ref{fig:mutagen_use_vs_fraction_beneficial} In the context of a changing environment, a mutation that switches an organism's phenotype to match the environment should be strongly selected for. Indeed, we found that this proportion was significantly and substantially higher for HGT-like mutations than other mutation types, and that there was strong correlation between the proportion of beneficial phenotype-switching mutations and mutagen use. This correlation is much stronger than the correlation with fitness effect, indicating that the magnitude of the fitness effect is less important to selection than the sign of the effect.
+%@RCK: fixed
+We measured the proportion of mutations that produce beneficial phenotype changes.\ref{fig:mutagen_use_vs_fraction_beneficial} In the context of a changing environment, a mutation that switches an organism's phenotype to match the environment should be strongly selected for. Indeed, we found that this proportion was significantly and substantially higher for HGT-like mutations than other mutation types\todo{stats}, and that there was strong correlation between the proportion of beneficial phenotype-switching mutations and mutagen use\todo{stats}. This correlation is much stronger than the correlation with fitness effect, indicating that the magnitude of the fitness effect is less important to selection than the sign of the effect.
 
 \todo[color=green]{stats}
 \todo{caption}
@@ -1670,7 +1736,7 @@ In order to identify an optical cycle time to support our experiments, we survey
 	\label{fig:a1-taskexpression}
 	\end{figure}
 
-We found that, of our surveyed values, a cycle time of 1000 updates (roughly 30 generations) both provided adequate time for traits to evolve and fix (and thus be performed by the entire population), but also not enough time for drift to destroy alternate-phase traits, thus minimizing the time required to re-evolve the task. Cycle times that were too short never acquired and fixed adaptive traits in the entire population, while as cycles got longer, the fluctuating tasks would take much longer to re-evolve, indicating that the populations had drifted away from the regions of the mutational landscape that contained them (Fig~\ref{fig:a1-timetofixation}). 
+We found that, of our surveyed values, a cycle time of 1,000 updates (roughly 30 generations) both provided adequate time for traits to evolve and fix (and thus be performed by the entire population), but also not enough time for drift to destroy alternate-phase traits, thus minimizing the time required to re-evolve the task. Cycle times that were too short never acquired and fixed adaptive traits in the entire population, while as cycles got longer, the fluctuating tasks would take much longer to re-evolve, indicating that the populations had drifted away from the regions of the mutational landscape that contained them (Fig~\ref{fig:a1-timetofixation}). 
 
 %=[FIGURE - complex environment task discovery]
 \todo[color=green]{stats}
