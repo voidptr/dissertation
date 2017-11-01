@@ -932,7 +932,9 @@ For the treatments corresponding to the first set of hypotheses on the origins o
 \begin{tabular}{|c|c|c|c|}
 \hline
 \thead{Treatment} & \thead{Changing \\ Env. \\ Type} & \thead{HGT \\ Action} & \thead{Bonus} \\\hhline{|=|=|=|=|}
-Control & Static & None & n/a \\\hline
+%Control & Static & None & n/a \\\hline
+\makecell{Static Control \\ (no HGT)} & Static & None & n/a \\\hline
+\makecell{CE Control \\ (no HGT)} & Harsh Cyclic & None & n/a \\\hline
 \makecell{HGT \\ B0.0 \\ (Natural Competence \\ No Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probability} & n/a \\\hline
 \makecell{HGT \\ B0.0 \\ CE \\ (Natural Competence \\ No Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probability} & n/a \\\hline
 \makecell{HGT \\ B0.8 \\ (Natural Competence \\ with Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probability \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
@@ -984,10 +986,21 @@ Our results show that both an uptake bonus and changing environment promote the 
 %* Bonus, CE - uptake higher than either BonusStatic or NoBonusCE
 
 %=measured fragment uptake, results summary
-We measured HGT fragment uptake in four conditions (see Table~\ref{hgt-treatments-h}), plus of pair of non-HGT controls. Without a bonus, in a static environment, fragment uptake is depressed to a low level as compared to the rate of the non-HGT control, where the \texttt{HGT-Uptake} instruction does nothing. This indicates that HGT in a static environment is largely deleterious (Figure~\ref{fig:hgt_inst_execution}). However, in a harsh changing environment, fragment uptake is elevated. This shows that in the context of a harsh changing environment, the integration of new genetic material is more beneficial than in the static environment. We also found that, regardless of whether the environment is static or changing, when a bonus to fragment uptake is provided (analogous to the nutritive benefit granted by natural competence in biological organisms), fragment uptake also increases. 
+We measured HGT fragment uptake in four conditions (see Table~\ref{hgt-treatments-h}), plus of pair of non-HGT controls. Without a bonus, in a static environment, fragment uptake is depressed to a low level as compared to the rate of the non-HGT control, where the \texttt{HGT-Uptake} instruction does nothing (Wilcoxon Rank-Sum Test: Z = 9.74, p $<<$ 0.0001). This indicates that HGT in a static environment is largely deleterious (Figure~\ref{fig:hgt_fragment_uptake}). However, in a no-bonus harsh changing environment, fragment uptake is elevated compared to the static environment (Wilcoxon Rank Sum-Test: Z = -8.44, p $<<$ 0.0001). This shows that in the context of a harsh changing environment, the integration of new genetic material is more beneficial than in the static environment. We also found that, regardless of whether the environment is static or changing, when a bonus to fragment uptake is provided (analogous to the nutritive benefit granted by natural competence in biological organisms), fragment uptake also increases(Wilcoxon Rank Sum Test: Z = -8.44, and -7.47, p $<<$ 0.0001). 
+
+% MJW: Ding ding ding!  :)
+%@RCK: done
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.65\columnwidth]{figures/HGT/hgt_fragment_uptake.png}
+\caption{ \textbf{Number of HGT fragment uptakes} in static and changing environments, without a grazing bonus, with a grazing bonus, and a no HGT control, where the \texttt{HGT-Uptake} instruction is inert. HGT uptake increases in response to a changing environment, and also in response to a grazing bonus. Both a grazing environment and a changing environment result in an even larger increase of fragment uptakes than either the changing environment, or the bonus alone (Wilcoxon Rank Sum Test: Z = -4.93 and -7.47 respectively, p $<<$ 0.0001).
+%
+}\label{fig:hgt_fragment_uptake}
+\end{center}
+\end{figure}
 
 %=measured fragment uptake wrl to bonus
-In order to investigate the relationship between the effects granted by a nutritive bonus and the benefit of fragment recombination in a changing environment, we selected a bonus level that increased fragment uptake in a static environment to a level comparable to the increase seen in changing environments without a bonus. We then combined these factors, giving a bonus, plus using a changing environment. We saw that the resulting uptake level increases largely additively. This indicates that the benefits granted by a grazing bonus are largely independent of the benefits conveyed by integrating new genetic material. 
+In order to investigate the relationship between the effects granted by a nutritive bonus and the benefit of fragment recombination in a changing environment, we selected a bonus level that increased fragment uptake in a static environment to a level comparable to the increase seen in changing environments without a bonus. We then combined these factors, giving a bonus, plus using a changing environment. We saw that the resulting uptake level increases largely additively. This indicates that the benefits granted by a grazing bonus are generally independent of the benefits conveyed by integrating new genetic material. 
 % MJW: The preceding paragraph reads like methods, no?
 %@RCK: Eh. I don't know. It's what we measured. Yes, we did a specific experiment, so that should be documented in methods. But I don't mind explaining the measure here.
 \todo[inline]{document the additive measuring thing in methods, per note}
@@ -996,15 +1009,7 @@ In order to investigate the relationship between the effects granted by a nutrit
 %=conclusion sentence - hgt is promoted by HGT
 Thus, not only is HGT evolution possible absent a bonus, the benefit stacks with that of a grazing bonus, proving a more likely scenario by which HGT might evolve. %bleh
 
-\todo[color=green]{stats}
-% MJW: Ding ding ding!  :)
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/HGT/hgt_inst_execution.png}
-\caption{bleh%\todo{stats}\todo{caption}
-}\label{fig:hgt_inst_execution}
-\end{center}
-\end{figure}
+
 
 
 
@@ -1013,26 +1018,24 @@ Thus, not only is HGT evolution possible absent a bonus, the benefit stacks with
 %Measured fitness effects of HGT fragments that originated in a matching phase in a previous cycle vs fragments originating in the non-matching phase of the cycle.
 
 %=understanding why HGT is used
-In order to understand the basis of the beneficial nature of HGT in changing environments, we performed a series of treatments where we replaced the fragments in the cell reservoirs with fragments that originated at the end of the matching phase of the cycle, the off-phase of the cycle, and from both phases, plus a non-replaced control. (Figures~\ref{fig:fitness_effect_heatmap}, \ref{fig:hgt_use_by_cycle_phase_source}, \ref{fig:fitness_effect_by_cycle_phase_source}, \ref{fig:beneficial_fraction_by_cycle_phase_source})
-We then measured the levels of HGT use, the fitness effect of HGT mutations, as well as the fraction of beneficial phenotype-switching mutations. In the both-phase and non-replaced control, the mean fitness effect was largely neutral, while the on-phase fragments had a significantly positive mean fitness benefit as compared to both the both-phase and non-replaced controls\todo{stats}. The off-phase fragments were largely negative when compared to the both-phase and non-replaced controls\todo{stats}. Further, the control, both-phase and on-phase all had a larger fraction of beneficial phenotype-switching mutants
-% MJW: compared to what?  Than other treatments?  Than non-beneficial phenotype switches?  Than mutations which don't switch phenotypes? I don't actually know what comparison you're making here.
-than the the off-phase treatment, which had few to no beneficial phenotype switches\todo{stats}. This indicates that it is not only genetic disruption that is beneficial, but that the majority of the benefit of HGT derives from taking up and integrating useful fragments of information from time-periods where organisms were already adapted to the environment, thus bypassing the need to evolve a new phenotype from scratch.
 
-\subsubsection{Expected Fitness Effects}
 
+\subsubsection{Fitness Effects}
+In order to understand the basis of the beneficial nature of HGT in changing environments, we measured the fitness effect of individual fragments on individual organisms within a population.
 %=measured fitness effect in normal HGT
 We calculated the average fitness effects of fragments in a randomly selected replicate of the non-replaced HGT control treatment at the end of the last environmental cycle, and generated a distribution of fragments sorted the fragments by age and fitness-effect (Figures~\ref{fig:fitness_effect_heatmap}). We can see a clear pattern of more beneficial fitness effects from fragments of organisms originating in the matching cycle phase. 
 % MJW: Have we done this for only one replicate?
 %@RCK: yes. It's an example of what they look like. Maybe we don't care that they look this way, but I like the figure :P
 
-\todo[color=green]{stats}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/fitness_effect_heatmap.png}
-\caption{bleh%\todo{stats}\todo{caption}
+\caption{\textbf{Origin and fitness distribution of HGT fragments} in the reservoirs from a randomly selected replicate population, sampled at 100,000 updates. We apply each fragment in each cell's reservoir, one at a time, to the organism in the cell, then record the fitness effect. The x-axis is the birth-update of fragment's original donor organism. The y-axis is a fragment's fitness effect. The color of each point represents the number of fragments that occupy that birth-update and also that fitness value. Hotter values indicate more fragments from that time origin at that fitness effect. Most fragments with a positive fitness effect (the upper half of the figure) are originate in bands that correspond with the matching phase of an earlier cycle. 
+%\todo{stats}\todo{caption}
 }\label{fig:fitness_effect_heatmap}
 \end{center}
 \end{figure}
+
 
 %=manipuated reservoir to match or not match phase - measured effects 
 In order to quantify this result, we performed experiments where we replaced the fragments in the reservoir to contain only fragments originating in the matching phase, the off-phase, and mixture of both phases. We measured the mean fitness 
@@ -1049,6 +1052,13 @@ effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycl
 \end{center}
 \end{figure}
 
+% we performed a series of treatments where we replaced the fragments in the cell reservoirs with fragments that originated at the end of the matching phase of the cycle, the off-phase of the cycle, and from both phases, plus a non-replaced control. (Figures~\ref{fig:fitness_effect_heatmap}, \ref{fig:hgt_use_by_cycle_phase_source}, \ref{fig:fitness_effect_by_cycle_phase_source}, \ref{fig:beneficial_fraction_by_cycle_phase_source})
+% We then measured the levels of HGT use, the fitness effect of HGT mutations, as well as the fraction of beneficial phenotype-switching mutations. In the both-phase and non-replaced control, the mean fitness effect was largely neutral, while the on-phase fragments had a significantly positive mean fitness benefit as compared to both the both-phase and non-replaced controls\todo{stats}. The off-phase fragments were largely negative when compared to the both-phase and non-replaced controls\todo{stats}. Further, the control, both-phase and on-phase all had a larger fraction of beneficial phenotype-switching mutants
+% % MJW: compared to what?  Than other treatments?  Than non-beneficial phenotype switches?  Than mutations which don't switch phenotypes? I don't actually know what comparison you're making here.
+% than the the off-phase treatment, which had few to no beneficial phenotype switches\todo{stats}. This indicates that it is not only genetic disruption that is beneficial, but that the majority of the benefit of HGT derives from taking up and integrating useful fragments of information from time-periods where organisms were already adapted to the environment, thus bypassing the need to evolve a new phenotype from scratch.
+
+
+\subsubsection{Beneficial Phenotype Switching}
 %=measured phenotypic change
 In our environments, mutations that convey phenotypic change should have the largest impact. Specifically, the largest fitness benefits should occur when a mutation leads to the acquisition of a new rewarded task, or the loss of a punished task.  
 % MJW: Slightly redundant; you just specified which pheotypic changes have the largest impacts, and then said that things that result in phenotypic changes have the largest impacts.  If you change the order of these sentences, you can put the "In our environments" on what is currently the second sentence, and then lead in with "Specifically, " for what is currently the first sentence.
