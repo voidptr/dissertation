@@ -1366,24 +1366,43 @@ As in the experiments described in the previous chapter, performing these kinds 
 \section{Background}
 
 %=how it affects long-term evo
-For longer timescales, evolvability is concerned more with variability generation and exploration of neutral spaces. Populations that exhibit this kind of evolvability would possess genomes with genetic architectures that more easily traverse the mutational landscape along neutral roads and thereby discover new fitness peaks while avoiding crossing fitness valleys. This kind of evolvability would allow populations to more easily colonize new ecological niches and form new clades\cite{kirschner_evolvability_1998,brookfield_evolution:_2001}.
+For longer timescales,
+% MJW: This is vague.  Also, it implies a comparison, but an unanchored one: compared to what type of time scales that are short?
+evolvability is concerned more with variability generation and exploration of neutral spaces. Populations that exhibit this kind of evolvability would possess genomes with genetic architectures
+% MJW: If you have defined what you use the term genetic architectures to mean back in Ch 1 or 2, this is potentially fine, though maybe with a reference.  For a paper, I feel like you should define this term when you first use it, so that your reader knows what you mean.  I feel like enough authors use genetic architecture to mean enough different things that readers familiar with the term might still interpret it differently than you are using it.
+that more easily traverse the mutational landscape along neutral roads and thereby discover new fitness peaks while avoiding crossing fitness valleys. This kind of evolvability would allow populations to more easily colonize new ecological niches and form new clades\cite{kirschner_evolvability_1998,brookfield_evolution:_2001}.
 
 %=connection between short/long term evo non-obvious
 Despite some common features, the relationship between short-term and long-term evolvability is not obvious. Architectural features and evolutionary pressures that might convey short-term evolvability may not be the same as those that confer longer-term evolvability\cite{pigliucci_is_2008}. For example, features that promote rapid adaptation to a harsh fluctuating environment might reduce fitness in constant or benign fluctuating environments as compared to that of wild-type invaders. Alternately, the adaptation to harsh fluctuating environments and the resulting bottlenecks would potentially reduce diversity to the point where large amounts of neutral novelty generation could not occur.
+% MJW: I feel like examples of these things would do a lot to bolster this paragraph.  Are specific ones laid out the Pigliucci paper, or referenced in it?
 
 \todo[color=magenta,inline]{ch5 - background - fill this in about the prior research done in this area}
 Prior research has shown that...
+% MJW: Are you looking to me for what prior research has shown, or is this more of a note to yourself?
 
-In this chapter, we examine how changing environments or novel mutagens affect long-term evolutionary potential. We introduce change-evolved populations from prior experiments with changing environments, and the evolution of HGT, to an entirely new environment, where we can assess long-term variability generation in the form of new task discovery and exploration.
+
+In this chapter, we examine how changing environments or novel mutagens
+% MJW: As before, I'd change this to something like mutagenic instructions.
+affect long-term evolutionary potential. We introduce change-evolved populations from prior experiments with changing environments, and the evolution of HGT,
+% MJW: For the dissertation, fine; for a manuscript, define HGT when first used.
+to an entirely new environment, where we can assess long-term variability generation in the form of new task discovery and exploration.
 
 \section{Methods}
 % For most experiments described in this chapter, we use populations of Avida organisms that were originally evolved in other experimental treatments with changing environments. We use populations evolved in Chapter~\ref{chap:ce-adaptation} to survey long-term evolutionary potential that originate in simple changing environments with a single fluctuating task. We use populations evolved in Chapter~\ref{chap:evo-hgt}, in a more complex changing environment, with the presence of the HGT instruction, evolved both with and without a bonus. And finally, we evolve a new set of populations that originate in a complex changing environment, but without exposure to HGT. 
 
 \subsection{Experimental Design}
 %=design for experimental environment (CCE vs SCE, and short vs long)
-In order to examine the long-term dynamics and mechanisms of evolving populations in changing environments, we performed three sets of experiments. For each set of experiments, we take populations evolved in conditions where short-term evolvability pressures dominate, and we introduce the resulting populations to a completely new environment, with a new set of rewarded bitwise tasks to perform: Logic-77. These new tasks use three bitwise inputs rather than two, and are each rewarded with a constant 1.2-fold bonus to execution. This reward structure provides a mild selective pressure to evolve these task, but the benefits to performing them do not overwhelm the existing selective pressure to continue performing the tasks rewarded by the original changing or static environment. 
+In order to examine the long-term dynamics and mechanisms of evolving populations in changing environments, we performed three sets of experiments. For each set of experiments, we take 
+% MJW: Verb tense.  You switch from past to present here.  I have the impression most papers are written as "What we did" in past tense, and "What we find" in present tense, but can't swear to that off the top of my head.  But you switch pretty clearly here to present tense for quite a while.
+populations evolved in conditions where short-term evolvability pressures dominate, and we introduce the resulting populations to a completely new environment, with a new set of rewarded bitwise tasks to perform: Logic-77. These new tasks use 
+% MJW: up to
+three bitwise inputs rather than 
+% MJW: a maximum of 
+two, and are each rewarded with a constant 1.2-fold bonus to execution. This reward structure provides a mild selective pressure to evolve these task, but the benefits to performing them do not overwhelm the existing selective pressure to continue performing the tasks rewarded by the original changing or static environment. 
 
-The first set of experiments examines the dynamics of organisms that originally evolved in simple changing environments. These are a continuation of the experiments described in Chapter~\ref{chap:ce-adaptation}. The second set of experiments takes populations evolved in a more complex changing environment where we evolve the organisms to switch back and forth between two halves of the Logic-9 task set. For the final set of experiments, we take populations that evolved in a complex changing environment, similar to the second set, but with the addition of the HGT mutagen. These are a continuation of experiments described in Chapter~\ref{chap:evo-hgt}.
+The first set of experiments examines the dynamics of organisms
+% MJW: I'm honestly not sure what this means.  Population dynamics is fairly consistent term in evo., but dynamics of organisms....do you mean 
+that originally evolved in simple changing environments. These are a continuation of the experiments described in Chapter~\ref{chap:ce-adaptation}. The second set of experiments takes populations evolved in a more complex changing environment where we evolve the organisms to switch back and forth between two halves of the Logic-9 task set. For the final set of experiments, we take populations that evolved in a complex changing environment, similar to the second set, but with the addition of the HGT mutagen. These are a continuation of experiments described in Chapter~\ref{chap:evo-hgt}.
 
 With these experiments, we will explore the characteristics of these populations, and how different kinds of environmental conditions do or do not produce long-term evolvability.  
 
