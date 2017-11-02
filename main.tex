@@ -1038,16 +1038,15 @@ We calculated the average fitness effects of fragments in a randomly selected re
 
 
 %=manipuated reservoir to match or not match phase - measured effects 
-In order to quantify this result, we performed experiments where we replaced the fragments in the reservoir to contain only fragments originating in the matching phase, the off-phase, and mixture of both phases. We measured the mean fitness 
+In order to quantify this observation, we performed experiments where we replaced the fragments in the reservoir to contain only fragments originating in the matching phase, the off-phase, and mixture of both phases as a control. We measured the mean fitness 
 % MJW: Why "expected" fitness?
 %@RCK: fixed
-effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycle_phase_source}). We found that HGT mutations are, on average, neutral in both the non-replaced control and the replaced-"both" treatment. The average fitness effect in the "on-phase" treatment was mildly beneficial, while in the "off-phase" treatment, the effect was strongly deleterious\todo{stats}. 
+effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycle_phase_source}). We found that HGT mutations are, on average, neutral, or nearly neutral in all the treatments. Both the non-replaced control (Mdn = 0.0, 95\% CI [0, 0]) and the replaced-"both" treatment (Mdn = -0.008, 95\% CI [-0.009, -0.008]) were neutral or nearly neutral. The median fitness effect in the "on-phase" treatment was mildly deleterious (Mdn = -0.054, 95\% CI [-0.055, -0.052]), while the mean was more strongly beneficial (M = 1.19, SD = 19.7). In contrast, the "off-phase" treatment, the median fitness effect was, again, mildly deleterious (Mdn = -0.0005, 95\% CI [-0.0006, -0.0004], but with a much more deleterious mean (M = -23.06, SD = 101.8). This suggests that while, on average, HGT mutations remain nearly neutral, a few fragments from the matching phase were strongly beneficial, while the opposite was the case for the non-matching phase.
 
-\todo[color=green]{stats}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/fitness_effect_by_cycle_phase_source.png}
-\caption{bleh%\todo{stats}\todo{caption}
+\caption{\textbf{Mean fitness effect of fragments} in reservoirs. Fragments in reservoirs are replaced by fragments based on the origin of donor organism. The On-Phase treatment only permits fragments in reservoirs that originate in matching phases of the current cycle. The Off-Phase treatment only permits fragments from non-matching phases. Plus two controls: first, where no filtration takes place, and "both" where fragments are injected from a mixed set of origins. The Off-Phase treatment has a significantly lower fitness effect than either of the controls (Wilcoxon Rank-Sum Test: Z = 143 and 31 respectively, p $<<$ 0.001), while the On-Phase treatment has a significantly higher fitness effect (Wilcoxon Rank-Sum Test: Z = 105 and 3 respectively, p $<$ 0.002). 
 }\label{fig:fitness_effect_by_cycle_phase_source}
 \end{center}
 \end{figure}
@@ -1066,13 +1065,12 @@ In our environments, mutations that convey phenotypic change should have the lar
 We quantified 
 % MJW: Isn't this quantification, not identification?
 %@RCK: fixed
-the phenotypic effect of each fragment by counting the number of times that fragments produced a beneficial phenotype change, vs all HGT mutations (Figure~\ref{fig:beneficial_fraction_by_cycle_phase_source}). We see that a significantly larger proportion of fragments in the "on-phase" treatment produce beneficial phenotype changes, as compared to fewer in the normal HGT and "both" treatments, and virtually zero in the "off-cycle" treatment\todo{stats}. 
+the phenotypic effect of each fragment by counting the number of times that fragments produced a beneficial phenotype change, vs all HGT mutations (Figure~\ref{fig:beneficial_fraction_by_cycle_phase_source}). We see that a significantly larger proportion of fragments in the "on-phase" treatment produce beneficial phenotype changes (Mdn = 0.09, 95\% CI [0.07, 0.11]), as compared to fewer in the normal HGT control (Mdn = 0.03, 95\% CI [0.03, 0.04]) and "both" treatments (Mdn = 0.04, 95\% CI [0.035, 0.05]) (Wilcoxon Rank Sum Test: Z = -6.42 and -6.12 respectively, p $<<$ 0.001). In contrast, we observe virtually no beneficial phenotype changes originating in fragments from the "off-phase" treatment (Mdn = 0.009, 95\% CI [0.006, 0.01]). This result is significantly worse than both the control and the "both" treatments (Wilcoxon Rank-Sum Test: Z = 7.11 and 7.35 respectively, p $<<$ 0.001) 
 
-\todo[color=green]{stats, caption}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/beneficial_fraction_by_cycle_phase_source.png}
-\caption{bleh%\todo{stats}\todo{caption}
+\caption{textbf{Fraction of all fragments that produced a beneficial phenotype change}. The "On-Phase" treatment has significantly more fragments that convey a beneficial phenotype change than either of the controls (Wilcoxon Rank Sum Test: Z = -6.42 and -6.12 respectively, p $<<$ 0.001), while the "Off-Phase" has significantly fewer (Wilcoxon Rank-Sum Test: Z = 7.11 and 7.35 respectively, p $<<$ 0.001).
 }\label{fig:beneficial_fraction_by_cycle_phase_source}
 \end{center}
 \end{figure}
@@ -1086,11 +1084,10 @@ Further, if fragments from the matching phase are indeed beneficial, we would ex
 %@RCK: fixed
 changing environments is most beneficial when the fragments in the environment contain information that would be beneficial in that environment. However, even when no such information is available, HGT use is not significantly depressed as compared to the control treatment. This suggests that despite the lack of exclusively matched environmental information, that fragments could still provide some benefit. 
 
-\todo[color=green]{stats}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/hgt_use_by_cycle_phase_source.png}
-\caption{bleh%\todo{stats}\todo{caption}
+\caption{\textbf{Number of uptaken fragments} in the filtered reservoir treatments. The "On-Phase" treatment has a significantly larger number of HGT fragment uptakes, as compared to control, "both", and "off-phase" treatments (Wilcoxon Rank-Sum Test: Z = -3.9**, -3.2*, and -6.5**, respectively, p $<$ 0.002* and p $<<$ 0.001**) This shows that HGT is significantly more beneficial when fragments match the current phase of the cycle. Thus, this suggests that the primary benefit from HGT is not mutational disruption, but the information that fragments convey about the current environment.
 }\label{fig:hgt_use_by_cycle_phase_source}
 \end{center}
 \end{figure}
@@ -1136,7 +1133,7 @@ It is worth noting that most prior studies of HGT have been observational studie
 In both natural and artificial systems, populations evolve mechanisms to reduce or eliminate mutation\cite{wielgoss_mutation_2013}, despite evidence that higher mutation rates may be optimal\cite{clune_natural_2008}.
 % MJW: Possible citations: Jeff Clune's Avida work on reduction in mutation rate; Wielgoss et al 2013 PNAS paper that shows two independent clades in one of the LTEE populations that reduce the mutation rate in the hypermutator background.
 %@RCK: applied
-In artificial systems, prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment\todo{[TODO CITE]}. However, Horizontal Gene Transfer through transformation seems to be exception to this rule.  
+In artificial systems, prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment\cite{clune_natural_2008}. However, Horizontal Gene Transfer through transformation seems to be exception to this rule.  
 % MJW: I don't think natural competence is capitalized, either here or in the next sentence.
 
 %Why should HGT mutations be different? 
