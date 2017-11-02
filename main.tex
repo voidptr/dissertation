@@ -1401,16 +1401,22 @@ three bitwise inputs rather than
 two, and are each rewarded with a constant 1.2-fold bonus to execution. This reward structure provides a mild selective pressure to evolve these task, but the benefits to performing them do not overwhelm the existing selective pressure to continue performing the tasks rewarded by the original changing or static environment. 
 
 The first set of experiments examines the dynamics of organisms
-% MJW: I'm honestly not sure what this means.  Population dynamics is fairly consistent term in evo., but dynamics of organisms....do you mean 
-that originally evolved in simple changing environments. These are a continuation of the experiments described in Chapter~\ref{chap:ce-adaptation}. The second set of experiments takes populations evolved in a more complex changing environment where we evolve the organisms to switch back and forth between two halves of the Logic-9 task set. For the final set of experiments, we take populations that evolved in a complex changing environment, similar to the second set, but with the addition of the HGT mutagen. These are a continuation of experiments described in Chapter~\ref{chap:evo-hgt}.
+% MJW: I'm honestly not sure what this means.  Population dynamics is fairly consistent term in evo., but dynamics of organisms....do you mean dynamics within the organism, like flow control, or the equivalent of metabolism?  More of population dynamics, such as rate of adaptation?  Something else?
+that originally evolved in simple changing environments. These are a continuation of the experiments described in Chapter~\ref{chap:ce-adaptation}. The second set of experiments takes populations evolved in a more complex changing environment where we evolve the organisms to switch back and forth between two halves of the Logic-9 task set.
+% MJW: This is more complex than the first set you talk about, but a less complex environment than you're moving them into.  I think that can be made clearer.
+For the final set of experiments, we take populations that evolved in a complex changing environment, similar to the second set, but with the addition of the HGT mutagen.
+% MJW: Flagging mutagen.
+These are a continuation of experiments described in Chapter~\ref{chap:evo-hgt}.
 
 With these experiments, we will explore the characteristics of these populations, and how different kinds of environmental conditions do or do not produce long-term evolvability.  
 
 \subsubsection{Simple Cyclic Changing Environments}
 %=explanation of the changing environment treatments - cyclic
 We took populations evolved under the experimental conditions detailed in Chapter \ref{chap:ce-adaptation}, and introduced them to an entirely new set of rewarded bitwise logical tasks: the Logic-77 environment. 
+% MJW: You're back to past tense here.  I agree with being in past tense here, just flagging the change.
 
 \todo[inline, color=magenta]{CH5 methods - more details about each treatment}
+% MJW: Definitely agree.  In particular, I think it's important to explain the terminology of Quiesce.  I was able to infer what it meant from quiescent, but I did still have to look it up.  
 
 	%=[TABLE - experimental treatments]
 	\begin{table}[]
@@ -1439,10 +1445,15 @@ We took populations evolved under the experimental conditions detailed in Chapte
 
 
 %=the organisms
-As in Chapter \ref{chap:ce-adaptation}, we held the individual genomes at a fixed length of 121 instructions, and applied mutations after each successful replication event at a substitution probability of 0.00075 per site. Again, we configured the Avida world to have local interactions on a toroidal grid that is 60-by-60 cells (3600 cells in total), and continued the evolution of populations where we left off in Chapter~\ref{chap:ce-adaptation}.
+As in Chapter \ref{chap:ce-adaptation}, we held the individual genomes at a fixed length of 121 instructions, and applied mutations after each successful replication event at a substitution probability of 0.00075 per site.
+% MJW: This is me being overly picky, feel free to ignore.  The point mutation probability is 0.00075 per site.  But the substitution probability is less than that.  Substitutions are defined by changing the sequence.  If you call a mutation on a nop-c, there is a non-zero probability of it still being a nop-c.  As the number of instructions in the instruction set increases, this probability decreases, but it does mean you have fewer substitutions than you have mutation events.
+Again,
+% MJW: I would drop this "again"
+we configured the Avida world to have local interactions on a toroidal grid that is 60-by-60 cells (3600 cells in total), and continued the evolution of populations where we left off in Chapter~\ref{chap:ce-adaptation}.
 
 \subsubsection{Complex Cyclic Changing Environment}
 The second set of experiments looks at the evolution of populations of organisms with variable-length genomes, evolved in a more complex cyclic changing environment. This environment and genetic structure derives from the experiments described in \ref{chap:evo-hgt}. However, these populations were evolved without a working HGT instruction.
+% MJW: You're back to present tense here.
 
 \todo{update table to match HGT}
 	%=[TABLE - experimental treatments]
@@ -1465,7 +1476,9 @@ The second set of experiments looks at the evolution of populations of organisms
 	%\makecell{Harsh \\ to \\ Benign} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 	\end{tabular} 
 
-	\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases. The first phase is a normal changing environment similar to those found in Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
+	\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases.
+    % MJW: These are fragments.
+    The first phase is a normal changing environment similar to those found in Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
 	\end{flushleft}
 	\label{cel-treatments}
 	\end{table}
@@ -1473,7 +1486,9 @@ The second set of experiments looks at the evolution of populations of organisms
 \todo[color=magenta,inline]{TODO fill this in with more detail of each treatment}
 
 \subsubsection{Complex Cyclic Changing Environment with HGT mutagen}
+% MJW: Flagging a mutagen.
 The last set of experiments looks at the evolution of populations of organisms that evolved in a more complex cyclic changing environment, while having access to the HGT mutagen. These experiments are continuations of those described in \ref{chap:evo-hgt}, and continue the evolution of the populations evolved there.
+% MJW: Still in present tense.  Also flagging for the paper that this is referencing a chapter in a way that won't work when they are separate publications, but that doesn't matter for the dissertation.
 
 %=[TABLE - experimental treatments]
 \begin{table}[]
@@ -1501,18 +1516,23 @@ The last set of experiments looks at the evolution of populations of organisms t
 
 	\end{tabular} 
 
-	\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases. The first phase is a normal changing environment similar to those found in Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
+	\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases. 
+    % MJW: Fragments, again.
+    The first phase is a normal changing environment similar to those found in Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
 	\end{flushleft}
 	\label{cel-treatments}
 	\end{table}
 
+% MJW: Made it to this point; need to sleep.
 \todo[color=magenta,inline]{TODO fill this in with more detail of each treatment}
 
 \subsection{Measuring Task Discovery and Task Performance}
-In order to assess how populations adapt to a brand new environment, we measure Task Performance and Task Discovery.
+In order to assess how populations adapt to a brand new environment, we measure Task Performance and Task Discovery, as detailed below.
+% MJW: Added the "as detailed below" bit, because this is otherwise a bit abrupt.  I mean, it still is, just less so.
 
 \subsubsection{Task Performance}
-Task Performance is measured by counting the number of unique non-ephemeral tasks that a population is performing. Each task may be performed only once per organism, yielding a maximum task count of 3600 at any given time. Thus, we define a non-ephemeral task as one that a population is performing at equal to or more than 0.1\% level, or 3.6 times per sampling. 
+Task Performance is measured by counting the number of unique non-ephemeral tasks that a population is performing.  Each task may be performed only once per organism, yielding a maximum task count of 3600 at any given time. Thus, we define a non-ephemeral task as one that a population is performing at equal to or more than 0.1\% level, or 3.6 times per sampling. 
+% MJW: I think this is confusingly phrased.  To the best of my understanding, you're saying that each task can only be performed once per organism.  Therefore, for any given task, the maximum number of times it could be performed in a given update (which I'm guessing is your sampling?) is 3,600 (because I'm assuming that if a specific organism gives birth during the update and then somehow has enough cycles to perform that task again, it's still only counted as having happened once?).  You therefore set a threshold at which tasks are only considered to be performed ephemerally, at 1 out of 100 organisms performing that task in the sampling.  Anything performed more often than that is not ephemeral; you count the unique non-ephemeral tasks from the population as your measure of task performance.  Introducing the term non-ephemeral several sentences before you define it is a bit confusing, and I'm still not entirely clear if you count whether organisms that are sampled *can* perform the task, or *do* perform the task at the point being sampled.
 
 \subsubsection{Task Discovery}
 We measure task by counting the number of unique non-ephemeral tasks that have been discovered by a population, starting at a defined point in time. Once a task is discovered, it may not become "undiscovered." Thus, task discovery counts will always increase monotonically. We measure "Overall" task discovery, counting all possible tasks - including Logic-77 which were available, but not rewarded in the first phase of experiments - and also "Post-Reward" task discovery, where we begin counting new tasks from the beginning of the second phase of the experiment, once Logic-77 rewards are applied. 
