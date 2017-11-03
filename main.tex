@@ -1258,8 +1258,17 @@ Our research shows that only mutations containing useful information are elevate
 %@RCK: fixed
 
 \subsection{Other mutation types are not elevated in response to HGT}
+\todo[color=green]{stats}
+\todo{caption}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_execution.png}
+\caption{bleh
+}\label{fig:mutagen_execution}
+\end{center}
+\end{figure}
 % Measured use of mutagen instruction in static and changing environments
-In order the compare the use of HGT against other kinds of mutation, we compared rates of non-bonus HGT fragment uptake against a execution of series of other mutation types, in both static and changing environments.\ref{fig:mutagen_execution} As expected, in the static environment, endogenously-controlled performance of all types of mutation (including HGT) is strongly suppressed. However, in harsh changing environment, HGT use dominates the other mutation types. Of particular interest is how the use of the HGT-like instructions are used most by order of information content. The intact-HGT instruction is used most, followed by the \texttt{HGT-Shuffle} instruction, and then followed by {HGT-Random}, where no information remains.\todo{stats}
+In order the compare the use of HGT against other kinds of mutation, we compared rates of non-bonus HGT fragment uptake against a execution of series of other mutation types, in both static and changing environments (Fig~\ref{fig:mutagen_execution}). As expected, in the static environment, endogenously-controlled performance of all types of mutation (including HGT) is strongly suppressed (Wilcoxon Rank Sum Test: Z = -22.65, p $<<$ 0.001). However, in harsh changing environments, use of HGT dominates the other mutation types (Wilcoxon Rank Sum Test: Z = 10.66, p $<<$ 0.001). Of particular interest is how the use of the HGT-like instructions are used most by order of information content. The intact-HGT instruction is used most (Mdn = 87389.71, CI 95\% [82982.98, 96000.3]), followed by the \texttt{HGT-Shuffle} instruction(Mdn = 52220.3, CI 95\% [45094.92, 57465.52]), and then followed by {HGT-Random}(Mdn = 25442.98, CI 95\% [22099.45, 30490.08]), where no information remains.
 % MJW: I don't know what you mean by "first" and "and then", since both commands presumably don't exist in the same treatment.
 %@RCK: clarfied
 The latter performs comparably to the remaining mutation types: Mutation Events: \texttt{ME-Sampled}, \texttt{ME-Random}
@@ -1275,19 +1284,20 @@ Also of note is that the only difference between the \texttt{ME-Sampled} and \te
 We speculate that this effect may synergize with the level of modularity in a genome. If a genome is even slightly modular, there are gradients of relatedness between loci that decrease with physical distance. A single mutation is enough to disrupt a function. Thus, if all mutations are concentrated in one region, they would be more likely to affect fewer total functions.  Thus, concentrating mutations to a single area may limit the reach of the damage, so to speak, as opposed to hitting many different locations at once. We would expect this effect to increase as modularity of a genome increases.
 %This indicates that a combination of information content and localization of the mutation event matter for the beneficial nature of HGT.
 
-\todo[color=green]{stats}
-\todo{caption}
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_execution.png}
-\caption{bleh
-}\label{fig:mutagen_execution}
-\end{center}
-\end{figure}
+
 
 
 
 \subsection{Mutation fitness effect correlate with mutagen use}
+\todo[color=green]{stats}
+\todo{caption}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_use_vs_fitness_effect.png}
+\caption{bleh
+}\label{fig:mutagen_use_vs_fitness_effect}
+\end{center}
+\end{figure}
 % Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
 % * Measured fitness effects of different types of mutagens
 %   * Spatially-Dispersed Mutation Event
@@ -1302,19 +1312,20 @@ Prior research has failed to show an increase in endogenously-controlled mutatio
 Why should HGT mutations be different? In order to address this question, we measured the average fitness effect of each mutation, and compared it to that mutation's usage rate in changing environments. We observed a positive correlation between the average fitness effect, and the use of the mutagenic instruction\todo{stats}. We observed many more positive or neutral fitness effects from HGT-like instructions than the other mutagenic instruction types, which exhibited primarily neutral or negative mutation effects. This indicates that mutagenic instruction use is under direct selection (Fig~\ref{fig:mutagen_use_vs_fitness_effect}).
 % MJW: I think these are mutations, again.
 
-\todo[color=green]{stats}
-\todo{caption}
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_use_vs_fitness_effect.png}
-\caption{bleh
-}\label{fig:mutagen_use_vs_fitness_effect}
-\end{center}
-\end{figure}
+
 
 %Fitness effects correlate with use of the mutagen.
 
 \subsection{HGT mutations increase evolved probability of beneficial phenotype switching}
+\todo[color=green]{stats}
+\todo{caption}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_use_vs_fraction_beneficial.png}
+\caption{bleh
+}\label{fig:mutagen_use_vs_fraction_beneficial}
+\end{center}
+\end{figure}
 % Measured proportion of mutations that convey beneficial phenotype change (with an increase in fitness) for different types of mutagens
 % * Spatially-Dispersed Mutation Event
 % * Localized Mutation Event
@@ -1326,15 +1337,7 @@ Why should HGT mutations be different? In order to address this question, we mea
 %@RCK: fixed
 We measured the proportion of mutations that produce beneficial phenotype changes.\ref{fig:mutagen_use_vs_fraction_beneficial} In the context of a changing environment, a mutation that switches an organism's phenotype to match the environment should be strongly selected for. Indeed, we found that this proportion was significantly and substantially higher for HGT-like mutations than other mutation types\todo{stats}, and that there was strong correlation between the proportion of beneficial phenotype-switching mutations and mutagen use\todo{stats}. This correlation is much stronger than the correlation with fitness effect, indicating that the magnitude of the fitness effect is less important to selection than the sign of the effect.
 
-\todo[color=green]{stats}
-\todo{caption}
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_use_vs_fraction_beneficial.png}
-\caption{bleh
-}\label{fig:mutagen_use_vs_fraction_beneficial}
-\end{center}
-\end{figure}
+
 
 %HGT conveys greater proportions of beneficial phenotype-changing mutations than other mutagens.
 
