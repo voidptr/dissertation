@@ -902,10 +902,28 @@ For all experiments described in this chapter, we used a 10\% recombination prob
 
 \subsubsection{Environmental Conditions}
 %=environmental rewards
-All experiments in this chapter compare outcomes between static environments, and harsh changing environments. In a similar manner to the experiments listed in the previous chapter (Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}), task rewards in the harsh changing environment switch from a positive to a negative reward. For the HGT experiments, we did not establish a backbone task that was always rewarded. Rather, we divided the Logic-9 environment into two halves, and alternated positive and negative rewards for each task in each set. There are four pairs of tasks of equivalent complexity, and we randomly allocated one from each pair to an experimental group. We also assigned \texttt{EQU}, which is the most complex task, and has no equivalent, to a random group. Thus, for the first phase of the cycle, we punished the \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU} instructions at $-2^1$, $-2^2$, $-2^3$, $-2^4$, and $-2^5$ respectively, while rewarding \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} at $2^1$, $2^2$, $2^3$, and $2^4$. In the second phase of the cycle, these rewards flip, such that we reward \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU}, and punish \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR}.
-
+All experiments in this chapter compare outcomes between static environments, and harsh changing environments. In a similar manner to the experiments listed in the previous chapter (Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}), task rewards in the harsh changing environment switch from a positive to a negative reward. For the HGT experiments, we did not establish a backbone task that was always rewarded. Rather, we divided the Logic-9 environment into two halves, and alternated positive and negative rewards for each task in each set. There are four pairs of tasks of equivalent complexity, and we randomly allocated one from each pair to an experimental group. We also assigned \texttt{EQU}, which is the most complex task, and has no equivalent, to a random group. Thus, for the first phase of the cycle, we punished the \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU} instructions at $-2^1$, $-2^2$, $-2^3$, $-2^4$, and $-2^5$ respectively, while rewarding \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} at $2^1$, $2^2$, $2^3$, and $2^4$. In the second phase of the cycle, these rewards flip, such that we reward \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU}, and punish \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} (Table~\ref{hgt-treatments-logic9}.
 % MJW: I suggest explaining how you chose to divide the tasks; ie, there are 4 pairs of tasks of equivalent complexity, and for each pair you arbitrarily assigned one task to set 1 and the other task to set 2, and then EQU had to go somewhere.  Also, you can switch "were/are punished" with "we punished" and the like to remove passive voice.
 %@RCK: fixed
+
+\begin{table}[]
+\centering
+\caption{\textbf{Logic-9 Groups}}
+\label{hgt-treatments-logic9-h}
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+ & \thead{Tasks} & \thead{Reward \\ Phase 1} & \thead{Reward \\ Phase 2} \\\hhline{|=|=|=|=|}
+ Group 1 & \makecell{ \texttt{NOT} \\ \texttt{AND} \\ \texttt{OR} \\ \texttt{NOR} \\ \texttt{EQU} } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ \\ $2^5$ } & \makecell{ $2^{-1}$ \\ $2^{-2}$ \\ $2^{-3}$ \\ $2^{-4}$ \\ $2^{-5}$ } \\\hline
+ Group 2 & \makecell{ \texttt{NAND} \\ \texttt{ORN} \\ \texttt{ANDN} \\ \texttt{XOR} } & \makecell{ $2^{-1}$ \\ $2^{-2}$ \\ $2^{-3}$ \\ $2^{-4}$ } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ } \\\hline
+\end{tabular} 
+
+\begin{flushleft}Division of Logic-9 task rewards by cyclic phase.   
+\end{flushleft}
+\label{hgt-treatments-logic9}
+\end{table}
+
+
 
 %=cycle length
 Each complete cycle lasts 1,000 updates, and the whole experimental run continues for 200,000 updates.
@@ -1386,11 +1404,13 @@ Despite some common features, the relationship between short-term and long-term 
 \todo[color=magenta,inline]{ch5 - background - fill this in about the prior research done in this area}
 Prior research has shown that...
 % MJW: Are you looking to me for what prior research has shown, or is this more of a note to yourself?
+%@RCK: note to myself
 
 
-In this chapter, we examine how changing environments or novel mutagens
+In this chapter, we examine how changing environments% or novel mutagens
 % MJW: As before, I'd change this to something like mutagenic instructions.
-affect long-term evolutionary potential. We introduce change-evolved populations from prior experiments with changing environments, and the evolution of HGT,
+affect long-term evolutionary potential. We introduce change-evolved populations from prior experiments with changing environments,
+% and the evolution of HGT,
 % MJW: For the dissertation, fine; for a manuscript, define HGT when first used.
 to an entirely new environment, where we can assess long-term variability generation in the form of new task discovery and exploration.
 
@@ -1399,38 +1419,40 @@ to an entirely new environment, where we can assess long-term variability genera
 
 \subsection{Experimental Design}
 %=design for experimental environment (CCE vs SCE, and short vs long)
-In order to examine the long-term dynamics and mechanisms of evolving populations in changing environments, we performed three sets of experiments. For each set of experiments, we take 
+%With these experiments, we will explore the characteristics of these populations, and how different kinds of environmental conditions do or do not produce long-term evolvability.
+In order to examine the long-term dynamics and mechanisms of evolving populations in changing environments, we performed two sets of experiments. For each set of experiments, we took 
 % MJW: Verb tense.  You switch from past to present here.  I have the impression most papers are written as "What we did" in past tense, and "What we find" in present tense, but can't swear to that off the top of my head.  But you switch pretty clearly here to present tense for quite a while.
-populations evolved in conditions where short-term evolvability pressures dominate, and we introduce the resulting populations to a completely new environment, with a new set of rewarded bitwise tasks to perform: Logic-77. These new tasks use 
-% MJW: up to
-three bitwise inputs rather than 
-% MJW: a maximum of 
-two, and are each rewarded with a constant 1.2-fold bonus to execution. This reward structure provides a mild selective pressure to evolve these task, but the benefits to performing them do not overwhelm the existing selective pressure to continue performing the tasks rewarded by the original changing or static environment. 
+populations evolved in conditions where short-term evolvability pressures dominated, and we introduced the resulting populations to a completely new environment, with a new set of rewarded bitwise tasks to perform: Logic-77. These new tasks use up to three bitwise inputs rather than a maximum of two, and are each rewarded with a constant 1.2-fold bonus to execution. This reward structure provides a mild selective pressure to evolve these task, but the benefits to performing them do not overwhelm the existing selective pressure to continue performing the tasks rewarded by the original changing or static environment. 
 % MJW: I think you should have a short bit being very explicit about terminology.  From reading the rest of this chapter, I have the sense that you are using the "Logic-77 tasks" to refer to those tasks which are rewarded in Logic-77 but are not rewarded in Logic-9.  But the tasks that are rewarded in Logic-9 are a strict subset of those rewarded in Logic-77, right?  That is, if an organisms does XOR in Logic-77, it is still rewarded for doing so?  I don't think it's a problem to use Logic-77 tasks to mean this subset of things rewarded in Logic-77, but I think if you do choose to do that, you absolutely need to be explicit upfront that that is how you are using the term.
 
-The first set of experiments examines the dynamics of organisms
-% MJW: I'm honestly not sure what this means.  Population dynamics is fairly consistent term in evo., but dynamics of organisms....do you mean dynamics within the organism, like flow control, or the equivalent of metabolism?  More of population dynamics, such as rate of adaptation?  Something else?
-that originally evolved in simple changing environments. These are a continuation of the experiments described in Chapter~\ref{chap:ce-adaptation}. The second set of experiments takes populations evolved in a more complex changing environment where we evolve the organisms to switch back and forth between two halves of the Logic-9 task set.
-% MJW: This is more complex than the first set you talk about, but a less complex environment than you're moving them into.  I think that can be made clearer.
-For the final set of experiments, we take populations that evolved in a complex changing environment, similar to the second set, but with the addition of the HGT mutagen.
-% MJW: Flagging mutagen.
-These are a continuation of experiments described in Chapter~\ref{chap:evo-hgt}.
 
-With these experiments, we will explore the characteristics of these populations, and how different kinds of environmental conditions do or do not produce long-term evolvability.  
+
+The first set of experiments examines the dynamics of populations
+% MJW: I'm honestly not sure what this means.  Population dynamics is fairly consistent term in evo., but dynamics of organisms....do you mean dynamics within the organism, like flow control, or the equivalent of metabolism?  More of population dynamics, such as rate of adaptation?  Something else?
+%@RCK: Nope, populations :P
+that originally evolved in simple changing environments, and are a continuation of the experiments described in Chapter~\ref{chap:ce-adaptation}. 
+
+The second set of experiments evolved population in a more complex changing environment where, rather than evolving to turn a single task on and off, we evolved populations that switch back and forth between performing two sets of task from the Logic-9 environment. The environment and genetic structure of the second set of experiments derives from the experiments described in \ref{chap:evo-hgt}. However, these populations were evolved without a working HGT instruction.
+% MJW: This is more complex than the first set you talk about, but a less complex environment than you're moving them into.  I think that can be made clearer.
+
+\todo{grab sentence below and move to new chapter}
+%For the final set of experiments, we take populations that evolved in a complex changing environment, similar to the second set, but with the addition of the HGT mutagenic instruction. These are a continuation of experiments described in Chapter~\ref{chap:evo-hgt}.
 
 \subsubsection{Simple Cyclic Changing Environments}
 %=explanation of the changing environment treatments - cyclic
 We took populations evolved under the experimental conditions detailed in Chapter \ref{chap:ce-adaptation}, and introduced them to an entirely new set of rewarded bitwise logical tasks: the Logic-77 environment. 
 % MJW: You're back to past tense here.  I agree with being in past tense here, just flagging the change.
+For the first phase (analogous to our earlier experiments), we rewarded a pair of two-input bitwise logical tasks: \texttt{XOR} and \texttt{EQU}. As in our earlier experiments, We rewarded \texttt{XOR} at a constant rate, with an 8-fold bonus to execution, and we alternated rewarding and punishing (or non-rewarding) of the \texttt{EQU} task with a reward that switches between 32-fold bonus to execution and either 0 reward for the benign treatments, or a -32-fold punishment in the harsh treatments. 
 
-\todo[inline, color=magenta]{CH5 methods - more details about each treatment}
-% MJW: Definitely agree.  In particular, I think it's important to explain the terminology of Quiesce.  I was able to infer what it meant from quiescent, but I did still had to look it up.  
+%\todo[inline, color=magenta]{CH5 methods - more details about each treatment}
+% MJW: Definitely agree.  In particular, I think it's important to explain the terminology of Quiesce.  I was able to infer what it meant from quiescent, but I did still had to look it up.
+%@RCK: done  
 
 	%=[TABLE - experimental treatments]
 	\begin{table}[]
 	\centering
 	\caption{\textbf{Experimental Treatments - Simple Cyclic Changing Environment}}
-	\label{cel-treatments-h}
+	\label{cel-treatments-simple-h}
 
 	\begin{tabular}{|c|c||c|c||c|c|c|}
 	%\begin{tabular}{ccccccc}
@@ -1448,29 +1470,30 @@ We took populations evolved under the experimental conditions detailed in Chapte
 
 	\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases. The first phase is a normal changing environment like those found in Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
 	\end{flushleft}
-	\label{cel-treatments}
+	\label{cel-treatments-simple}
 	\end{table}
 
 
 %=the organisms
 As in Chapter \ref{chap:ce-adaptation}, we held the individual genomes at a fixed length of 121 instructions, and applied mutations after each successful replication event at a substitution probability of 0.00075 per site.
 % MJW: This is me being overly picky, feel free to ignore.  The point mutation probability is 0.00075 per site.  But the substitution probability is less than that.  Substitutions are defined by changing the sequence.  If you call a mutation on a nop-c, there is a non-zero probability of it still being a nop-c.  As the number of instructions in the instruction set increases, this probability decreases, but it does mean you have fewer substitutions than you have mutation events.
-Again,
+%Again,
 % MJW: I would drop this "again"
-we configured the Avida world to have local interactions on a toroidal grid that is 60-by-60 cells (3600 cells in total), and continued the evolution of populations where we left off in Chapter~\ref{chap:ce-adaptation}.
+%@RCK: removed
+We configured the Avida world to have local interactions on a toroidal grid that is 60-by-60 cells (3600 cells in total), and continued the evolution of populations where we left off in Chapter~\ref{chap:ce-adaptation}.
 
 \subsubsection{Complex Cyclic Changing Environment}
 The second set of experiments looks at the evolution of populations of organisms with variable-length genomes, 
 % MJW: I don't think this should be hyphenated, but am not positive.
-evolved in a more complex cyclic changing environment. This environment and genetic structure derives from the experiments described in \ref{chap:evo-hgt}. However, these populations were evolved without a working HGT instruction.
+evolved in a more complex cyclic changing environment.  As in the previous chapter, we divided the Logic-9 tasks into two groups (Table~\ref{hgt-treatments-logic9}) and alternated reward and punishment between them. For the first phase of our experiments, we alternate rewards between one group and the other, or reward all of Logic-9 for the control treatment. For the benign treatments, rather than punish the alternate group, we simply do not reward the tasks. 
 % MJW: You're back to present tense here.
 
-\todo{update table to match HGT}
+\todo{fix this table to show the halves of the logic 9 split}
 	%=[TABLE - experimental treatments]
 	\begin{table}[]
 	\centering
 	\caption{\textbf{Experimental Treatments - Complex Cyclic Changing Environment}}
-	\label{cel-treatments-h}
+	\label{cel-treatments-complex-h}
 
 	\begin{tabular}{|c|c||c|c||c|c|c|}
 	%\begin{tabular}{ccccccc}
@@ -1488,79 +1511,51 @@ evolved in a more complex cyclic changing environment. This environment and gene
 
 	\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases.
     % MJW: These are fragments.
-    The first phase is a normal changing environment similar to those found in Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
+    The first phase is a complex changing environment similar to those found in Chapter~\ref{chap:evo-hgt}, Table~\ref{hgt-treatments-h}. The second phase introduces an additional set of tasks (Logic-77) that are rewarded at a lower rate.
 	\end{flushleft}
-	\label{cel-treatments}
+	\label{cel-treatments-complex}
 	\end{table}
 
-\todo[color=magenta,inline]{TODO fill this in with more detail of each treatment}
+\subsubsection{Environmental Treatments}
+In order to compare the effects of different kinds of alternating selective pressures on long-term evolvability, we prepared four different types of experimental treatment using changing environments, plus a static control, for both the simple and complex environmental treatments. 
 
-\subsubsection{Complex Cyclic Changing Environment with HGT mutagen}
-% MJW: Flagging a mutagen.
-The last set of experiments looks at the evolution of populations of organisms that evolved in a more complex cyclic changing environment, while having access to the HGT mutagen. These experiments are continuations of those described in \ref{chap:evo-hgt}, and continue the evolution of the populations evolved there.
-% MJW: Still in present tense.  Also flagging for the paper that this is referencing a chapter in a way that won't work when they are separate publications, but that doesn't matter for the dissertation.
+\begin{itemize}
+	\item \textbf{Static (Control)}: For the first 200k updates (phase 1), we reward populations for performing either XOR and EQU for the simple environment (Table~\ref{cel-treatments-simple}, or the whole Logic-9 task set (Table~\ref{cel-treatments-complex}). For the second 200k updates (phase 2), we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution.
 
-%=[TABLE - experimental treatments]
-\begin{table}[]
-\centering
-\caption{\textbf{Experimental Treatments - Complex Cyclic Changing Environments with HGT}}
-\label{cel-treatments-h}
-\todo[color=red, inline]{correct second half of the table with info about the bonus structures B0 and B0.8}
-	\begin{tabular}{|c|c||c|c||c|c|c|}
-	%\begin{tabular}{ccccccc}
-	\hline
-	\multirow{3}{*}{ \thead{Treatment} } & \multirow{3}{*}{ \thead{Changing \\ Env. \\ Type} } & \multicolumn{5}{c|}{ \thead{Rewarded Tasks} } \\\cline{3-7}
-	& & \multicolumn{2}{c||}{ \thead{Phase 1 \\ (0-200,000 Updates)} } & \multicolumn{3}{c|}{ \thead{Phase 2 \\ (200,000-400,000 Updates)} } \\\cline{3-7}
-	& & XOR & EQU & XOR & EQU & \makecell{Logic-77 \\ (all)} \\\hhline{|=|=|=|=|=|=|=|}
-	Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	Benign & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	\makecell{Benign \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	Harsh & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	\makecell{Harsh \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+	\item \textbf{Benign Changing Environment}: For the first 200k updates (phase 1), we alternate rewarding and not rewarding populations for performing either the EQU task (the simple environment) (Table~\ref{cel-treatments-simple}, or we alternate rewarding each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and\ref{hgt-treatments-logic9}). For the second phase of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
 
-	Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	Benign & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	\makecell{Benign \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	Harsh & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	\makecell{Harsh \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+	\item \textbf{Benign Quiescent Changing Environment}: For the first 200k updates (phase 1), we alternate rewarding and not rewarding populations, as in the Benign Changing Environment above. For the second phase of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase stop at 200k updates, and we instead reward the tasks of the first phase as we did in the Static treatment (all constant reward).
 
-	\end{tabular} 
+	\item \textbf{Harsh Changing Environment}: For the first 200k updates (phase 1), we alternate rewarding and \textbf{punishing} populations for performing either the EQU task (the simple environment) (Table~\ref{cel-treatments-simple}, or we alternate rewarding and punishing each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and\ref{hgt-treatments-logic9}). For the second phase of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
 
-	\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases. 
-    % MJW: Fragments, again.
-    The first phase is a normal changing environment similar to those found in Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
-	\end{flushleft}
-	\label{cel-treatments}
-	\end{table}
-
-% MJW: Made it to this point; need to sleep.
-\todo[color=magenta,inline]{TODO fill this in with more detail of each treatment}
+	\item \textbf{Harsh Quiescent Changing Environment}: For the first 200k updates (phase 1), we alternate rewarding and \textbf{punishing} populations, as in the Harsh Changing Environment above. For the second phase of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase stop at 200k updates, and we instead reward the tasks of the first phase as we did in the Static treatment (all constant reward).
+\end{itemize}
 
 \subsection{Measuring Task Discovery and Task Performance}
-In order to assess how populations adapt to a brand new environment, we measure Task Performance and Task Discovery, as detailed below.
+Task discovery and task performance are important measures not only for the adaptation of digital organisms to their local environment, but they also indicate the extent to which populations are more or less evolvable. Populations that are more evolvable should be able to acquire new tasks at a faster rate than less evolvable populations. If the evolvability of our populations is affected by evolution in a changing environment, then this effect should result in differential rates of task discovery and performance.
 % MJW: Added the "as detailed below" bit, because this is otherwise a bit abrupt.  I mean, it still is, just less so.
-
-\subsubsection{Task Performance}
-Task Performance is measured by counting the number of unique non-ephemeral tasks that a population is performing.  Each task may be performed only once per organism, yielding a maximum task count of 3600 at any given time. Thus, we define a non-ephemeral task as one that a population is performing at equal to or more than 0.1\% level, or 3.6 times per sampling. 
-% MJW: I think this is confusingly phrased.  To the best of my understanding, you're saying that each task can only be performed once per organism.  Therefore, for any given task, the maximum number of times it could be performed in a given update (which I'm guessing is your sampling?) is 3,600 (because I'm assuming that if a specific organism gives birth during the update and then somehow has enough cycles to perform that task again, it's still only counted as having happened once?).  You therefore set a threshold at which tasks are only considered to be performed ephemerally, at 1 out of 100 organisms performing that task in the sampling.  Anything performed more often than that is not ephemeral; you count the unique non-ephemeral tasks from the population as your measure of task performance.  Introducing the term non-ephemeral several sentences before you define it is a bit confusing, and I'm still not entirely clear if you count whether organisms that are sampled *can* perform the task, or *do* perform the task at the point being sampled.
+%@RCK: reworded
 
 \subsubsection{Task Discovery}
-We measure task
+We measure task discovery
 % MJW: You're missing the word "discovery" here, right?  Also, parallelism; you capitalized Task Performance, and are not capitalizing task in what I assume is Task Discovery.  I think it's probably better to capitalize neither, but both would be better than just one.
 by counting the number of unique non-ephemeral tasks that have been discovered by a population, starting at a defined point in time. Once a task is discovered, it may not become "undiscovered." Thus, task discovery counts will always increase monotonically. We measure "Overall" task discovery, counting all possible tasks - including Logic-77 
 % MJW add "tasks" here, right?  Logic-77 is the environment.  Also, I'm going to just note here and not in all of the cases: you are inconsistent in whether it gets called Logic-77 or Logic 77, and whether or not the word Logic is capitalized.  I think you're more consistent with Logic-9, but I'd have to go through and count to determine if I'm right about that.
 which were available, but not rewarded in the first phase of experiments - and also "Post-Reward" task discovery, where we begin counting new tasks from the beginning of the second phase of the experiment, once Logic-77 rewards are applied. 
 % MJW: I'd rephrase this to "rewards for the Logic-77 tasks".  The way it is, it sounds like Logic-77 is not just an environment but also a specific reward scheme.
 
+\subsubsection{Task Performance}
+We measure task performance by counting the number of unique non-ephemeral tasks that a population performs.  Each task may be performed only once per organism, yielding a maximum task count of 3600 at any given time. Thus, we define a non-ephemeral task as one that a population is performing at equal to or more than 0.1\% level, or 3.6 times per sampling. 
+% MJW: I think this is confusingly phrased.  To the best of my understanding, you're saying that each task can only be performed once per organism.  Therefore, for any given task, the maximum number of times it could be performed in a given update (which I'm guessing is your sampling?) is 3,600 (because I'm assuming that if a specific organism gives birth during the update and then somehow has enough cycles to perform that task again, it's still only counted as having happened once?).  You therefore set a threshold at which tasks are only considered to be performed ephemerally, at 1 out of 100 organisms performing that task in the sampling.  Anything performed more often than that is not ephemeral; you count the unique non-ephemeral tasks from the population as your measure of task performance.  Introducing the term non-ephemeral several sentences before you define it is a bit confusing, and I'm still not entirely clear if you count whether organisms that are sampled *can* perform the task, or *do* perform the task at the point being sampled.
+
+
+
 \section{Results and Discussion}
 
-Our experiments demonstrate that the harshness of fluctuation has a dramatic effect on long-term evolvability, landscape exploration and task discovery. We find that while harsh changing environments were most effective at driving short-term adaptation, these environments depress long-term evolvability once rewards are in place. In all experiments, we find that benign environments produce the highest levels of task discovery, far outperforming harsh changing environments. We also find that the HGT mutagen
-% MJW: Flagging a use of mutagen.
-, which helps with short-term evolvability in cyclic environments, does not appear to have a beneficial effect.
-% MJW: I'm not sure what your target for publishing this is, but this is a weird format for most science journal articles.  This paragraph reads essentially like a summary of the results, and therefore the sort of thing you might have in an abstract or a conclusion.  I am not used to seeing summaries of the results in the results section, before those things have been specifically laid out (figures, tables, statistical comparisons).  This might be fine for a dissertation; that's up to your committee.  But I'm flagging it as something that's strange for a journal article so that if it stays this way for the diss. you're aware it probably needs to change for publication.
+\subsection{Task Discovery}
 
 
-\subsection{Long-Term Evolvability in Simple Cyclic Changing Environments}
+%\subsection{Long-Term Evolvability in Simple Cyclic Changing Environments}
 % MJW: I suggest a paragraph here about the fact that you looked {set of things comprising the sub-subsections}.  Jumping immediately into a sub-section within a subsection, without something general first, can be a little jarring.
 
 \subsubsection{Benign changing environments outperform harsh environments in task discovery}
@@ -1584,6 +1579,17 @@ In contrast, the benign environment, with its comparatively weaker strength of s
 	\label{fig:postreward_task_discovery}
 	\end{figure} 
 
+	%=[FIGURE - complex environment task discovery]
+	\todo[color=green]{stats}
+	\todo{caption}
+	\begin{figure}[!h]
+	%\missingfigure{Complex CCE Task Discovery}
+	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-post_reward_task_discovery.png}
+	\caption{\textbf{Number of new logic-77 tasks discovered post-reward}. [TODO DESCRIPTION AND STATS]%
+	}
+	\label{fig:complex-task_discovery}
+	\end{figure}
+
 Interestingly, in those populations where we removed the harsh environmental change as we introduce Logic-77, we see that task exploration recovers somewhat and reaches a comparable level to the control\todo{stats}. This suggests that it is the active pressures of the harsh environment that depress task exploration, and not a penalty conveyed by architectural features that persist after selective pressures have changed.
 % MJW: This is a really key finding of this chapter.  I feel you could highlight this more.  One writing strategy that Rich employs a lot that I find particularly effective is to structure something along the lines of "Here is a fact (either from our observation or from the literature).  What could account for this?  Possible explanation 1 would predict X.  Possible explanation 2 would predict Y.  Possible explanation 3 would predict Z.  We find N, which is inconsistent with X, and is more likely to be a result of Y than of Z, so we conclude that possible explanation 1 is not driving our results/this observation, and that possible explanation 2 is more likely than possible explanation 3".  Not saying you have three possible explanations here, just a general sort of approach to that way of writing a combined results and discussion section.
 
@@ -1591,26 +1597,6 @@ Interestingly, in those populations where we removed the harsh environmental cha
 Of similar interest
 % MJW: Careful.  It's one thing to call a result interesting; it's another to make a claim about how relatively interesting different findings are as if that is objectively measurable, rather than a personal decision.
 is the comparison of task discovery rates between the benign changing environment populations BenignCE and BenignQuiescent.\todo{make a figure to highlight this?}\todo{rename the populations A and B} The BenignCE populations continue to be subject to the benign changing environment, where as the BenignQuiescent populations are only subject to directional selection toward the evolution of XOR, EQU, and the Logic-77 tasks. The task discovery rate for the BenignCE population is slightly higher than for BenignQuiescent, but the effect is not statistically significant\todo{stats}. Both, however, still perform better than the control treatment\todo{stats}. Thus, this result suggests that there may be architectural features conferred by evolution in the changing environment that are helpful for long-term evolvability, even after the environmental changes have stopped, and that this effect is distinct from the direct effects of the changing direction of selection. %Further research is needed to fully untangle these effects.
-
- 
-
-\subsubsection{Benign changing environments outperform harsh environments in task performance}
-Similar to task discovery, populations evolving in harsh changing environments perform far fewer distinct tasks than either the benign-evolved or control populations (Fig~\ref{fig:lte-task_performance})\todo{stats}. While the Benign-evolving
-% MJW: Inconsistent capitalization w/r/t the previous sentence.
-populations seem to outperform the control, this effect is not statistically significant.\todo{stats} 
-
-	%=[FIGURE - postreward task performance]
-	\todo[color=green]{stats}
-	\todo{caption}
-	\begin{figure}[!h]
-	%\missingfigure{lte-task_performance - Long Term Evolution Task Performance}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-post_reward_task_performance.png}
-	%\missingfigure{Long Term Evolution Task Performance}
-	\caption{\textbf{Number of new logic-77 tasks performed beginning in phase 2}.%
-	}
-	\label{fig:lte-task_performance}
-	\end{figure}  
-
 
 \subsubsection{Harsh changing environments drive populations across the mutational landscape}
 %=choice of CE has dramatic effects - forced march
@@ -1633,10 +1619,6 @@ In the first phase of the experiments, despite the logic-77 tasks not being rewa
 
 
 
-
-
-
-
 % %=[FIGURE - overall task discovery]
 % \todo[color=green]{stats}
 % \todo{caption}
@@ -1647,18 +1629,36 @@ In the first phase of the experiments, despite the logic-77 tasks not being rewa
 % \label{fig:composite_task_discovery}
 % \end{figure}
 
-\subsection{Long Term Evolvability and Complex Changing Environments}
 
-\subsubsection{Benign changing environments outperform harsh environments in task discovery and task performance}
-Similar to the results of the simple environments, Benign-evolved populations out-perform Harsh-evolving
-% MJW: You're inconsistent on whether the populations are evolved or evolving.  Or, well, you're comparing this at the end of the benign environment to things not at the end of the harsh environment, which means you're got time as a confounding factor.
-populations in complex changing environments in measures of Task Performance (Fig~\ref{fig:complex-task_performance}) and Task Discovery (Fig~\ref{fig:complex-task_discovery}). Again, this result suggests that, despite the differences in genome composition and environmental complexity, Benign changing environments, with their gentler selective pressures, or possibly with more intact chunks of undisturbed functionality in their genomes, leave more room for populations to acquire new tasks without the risk of harsh punishments. 
-%MAYBE NOT?
-%Both types of Benign-evolved environment appear to out-perform the control, but the effect is not statistically significant.
 
-%=[FIGURE - complex environment task performance]
-\todo[color=green]{stats}
-\todo{caption}
+
+
+
+
+
+\subsection{Task Performance}
+
+ 
+\subsubsection{Benign changing environments outperform harsh environments in task performance}
+Similar to task discovery, populations evolving in harsh changing environments perform far fewer distinct tasks than either the benign-evolved or control populations (Fig~\ref{fig:lte-task_performance})\todo{stats}. While the Benign-evolving
+% MJW: Inconsistent capitalization w/r/t the previous sentence.
+populations seem to outperform the control, this effect is not statistically significant.\todo{stats} 
+
+	%=[FIGURE - postreward task performance]
+	\todo[color=green]{stats}
+	\todo{caption}
+	\begin{figure}[!h]
+	%\missingfigure{lte-task_performance - Long Term Evolution Task Performance}
+	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-post_reward_task_performance.png}
+	%\missingfigure{Long Term Evolution Task Performance}
+	\caption{\textbf{Number of new logic-77 tasks performed beginning in phase 2}.%
+	}
+	\label{fig:lte-task_performance}
+	\end{figure}  
+
+	%=[FIGURE - complex environment task performance]
+	\todo[color=green]{stats}
+	\todo{caption}
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-task_performance.png}
 	%\missingfigure{Complex CCE Task Performance}
@@ -1667,16 +1667,16 @@ populations in complex changing environments in measures of Task Performance (Fi
 	\label{fig:complex-task_performance}
 	\end{figure}
 
-%=[FIGURE - complex environment task discovery]
-\todo[color=green]{stats}
-\todo{caption}
-	\begin{figure}[!h]
-	%\missingfigure{Complex CCE Task Discovery}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-post_reward_task_discovery.png}
-	\caption{\textbf{Number of new logic-77 tasks discovered post-reward}. [TODO DESCRIPTION AND STATS]%
-	}
-	\label{fig:complex-task_discovery}
-	\end{figure}
+
+%\subsubsection{Benign changing environments outperform harsh environments in task discovery and task performance}
+Similar to the results of the simple environments, Benign-evolved populations out-perform Harsh-evolving
+% MJW: You're inconsistent on whether the populations are evolved or evolving.  Or, well, you're comparing this at the end of the benign environment to things not at the end of the harsh environment, which means you're got time as a confounding factor.
+populations in complex changing environments 
+%in measures of Task Performance (Fig~\ref{fig:complex-task_performance}) and Task Discovery 
+(Fig~\ref{fig:complex-task_discovery}). Again, this result suggests that, despite the differences in genome composition and environmental complexity, Benign changing environments, with their gentler selective pressures, or possibly with more intact chunks of undisturbed functionality in their genomes, leave more room for populations to acquire new tasks without the risk of harsh punishments. 
+%MAYBE NOT?
+%Both types of Benign-evolved environment appear to out-perform the control, but the effect is not statistically significant.
+
 
 % below is speculative!!!
 Interestingly, populations that were initially evolved in a harsh changing environment and then change ceased upon introduction of Logic-77 rewards (HarshQuiescent)
@@ -1687,110 +1687,177 @@ Further research is needed to identify a mechanism for this effect.
 
 
 
-\subsection{Long Term Evolvability and Horizontal Gene Transfer}
-\todo{move below to the introduction about why we care about HGT}
-The addition of mutagens
-% MJW: Flagging mutagens because I honestly don't know if you mean chemical/physical mutagens in the sense that the term is used in biology/chemistry literature, or the way you've been referring to HGT instructions as mutagens (which I've also been flagging).  Until I know which one you mean, I won't be able to suggest citations, because those are different things.
-are thought to promote long-term evolvability[CITE] In this section we examine the long-term evolutionary dynamics of adding an HGT mutagen to populations introduced to a brand new, complex environment.
-
-\subsubsection{New environments do not promote the use of HGT}
-Contrary to our expectations,
-% MJW: This may be an artifact of me editing this over the course of multiple sessions, but do you spell out why we expected this somewhere in this chapter?  If not, I think it would be really helpful.  It might even be helpful to give one/ a few sentences here even if you did, as a reminder.
-none of our populations previously evolved to use HGT showed a significant increase in HGT fragment uptakes as a result of being introduced to a new environment\todo{stats}. In general, levels 
-% MJW: Levels of what? Also applies to the next use of levels in this sentence.
-remain constant, and in one notable example, levels appear to decrease, though this effect is not statistically significant (Fig ~\ref{fig:lte-hgt_use}.
-
-%=[FIGURE - complex environment task discovery]
-\todo[color=green]{stats}
-\todo{caption}
-	\begin{figure}[!h]
-	\missingfigure{HGT Use Bonus 0, split by pre and post introduction of new logic-77 tasks}
-	%\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/901_overall_task_discovery.png}
-	\caption{\textbf{HGT Use, pre and post introduction of new logic-77 tasks}. [TODO DESCRIPTION AND STATS]%
-	}
-	\label{fig:lte-hgt_use}
-	\end{figure}
-
-\subsubsection{Fragment grazing bonus reduces task discovery and task performance}
-In most of our environmental treatments, applying an HGT Uptake grazing bonus
-% MJW: Have you defined what that means in this chapter?
-results in reduced levels of both task performance and task discovery\todo{stats} as compared to non-Bonus treatments (Fig~\ref{fig:lte-hgt_task_performance}, and Fig~\ref{fig:lte-hgt_task_discovery}).
-\todo{hypothesis here?}
-%We hypothesize that this reduction may occur because populations may already be adapted and resistant to performing HGT, and thus, performing it is an easy way to increase fitness. 
-
-%=[FIGURE - complex environment task discovery]
-\todo[color=green]{stats}
-\todo{caption}
-	\begin{figure}[!h]
-	%\missingfigure{HGT Use}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-hgt-task_performance.png}
-	\caption{\textbf{Task Performance, with and without HGT Grazing Bonus}. [TODO DESCRIPTION AND STATS]%
-	}
-	\label{fig:lte-hgt_task_performance}
-	\end{figure}
-
-%=[FIGURE - complex environment task discovery]
-\todo[color=green]{stats}
-\todo{caption}
-	\begin{figure}[!h]
-	%\missingfigure{HGT Use}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-hgt-task_discovery.png}
-	\caption{\textbf{Task Discovery, with and without HGT Grazing Bonus}. [TODO DESCRIPTION AND STATS]%
-	}
-	\label{fig:lte-hgt_task_discovery}
-	\end{figure}
-
-Further, we see a strong negative correlation between task discovery and task performance in populations where an HGT grazing bonus is applied, regardless of environmental treatment (Fig~\ref{fig:lte-bonus_hgt_vs_task_performance}. We see no such correlation in non-Bonus HGT populations (Fig~\ref{fig:lte-no-bonus_hgt_vs_task_performance}). This result suggests that there is potentially an intrinsic architectural difference between populations evolved to perform HGT for a grazing bonus vs populations that use HGT without a bonus. Or it is possible that the selective pressure to perform HGT outweighs the pressure to acquire new tasks when a simple bonus is available simply by executing a single instruction.
-% MJW: I feel like this is awkwardly phrased.  I would suggest something more like "One explanation for this result is X.  Alternately, this result could be explained by Y."
-More experiments will be required to identify the mechanism behind this effect.
-% MJW: If you are interested in / planning to do these experiments, I suggest identifying what those experiments are / would entail.  And if you have sufficient detail to do so, it may be relevant to create a Future Work section/subsection/subsubsection (whichever seems most appropriate)
-
-%=[FIGURE - complex environment task discovery]
-\todo[color=green]{stats}
-\todo{caption}
-	\begin{figure}[!h]
-%	\missingfigure{HGT Bonus vs Task Performance and Discovery}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-bonus_hgt_vs_task_performance.png}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-bonus_hgt_vs_task_discovery.png}
-	\caption{\textbf{HGT-Bonus vs Task Performance and Discovery}. [TODO DESCRIPTION AND STATS]%
-	}
-	\label{fig:lte-bonus_hgt_vs_task_performance}
-	\end{figure}
-
-%=[FIGURE - complex environment task discovery]
-\todo[color=green]{stats}
-\todo{caption}
-	\begin{figure}[!h]
-	%\missingfigure{HGT noBonus vs Task Performance and Discovery}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-no-bonus_hgt_vs_task_performance.png}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-no-bonus_hgt_vs_task_discovery.png}
-	\caption{\textbf{HGT-noBonus vs Task Performance and Discovery}. [TODO DESCRIPTION AND STATS]%
-	}
-	\label{fig:lte-no-bonus_hgt_vs_task_performance}
-	\end{figure}	
-
-\subsubsection{Benign changing environments outperform harsh environments in task discovery and task performance in populations with HGT}
-Again, 
-% MJW: I suggest not beginning sentences with "Again". This can often make it sound like you feel you are belaboring the point, or re-iterating something you've already said.
-consistent with earlier results, populations with HGT follow the same pattern as the earlier experiments. 
-% MJW: Redundant.  If this is follows the same patterns as earlier experiments, it is obviously consistent with earlier results.
-Benign-evolved populations strongly outperform Harsh-evolving in measures of Task Discovery and Task Performance\todo{stats} (Fig.~\ref{fig:lte-hgt_task_performance} and Fig.~\ref{fig:lte-hgt_task_discovery}. These results show that regardless of access to an information rich mutagen
-% MJW: Flagging mutagen
-, the dominant effect
-% MJW: of what?
-is one of balancing of fitness pressures. 
-
-% MJW: General comment: I've just looked through the sections and subsection headings to see if I was right that this could have a somewhat improved narrative flow.  I think it could.  
-% One option is to simply move to being more parallel in how things are discussed.  For the simple changing environment, task discovery and task performance are different subsections; they're combined in both the complex changing environment and the HGT sections.  The task discovery and task performance sections come at the start in the simple and complex changing environments; they come at the end of the HGT section.  This jumping around of what is presented when demands a whole lot of attention from the reader.
-% Another option is to make your sections about the metrics, and have subsections about the different environments.  So, for example, if you have a section about Task Discovery, and talk about it in each of the three configuration setting pairings you make.  I think that would probably be a better narrative structure, because it requires the reader to keep fewer things in memory.  When they see that benign changing environments outperform harsh changing environments in task discovery in ALL TYPES OF ENVIRONMENTS/MuTATION SCHEMES YOU LOOK AT in a row, that reduces the memory footprint to "Task discovery is higher for benign changing environments than for harsh changing environments", and then they can go on to consider: What about task performance?
 
 \section{Conclusion}
+
+Our experiments demonstrate that the harshness of fluctuation has a dramatic effect on long-term evolvability, landscape exploration and task discovery. We find that while harsh changing environments were most effective at driving short-term adaptation, these environments depress long-term evolvability once rewards are in place. In all experiments, we find that benign environments produce the highest levels of task discovery, far outperforming harsh changing environments. We also find that the HGT mutagen
+% MJW: Flagging a use of mutagen.
+, which helps with short-term evolvability in cyclic environments, does not appear to have a beneficial effect.
+% MJW: I'm not sure what your target for publishing this is, but this is a weird format for most science journal articles.  This paragraph reads essentially like a summary of the results, and therefore the sort of thing you might have in an abstract or a conclusion.  I am not used to seeing summaries of the results in the results section, before those things have been specifically laid out (figures, tables, statistical comparisons).  This might be fine for a dissertation; that's up to your committee.  But I'm flagging it as something that's strange for a journal article so that if it stays this way for the diss. you're aware it probably needs to change for publication.
+%@RCK: moved to conclusion, possibly for deletion
+\todo{clean this up (above)}
+
 
 %=CE promotes task discovery
 Our experiments show that changing environments both directly and indirectly influence long-term evolvability by directly driving exploration across the fitness landscape, and also by creating genetic architectures that increase the rate of new task discovery in novel environments. We hypothesize that these effects are driven by the presence of the accumulated pseudogene-like structures that provide cryptic functionality. In our experiments, the increased rate of task discovery is significant, though relatively small, but we expect that future experiments focused on this specific effect might yield more conclusive results. 
 % MJW: This is a very short conclusion.  I suggest expanding it.  In particular, since your results and discussion section doesn't have much about big picture implications of the findings of this chapter, the conclusion section is a good place to expand upon that.  If this is a general finding across different systems, what does that mean?
 
 \todo[inline, color=magenta]{fill this in, recapitulating the argument and framing about balancing of fitness effects.}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%% Possible Additional Chapter Containing the HGT/LTE stuff
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \chapter{Horizontal Gene Transfer, Changing Environments, and Long Term Evolvability}
+% \section{Background}
+% \section{Methods}
+
+% \subsubsection{Complex Cyclic Changing Environment with HGT mutagen}
+% % MJW: Flagging a mutagen.
+% The last set of experiments looks at the evolution of populations of organisms that evolved in a more complex cyclic changing environment, while having access to the HGT mutagen. These experiments are continuations of those described in \ref{chap:evo-hgt}, and continue the evolution of the populations evolved there.
+% % MJW: Still in present tense.  Also flagging for the paper that this is referencing a chapter in a way that won't work when they are separate publications, but that doesn't matter for the dissertation.
+
+% %=[TABLE - experimental treatments]
+% \begin{table}[]
+% \centering
+% \caption{\textbf{Experimental Treatments - Complex Cyclic Changing Environments with HGT}}
+% \label{cel-treatments-h}
+% \todo[color=red, inline]{correct second half of the table with info about the bonus structures B0 and B0.8}
+% 	\begin{tabular}{|c|c||c|c||c|c|c|}
+% 	%\begin{tabular}{ccccccc}
+% 	\hline
+% 	\multirow{3}{*}{ \thead{Treatment} } & \multirow{3}{*}{ \thead{Changing \\ Env. \\ Type} } & \multicolumn{5}{c|}{ \thead{Rewarded Tasks} } \\\cline{3-7}
+% 	& & \multicolumn{2}{c||}{ \thead{Phase 1 \\ (0-200,000 Updates)} } & \multicolumn{3}{c|}{ \thead{Phase 2 \\ (200,000-400,000 Updates)} } \\\cline{3-7}
+% 	& & XOR & EQU & XOR & EQU & \makecell{Logic-77 \\ (all)} \\\hhline{|=|=|=|=|=|=|=|}
+% 	Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+% 	Benign & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+% 	\makecell{Benign \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+% 	Harsh & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+% 	\makecell{Harsh \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+
+% 	Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+% 	Benign & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+% 	\makecell{Benign \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+% 	Harsh & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+% 	\makecell{Harsh \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+
+% 	\end{tabular} 
+
+% 	\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases. 
+%     % MJW: Fragments, again.
+%     The first phase is a normal changing environment similar to those found in Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
+% 	\end{flushleft}
+% 	\label{cel-treatments}
+% 	\end{table}
+
+% % MJW: Made it to this point; need to sleep.
+% \todo[color=magenta,inline]{TODO fill this in with more detail of each treatment}
+
+% \section{Results and Discussion}
+
+% \subsection{Long Term Evolvability and Horizontal Gene Transfer}
+% \todo{move below to the introduction about why we care about HGT}
+% The addition of mutagens
+% % MJW: Flagging mutagens because I honestly don't know if you mean chemical/physical mutagens in the sense that the term is used in biology/chemistry literature, or the way you've been referring to HGT instructions as mutagens (which I've also been flagging).  Until I know which one you mean, I won't be able to suggest citations, because those are different things.
+% are thought to promote long-term evolvability[CITE] In this section we examine the long-term evolutionary dynamics of adding an HGT mutagen to populations introduced to a brand new, complex environment.
+
+% \subsubsection{New environments do not promote the use of HGT}
+% Contrary to our expectations,
+% % MJW: This may be an artifact of me editing this over the course of multiple sessions, but do you spell out why we expected this somewhere in this chapter?  If not, I think it would be really helpful.  It might even be helpful to give one/ a few sentences here even if you did, as a reminder.
+% none of our populations previously evolved to use HGT showed a significant increase in HGT fragment uptakes as a result of being introduced to a new environment\todo{stats}. In general, levels 
+% % MJW: Levels of what? Also applies to the next use of levels in this sentence.
+% remain constant, and in one notable example, levels appear to decrease, though this effect is not statistically significant (Fig ~\ref{fig:lte-hgt_use}.
+
+% %=[FIGURE - complex environment task discovery]
+% \todo[color=green]{stats}
+% \todo{caption}
+% 	\begin{figure}[!h]
+% 	\missingfigure{HGT Use Bonus 0, split by pre and post introduction of new logic-77 tasks}
+% 	%\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/901_overall_task_discovery.png}
+% 	\caption{\textbf{HGT Use, pre and post introduction of new logic-77 tasks}. [TODO DESCRIPTION AND STATS]%
+% 	}
+% 	\label{fig:lte-hgt_use}
+% 	\end{figure}
+
+% \subsubsection{Fragment grazing bonus reduces task discovery and task performance}
+% In most of our environmental treatments, applying an HGT Uptake grazing bonus
+% % MJW: Have you defined what that means in this chapter?
+% results in reduced levels of both task performance and task discovery\todo{stats} as compared to non-Bonus treatments (Fig~\ref{fig:lte-hgt_task_performance}, and Fig~\ref{fig:lte-hgt_task_discovery}).
+% \todo{hypothesis here?}
+% %We hypothesize that this reduction may occur because populations may already be adapted and resistant to performing HGT, and thus, performing it is an easy way to increase fitness. 
+
+% %=[FIGURE - complex environment task discovery]
+% \todo[color=green]{stats}
+% \todo{caption}
+% 	\begin{figure}[!h]
+% 	%\missingfigure{HGT Use}
+% 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-hgt-task_performance.png}
+% 	\caption{\textbf{Task Performance, with and without HGT Grazing Bonus}. [TODO DESCRIPTION AND STATS]%
+% 	}
+% 	\label{fig:lte-hgt_task_performance}
+% 	\end{figure}
+
+% %=[FIGURE - complex environment task discovery]
+% \todo[color=green]{stats}
+% \todo{caption}
+% 	\begin{figure}[!h]
+% 	%\missingfigure{HGT Use}
+% 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-hgt-task_discovery.png}
+% 	\caption{\textbf{Task Discovery, with and without HGT Grazing Bonus}. [TODO DESCRIPTION AND STATS]%
+% 	}
+% 	\label{fig:lte-hgt_task_discovery}
+% 	\end{figure}
+
+% Further, we see a strong negative correlation between task discovery and task performance in populations where an HGT grazing bonus is applied, regardless of environmental treatment (Fig~\ref{fig:lte-bonus_hgt_vs_task_performance}. We see no such correlation in non-Bonus HGT populations (Fig~\ref{fig:lte-no-bonus_hgt_vs_task_performance}). This result suggests that there is potentially an intrinsic architectural difference between populations evolved to perform HGT for a grazing bonus vs populations that use HGT without a bonus. Or it is possible that the selective pressure to perform HGT outweighs the pressure to acquire new tasks when a simple bonus is available simply by executing a single instruction.
+% % MJW: I feel like this is awkwardly phrased.  I would suggest something more like "One explanation for this result is X.  Alternately, this result could be explained by Y."
+% More experiments will be required to identify the mechanism behind this effect.
+% % MJW: If you are interested in / planning to do these experiments, I suggest identifying what those experiments are / would entail.  And if you have sufficient detail to do so, it may be relevant to create a Future Work section/subsection/subsubsection (whichever seems most appropriate)
+
+% %=[FIGURE - complex environment task discovery]
+% \todo[color=green]{stats}
+% \todo{caption}
+% 	\begin{figure}[!h]
+% %	\missingfigure{HGT Bonus vs Task Performance and Discovery}
+% 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-bonus_hgt_vs_task_performance.png}
+% 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-bonus_hgt_vs_task_discovery.png}
+% 	\caption{\textbf{HGT-Bonus vs Task Performance and Discovery}. [TODO DESCRIPTION AND STATS]%
+% 	}
+% 	\label{fig:lte-bonus_hgt_vs_task_performance}
+% 	\end{figure}
+
+% %=[FIGURE - complex environment task discovery]
+% \todo[color=green]{stats}
+% \todo{caption}
+% 	\begin{figure}[!h]
+% 	%\missingfigure{HGT noBonus vs Task Performance and Discovery}
+% 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-no-bonus_hgt_vs_task_performance.png}
+% 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-no-bonus_hgt_vs_task_discovery.png}
+% 	\caption{\textbf{HGT-noBonus vs Task Performance and Discovery}. [TODO DESCRIPTION AND STATS]%
+% 	}
+% 	\label{fig:lte-no-bonus_hgt_vs_task_performance}
+% 	\end{figure}	
+
+% \subsubsection{Benign changing environments outperform harsh environments in task discovery and task performance in populations with HGT}
+% Again, 
+% % MJW: I suggest not beginning sentences with "Again". This can often make it sound like you feel you are belaboring the point, or re-iterating something you've already said.
+% consistent with earlier results, populations with HGT follow the same pattern as the earlier experiments. 
+% % MJW: Redundant.  If this is follows the same patterns as earlier experiments, it is obviously consistent with earlier results.
+% Benign-evolved populations strongly outperform Harsh-evolving in measures of Task Discovery and Task Performance\todo{stats} (Fig.~\ref{fig:lte-hgt_task_performance} and Fig.~\ref{fig:lte-hgt_task_discovery}. These results show that regardless of access to an information rich mutagen
+% % MJW: Flagging mutagen
+% , the dominant effect
+% % MJW: of what?
+% is one of balancing of fitness pressures. 
+
+% % MJW: General comment: I've just looked through the sections and subsection headings to see if I was right that this could have a somewhat improved narrative flow.  I think it could.  
+% % One option is to simply move to being more parallel in how things are discussed.  For the simple changing environment, task discovery and task performance are different subsections; they're combined in both the complex changing environment and the HGT sections.  The task discovery and task performance sections come at the start in the simple and complex changing environments; they come at the end of the HGT section.  This jumping around of what is presented when demands a whole lot of attention from the reader.
+% % Another option is to make your sections about the metrics, and have subsections about the different environments.  So, for example, if you have a section about Task Discovery, and talk about it in each of the three configuration setting pairings you make.  I think that would probably be a better narrative structure, because it requires the reader to keep fewer things in memory.  When they see that benign changing environments outperform harsh changing environments in task discovery in ALL TYPES OF ENVIRONMENTS/MuTATION SCHEMES YOU LOOK AT in a row, that reduces the memory footprint to "Task discovery is higher for benign changing environments than for harsh changing environments", and then they can go on to consider: What about task performance?
+
+% \section{Conclusion}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%% END OF Possible Additional Chapter Containing the HGT/LTE stuff
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
