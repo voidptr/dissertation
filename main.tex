@@ -1599,6 +1599,8 @@ Also of interest
 %@RCK: removed comparison
 is the comparison of task discovery rates between the benign changing environment populations BenignCE and BenignQuiescent.\todo{rename the populations A and B} The BenignCE populations continue to be subject to the benign changing environment, whereas the Benign Quiescent populations are only subject to directional selection toward the evolution of the original and the Logic-77 tasks. In both environment types, task discovery rate for the BenignCE population (Simple: Mdn = 37.0, CI 95\% [36.0, 38.0]; Complex: Mdn = 29.0, CI 95\% [26.0, 31.0]) is slightly higher than for BenignQuiescent(Simple: Mdn = 36.0, CI 95\% [34.0, 38.0]; Complex: Mdn = 24.0, CI 95\% [22.0, 27.0]), but the effect is not statistically significant in the simple environment (Complex: Wilcoxon Rank Sum Test: Z = 3.15, p $<$ 0.01; Simple: Wilcoxon Rank Sum Test: Z = 1.39, p = 0.16). Both, however, still perform better than the control treatment (Simple: Mdn = 34.5, CI 95\% [32.0, 38.0]; Complex: Mdn = 22.0, CI 95\% [21.0, 25.0]), though this effect is only statistically significant between the BenignCE and Control treatments in the complex environment (Wilcoxon Rank Sum Test: Z = -4.33, p $<$ 0.001). Thus, this result suggests that there may be architectural features conferred by evolution in the changing environment that are helpful for long-term evolvability, even after the environmental changes have stopped, and that this effect is distinct from the direct effects of the changing direction of selection. %Further research is needed to fully untangle these effects.
 
+\todo[inline]{add note about how simple also perform more tasks than the complex. this is contrary to our expectation}
+
 \subsubsection{Harsh changing environments drive populations across the mutational landscape}
 %=choice of CE has dramatic effects - forced march
 In the first phase of the experiments, despite the logic-77 tasks not being rewarded, both changing-environment treatments (BenignCE and Benign Quiescent) discover more new tasks than the control (Simple: Wilcoxon Rank Sum Test: Z = -5.75 and -11.15 respectively, p $<<$ 0.001; Complex: Wilcoxon Rank Sum Test: Z = -4.32 and -3.73 respectively, p $<$ 0.001). In the simple environment, the harsh treatment in particular discovers substantially and significantly more Logic-77 tasks than either the benign treatment(Wilcoxon Rank Sum Test: Z = -8.0, p $<<$ 0.001), or the control, despite these tasks not being rewarded (Fig~\ref{fig:simple-overall_task_discovery}. We hypothesize that this effect may be due to the large phylogenetic depth of the harsh-evolved populations, where the repeated bottlenecks drive the populations along a kind of forced march across the mutational landscape. However, as the experiment proceeds, and Logic-77 rewards are introduced, this effect disappears, and task discovery rates converge (Kruskal Wallis: H(2) = 6.97, p = 0.03).
@@ -1643,22 +1645,21 @@ In the first phase of the experiments, despite the logic-77 tasks not being rewa
 
 \subsection{Task Performance}
 
- 
 \subsubsection{Benign changing environments outperform harsh environments in task performance}
-Similar to task discovery, populations evolving in harsh changing environments perform far fewer distinct tasks than either the benign-evolved or control populations (Fig~\ref{fig:lte-task_performance})\todo{stats}. While the Benign-evolving
+Similar to task discovery, populations evolving in harsh changing environments perform far fewer distinct tasks than either the benign-evolved or control populations (Wilcoxon Rank Sum Test: Simple: Z = -11.22 and -11.15 respectively; Complex: Z = -4.32 and -3.73 respectively, p $<<$ 0.001) (Fig~\ref{fig:lte-task_performance} and \ref{fig:complex-task_performance}). While both the BenignCE and Benign Quiesce
 % MJW: Inconsistent capitalization w/r/t the previous sentence.
-populations seem to outperform the control, this effect is not statistically significant.\todo{stats} 
+populations seem to outperform the control, this effect is only statistically significant in the complex environment (Wilcoxon Rank Sum Test: Z = 2.42 and 2.37 respectively, p $<$ 0.05). In the simple environment, the differences are not statistically significant (Kruskal Wallis: H(2) = 2.76, p = 0.25).
 
 	%=[FIGURE - postreward task performance]
 	\todo[color=green]{stats}
 	\todo{caption}
 	\begin{figure}[!h]
 	%\missingfigure{lte-task_performance - Long Term Evolution Task Performance}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-post_reward_task_performance.png}
+	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-task_performance.png}
 	%\missingfigure{Long Term Evolution Task Performance}
 	\caption{\textbf{Number of new logic-77 tasks performed beginning in phase 2}. [TODO DESCRIPTION AND STATS]%
 	}
-	\label{fig:lte-task_performance}
+	\label{fig:lte-simple-task_performance}
 	\end{figure}  
 
 	%=[FIGURE - complex environment task performance]
@@ -1673,20 +1674,20 @@ populations seem to outperform the control, this effect is not statistically sig
 	\end{figure}
 
 
-%\subsubsection{Benign changing environments outperform harsh environments in task discovery and task performance}
-Similar to the results of the simple environments, Benign-evolved populations out-perform Harsh-evolving
-% MJW: You're inconsistent on whether the populations are evolved or evolving.  Or, well, you're comparing this at the end of the benign environment to things not at the end of the harsh environment, which means you're got time as a confounding factor.
-populations in complex changing environments 
-%in measures of Task Performance (Fig~\ref{fig:complex-task_performance}) and Task Discovery 
-(Fig~\ref{fig:complex-task_discovery}). Again, this result suggests that, despite the differences in genome composition and environmental complexity, Benign changing environments, with their gentler selective pressures, or possibly with more intact chunks of undisturbed functionality in their genomes, leave more room for populations to acquire new tasks without the risk of harsh punishments. 
-%MAYBE NOT?
-%Both types of Benign-evolved environment appear to out-perform the control, but the effect is not statistically significant.
+% %\subsubsection{Benign changing environments outperform harsh environments in task discovery and task performance}
+% Similar to the results of the simple environments, Benign-evolved populations out-perform Harsh-evolving
+% % MJW: You're inconsistent on whether the populations are evolved or evolving.  Or, well, you're comparing this at the end of the benign environment to things not at the end of the harsh environment, which means you're got time as a confounding factor.
+% populations in complex changing environments 
+% %in measures of Task Performance (Fig~\ref{fig:complex-task_performance}) and Task Discovery 
+% (Fig~\ref{fig:complex-task_discovery}). Again, this result suggests that, despite the differences in genome composition and environmental complexity, Benign changing environments, with their gentler selective pressures, or possibly with more intact chunks of undisturbed functionality in their genomes, leave more room for populations to acquire new tasks without the risk of harsh punishments. 
+% %MAYBE NOT?
+% %Both types of Benign-evolved environment appear to out-perform the control, but the effect is not statistically significant.
 
 
 % below is speculative!!!
-Interestingly, populations that were initially evolved in a harsh changing environment and then change ceased upon introduction of Logic-77 rewards (HarshQuiescent)
+Interestingly, in the complex environments, populations that were initially evolved in a harsh changing environment and then change ceased upon introduction of Logic-77 rewards (Harsh Quiescent)
 % MJW: "change ceased upon introduction..."?  I don't understand.  I'm unsure whether change ceased is an adjective of the populations, or if changed ceased (noun - verb) when you moved them to a different environment.
-seem to out-perform all other environment types in task performance (Fig~\ref{fig:complex-task_performance}) \todo{stats}. This effect may be due to a lingering architectural effect of evolving in harsh changing environments.
+seem to out-perform all other environment types in task performance, though the differences between Harsh Quiescent and both Benign treatments are only barely statistically significant (Wilcoxon Rank Sum Test: Control Z = 4.33, HarshCE Z = -9.3, p $<$ 0.001; BenignCE Z = 2.25, Benign Quiesce Z = 1.96, p $<$ 0.05). This effect may be due to a lingering architectural effect of evolving in harsh changing environments.
 % MJW: I suggest that if you're going to speculate, speculate.  In other words, either expand this section with one or more examples of what sort of architectural effect you mean, or cut this sentence.
 Further research is needed to identify a mechanism for this effect.
 
