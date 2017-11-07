@@ -35,7 +35,7 @@
 \title{Evolution and Evolvability in Changing Environments}
 \author{Rosangela Canino-Koning}
 \fieldofstudy{Computer Science} % should be in sentence case
-\dedication{This thesis is dedicated to Kendall Koning.}
+\dedication{This thesis is dedicated to Kendall Koning. I would never have gotten this far without her.}
 \date{2017}
 %
 \begin{document}
@@ -69,8 +69,15 @@
 \clearpage
 \chapter*{Acknowledgments}
 \DoubleSpacing
-Your acknowledgments here
-\todo{acknowledgments}
+I would like to thank all the members of the Devolab, past and present, for their unflagging engagement, criticism, and encouragement over the years. I couldn't have asked for a better lab.
+
+A special thanks to Art Covert, my lab bestie for many years. Your encouragement, friendship, and advice on how to approach my work was invaluable. Also, special thanks to Matt Rupp, Luis Zaman, and Josh Nahum. All of you asked important questions at various points that strongly shaped my work. This stuff would have been much less useful and interesting without your input.
+
+A very special thank you to Mike Wiser, my friend and faithful frequent collaborator. A solid half of my research is based on our collaboration, and I have no idea how any of these papers could have gotten out the door without your help. You're not around just for the stats!
+
+To my former co-advisor Titus Brown, thanks for kicking me out of your lab, you jerk.~;) Trying to finish with two completely different lines of research would have been virtually impossible, and I appreciate your wisdom in forcing me to make a decision. Seriously, though, thank you for your advice and friendship.
+
+Finally, thank you to my advisor Charles Ofria. I had never considered pursuing evolution as a research topic until I randomly met you during my first visit to MSU. I'm glad I did. For one, my research topic would have been way more boring, and second, the environment you foster in your lab is incredibly nurturing and supportive. I'm sure there are a lot of great advisers out there, but you're the best I know.
 %
 \clearpage
 \SingleSpacing
@@ -574,7 +581,7 @@ In order to examine the dynamics and mechanisms of evolving populations in chang
 %=[TABLE - experimental treatments]
 \begin{table}[]
 \centering
-\caption{\textbf{Experimental Treatments}}
+\caption{\textbf{Experimental Treatments - Cyclic and Stochastic Changing Environments}}
 \label{ce-treatments-h}
 \begin{tabular}{|c|c||c|c|}
 \hline
@@ -587,7 +594,7 @@ Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^3$} & \makecell
 \makecell{SCE \\ Harsh} & Stochastic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} \\\hline
 \end{tabular} 
 
-\begin{flushleft} Experimental treatments. Four types of changing environment, plus a static control. In the first two treatments, the environment switches in a predictable cycle, whereas in the second two, the environment switches at random intervals. 
+\begin{flushleft} Four types of changing environment, plus a static control. In the first two treatments, the environment switches in a predictable cycle, whereas in the second two, the environment switches at random intervals. 
 \end{flushleft}
 \label{ce-treatments}
 \end{table}
@@ -680,15 +687,9 @@ In contrast, the architecture of XOR and EQU remain tightly intertwined in the c
 Interestingly, populations evolved in both the benign and harsh treatments also show development of a large reservoir of formerly functional, now vestigial, sites; that is, sites that remain unchanged from when they were previously active in performing a task, but were disabled by a mutation elsewhere and are thus now neutral. These vestigial pseudogene-like sites appear to be important for allowing the organisms to quickly re-adapt as the fluctuations in the environment restore the previously-rewarded functions. (Fig~\ref{fig:CCE_func_vestigial})
 
 %=[FIGURE - functional vs vestigial sites]
-%\todo[color=green]{stats for figure}
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/CCE_func_vest__box.png}
-	%% TODO - generate the stats
 	\caption{\textbf{Number of functional and vestigial sites by treatment}. The harsh environment has a significantly larger number of vestigial sites for the fluctuating (EQU) task compared to the benign treatment or control (Wilcoxon Rank-Sum Z = -6.57 and -8.33, p $<<$ 0.0001).
-%	\todo[inline]{stats}
-	%\todo{stats}%
-	%old --- (One-Way ANOVA F(2,132) = 54.35, p $<<$ 0.0001).
-	% @CAO: Just a reminder to do the stats!
 	}
 	\label{fig:CCE_func_vestigial} %% FIGURE 5
 	\end{figure}
@@ -704,18 +705,14 @@ In order to identify the role that these pseudogene-like structures play, we per
 \todo[inline]{Todo, clarify per Charles's comment above}
 
 %=[FIGURE - Frac 1-step]
-%\todo[color=green]{stats for figure}
 	\begin{figure}[!h] %% FIGURE 6
 	\includegraphics[trim={0.2cm 0 0 0.2cm},clip,width=0.75\columnwidth]{figures/CE/CCE_frac_1step__box.png}
 	%% TODO - stats
 	\caption{\textbf{A survey of the single-step mutational neighborhood} around organisms that performed the fluctuating task. Note that in both the benign and harsh treatments, there were significantly more mutants that lost the EQU task as compared to the control (Wilcoxon Rank Sum Test: Z = -5.46 and -7.80 respectively, p $<<$ 0.0001). This result indicates that it was easier for the organisms in both treatments to turn off the EQU task in response to one mutation. 
-	%\todo[noinline]{TODO STATS}%
-	% old -- (Wilcoxon Rank Sum Test: Z = -6.59 and -6.70 respectively, p $<<$ 0.0001)
 	}\label{fig:CCE_single_step}
 
 	\end{figure}
 %=[FIGURE - Frac 2-step]
-\todo[color=green]{stats for figure}
 %@CAO - I wonder if it would be interesting to list the number of ways that this happened to be clear that we're not just talking about undoing the changes that caused the loss in the first place.
 \todo{Add to caption per Charles's comment above}
 	\begin{figure}[!h] %% FIGURE 7
@@ -723,16 +720,12 @@ In order to identify the role that these pseudogene-like structures play, we per
 	%TODO - stats
 
 	\caption{\textbf{A survey of the two-step mutational neighborhood} of the organisms that lost EQU function in the one-step survey. We found that in both the harsh and benign treatments, there were significantly more organisms that regained function in response to mutation than the control. (Wilcoxon Rank Sum Test: Z = -47.9 and -57.82 respectively, p $<<$ 0.0001). This result indicates that it was easier for the organisms in both fluctuating environments to regain the task in response to one additional mutation, beyond a single reversion. 
-	%\todo[noinline]{TODO STATS}
-	%(Wilcoxon Rank Sum Test: Z = -6.11 and -7.38 respectively, p $<<$ 0.0001)
 	}\label{fig:CCE_two_step}
 	\end{figure}
 
 %=measured D_g, D_p, found similarity in D_g, increase in D_p 
 We also measured the proportion of non-deleterious mutants in the nearby fitness landscape. We found that between all treatments, this proportion
-remained approximately the same. However, we found that the proportion of these mutants with different (potentially adaptive) phenotypes increased in the changing environments. In this way, the organisms from the changing environment treatments have an advantage over organisms from the control runs in terms of the short-term evolvability of the fluctuating task. This result indicates real adaptation, not only to resources in their local environment, but a direct adaptation to the environmental change. (Fig~\ref{fig:CCE_diffusion_rate})
-\todo[color=green]{add stats for this paragraph}
-
+remained approximately the same.\todo[color=green]{stats} However, we found that the proportion of these mutants with different (potentially adaptive) phenotypes increased in the changing environments.\todo[color=green]{stats} In this way, the organisms from the changing environment treatments have an advantage over organisms from the control runs in terms of the short-term evolvability of the fluctuating task. This result indicates real adaptation, not only to resources in their local environment, but a direct adaptation to the environmental change. (Fig~\ref{fig:CCE_diffusion_rate})
 \todo[inline, color=magenta]{TODO - add paragraph describing/speculating about why Benign loses EQU almost as well as Harsh}
 % @CAO: I also get why we should expect to see EQU lost easily in the Harsh changing environment, but why is it also lost so easily in the benign environment.  Should we speculate here?  (Or do you below?)  More generally, why do you think this is the case?
 % @CAO: One other thought for how this result may happen.  Maybe in the control there is a pressure for EQU to evolve to be more robust, whereas the changing environment just doesn't give it time to evolve robustness.  I can't think of a way to easily disentangle those explanations though...
@@ -740,7 +733,6 @@ remained approximately the same. However, we found that the proportion of these 
 % @RCK - NOTE TO SELF -- see about joining vestigial sites paper with Matt's bias work. Are vestigial sites useful because they are random building blocks available (equivalent to mutational bias), or is there a deeper functional structure. Does order matter?
 
 %=[FIGURE D_g D_p]
-\todo[color=green]{stats}
 	\begin{figure}[!h] %% FIGURE 8
 	\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CCE_D_g_D_p__box.png}
 	\caption{\textbf{Genomic and Phenotypic Diffusion Rates}, showing the probabilities of producing offspring that are genotypically ($D_g$) or phenotypically ($D_p$) distinct from the parent, while not reducing fitness.
@@ -787,12 +779,9 @@ In contrast, we observed a very slight, but statistically significant increase i
 Few differences between the cyclic and stochastic treatments also appeared in the number of functional and vestigial sites. Both the numbers of functional and vestigial sites in the stochastic environment were similar to those in the cyclic environment. In the stochastic harsh treatment, there was a small, but significant reduction in the number of XOR+EQU overlapping functional sites (Mdn = 14) as compared to the cyclic treatment (Mdn = 16) . (Fig~\ref{fig:CSE_func_vestigial}) 
 
 %=[FIGURE - func vestigial sites]
-%\todo[color=green]{stats}
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/CSE_func_vest__filtered__box.png}
 	\caption{\textbf{Number of functional and vestigial sites by treatment} in a stochastic changing environment. The vestigial site counts for EQU-only remain comparable to the cyclic environment (Wilcoxon Rank-Sum Z = 0.46, 1.45, and -1.10, p = 0.6, 0.14, and 0.2). The functional sites were also comparable, however, there was a slight, but statistically significant decrease in the number of XOR \& EQU overlapping sites in the stochastic vs cyclic environments (Wilcoxon Rank-Sum Test: Z = -3.05, p < 0.01).
-	%
-	%-old (One-Way ANOVA F(2,132) = 54.35, p $<<$ 0.0001).
 	}
 	\label{fig:CSE_func_vestigial} %% FIGURE 9
 	\end{figure}
@@ -892,33 +881,33 @@ For all experiments described in this chapter, we used a 10\% recombination prob
 % MJW: Beyond merely citing something about number of nucleotides needed, I think it's worth explaining how we therefore chose 3 instructions in Avida.  26^3 is ~ 4^7, so if you're talking about an average of 300 nucleotides matching on each end, that would be way more restrictive than what we're doing.  A recent citation you can use is Optimal Cloning of PCR Fragments by Homologous Recombination in Escherichia coli by Ana Paula Jacobus and Jefferson Gross in PLOS ONE.  https://doi.org/10.1371/journal.pone.0119221  That one mentions in its abstract how 20bp is enough to assume identity.
 %@RCK: Applied
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/HGT/hgt_figure.png}
-\caption{\textbf{The HGT process}. Organisms can execute instructions that trigger uptake from the environment. When uptake occurs, there is an experimenter-defined chance that either it will yield a boost to speed of execution or, alternatively, that the fragment will be integrated into the genome.
-}\label{fig:hgtprocess}
-\end{center}
-\end{figure}
+	\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[width=0.7\columnwidth]{figures/HGT/hgt_figure.png}
+	\caption{\textbf{The HGT process}. Organisms can execute instructions that trigger uptake from the environment. When uptake occurs, there is an experimenter-defined chance that either it will yield a boost to speed of execution or, alternatively, that the fragment will be integrated into the genome.
+	}\label{fig:hgtprocess}
+	\end{center}
+	\end{figure}
 
 \subsubsection{Environmental Conditions}
 %=environmental rewards
-All experiments in this chapter compare outcomes between static environments, and harsh changing environments. In a similar manner to the experiments listed in the previous chapter (Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}), task rewards in the harsh changing environment switch from a positive to a negative reward. For the HGT experiments, we did not establish a backbone task that was always rewarded. Rather, we divided the Logic-9 environment into two halves, and alternated positive and negative rewards for each task in each set. There are four pairs of tasks of equivalent complexity, and we randomly allocated one from each pair to an experimental group. We also assigned \texttt{EQU}, which is the most complex task, and has no equivalent, to a random group. Thus, for the first phase of the cycle, we punished the \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU} instructions at $-2^1$, $-2^2$, $-2^3$, $-2^4$, and $-2^5$ respectively, while rewarding \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} at $2^1$, $2^2$, $2^3$, and $2^4$. In the second phase of the cycle, these rewards flip, such that we reward \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU}, and punish \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} (Table~\ref{hgt-treatments-logic9}.
+All experiments in this chapter compare outcomes between static environments, and harsh changing environments. In a similar manner to the experiments listed in the previous chapter (Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}), task rewards in the harsh changing environment switch from a positive to a negative reward. For the HGT experiments, we did not establish a backbone task that was always rewarded. Rather, we divided the Logic-9 environment into two halves, and alternated positive and negative rewards for each task in each set. There are four pairs of tasks of equivalent complexity, and we randomly allocated one from each pair to an experimental group. We also assigned \texttt{EQU}, which is the most complex task, and has no equivalent, to a random group. Thus, for the first phase of the cycle, we punished the \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU} instructions at $-2^1$, $-2^2$, $-2^3$, $-2^4$, and $-2^5$ respectively, while rewarding \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} at $2^1$, $2^2$, $2^3$, and $2^4$. In the second phase of the cycle, these rewards flip, such that we reward \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU}, and punish \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} (Table~\ref{hgt-treatments-logic9}).
 % MJW: I suggest explaining how you chose to divide the tasks; ie, there are 4 pairs of tasks of equivalent complexity, and for each pair you arbitrarily assigned one task to set 1 and the other task to set 2, and then EQU had to go somewhere.  Also, you can switch "were/are punished" with "we punished" and the like to remove passive voice.
 %@RCK: fixed
 
 \begin{table}[]
 \centering
-\caption{\textbf{Logic-9 Groups}}
+\caption{\textbf{Logic-9 Rewarded Task Groupings}}
 \label{hgt-treatments-logic9-h}
 
 \begin{tabular}{|c|c|c|c|}
 \hline
  & \thead{Tasks} & \thead{Reward \\ Phase 1} & \thead{Reward \\ Phase 2} \\\hhline{|=|=|=|=|}
- Group 1 & \makecell{ \texttt{NOT} \\ \texttt{AND} \\ \texttt{OR} \\ \texttt{NOR} \\ \texttt{EQU} } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ \\ $2^5$ } & \makecell{ $2^{-1}$ \\ $2^{-2}$ \\ $2^{-3}$ \\ $2^{-4}$ \\ $2^{-5}$ } \\\hline
- Group 2 & \makecell{ \texttt{NAND} \\ \texttt{ORN} \\ \texttt{ANDN} \\ \texttt{XOR} } & \makecell{ $2^{-1}$ \\ $2^{-2}$ \\ $2^{-3}$ \\ $2^{-4}$ } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ } \\\hline
+ Group 1 & \makecell{ \texttt{NOT} \\ \texttt{AND} \\ \texttt{OR} \\ \texttt{NOR} \\ \texttt{EQU} } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ \\ $2^5$ } & \makecell{ $-2^{1}$ \\ $-2^{2}$ \\ $-2^{3}$ \\ $-2^{4}$ \\ $-2^{5}$ } \\\hline
+ Group 2 & \makecell{ \texttt{NAND} \\ \texttt{ORN} \\ \texttt{ANDN} \\ \texttt{XOR} } & \makecell{ $-2^{1}$ \\ $-2^{2}$ \\ $-2^{3}$ \\ $-2^{4}$ } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ } \\\hline
 \end{tabular} 
 
-\begin{flushleft}Division of Logic-9 task rewards by cyclic phase.   
+\begin{flushleft}Logic-9 tasks are divided into to groups, with one task from each pair of tasks of equivalent complexity assigned to a group. The \texttt{EQU} task, which has no complexity equivalent, is assigned to the first group. During the first half of a cycle, we reward the first group of task and punish the second group (see Reward Phase 1). During the second half of the cycle, we reward the second group, and punish the first group (Reward Phase 2).  
 \end{flushleft}
 \label{hgt-treatments-logic9}
 \end{table}
@@ -959,7 +948,7 @@ For the treatments corresponding to the first set of hypotheses on the origins o
 \makecell{HGT \\ B0.8 \\ CE \\ (Natural Competence \\ with Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probability \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
 \end{tabular} 
 
-\begin{flushleft} Experimental treatments. Four treatments corresponding to the combination of two factors: Static vs Changing Environment, and Grazing Bonus vs No Grazing Bonus, plus a non-HGT control, where the HGT instruction is inert.  
+\begin{flushleft}Four treatments corresponding to the combination of two factors: Static vs Changing Environment, and Grazing Bonus vs No Grazing Bonus, plus a non-HGT control, where the HGT instruction is inert.  
 \end{flushleft}
 \label{hgt-treatments}
 \end{table}
@@ -983,7 +972,7 @@ HGT & organism death \\\hline
 \makecell{HGT-OffPhase} & sampled from organisms from the non-matching phase \\\hline
 \end{tabular} 
 
-\begin{flushleft} Experimental treatments. Four treatments corresponding to the sources of fragments. The first treatment uses the default fragment source (dead organisms from the environment). The second treatment samples a population for organisms corresponding to both phases, and injects those into the reservoirs. The third and fourth treatments sample the population, but only inject fragments from the matching and non-matching phases, respectively.  
+\begin{flushleft} Four treatments corresponding to the sources of fragments. The first treatment uses the default fragment source (dead organisms from the environment). The second treatment samples a population for organisms corresponding to both phases, and injects those into the reservoirs. The third and fourth treatments sample the population, but only inject fragments from the matching and non-matching phases, respectively.  
 \end{flushleft}
 \label{hgt-treatments-reservoir}
 \end{table}
@@ -1049,7 +1038,6 @@ We calculated the average fitness effects of fragments in a randomly selected re
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/fitness_effect_heatmap.png}
 \caption{\textbf{Origin and fitness distribution of HGT fragments} in the reservoirs from a randomly selected replicate population, sampled at 100,000 updates. We apply each fragment in each cell's reservoir, one at a time, to the organism in the cell, then record the fitness effect. The x-axis is the birth-update of fragment's original donor organism. The y-axis is a fragment's fitness effect. The color of each point represents the number of fragments that occupy that birth-update and also that fitness value. Hotter values indicate more fragments from that time origin at that fitness effect. Most fragments with a positive fitness effect (the upper half of the figure) are originate in bands that correspond with the matching phase of an earlier cycle. 
-%\todo{stats}\todo{caption}
 }\label{fig:fitness_effect_heatmap}
 \end{center}
 \end{figure}
@@ -1088,7 +1076,7 @@ the phenotypic effect of each fragment by counting the number of times that frag
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/beneficial_fraction_by_cycle_phase_source.png}
-\caption{textbf{Fraction of all fragments that produced a beneficial phenotype change}. The "On-Phase" treatment has significantly more fragments that convey a beneficial phenotype change than either of the controls (Wilcoxon Rank Sum Test: Z = -6.42 and -6.12 respectively, p $<<$ 0.001), while the "Off-Phase" has significantly fewer (Wilcoxon Rank-Sum Test: Z = 7.11 and 7.35 respectively, p $<<$ 0.001).
+\caption{\textbf{Fraction of all fragments that produced a beneficial phenotype change}. The "On-Phase" treatment has significantly more fragments that convey a beneficial phenotype change than either of the controls (Wilcoxon Rank Sum Test: Z = -6.42 and -6.12 respectively, p $<<$ 0.001), while the "Off-Phase" has significantly fewer (Wilcoxon Rank-Sum Test: Z = 7.11 and 7.35 respectively, p $<<$ 0.001).
 }\label{fig:beneficial_fraction_by_cycle_phase_source}
 \end{center}
 \end{figure}
@@ -1247,23 +1235,23 @@ For the experiments comparing the mutational effects of different types of mutat
 % MJW: I think these are mutations again.
 %@RCK: fixed
 \\\hhline{|=|=|=|}
-HGT & Static & \multirow{2}{*}{ HGT } \\\cline{1-2}
+HGT & Static & \multirow{2}{*}{ \texttt{HGT} } \\\cline{1-2}
 HGT CE & Changing & \\\hline
-HGT-Shuffle & Static & \multirow{2}{*}{ \makecell{HGT-Shuffle} } \\\cline{1-2}
+HGT-Shuffle & Static & \multirow{2}{*}{ \makecell{\texttt{HGT-Shuffle}} } \\\cline{1-2}
 HGT-Shuffle CE & Changing & \\\hline
-HGT-Random & Static & \multirow{2}{*}{ \makecell{HGT-Random} } \\\cline{1-2}
+HGT-Random & Static & \multirow{2}{*}{ \makecell{\texttt{HGT-Random}} } \\\cline{1-2}
 HGT-Random CE & Changing & \\\hline
-ME-Sampled & Static & \multirow{2}{*}{ \makecell{Mutation Event - Sampled} } \\\cline{1-2}
+ME-Sampled & Static & \multirow{2}{*}{ \makecell{\texttt{ME-Sampled} \\ (Mutation Event - Sampled)} } \\\cline{1-2}
 ME-Sampled CE & Changing & \\\hline
-ME-Random & Static & \multirow{2}{*}{ \makecell{Mutation Event - Random} } \\\cline{1-2}
+ME-Random & Static & \multirow{2}{*}{ \makecell{\texttt{ME-Random} \\ (Mutation Event - Random)} } \\\cline{1-2}
 ME-Random CE & Changing & \\\hline
-MRI & Static & \multirow{2}{*}{ \makecell{Mutation Rate Increase} } \\\cline{1-2}
+MRI & Static & \multirow{2}{*}{ \makecell{\texttt{MRI} \\ (Mutation Rate Increase)} } \\\cline{1-2}
 MRI CE & Changing & \\\hline
-Die & Static & \multirow{2}{*}{ \makecell{Die} } \\\cline{1-2}
+Die & Static & \multirow{2}{*}{ \makecell{\texttt{Die}} } \\\cline{1-2}
 Die CE & Changing & \\\hline
 \end{tabular} 
 
-\begin{flushleft} Experimental treatments. Two types of environment (static vs changing environment), for each mutagen. No bonus was given for performing any of the mutagen instructions.
+\begin{flushleft} Two types of environment (static vs changing environment), for each mutagen. No bonus was given for performing any of the mutagen instructions.
 \end{flushleft}
 \label{hgt_mut-treatments}
 \end{table}
@@ -1277,12 +1265,13 @@ Our research shows that only mutations containing useful information are elevate
 %@RCK: fixed
 
 \subsection{Other mutation types are not elevated in response to HGT}
-\todo[color=green]{stats}
-\todo{caption}
+\todo{polish figure}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_execution.png}
-\caption{bleh
+\caption{\textbf{Executions of mutagenic instructions}. In static environments, use of all mutagenic instructions was strongly suppressed (Wilcoxon Rank Sum Test: Z = -22.65, p << 0.001). In changing environment treatments, the \texttt{HGT} and \texttt{HGT-Shuffled} instructions were used at elevated rates, compared to the other mutagenic instructions, including the \texttt{Die} control (Wilcoxon Rank Sum Test:
+Z = 10.66, p << 0.001). The \texttt{HGT} instruction (Mdn = 87389.71, CI 95\% [82982.98, 96000.3]) is used more than the \texttt{HGT-Shuffle} instruction (Mdn = 52220.3, CI 95\% [45094.92, 57465.52]), which is used more than \texttt{HGT-Random} (Mdn
+= 25442.98, CI 95\% [22099.45, 30490.08]), indicating that the information content of the mutation matters. 
 }\label{fig:mutagen_execution}
 \end{center}
 \end{figure}
@@ -1310,13 +1299,13 @@ We speculate that this effect may synergize with the level of modularity in a ge
 
 
 
-\subsection{Mutation fitness effect correlate with mutagen use}
-\todo[color=green]{stats}
-\todo{caption}
+\subsection{Mutation fitness effect correlate with mutagenic instruction use}
+\todo{polish figure - show fitness effect instead of uptake in left violin?}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_use_vs_fitness_effect.png}
-\caption{bleh
+\caption{\textbf{Mutagenic instruction use vs fitness effect of mutation}. The use of the mutagenic instruction correlates with the fitness effect of that instruction (Pearson’s R: $r_2$ = 0.35,
+p $<<$ 0.001). Because mutagenic instructions are integrated into the genomes, those instructions that produce a beneficial fitness effect are more likely to be selected for.
 }\label{fig:mutagen_use_vs_fitness_effect}
 \end{center}
 \end{figure}
@@ -1331,7 +1320,7 @@ We speculate that this effect may synergize with the level of modularity in a ge
 Prior research has failed to show an increase in endogenously-controlled mutation rates, when such an increase would be beneficial for long-term evolution, such as in a changing environment\cite{clune_natural_2008}.
 % MJW: This sentence demands citations.  Presumably Jeff Clune's Avida work?
 %@RCK: fixed
-Why should HGT mutations be different? In order to address this question, we measured the average fitness effect of each mutation, and compared it to that mutation's usage rate in changing environments. We observed a positive correlation between the average fitness effect, and the use of the mutagenic instruction (Pearson's R: $r_{2}$ = 0.35, p =  $<<$ 0.001). We observed many more positive or neutral fitness effects from the HGT instruction (Mdn = 0.08, CI 95\% [-0.12, 0.37]) than the other mutagenic instruction types, which exhibited primarily neutral or negative mutation effects (Mdn = -0.62, CI 95\% [-0.79, -0.52]) (Wilcoxon Rank Sum Test: Z = 7.09, p $<<$ 0.001). This indicates that mutagenic instruction use is under direct selection (Fig~\ref{fig:mutagen_use_vs_fitness_effect}).
+Why should HGT mutations be different? In order to address this question, we measured the average fitness effect of each mutation, and compared it to that mutation's usage rate in changing environments. We observed a positive correlation between the average fitness effect, and the use of the mutagenic instruction (Pearson's R: $r_{2}$ = 0.35, p $<<$ 0.001). We observed many more positive or neutral fitness effects from the HGT instruction (Mdn = 0.08, CI 95\% [-0.12, 0.37]) than the other mutagenic instruction types, which exhibited primarily neutral or negative mutation effects (Mdn = -0.62, CI 95\% [-0.79, -0.52]) (Wilcoxon Rank Sum Test: Z = 7.09, p $<<$ 0.001). This indicates that mutagenic instruction use is under direct selection (Fig~\ref{fig:mutagen_use_vs_fitness_effect}).
 % MJW: I think these are mutations, again.
 
 
@@ -1339,12 +1328,11 @@ Why should HGT mutations be different? In order to address this question, we mea
 %Fitness effects correlate with use of the mutagen.
 
 \subsection{HGT mutations increase evolved probability of beneficial phenotype switching}
-\todo[color=green]{stats}
-\todo{caption}
+\todo{polish figure}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_use_vs_fraction_beneficial.png}
-\caption{bleh
+\caption{\textbf{Fraction of beneficial phenotype-switching mutations vs mutagenic instruction use}. We observe a strong correlation between the fraction of mutations that produce beneficial phenotype switches, and the use of the mutagenic instruction (Pearson's R: $r_{2}$ = 0.61, p =  $<<$ 0.001). This correlation is much stronger than the correlation between fitness effect and mutagenic instruction use. This suggests that it is not only the absolute fitness effect that is selected for, but the evolvability benefit.
 }\label{fig:mutagen_use_vs_fraction_beneficial}
 \end{center}
 \end{figure}
@@ -1370,9 +1358,9 @@ We measured the proportion of mutations that produce beneficial phenotype change
 %Under Stress, Natural Competence increases
 Our experiments expand on our understanding of the evolution of horizontal gene transfer, and how it relates to other types of mutations in the context of changing environments. As expected, we find that the fitness effects of different types of mutations vary significantly, and that they predict the levels of use of that mutagen. In particular, we find a strong correlation between the fraction of mutations that produce a beneficial phenotype change, and the use of that mutagen. Thus, in the context of a changing environment, where there are strong selective pressures to change your phenotype, levels of HGT are elevated, while levels of other mutagens remain low.
 
-This result matches prior research that shows that populations will tend to depress the use of mutagens, even though, in the long-term, higher mutation rates are optimal [CITE]. This result is further evidence that selection tends to act in the short term. Thus, even though certain kinds of mutagens and architectural features may promote long-term evolvability, these features are hitchhiking on short-term adaptive benefits. Thus, our research shows that even though evolvability may evolve, it is not necessarily selected for in the long-term. 
+This result matches prior research that shows that populations will tend to depress the use of mutagens, even though, in the long-term, higher mutation rates are optimal\cite{clune_natural_2008}. This result is further evidence that selection tends to act in the short term. Thus, even though certain kinds of mutagens and architectural features may promote long-term evolvability, these features are hitchhiking on short-term adaptive benefits. Thus, our research shows that even though evolvability may evolve, it is not necessarily selected for in the long-term. 
 
-\todo{add a takeaway, as per the note below}
+\todo[color=magenta, inline]{add a takeaway, as per the note below}
 % MJW: Since this is a conclusion section, it's worth taking a bit of space to drive home the major points, even if this seems a bit repetitive with the discussion section.  If I'm remembering the results correctly: Simply boosting the mutation rate doesn't cause the instruction to be notably enriched.  That means that the higher effective mutation rate caused by these HGT events is not what's driving things.  Causing that number of mutations to all localize to one region does cause the instruction's use to be elevated, so there's some advantage to this localization.  But there's a *much* higher use if there is also information content involved, either by enriching for those instructions in the actual fragment, or even moreso if the order of those instructions is preserved.  This means that primary beneficial effect of HGT we see is that it results in mutation events that contain more information content than other types of mutation events.
 
 \todo{does this (below) read ok?}
@@ -1458,7 +1446,7 @@ For the first phase (analogous to our earlier experiments), we rewarded a pair o
 	%\begin{tabular}{ccccccc}
 	\hline
 	\multirow{3}{*}{ \thead{Treatment} } & \multirow{3}{*}{ \thead{Changing \\ Env. \\ Type} } & \multicolumn{5}{c|}{ \thead{Rewarded Tasks} } \\\cline{3-7}
-	& & \multicolumn{2}{c||}{ \thead{Phase 1 \\ (0-200,000 Updates)} } & \multicolumn{3}{c|}{ \thead{Phase 2 \\ (200,000-400,000 Updates)} } \\\cline{3-7}
+	& & \multicolumn{2}{c||}{ \thead{Part 1 \\ (0-200,000 Updates)} } & \multicolumn{3}{c|}{ \thead{Part 2 \\ (200,000-400,000 Updates)} } \\\cline{3-7}
 	& & XOR & EQU & XOR & EQU & \makecell{Logic-77 \\ (all)} \\\hhline{|=|=|=|=|=|=|=|}
 	Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 	Benign & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
@@ -1468,7 +1456,7 @@ For the first phase (analogous to our earlier experiments), we rewarded a pair o
 	%\makecell{Harsh \\ to \\ Benign} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 	\end{tabular} 
 
-	\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases. The first phase is a normal changing environment like those found in Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
+	\begin{flushleft} Four types of cyclic changing environment, plus a static control. Each is split into two phases. The first phase is a normal changing environment like those found in Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}. The second phase introduces an additional set of tasks (Logic 77) that are rewarded at a lower rate.
 	\end{flushleft}
 	\label{cel-treatments-simple}
 	\end{table}
@@ -1485,8 +1473,25 @@ We configured the Avida world to have local interactions on a toroidal grid that
 \subsubsection{Complex Cyclic Changing Environment}
 The second set of experiments looks at the evolution of populations of organisms with variable-length genomes, 
 % MJW: I don't think this should be hyphenated, but am not positive.
-evolved in a more complex cyclic changing environment.  As in the previous chapter, we divided the Logic-9 tasks into two groups (Table~\ref{hgt-treatments-logic9}) and alternated reward and punishment between them. For the first phase of our experiments, we alternate rewards between one group and the other, or reward all of Logic-9 for the control treatment. For the benign treatments, rather than punish the alternate group, we simply do not reward the tasks. 
+evolved in a more complex cyclic changing environment.  As in the previous chapter, we divided the Logic-9 tasks into two groups (Table~\ref{lte-complex-treatments-logic9}) and alternated reward and punishment between them. For the first phase of our experiments, we alternate rewards between one group and the other, or reward all of Logic-9 for the control treatment. For the benign treatments, rather than punish the alternate group, we simply do not reward the tasks. 
 % MJW: You're back to present tense here.
+
+	\begin{table}[]
+	\centering
+	\caption{\textbf{Complex Changing Environments - Logic-9 Rewarded Task Groupings}}
+	\label{lte-complex-treatments-logic9-h}
+
+	\begin{tabular}{|c|c|c|c|}
+	\hline
+	 & \thead{Tasks} & \thead{Reward \\ Phase 1} & \thead{Reward \\ Phase 2} \\\hhline{|=|=|=|=|}
+	 Group 1 & \makecell{ \texttt{NOT} \\ \texttt{AND} \\ \texttt{OR} \\ \texttt{NOR} \\ \texttt{EQU} } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ \\ $2^5$ } & \makecell{ $2^{-1}$ \\ $2^{-2}$ \\ $2^{-3}$ \\ $2^{-4}$ \\ $2^{-5}$ } \\\hline
+	 Group 2 & \makecell{ \texttt{NAND} \\ \texttt{ORN} \\ \texttt{ANDN} \\ \texttt{XOR} } & \makecell{ $2^{-1}$ \\ $2^{-2}$ \\ $2^{-3}$ \\ $2^{-4}$ } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ } \\\hline
+	\end{tabular} 
+
+	\begin{flushleft}Logic-9 tasks are divided into to groups, with one task from each pair of tasks of equivalent complexity assigned to a group. The \texttt{EQU} task, which has no complexity equivalent, is assigned to the first group. During the first half of a cycle, we reward the first group of task and punish the second group (see Reward Phase 1). During the second half of the cycle, we reward the second group, and punish the first group (Reward Phase 2).  
+	\end{flushleft}
+	\label{lte-complex-treatments-logic9}
+	\end{table}
 
 \todo{fix this table to show the halves of the logic 9 split}
 	%=[TABLE - experimental treatments]
@@ -1499,17 +1504,17 @@ evolved in a more complex cyclic changing environment.  As in the previous chapt
 	%\begin{tabular}{ccccccc}
 	\hline
 	\multirow{3}{*}{ \thead{Treatment} } & \multirow{3}{*}{ \thead{Changing \\ Env. \\ Type} } & \multicolumn{5}{c|}{ \thead{Rewarded Tasks} } \\\cline{3-7}
-	& & \multicolumn{2}{c||}{ \thead{Phase 1 \\ (0-200,000 Updates)} } & \multicolumn{3}{c|}{ \thead{Phase 2 \\ (200,000-400,000 Updates)} } \\\cline{3-7}
-	& & XOR & EQU & XOR & EQU & \makecell{Logic-77 \\ (all)} \\\hhline{|=|=|=|=|=|=|=|}
-	Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	Benign & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+	& & \multicolumn{2}{c||}{ \thead{Part 1 \\ (0-200,000 Updates)} } & \multicolumn{3}{c|}{ \thead{Part 2 \\ (200,000-400,000 Updates)} } \\\cline{3-7}
+	& & Group 1 & Group 2 & Group 1 & Group 2 & \makecell{Logic-77 \\ (all)} \\\hhline{|=|=|=|=|=|=|=|}
+	Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^{1-5}$} & \makecell{constant \\ $2^{1-4}$} & \makecell{constant \\ $2^{1-5}$} & \makecell{constant \\ $2^{1-4}$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+	Benign & Cyclic & \makecell{benign \\ fluctuating \\ $2^{1-5}$ or 0} & \makecell{benign \\ fluctuating \\ 0 or $2^{1-5}$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ $2^{1-5}$ or 0} & \makecell{constant \\ $2^{0.3}$} \\\hline
 	\makecell{Benign \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 	Harsh & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 	\makecell{Harsh \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 	%\makecell{Harsh \\ to \\ Benign} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 	\end{tabular} 
 
-	\begin{flushleft} Experimental treatments. Four types of cyclic changing environment, plus a static control. Each is split into two phases.
+	\begin{flushleft} Four types of cyclic changing environment, plus a static control. Each is split into two phases.
     % MJW: These are fragments.
     The first phase is a complex changing environment similar to those found in Chapter~\ref{chap:evo-hgt}, Table~\ref{hgt-treatments-h}. The second phase introduces an additional set of tasks (Logic-77) that are rewarded at a lower rate.
 	\end{flushleft}
@@ -1520,15 +1525,15 @@ evolved in a more complex cyclic changing environment.  As in the previous chapt
 In order to compare the effects of different kinds of alternating selective pressures on long-term evolvability, we prepared four different types of experimental treatment using changing environments, plus a static control, for both the simple and complex environmental treatments. 
 
 \begin{itemize}
-	\item \textbf{Static (Control)}: For the first 200k updates (phase 1), we reward populations for performing either XOR and EQU for the simple environment (Table~\ref{cel-treatments-simple}, or the whole Logic-9 task set (Table~\ref{cel-treatments-complex}). For the second 200k updates (phase 2), we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution.
+	\item \textbf{Static (Control)}: For the first 200k updates (part 1), we reward populations for performing either XOR and EQU for the simple environment (Table~\ref{cel-treatments-simple}, or the whole Logic-9 task set (Table~\ref{cel-treatments-complex}). For the second 200k updates (part 2), we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution.
 
-	\item \textbf{Benign Changing Environment}: For the first 200k updates (phase 1), we alternate rewarding and not rewarding populations for performing either the EQU task (the simple environment) (Table~\ref{cel-treatments-simple}, or we alternate rewarding each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and\ref{hgt-treatments-logic9}). For the second phase of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
+	\item \textbf{Benign Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and not rewarding populations for performing either the EQU task (the simple environment) (Table~\ref{cel-treatments-simple}, or we alternate rewarding each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and\ref{hgt-treatments-logic9}). For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
 
-	\item \textbf{Benign Quiescent Changing Environment}: For the first 200k updates (phase 1), we alternate rewarding and not rewarding populations, as in the Benign Changing Environment above. For the second phase of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase stop at 200k updates, and we instead reward the tasks of the first phase as we did in the Static treatment (all constant reward).
+	\item \textbf{Benign Quiescent Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and not rewarding populations, as in the Benign Changing Environment above. For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase stop at 200k updates, and we instead reward the tasks of the first phase as we did in the Static treatment (all constant reward).
 
-	\item \textbf{Harsh Changing Environment}: For the first 200k updates (phase 1), we alternate rewarding and \textbf{punishing} populations for performing either the EQU task (the simple environment) (Table~\ref{cel-treatments-simple}, or we alternate rewarding and punishing each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and\ref{hgt-treatments-logic9}). For the second phase of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
+	\item \textbf{Harsh Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and \textbf{punishing} populations for performing either the EQU task (the simple environment) (Table~\ref{cel-treatments-simple}, or we alternate rewarding and punishing each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and\ref{hgt-treatments-logic9}). For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
 
-	\item \textbf{Harsh Quiescent Changing Environment}: For the first 200k updates (phase 1), we alternate rewarding and \textbf{punishing} populations, as in the Harsh Changing Environment above. For the second phase of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase stop at 200k updates, and we instead reward the tasks of the first phase as we did in the Static treatment (all constant reward).
+	\item \textbf{Harsh Quiescent Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and \textbf{punishing} populations, as in the Harsh Changing Environment above. For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase stop at 200k updates, and we instead reward the tasks of the first phase as we did in the Static treatment (all constant reward).
 \end{itemize}
 
 \subsection{Measuring Task Discovery and Task Performance}
@@ -1574,7 +1579,7 @@ In contrast, the benign environment, with its comparatively weaker strength of s
 	\todo{caption}
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-post_reward_task_discovery.png}
-	\caption{\textbf{Number of new logic-77 tasks discovered beginning in phase 2}. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Number of new logic-77 tasks discovered beginning in part 2}. [TODO DESCRIPTION AND STATS]%
 	}
 	\label{fig:postreward_task_discovery}
 	\end{figure} 
@@ -1646,7 +1651,7 @@ In the first phase of the experiments, despite the logic-77 tasks not being rewa
 \subsection{Task Performance}
 
 \subsubsection{Benign changing environments outperform harsh environments in task performance}
-Similar to task discovery, populations evolving in harsh changing environments perform far fewer distinct tasks than either the benign-evolved or control populations (Wilcoxon Rank Sum Test: Simple: Z = -11.22 and -11.15 respectively; Complex: Z = -4.32 and -3.73 respectively, p $<<$ 0.001) (Fig~\ref{fig:lte-task_performance} and \ref{fig:complex-task_performance}). While both the BenignCE and Benign Quiesce
+Similar to task discovery, populations evolving in harsh changing environments perform far fewer distinct tasks than either the benign-evolved or control populations (Wilcoxon Rank Sum Test: Simple: Z = -11.22 and -11.15 respectively; Complex: Z = -4.32 and -3.73 respectively, p $<<$ 0.001) (Fig~\ref{fig:lte-simple-task_performance} and \ref{fig:complex-task_performance}). While both the BenignCE and Benign Quiesce
 % MJW: Inconsistent capitalization w/r/t the previous sentence.
 populations seem to outperform the control, this effect is only statistically significant in the complex environment (Wilcoxon Rank Sum Test: Z = 2.42 and 2.37 respectively, p $<$ 0.05). In the simple environment, the differences are not statistically significant (Kruskal Wallis: H(2) = 2.76, p = 0.25).
 
@@ -1657,7 +1662,7 @@ populations seem to outperform the control, this effect is only statistically si
 	%\missingfigure{lte-task_performance - Long Term Evolution Task Performance}
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-task_performance.png}
 	%\missingfigure{Long Term Evolution Task Performance}
-	\caption{\textbf{Number of new logic-77 tasks performed beginning in phase 2}. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Number of new logic-77 tasks performed beginning in part 2}. [TODO DESCRIPTION AND STATS]%
 	}
 	\label{fig:lte-simple-task_performance}
 	\end{figure}  
@@ -1668,7 +1673,7 @@ populations seem to outperform the control, this effect is only statistically si
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-task_performance.png}
 	%\missingfigure{Complex CCE Task Performance}
-	\caption{\textbf{Number of logic-77 tasks performed beginning in phase 2}. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Number of logic-77 tasks performed beginning in part 2}. [TODO DESCRIPTION AND STATS]%
 	}
 	\label{fig:complex-task_performance}
 	\end{figure}
