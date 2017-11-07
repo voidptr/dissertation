@@ -1562,7 +1562,7 @@ We measure task performance by counting the number of unique non-ephemeral tasks
 % MJW: Why do you switch between capitalizing the words in the subsections and not in the sub-subsections?  This might be something you do consistently but I only noticed here because they're stacked right next to each other, in which case it's probably a formatting thing, but it seemed worth asking when I noticed it.
 We found
 % MJW: This sets up tense weirdness.  "We found" is past tense; essentially everything else here is written as present tense.
-that once the Logic-77 reward structure is introduced, populations evolving in harsh changing environments discover many fewer tasks that those evolving in benign changing environments (Fig~\ref{fig:postreward_task_discovery})\todo{stats}. We hypothesize that this effect is due to the relative differences in the strength of selection between the harsh changing environment and the directional selection toward the logic-77 tasks.
+that once the Logic-77 reward structure is introduced, populations evolving in harsh changing environments discover many fewer tasks that those evolving in benign changing environments in both the simple environment (Wilcoxon Rank Sum Test: Z = 2.75, p $<$ 0.01) and the complex environment (Wilcoxon Rank Sum Test: Z = 5.96, p $<<$ 0.001) (Figs~\ref{fig:postreward_task_discovery}, \ref{fig:complex-task_discovery}). We hypothesize that this effect is due to the relative differences in the strength of selection between the harsh changing environment and the directional selection toward the logic-77 tasks.
 % MJW: I am having a hard time tracking what the "relative differences" are here.  The plurality implies that there are multiple, but the sentence structure seems to indicate you're comparing strength of selection in the harsh changing environment and the directional selection toward Logic-77 tasks (by which I am assuming you are referring to the selective pressure towards acquiring tasks that are always rewarded, but conceptually it's hard to compare the strength of selection [essentially a measure of s in population genetics] to directional selection [a class of selective pressure]).
 The pressure to gain and lose the fluctuating task is much stronger than the pressure to acquire the logic-77 tasks, thereby depressing the rate at which they are found.
 % MJW: I know that stats are TODO throughout this chapter, but this sentence in particular absolutely needs them, and it's the sort that would be easy to overlook so I'm flagging it.  Though, to be fair, you don't necessarily need the stats if you just lay out the raw numbers -- the selective benefit towards either gaining EQU when it starts being rewarded or lose it when it starts being punished is X, the benefit of acquiring a Logic-77 task is Y.
@@ -1574,7 +1574,7 @@ In contrast, the benign environment, with its comparatively weaker strength of s
 	\todo{caption}
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-post_reward_task_discovery.png}
-	\caption{\textbf{Number of new logic-77 tasks discovered beginning in phase 2}.%
+	\caption{\textbf{Number of new logic-77 tasks discovered beginning in phase 2}. [TODO DESCRIPTION AND STATS]%
 	}
 	\label{fig:postreward_task_discovery}
 	\end{figure} 
@@ -1590,29 +1590,34 @@ In contrast, the benign environment, with its comparatively weaker strength of s
 	\label{fig:complex-task_discovery}
 	\end{figure}
 
-Interestingly, in those populations where we removed the harsh environmental change as we introduce Logic-77, we see that task exploration recovers somewhat and reaches a comparable level to the control\todo{stats}. This suggests that it is the active pressures of the harsh environment that depress task exploration, and not a penalty conveyed by architectural features that persist after selective pressures have changed.
+Interestingly, in those populations where we removed the harsh environmental change as we introduce Logic-77, we see that task exploration recovers somewhat and reaches a comparable level to the control (Wilcoxon Rank Sum Test: Z = -0.91, p = 0.37). This suggests that it is the active pressures of the harsh environment that depress task exploration, and not a penalty conveyed by architectural features that persist after selective pressures have changed.
 % MJW: This is a really key finding of this chapter.  I feel you could highlight this more.  One writing strategy that Rich employs a lot that I find particularly effective is to structure something along the lines of "Here is a fact (either from our observation or from the literature).  What could account for this?  Possible explanation 1 would predict X.  Possible explanation 2 would predict Y.  Possible explanation 3 would predict Z.  We find N, which is inconsistent with X, and is more likely to be a result of Y than of Z, so we conclude that possible explanation 1 is not driving our results/this observation, and that possible explanation 2 is more likely than possible explanation 3".  Not saying you have three possible explanations here, just a general sort of approach to that way of writing a combined results and discussion section.
 
 %=disentangling direct effects from architectural byproducts
-Of similar interest
+Also of interest
 % MJW: Careful.  It's one thing to call a result interesting; it's another to make a claim about how relatively interesting different findings are as if that is objectively measurable, rather than a personal decision.
-is the comparison of task discovery rates between the benign changing environment populations BenignCE and BenignQuiescent.\todo{make a figure to highlight this?}\todo{rename the populations A and B} The BenignCE populations continue to be subject to the benign changing environment, where as the BenignQuiescent populations are only subject to directional selection toward the evolution of XOR, EQU, and the Logic-77 tasks. The task discovery rate for the BenignCE population is slightly higher than for BenignQuiescent, but the effect is not statistically significant\todo{stats}. Both, however, still perform better than the control treatment\todo{stats}. Thus, this result suggests that there may be architectural features conferred by evolution in the changing environment that are helpful for long-term evolvability, even after the environmental changes have stopped, and that this effect is distinct from the direct effects of the changing direction of selection. %Further research is needed to fully untangle these effects.
+%@RCK: removed comparison
+is the comparison of task discovery rates between the benign changing environment populations BenignCE and BenignQuiescent.\todo{rename the populations A and B} The BenignCE populations continue to be subject to the benign changing environment, whereas the Benign Quiescent populations are only subject to directional selection toward the evolution of the original and the Logic-77 tasks. In both environment types, task discovery rate for the BenignCE population (Simple: Mdn = 37.0, CI 95\% [36.0, 38.0]; Complex: Mdn = 29.0, CI 95\% [26.0, 31.0]) is slightly higher than for BenignQuiescent(Simple: Mdn = 36.0, CI 95\% [34.0, 38.0]; Complex: Mdn = 24.0, CI 95\% [22.0, 27.0]), but the effect is not statistically significant in the simple environment (Complex: Wilcoxon Rank Sum Test: Z = 3.15, p $<$ 0.01; Simple: Wilcoxon Rank Sum Test: Z = 1.39, p = 0.16). Both, however, still perform better than the control treatment (Simple: Mdn = 34.5, CI 95\% [32.0, 38.0]; Complex: Mdn = 22.0, CI 95\% [21.0, 25.0]), though this effect is only statistically significant between the BenignCE and Control treatments in the complex environment (Wilcoxon Rank Sum Test: Z = -4.33, p $<$ 0.001). Thus, this result suggests that there may be architectural features conferred by evolution in the changing environment that are helpful for long-term evolvability, even after the environmental changes have stopped, and that this effect is distinct from the direct effects of the changing direction of selection. %Further research is needed to fully untangle these effects.
 
 \subsubsection{Harsh changing environments drive populations across the mutational landscape}
 %=choice of CE has dramatic effects - forced march
-In the first phase of the experiments, despite the logic-77 tasks not being rewarded, both changing-environment treatments discover more new tasks than the control\todo{stats}. The harsh changing environment treatments in particular discover significantly more Logic-77 tasks than either the benign treatment\todo{stats}, or the control, despite these tasks not being rewarded (Fig~\ref{fig:overall_task_discovery}. We hypothesize that this effect may be due to the large phylogenetic depth of the harsh-evolved populations, where the repeated bottlenecks drive the populations along a kind of forced march across the mutational landscape. However, as the experiment proceeds, and Logic-77 rewards are introduced, this effect disappears, and benign environments quickly dominate in task discovery.\todo{stats}
+In the first phase of the experiments, despite the logic-77 tasks not being rewarded, both changing-environment treatments (BenignCE and Benign Quiescent) discover more new tasks than the control (Simple: Wilcoxon Rank Sum Test: Z = -5.75 and -11.15 respectively, p $<<$ 0.001; Complex: Wilcoxon Rank Sum Test: Z = -4.32 and -3.73 respectively, p $<$ 0.001). In the simple environment, the harsh treatment in particular discovers substantially and significantly more Logic-77 tasks than either the benign treatment(Wilcoxon Rank Sum Test: Z = -8.0, p $<<$ 0.001), or the control, despite these tasks not being rewarded (Fig~\ref{fig:simple-overall_task_discovery}. We hypothesize that this effect may be due to the large phylogenetic depth of the harsh-evolved populations, where the repeated bottlenecks drive the populations along a kind of forced march across the mutational landscape. However, as the experiment proceeds, and Logic-77 rewards are introduced, this effect disappears, and task discovery rates converge (Kruskal Wallis: H(2) = 6.97, p = 0.03).
 
 %=[FIGURE - overall task discovery]
-\todo[inline]{REPLACE THIS WITH THE ONE THAT HAS THE VIOLIN PLOT?}
 \todo[color=green]{stats}
 \todo{caption}
 	\begin{figure}[!h]
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/901_overall_task_discovery.png}
+	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-overall_task_discovery.png}
 	\caption{\textbf{Number of new logic-77 tasks discovered over time}. [TODO DESCRIPTION AND STATS]%
 	}
-	\label{fig:overall_task_discovery}
+	\label{fig:simple-overall_task_discovery}
 	\end{figure}
-
+	\begin{figure}[!h]
+	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-overall_task_discovery.png}
+	\caption{\textbf{Number of new logic-77 tasks discovered over time}. [TODO DESCRIPTION AND STATS]%
+	}
+	\label{fig:complex-overall_task_discovery}
+	\end{figure}
 %=post-reward exploration - strength of selection differences
 % Despite the initial success of the harsh-evolved populations' random walk across the fitness landscape, once selection for the logic-77 tasks is engaged at the start of phase 2, the benign and control treatments out-perform the harsh-evolved populations in task discovery. In particular, those populations where the harsh changing environment continues, significantly under-perform in task exploration as compared to the benign-evolved populations, and are comparable to the control rate. (Fig~\ref{fig:postreward_task_discovery}). 
 % (Fig~\ref{fig:composite_task_discovery} lower left)
@@ -1651,7 +1656,7 @@ populations seem to outperform the control, this effect is not statistically sig
 	%\missingfigure{lte-task_performance - Long Term Evolution Task Performance}
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-post_reward_task_performance.png}
 	%\missingfigure{Long Term Evolution Task Performance}
-	\caption{\textbf{Number of new logic-77 tasks performed beginning in phase 2}.%
+	\caption{\textbf{Number of new logic-77 tasks performed beginning in phase 2}. [TODO DESCRIPTION AND STATS]%
 	}
 	\label{fig:lte-task_performance}
 	\end{figure}  
@@ -1662,7 +1667,7 @@ populations seem to outperform the control, this effect is not statistically sig
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-task_performance.png}
 	%\missingfigure{Complex CCE Task Performance}
-	\caption{\textbf{Number of logic-77 tasks performed over time}. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Number of logic-77 tasks performed beginning in phase 2}. [TODO DESCRIPTION AND STATS]%
 	}
 	\label{fig:complex-task_performance}
 	\end{figure}
