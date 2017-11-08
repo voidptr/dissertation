@@ -708,7 +708,6 @@ In order to identify the role that these pseudogene-like structures play, we per
 %=[FIGURE - Frac 1-step]
 	\begin{figure}[!h] %% FIGURE 6
 	\includegraphics[trim={0.2cm 0 0 0.2cm},clip,width=0.75\columnwidth]{figures/CE/CCE_frac_1step__box.png}
-	%% TODO - stats
 	\caption{\textbf{A survey of the single-step mutational neighborhood} around organisms that performed the fluctuating task. Note that in both the benign and harsh treatments, there were significantly more mutants that lost the EQU task as compared to the control (Wilcoxon Rank Sum Test: Z = -5.46 and -7.80 respectively, p $<<$ 0.0001). This result indicates that it was easier for the organisms in both treatments to turn off the EQU task in response to one mutation. 
 	}\label{fig:CCE_single_step}
 
@@ -718,15 +717,13 @@ In order to identify the role that these pseudogene-like structures play, we per
 \todo[inline]{Add to caption per Charles's comment above}
 	\begin{figure}[!h] %% FIGURE 7
 	\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CCE_frac_2step__box.png}
-	%TODO - stats
-
 	\caption{\textbf{A survey of the two-step mutational neighborhood} of the organisms that lost EQU function in the one-step survey. We found that in both the harsh and benign treatments, there were significantly more organisms that regained function in response to mutation than the control. (Wilcoxon Rank Sum Test: Z = -47.9 and -57.82 respectively, p $<<$ 0.0001). This result indicates that it was easier for the organisms in both fluctuating environments to regain the task in response to one additional mutation, beyond a single reversion. 
 	}\label{fig:CCE_two_step}
 	\end{figure}
 
 %=measured D_g, D_p, found similarity in D_g, increase in D_p 
 We also measured the proportion of non-deleterious mutants in the nearby fitness landscape. We found that between all treatments, this proportion
-remained approximately the same.\todo[color=green]{stats} However, we found that the proportion of these mutants with different (potentially adaptive) phenotypes increased in the changing environments.\todo[color=green]{stats} In this way, the organisms from the changing environment treatments have an advantage over organisms from the control runs in terms of the short-term evolvability of the fluctuating task. This result indicates real adaptation, not only to resources in their local environment, but a direct adaptation to the environmental change. (Fig~\ref{fig:CCE_diffusion_rate})
+remained approximately the same (Kruskal Wallis: H(2) = 1.44, p = 0.49). However, we found that the proportion of these mutants with different (potentially adaptive) phenotypes increased in the changing environment treatments as compared to the controls (Wilcoxon Rank Sum Test: Z = -8.02, -8.39, respectively, p $<<$ 0.001). In this way, the organisms from the changing environment treatments have an advantage over organisms from the control runs in terms of the short-term evolvability of the fluctuating task. This result indicates real adaptation, not only to resources in their local environment, but a direct adaptation to the environmental change. (Fig~\ref{fig:CCE_diffusion_rate})
 \todo[inline, color=magenta]{TODO - add paragraph describing/speculating about why Benign loses EQU almost as well as Harsh}
 % @CAO: I also get why we should expect to see EQU lost easily in the Harsh changing environment, but why is it also lost so easily in the benign environment.  Should we speculate here?  (Or do you below?)  More generally, why do you think this is the case?
 % @CAO: One other thought for how this result may happen.  Maybe in the control there is a pressure for EQU to evolve to be more robust, whereas the changing environment just doesn't give it time to evolve robustness.  I can't think of a way to easily disentangle those explanations though...
@@ -737,7 +734,7 @@ remained approximately the same.\todo[color=green]{stats} However, we found that
 	\begin{figure}[!h] %% FIGURE 8
 	\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CCE_D_g_D_p__box.png}
 	\caption{\textbf{Genomic and Phenotypic Diffusion Rates}, showing the probabilities of producing offspring that are genotypically ($D_g$) or phenotypically ($D_p$) distinct from the parent, while not reducing fitness.
-	Note that while overall neutral exploration capacity remains relatively stable between treatments (Kruskal Wallis: H(2) = 1.4, p = 0.48), phenotypic exploration capacity is increased in both treatments, but especially in the Harsh treatment. (Wilcoxon Rank-Sum Test: Z = -7.42 and -7.77 respectively, p $<<$ 0.0001). This result indicates that changing environments promote the phenotypic evolvability of populations in particular.
+	Note that while overall neutral exploration capacity remains relatively stable between treatments (Kruskal Wallis: H(2) = 1.44, p = 0.49), phenotypic exploration capacity is increased in both treatments, but especially in the Harsh treatment. (Wilcoxon Rank Sum Test: Z = -8.02, -8.39, respectively, p $<<$ 0.001). This result indicates that changing environments promote the phenotypic evolvability of populations.
 	}\label{fig:CCE_diffusion_rate}
 	\end{figure}
 
