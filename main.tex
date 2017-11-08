@@ -35,7 +35,8 @@
 \title{Evolution and Evolvability in Changing Environments}
 \author{Rosangela Canino-Koning}
 \fieldofstudy{Computer Science} % should be in sentence case
-\dedication{This thesis is dedicated to Kendall Koning. I would never have gotten this far without her.}
+\dedication{This thesis is dedicated to Kendall Koning. \\
+I would never have gotten this far without you.}
 \date{2017}
 %
 \begin{document}
@@ -668,7 +669,7 @@ in the benign and control treatments led populations in them to have higher stan
 The selective shifts in both benign and harsh changing environments result in qualitatively different architectural styles from the static control environment. The task arrangements evolved under both experimental treatments are much more scattered throughout the genome than in the control. Specifically, the bulk of the sites responsible for performing the fluctuating task (EQU) did not overlap with the backbone task (XOR), except for a core region, which represents portions of the tasks that are shared between XOR and EQU. (Fig~\ref{fig:lineage})
 % @CAO: I'm not positive I understand this description for how things are laid out.  It might be worth putting a bit more detail here, and highlighting also that there is a lot more separation in the harsh environment (or so it seems).  Should we talk more here about why all of this is the case (highlighting that we are speculating) or will that come later?
 
-\todo{polish this figure, task layout, make three separate figures}
+\todo[inline]{polish this figure, task layout, make three separate figures}
 	\begin{figure}[!h]
 	\setlength{\fboxsep}{0pt}%
 	\setlength{\fboxrule}{0pt}%
@@ -714,7 +715,7 @@ In order to identify the role that these pseudogene-like structures play, we per
 	\end{figure}
 %=[FIGURE - Frac 2-step]
 %@CAO - I wonder if it would be interesting to list the number of ways that this happened to be clear that we're not just talking about undoing the changes that caused the loss in the first place.
-\todo{Add to caption per Charles's comment above}
+\todo[inline]{Add to caption per Charles's comment above}
 	\begin{figure}[!h] %% FIGURE 7
 	\includegraphics[trim={0.2cm 0 0.4cm 0.25cm},clip,width=0.75\columnwidth]{figures/CE/CCE_frac_2step__box.png}
 	%TODO - stats
@@ -1265,7 +1266,7 @@ Our research shows that only mutations containing useful information are elevate
 %@RCK: fixed
 
 \subsection{Other mutation types are not elevated in response to HGT}
-\todo{polish figure}
+\todo[inline]{polish figure}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_execution.png}
@@ -1300,7 +1301,7 @@ We speculate that this effect may synergize with the level of modularity in a ge
 
 
 \subsection{Mutation fitness effect correlate with mutagenic instruction use}
-\todo{polish figure - show fitness effect instead of uptake in left violin?}
+\todo[inline]{polish figure - show fitness effect instead of uptake in left violin?}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_use_vs_fitness_effect.png}
@@ -1328,7 +1329,7 @@ Why should HGT mutations be different? In order to address this question, we mea
 %Fitness effects correlate with use of the mutagen.
 
 \subsection{HGT mutations increase evolved probability of beneficial phenotype switching}
-\todo{polish figure}
+\todo[inline]{polish figure}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_use_vs_fraction_beneficial.png}
@@ -1447,7 +1448,7 @@ For the first phase (analogous to our earlier experiments), we rewarded a pair o
 	\hline
 	\multirow{3}{*}{ \thead{Treatment} } & \multirow{3}{*}{ \thead{Changing \\ Env. \\ Type} } & \multicolumn{5}{c|}{ \thead{Rewarded Tasks} } \\\cline{3-7}
 	& & \multicolumn{2}{c||}{ \thead{Part 1 \\ (0-200,000 Updates)} } & \multicolumn{3}{c|}{ \thead{Part 2 \\ (200,000-400,000 Updates)} } \\\cline{3-7}
-	& & XOR & EQU & XOR & EQU & \makecell{Logic-77 \\ (all)} \\\hhline{|=|=|=|=|=|=|=|}
+	& & XOR & EQU & XOR & EQU & \makecell{Logic-77 } \\\hhline{|=|=|=|=|=|=|=|}
 	Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 	Benign & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 	\makecell{Benign \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
@@ -1484,8 +1485,8 @@ evolved in a more complex cyclic changing environment.  As in the previous chapt
 	\begin{tabular}{|c|c|c|c|}
 	\hline
 	 & \thead{Tasks} & \thead{Reward \\ Phase 1} & \thead{Reward \\ Phase 2} \\\hhline{|=|=|=|=|}
-	 Group 1 & \makecell{ \texttt{NOT} \\ \texttt{AND} \\ \texttt{OR} \\ \texttt{NOR} \\ \texttt{EQU} } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ \\ $2^5$ } & \makecell{ $2^{-1}$ \\ $2^{-2}$ \\ $2^{-3}$ \\ $2^{-4}$ \\ $2^{-5}$ } \\\hline
-	 Group 2 & \makecell{ \texttt{NAND} \\ \texttt{ORN} \\ \texttt{ANDN} \\ \texttt{XOR} } & \makecell{ $2^{-1}$ \\ $2^{-2}$ \\ $2^{-3}$ \\ $2^{-4}$ } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ } \\\hline
+	 Group A & \makecell{ \texttt{NOT} \\ \texttt{AND} \\ \texttt{OR} \\ \texttt{NOR} \\ \texttt{EQU} } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ \\ $2^5$ } & \makecell{ $-2^{1}$ \\ $-2^{2}$ \\ $-2^{3}$ \\ $-2^{4}$ \\ $-2^{5}$ } \\\hline
+	 Group B & \makecell{ \texttt{NAND} \\ \texttt{ORN} \\ \texttt{ANDN} \\ \texttt{XOR} } & \makecell{ $-2^{1}$ \\ $-2^{2}$ \\ $-2^{3}$ \\ $-2^{4}$ } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ } \\\hline
 	\end{tabular} 
 
 	\begin{flushleft}Logic-9 tasks are divided into to groups, with one task from each pair of tasks of equivalent complexity assigned to a group. The \texttt{EQU} task, which has no complexity equivalent, is assigned to the first group. During the first half of a cycle, we reward the first group of task and punish the second group (see Reward Phase 1). During the second half of the cycle, we reward the second group, and punish the first group (Reward Phase 2).  
@@ -1500,23 +1501,28 @@ evolved in a more complex cyclic changing environment.  As in the previous chapt
 	\caption{\textbf{Experimental Treatments - Complex Cyclic Changing Environment}}
 	\label{cel-treatments-complex-h}
 
-	\begin{tabular}{|c|c||c|c||c|c|c|}
+	\begin{tabular}{|c|c||c||c|c|}
 	%\begin{tabular}{ccccccc}
 	\hline
-	\multirow{3}{*}{ \thead{Treatment} } & \multirow{3}{*}{ \thead{Changing \\ Env. \\ Type} } & \multicolumn{5}{c|}{ \thead{Rewarded Tasks} } \\\cline{3-7}
-	& & \multicolumn{2}{c||}{ \thead{Part 1 \\ (0-200,000 Updates)} } & \multicolumn{3}{c|}{ \thead{Part 2 \\ (200,000-400,000 Updates)} } \\\cline{3-7}
-	& & Group 1 & Group 2 & Group 1 & Group 2 & \makecell{Logic-77 \\ (all)} \\\hhline{|=|=|=|=|=|=|=|}
-	Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^{1-5}$} & \makecell{constant \\ $2^{1-4}$} & \makecell{constant \\ $2^{1-5}$} & \makecell{constant \\ $2^{1-4}$} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	Benign & Cyclic & \makecell{benign \\ fluctuating \\ $2^{1-5}$ or 0} & \makecell{benign \\ fluctuating \\ 0 or $2^{1-5}$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ $2^{1-5}$ or 0} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	\makecell{Benign \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	Harsh & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
-	\makecell{Harsh \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+	\multirow{3}{*}{ \thead{Treatment} } & \multirow{3}{*}{ \thead{Changing \\ Env. \\ Type} } & \multicolumn{3}{c|}{ \thead{Rewarded Tasks} } \\\cline{3-5}
+	& & \multicolumn{1}{c||}{ \thead{Part 1 \\ (0-200,000 Updates)} } & \multicolumn{2}{c|}{ \thead{Part 2 \\ (200,000-400,000 Updates)} } \\\cline{3-5}
+	& & \makecell{Logic-9} & \makecell{Logic-9} & \makecell{Logic-77 } \\\hhline{|=|=|=|=|=|}
+
+	Control & \makecell{None \\ (static)} & \makecell{constant  \\ $2^{1-5}$} & \makecell{constant  \\ $2^{1-5}$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+
+	Benign & Cyclic & \makecell{benign \\ fluctuating \\ A: $2^{1-5}$ or 0 \\ B: $2^{1-4}$ or 0} & \makecell{benign \\ fluctuating \\ A: $2^{1-5}$ or 0 \\ B: $2^{1-4}$ or 0} & \makecell{constant \\ $2^{0.3}$} \\\hline
+
+	\makecell{Benign \\ Quiesce} & \makecell{Cyclic \\ to Static} & \makecell{benign \\ fluctuating \\ A: $2^{1-5}$ or 0 \\ B: $2^{1-4}$ or 0} & \makecell{constant  \\ $2^{1-5}$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+
+	Harsh & Cyclic & \makecell{harsh \\ fluctuating \\ A: $-2^{1-5}$ or $2^{1-5}$ \\ B: $-2^{1-4}$ or $2^{1-4}$} & \makecell{harsh \\ fluctuating \\ A: $-2^{1-5}$ or $2^{1-5}$ \\ B: $-2^{1-4}$ or $2^{1-4}$} & \makecell{constant \\ $2^{0.3}$} \\\hline
+
+	\makecell{Harsh \\ Quiesce} & \makecell{Cyclic \\ to Static} & \makecell{harsh \\ fluctuating \\ A: $-2^{1-5}$ or $2^{1-5}$ \\ B: $-2^{1-4}$ or $2^{1-4}$} & \makecell{constant  \\ $2^{1-5}$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 	%\makecell{Harsh \\ to \\ Benign} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{harsh \\ fluctuating \\ $-2^5$ or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 	\end{tabular} 
 
-	\begin{flushleft} Four types of cyclic changing environment, plus a static control. Each is split into two phases.
+	\begin{flushleft} Four types of cyclic changing environment, plus a static control. Each is split into two parts.
     % MJW: These are fragments.
-    The first phase is a complex changing environment similar to those found in Chapter~\ref{chap:evo-hgt}, Table~\ref{hgt-treatments-h}. The second phase introduces an additional set of tasks (Logic-77) that are rewarded at a lower rate.
+    The first part is a complex changing environment similar to those found in Chapter~\ref{chap:evo-hgt}, Table~\ref{hgt-treatments-h}. The second part introduces an additional set of tasks (Logic-77) that are rewarded at a constant lower rate. The environments may or may not fluctuate in the second part, depending on the treatment.
 	\end{flushleft}
 	\label{cel-treatments-complex}
 	\end{table}
@@ -1525,13 +1531,13 @@ evolved in a more complex cyclic changing environment.  As in the previous chapt
 In order to compare the effects of different kinds of alternating selective pressures on long-term evolvability, we prepared four different types of experimental treatment using changing environments, plus a static control, for both the simple and complex environmental treatments. 
 
 \begin{itemize}
-	\item \textbf{Static (Control)}: For the first 200k updates (part 1), we reward populations for performing either XOR and EQU for the simple environment (Table~\ref{cel-treatments-simple}, or the whole Logic-9 task set (Table~\ref{cel-treatments-complex}). For the second 200k updates (part 2), we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution.
+	\item \textbf{Static (Control)}: For the first 200k updates (part 1), we reward populations for performing either XOR and EQU for the simple environment (Table~\ref{cel-treatments-simple}), or the whole Logic-9 task set (Table~\ref{cel-treatments-complex}). For the second 200k updates (part 2), we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution.
 
-	\item \textbf{Benign Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and not rewarding populations for performing either the EQU task (the simple environment) (Table~\ref{cel-treatments-simple}, or we alternate rewarding each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and\ref{hgt-treatments-logic9}). For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
+	\item \textbf{Benign Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and not rewarding populations for performing either the EQU task (the simple environment - Table~\ref{cel-treatments-simple}), or we alternate rewarding each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and \ref{hgt-treatments-logic9}). For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
 
 	\item \textbf{Benign Quiescent Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and not rewarding populations, as in the Benign Changing Environment above. For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase stop at 200k updates, and we instead reward the tasks of the first phase as we did in the Static treatment (all constant reward).
 
-	\item \textbf{Harsh Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and \textbf{punishing} populations for performing either the EQU task (the simple environment) (Table~\ref{cel-treatments-simple}, or we alternate rewarding and punishing each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and\ref{hgt-treatments-logic9}). For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
+	\item \textbf{Harsh Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and \textbf{punishing} populations for performing either the EQU task (the simple environment) (Table~\ref{cel-treatments-simple}, or we alternate rewarding and punishing each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and \ref{hgt-treatments-logic9}). For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
 
 	\item \textbf{Harsh Quiescent Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and \textbf{punishing} populations, as in the Harsh Changing Environment above. For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase stop at 200k updates, and we instead reward the tasks of the first phase as we did in the Static treatment (all constant reward).
 \end{itemize}
@@ -1575,22 +1581,18 @@ The pressure to gain and lose the fluctuating task is much stronger than the pre
 In contrast, the benign environment, with its comparatively weaker strength of selection for EQU task gain and loss, experiences a comparatively stronger selective pressure to acquire logic-77 tasks, while still benefiting from the increased exploration rate conveyed by the benign changing environment.
 
 	%=[FIGURE - postreward task discovery]
-	\todo[color=green]{stats}
-	\todo{caption}
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-post_reward_task_discovery.png}
-	\caption{\textbf{Number of new logic-77 tasks discovered beginning in part 2}. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Number of new logic-77 tasks discovered in post-reward in the simple environments}. The left plot shows a time-series of the number of non-ephemeral tasks discovered by populations by each treatment. The right plot shows the number of tasks discovered at the end of the experiments. While the individual values overlap their neigbors, the top and bottom-most treatments (Benign and Harsh) are significantly different from each other (Wilcoxon Rank Sum Test: Z = 2.75, p $<$ 0.01). %
 	}
 	\label{fig:postreward_task_discovery}
 	\end{figure} 
 
 	%=[FIGURE - complex environment task discovery]
-	\todo[color=green]{stats}
-	\todo{caption}
 	\begin{figure}[!h]
 	%\missingfigure{Complex CCE Task Discovery}
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-post_reward_task_discovery.png}
-	\caption{\textbf{Number of new logic-77 tasks discovered post-reward}. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Number of new logic-77 tasks discovered post-reward in the complex environments}. The left plot shows a time-series of the number of non-ephemeral tasks discovered by populations in each treatment. The right plot shows the number of tasks discovered by the end of the experiments. Overall, the number of Logic-77 tasks discovered in the complex environments (Mdn = 24.0, CI 95\% [23.0, 25.0]) is significantly lower than those found in the simple environments (Mdn = 36.0, CI 95\% [35.0, 36.0]) (Wilcoxon Rank Sum Test: Z = -16.15, p $<<$ 0.001). However, the same pattern holds, where the benign changing environment treatment discovers significantly more tasks than the harsh changing environment (Wilcoxon Rank Sum Test: Z = 5.96, p $<<$ 0.001).%
 	}
 	\label{fig:complex-task_discovery}
 	\end{figure}
@@ -1607,24 +1609,23 @@ is the comparison of task discovery rates between the benign changing environmen
 \todo[inline]{add note about how simple also perform more tasks than the complex. this is contrary to our expectation}
 
 \subsubsection{Harsh changing environments drive populations across the mutational landscape}
-%=choice of CE has dramatic effects - forced march
-In the first phase of the experiments, despite the logic-77 tasks not being rewarded, both changing-environment treatments (BenignCE and Benign Quiescent) discover more new tasks than the control (Simple: Wilcoxon Rank Sum Test: Z = -5.75 and -11.15 respectively, p $<<$ 0.001; Complex: Wilcoxon Rank Sum Test: Z = -4.32 and -3.73 respectively, p $<$ 0.001). In the simple environment, the harsh treatment in particular discovers substantially and significantly more Logic-77 tasks than either the benign treatment(Wilcoxon Rank Sum Test: Z = -8.0, p $<<$ 0.001), or the control, despite these tasks not being rewarded (Fig~\ref{fig:simple-overall_task_discovery}. We hypothesize that this effect may be due to the large phylogenetic depth of the harsh-evolved populations, where the repeated bottlenecks drive the populations along a kind of forced march across the mutational landscape. However, as the experiment proceeds, and Logic-77 rewards are introduced, this effect disappears, and task discovery rates converge (Kruskal Wallis: H(2) = 6.97, p = 0.03).
-
 %=[FIGURE - overall task discovery]
-\todo[color=green]{stats}
-\todo{caption}
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-overall_task_discovery.png}
-	\caption{\textbf{Number of new logic-77 tasks discovered over time}. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Number of new logic-77 tasks discovered in simple environments, over the whole experiment}. The left plot shows a time-series of all new tasks discovered over the course of the entire run, including non-rewarded Logic-77 tasks. The right-hand plot shows the final count at the end of the run. Before we introduce rewards for performing Logic-77 tasks, the harsh changing environment discovers far more new tasks (Mdn = 28.0, CI 95\% [27.0, 30.0]) than either of the other treatments (Mdn = 22.0, CI 95\% [22.0, 23.0]) (Wilcoxon Rank Sum Test: Z = 8.61, p $<<$ 0.001). This occurs despite no reward being given for performing the Logic-77 tasks in the first part of the experiment. %
 	}
 	\label{fig:simple-overall_task_discovery}
 	\end{figure}
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-overall_task_discovery.png}
-	\caption{\textbf{Number of new logic-77 tasks discovered over time}. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Number of new logic-77 tasks discovered in complex environments, over the whole experiment}. The left plot shows a time-series of all new tasks discovered over the course of the entire run, included non-rewarded Logic-77 tasks. The right-hand plot shows the final count of tasks discovered by the end of the run. Again, both sets of changing environments (BenignCE and HarshCE) randomly discover more Logic-77 tasks than the control treatment before rewards for those tasks are offered (Wilcoxon Rank Sum Test: Z = -4.32 and -3.73 respectively, p $<$ 0.001). This result suggests that the alternation of the direction of selection drives populations to explore new regions of the fitness landscape more effectively than directional selection alone.%
 	}
 	\label{fig:complex-overall_task_discovery}
 	\end{figure}
+%=choice of CE has dramatic effects - forced march
+In the first phase of the experiments, despite the logic-77 tasks not being rewarded, both changing-environment treatments (BenignCE and HarshCE) discover more new tasks than the control (Simple: Wilcoxon Rank Sum Test: Z = -5.75 and -11.15 respectively, p $<<$ 0.001; Complex: Wilcoxon Rank Sum Test: Z = -4.32 and -3.73 respectively, p $<$ 0.001). In the simple environment, the harsh treatment in particular discovers substantially and significantly more Logic-77 tasks than either the benign treatment(Wilcoxon Rank Sum Test: Z = -8.0, p $<<$ 0.001), or the control, despite these tasks not being rewarded (Fig~\ref{fig:simple-overall_task_discovery}. We hypothesize that this effect may be due to the large phylogenetic depth of the harsh-evolved populations, where the repeated bottlenecks drive the populations along a kind of forced march across the mutational landscape. However, as the experiment proceeds, and Logic-77 rewards are introduced, this effect disappears, and task discovery rates converge (Kruskal Wallis: H(2) = 6.97, p = 0.03).
+
+
 %=post-reward exploration - strength of selection differences
 % Despite the initial success of the harsh-evolved populations' random walk across the fitness landscape, once selection for the logic-77 tasks is engaged at the start of phase 2, the benign and control treatments out-perform the harsh-evolved populations in task discovery. In particular, those populations where the harsh changing environment continues, significantly under-perform in task exploration as compared to the benign-evolved populations, and are comparable to the control rate. (Fig~\ref{fig:postreward_task_discovery}). 
 % (Fig~\ref{fig:composite_task_discovery} lower left)
@@ -1651,32 +1652,31 @@ In the first phase of the experiments, despite the logic-77 tasks not being rewa
 \subsection{Task Performance}
 
 \subsubsection{Benign changing environments outperform harsh environments in task performance}
-Similar to task discovery, populations evolving in harsh changing environments perform far fewer distinct tasks than either the benign-evolved or control populations (Wilcoxon Rank Sum Test: Simple: Z = -11.22 and -11.15 respectively; Complex: Z = -4.32 and -3.73 respectively, p $<<$ 0.001) (Fig~\ref{fig:lte-simple-task_performance} and \ref{fig:complex-task_performance}). While both the BenignCE and Benign Quiesce
-% MJW: Inconsistent capitalization w/r/t the previous sentence.
-populations seem to outperform the control, this effect is only statistically significant in the complex environment (Wilcoxon Rank Sum Test: Z = 2.42 and 2.37 respectively, p $<$ 0.05). In the simple environment, the differences are not statistically significant (Kruskal Wallis: H(2) = 2.76, p = 0.25).
 
+	\todo[inline]{polish figure}
 	%=[FIGURE - postreward task performance]
-	\todo[color=green]{stats}
-	\todo{caption}
 	\begin{figure}[!h]
-	%\missingfigure{lte-task_performance - Long Term Evolution Task Performance}
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-task_performance.png}
 	%\missingfigure{Long Term Evolution Task Performance}
-	\caption{\textbf{Number of new logic-77 tasks performed beginning in part 2}. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Number of distinct tasks performed in simple environments}. The left plot shows a time-series of the number of distinct tasks performed by the treatment populations over time. The right-had plot shows the number of tasks performed at the end of the experiments. The harsh changing environment treatment performs substantially and significantly fewer tasks than any of the benign or control treatments (Wilcoxon Rank Sum Test: Z = -11.22 and -11.15 respectively, p $<<$ 0.001). The benign treatments perform best, but the differences are not statistically significant from the control (Kruskal Wallis: H(2) = 2.76, p = 0.25). %
 	}
 	\label{fig:lte-simple-task_performance}
 	\end{figure}  
 
+	\todo[inline]{polish figure}
 	%=[FIGURE - complex environment task performance]
-	\todo[color=green]{stats}
-	\todo{caption}
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-task_performance.png}
-	%\missingfigure{Complex CCE Task Performance}
-	\caption{\textbf{Number of logic-77 tasks performed beginning in part 2}. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Number of distinct tasks performed in complex environments}. The left plot shows a time-series of the number of distinct tasks performed by the treatment populations over time. The right-had plot shows the number of tasks performed at the end of the experiments. Similar to the simple environment, the harsh changing environment treatment performs substantially and significantly fewer tasks than any of the benign or control treatments (Wilcoxon Rank Sum Test: Z = -4.32 and -3.73 respectively, p $<<$ 0.001). Similarly to task discovery, the complex environment performs fewer tasks overall (Mdn = 11.0, CI 95\% [10.0, 12.0]), compared to the simple environment(Mdn = 17.0, CI 95\% [17.0, 18.0]) (Wilcoxon Rank Sum Test: Z = -9.25, p $<<$ 0.001). Interestingly, the Harsh Quiescent treatment performs the most tasks, though this effect is only slightly significantly different from the benign treatments (Wilcoxon Rank Sum Test: Control Z = 4.33, HarshCE Z = -9.3, p $<$ 0.001; BenignCE Z = 2.25, Benign Quiesce Z = 1.96, p $<$ 0.05).  %
 	}
 	\label{fig:complex-task_performance}
 	\end{figure}
+
+Similar to task discovery, populations evolving in harsh changing environments perform far fewer distinct tasks than either the benign-evolved or control populations (Wilcoxon Rank Sum Test: Simple: Z = -11.22 and -11.15 respectively; Complex: Z = -4.32 and -3.73 respectively, p $<<$ 0.001) (Fig~\ref{fig:lte-simple-task_performance} and \ref{fig:complex-task_performance}). While both the BenignCE and Benign Quiesce
+% MJW: Inconsistent capitalization w/r/t the previous sentence.
+populations seem to outperform the control, this effect is only statistically significant in the complex environment (Wilcoxon Rank Sum Test: Z = 2.42 and 2.37 respectively, p $<$ 0.05). In the simple environment, the differences are not statistically significant (Kruskal Wallis: H(2) = 2.76, p = 0.25).
+
+
 
 
 % %\subsubsection{Benign changing environments outperform harsh environments in task discovery and task performance}
@@ -1739,7 +1739,7 @@ Our experiments show that changing environments both directly and indirectly inf
 % 	\hline
 % 	\multirow{3}{*}{ \thead{Treatment} } & \multirow{3}{*}{ \thead{Changing \\ Env. \\ Type} } & \multicolumn{5}{c|}{ \thead{Rewarded Tasks} } \\\cline{3-7}
 % 	& & \multicolumn{2}{c||}{ \thead{Phase 1 \\ (0-200,000 Updates)} } & \multicolumn{3}{c|}{ \thead{Phase 2 \\ (200,000-400,000 Updates)} } \\\cline{3-7}
-% 	& & XOR & EQU & XOR & EQU & \makecell{Logic-77 \\ (all)} \\\hhline{|=|=|=|=|=|=|=|}
+% 	& & XOR & EQU & XOR & EQU & \makecell{Logic-77 } \\\hhline{|=|=|=|=|=|=|=|}
 % 	Control & \makecell{None \\ (static)} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 % 	Benign & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
 % 	\makecell{Benign \\ Quiesce} & Cyclic & \makecell{constant \\ $2^3$} & \makecell{benign \\ fluctuating \\ 0 or $2^5$} & \makecell{constant \\ $2^3$} & \makecell{constant \\ $2^5$} & \makecell{constant \\ $2^{0.3}$} \\\hline
@@ -1913,14 +1913,13 @@ Cyclic changing environments have predictable cycles and thus have consistent pe
 In order to identify an optical cycle time to support our experiments, we surveyed a series of cycle lengths, and measured task performance rates in both benign and harsh changing environments (Fig~\ref{fig:a1-taskexpression}).
 
 %=[FIGURE - complex environment task discovery]
-\todo[color=green]{stats}
-\todo{caption}
+\todo[inline]{polish figure}
 	\begin{figure}[!h]
 
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/A1/a1-taskexpression-control.png}
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/A1/a1-taskexpression-benign.png}
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/A1/a1-taskexpression-harsh.png}
-	\caption{\textbf{Survey of task execution} for a series of cycle-lengths. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Survey of task execution} for a series of cycle-lengths. The top plots count the number of executions of the \texttt{EQU} instruction in the control treatment. Each organism only receives a bonus for executing \texttt{EQU} once. The seed population performed EQU, and it is never lost. The middle and lower plots show \texttt{EQU} execution in benign and harsh changing environments, respectively. Each line describes a different cycle-length treatment. The longer cycle lengths correspond with longer times to lose and regain EQU. Only treatments with cycles longer than 1000 updates achieve fixation, at a maximum value of 3600 \texttt{EQU} executions. %
 	}
 	\label{fig:a1-taskexpression}
 	\end{figure}
@@ -1928,62 +1927,60 @@ In order to identify an optical cycle time to support our experiments, we survey
 We found that, of our surveyed values, a cycle time of 1,000 updates (roughly 30 generations) both provided adequate time for traits to evolve and fix (and thus be performed by the entire population), but also not enough time for drift to destroy alternate-phase traits, thus minimizing the time required to re-evolve the task. Cycle times that were too short never acquired and fixed adaptive traits in the entire population, while as cycles got longer, the fluctuating tasks would take much longer to re-evolve, indicating that the populations had drifted away from the regions of the mutational landscape that contained them (Fig~\ref{fig:a1-timetofixation}). 
 
 %=[FIGURE - complex environment task discovery]
-\todo[color=green]{stats}
-\todo{caption}
+\todo[inline]{polish figure}
 	\begin{figure}[!h]
 
 	\includegraphics[trim={0 0 0 0}, clip, width=0.85\columnwidth]{figures/A1/a1-timetofixation-harsh.png}
-	\caption{\textbf{Survey of task execution} for a series of cycle-lengths. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Survey of task time to \texttt{EQU} fixation for harsh changing environments} for a series of cycle-lengths. Only those treatments where \texttt{EQU} fixation occurs (cycle lengths greater than 1000 updates), were surveyed. The longer the cycle time, the longer it takes for fixation to occur.%
 	}
 	\label{fig:a1-timetofixation}
 	\end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%% APPENDIX B
 \chapter{Experimentally Deriving Parameters for HGT Recombination Probability and Bonus Levels}
 \label{appendix:hgt_sweep}
 
 \section{Recombination Probability Sweep}
-In nature, the probability of horizontal gene transfer occurring varies wildly by species, environmental conditions, and mechanism of action. In order to identify an optimal probability of HGT uptake resulting in recombination, we performed a series of experiments comparing different probabilities, coupled with a pair of basic grazing bonuses. Our initial grazing bonuses were based on the reward given for a similarly complex task - \texttt{NAND} - which only requires a single instruction, plus an \texttt{IO} instruction, to implement. \texttt{NAND} is typically rewarded with a bonus of $2^1$ to execution speed. Thus, performing HGT, which only requires a single instruction - \texttt{HGT-Uptake}, was rewarded similarly.
-
-The goal was to identify a probability of recombination that would, without a grazing bonus, result in a reduced HGT uptake level as compared to with a grazing bonus. Further, we wanted the recombination probability to not be so high as to result in mutational melt-down, thus frequently killing the populations. We found that a level of 0.1 probability met these characteristics. That is, recombination probabilities of less than 0.1 had similar HGT expression rates with and without a bonus, while probabilities above 0.1 tended to have many many fewer surviving populations (Fig~\ref{fig:a2-hgt-probabilitysweep-hgtuse}).
-
-%=[FIGURE - complex environment task discovery]
-\todo[color=green]{stats}
-\todo{caption}
+\todo[inline]{polish figure}
 	\begin{figure}[!h]
-	%\missingfigure{$ce-task_performance_by_cycle_length$ harsh}
 	\includegraphics[trim={0 0 0 0}, clip, width=0.85\columnwidth]{figures/A2/hgt-probabilitysweep-hgtuse.png}
-	\caption{\textbf{Survey of hgt use} for a series of recombination probabilities. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Survey of \texttt{HGT} use} for a series of recombination probabilities in a static environment. The left-hand figure shows a time-series of fragment uptakes, with and without bonus values. The right-hand plot shows the final uptake counts at the end of the runs. Those values at a recombination probability of less than 0.1 are not meaningfully depressed as compared to the bonus values. Values greater than 0.1 showed more suppression, and ultimately reached mutational melt-downs with few surviving populations.  %
 	}
 	\label{fig:a2-hgt-probabilitysweep-hgtuse}
 	\end{figure}
+In nature, the probability of horizontal gene transfer occurring varies wildly by species, environmental conditions, and mechanism of action. In order to identify an optimal probability of HGT uptake resulting in recombination, we performed a series of experiments comparing different probabilities, coupled with a pair of basic grazing bonuses. Our initial grazing bonuses were based on the reward given for a similarly complex task - \texttt{NAND} - which only requires a single instruction, plus an \texttt{IO} instruction, to implement. \texttt{NAND} is typically rewarded with a bonus of $2^1$ to execution speed. Thus, performing HGT, which only requires a single instruction - \texttt{HGT-Uptake}, was rewarded similarly.
+
+%=[FIGURE - complex environment task discovery]
+
+
+The goal was to identify a probability of recombination that would, without a grazing bonus, result in a reduced HGT uptake level as compared to with a grazing bonus. Further, we wanted the recombination probability to not be so high as to result in mutational melt-down, thus frequently killing the populations. We found that a level of 0.1 probability met these characteristics. That is, recombination probabilities of less than 0.1 had similar HGT expression rates with and without a bonus, while probabilities above 0.1 tended to have many many fewer surviving populations (Fig~\ref{fig:a2-hgt-probabilitysweep-hgtuse}).
+
+
 
 
 \section{Bonus Sweep}
-Similarly, in nature, the amount of nutritive benefit derived from taking up DNA fragments from the environment is difficult to quantify. In Avida, when populations are presented with instructions that provide a direct boost to execution speed, use of these instructions is strongly selected for. Populations rapidly fill their genomes with these instructions, to the exclusion of virtually all else. Thus, our goal in selecting potential bonus levels lay in finding a range of minimal value that would balance the presumably deleterious effects of the HGT uptake instruction, without completely overwhelming the balance of selective pressures we wished to apply to our experiments. As expected, and coupled with the recombination probability above, values around $2^1$ seemed to perform the best (Fig~\ref{fig:a2-hgt-bonussweep-hgtuse}). Above a value of $2^2$, there seem to be diminishing returns.
 %=[FIGURE - complex environment task discovery]
-\todo[color=green]{stats}
-\todo{caption}
+\todo[inline]{polish figure}
 	\begin{figure}[!h]
-	%\missingfigure{survey of hgt use for a series of bonus values}
 	\includegraphics[trim={0 0 0 0}, clip, width=0.85\columnwidth]{figures/A2/a2-hgt-bonussweep-hgtuse.png}
-	\caption{\textbf{Survey of task execution} for a series of cycle-lengths. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Survey of \texttt{HGT} use} for a series of bonus values in a static environment. The left plot shows a time-series of HGT fragment uptakes, while the right-hand plot shows final uptake values at the end of the experimental runs. With recombination probability at 0.1, bonus values of zero depress HGT use. A bonus of 0.1 increases uptake dramatically, indicating a very high use. Bonuses at 0.5 and greater show diminishing returns in increasing HGT use.%
 	}
 	\label{fig:a2-hgt-bonussweep-hgtuse}
 	\end{figure}
+Similarly, in nature, the amount of nutritive benefit derived from taking up DNA fragments from the environment is difficult to quantify. In Avida, when populations are presented with instructions that provide a direct boost to execution speed, use of these instructions is strongly selected for. Populations rapidly fill their genomes with these instructions, to the exclusion of virtually all else. Thus, our goal in selecting potential bonus levels lay in finding a range of minimal value that would balance the presumably deleterious effects of the HGT uptake instruction, without completely overwhelming the balance of selective pressures we wished to apply to our experiments. As expected, and coupled with the recombination probability above, values around $2^1$ seemed to perform the best (Fig~\ref{fig:a2-hgt-bonussweep-hgtuse}). Above a value of $2^2$, there seem to be diminishing returns.
+
 
 
 
 \section{Comparable Bonus Values}
 For later experiments, in order to identify the relationship between HGT uptakes prompted by grazing bonus, and uptakes prompted by evolvability pressures in changing environments, we surveyed a series of bonuses to find a value that, in a static environment, would yield an HGT fragment uptake rate similar to that found in changing environments without a grazing bonus. We found that a bonus value of $2^{0.8}$ yielded similar HGT fragment uptake levels (Fig~\ref{fig:a2-hgt-bonusvsce-hgtuse}).
 %=[FIGURE - complex environment task discovery]
-\todo[inline]{fix up figure to include CE uptake value, plus less terrible}
-\todo[color=green]{stats}
-\todo{caption}
+\todo[inline]{polish figure - fix up figure to include CE uptake value, plus less terrible}
 	\begin{figure}[!h]
 	%\missingfigure{selection of hgt bonus value matching CE no-bonus HGT use}
 	\includegraphics[trim={0 0 0 0}, clip, width=0.85\columnwidth]{figures/A2/a2-hgt-bonusvsce-hgtuse.png}
-	\caption{\textbf{Survey of comparable bonus values} for a series of cycle-lengths. [TODO DESCRIPTION AND STATS]%
+	\caption{\textbf{Survey of \texttt{HGT} use, across a series of comparable bonus values} in a static environment, with a recombination probability of 0.1. This figure shows a sweep of bonus values, demonstrating a largely linear progression of increasing \texttt{HGT} use as bonus values increase, thus balancing negative effects caused by recombination in a static environment.
 	}
 	\label{fig:a2-hgt-bonusvsce-hgtuse}
 	\end{figure}
@@ -1995,13 +1992,11 @@ For later experiments, in order to identify the relationship between HGT uptakes
 \chapter{Changing Environments Elevate All Instruction Use Due to Repeated Bottlenecks}
 In Chapter \ref{chap:hgt-preferred}, we observe that the Die mutagen control is also elevated in the changing environments treatment. This counterintuitive effect is due to the repeated bottlenecking of the populations subjected to the harsh changing environment.\ref{fig:bottlenecks}. We observe that under increasingly harsh bottlenecks, rates of execution of the "die" instruction increase to levels comparable to what is seen in the changing environment treatments. Because not all instructions contained in an organism's genome are necessarily executed (due to genetic flow-control structures), it is possible for any instruction to remain dormant. Thus, not all organisms with the "die" instruction in their genome will express it. Thus, the selective pressures of the environmental change may ultimately outweigh that of the die instruction if it is initially dormant in a genome that would survive a harsh environmental change and reproduce. 
 
-\todo{rework figure}
-\todo[color=green]{stats}
-\todo{caption}
+\todo{polish figure - remove non-working Bottlenecks from the figure}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/HGT/die_bottleneck.png}
-\caption{bleh
+\caption{\textbf{\texttt{Die} instruction executions} across a series of artificial bottlenecks. We observe that the \texttt{Die} instruction is elevated in a harsh changing environment as compared to a static environment. We apply a pair of bottlenecking procedures. In the "Serial Transfer" treatments, we kill the population, but select increasingly fewer organisms to seed from. As the number of seed organisms become fewer, the expression of the \texttt{Die} instruction increases. This indicates that founder effects are likely the cause of increasing expression of strongly deleterious traits in harsh changing environments. 
 }\label{fig:bottlenecks}
 \end{center}
 \end{figure}
