@@ -746,7 +746,7 @@ remained approximately the same (Kruskal Wallis: H(2) = 1.44, p = 0.49). However
 Contrary to our expectations, stochastic changing environments were, overall, no more effective at
 %@CAO - Just "no more" effective, not less?
 %@RCK - It was a mixed bag. I don't feel confident enough to definitively say less.
-promoting evolvability than cyclically changing environments. Harsh environments performed slightly worse, whereas benign environments were slightly better, though neither result was consistently statistically significant. There was a slight but significant reduction in the Phenotypic Diffusion Rate ($D_p$) between the cyclic and stochastic harsh changing environments; $D_p$ settled on a lower median (Mdn = 0.0) in the stochastic harsh treatment as compared to the cyclic harsh (Mdn = 0.0058) (Wilcoxon Rank-Sum Test: Z = -6.19, p $<<$ 0.0001), indicating a lower probability of the population producing offspring that would switch phenotypes neutrally. In the Benign treatments, however, Stochastic environments fared slightly better than cyclic, though this result was only barely statistically significant (Wilcoxon Rank-Sum Test: Z = 2.2, p < 0.03). (Fig~\ref{fig:CSE_diffusion_rate}) 
+promoting evolvability than cyclically changing environments. Harsh environments performed slightly worse, whereas benign environments were slightly better, though neither result was consistently statistically significant. There was a slight but significant reduction in the Phenotypic Diffusion Rate ($D_p$) between the cyclic and stochastic harsh changing environments; $D_p$ settled on a lower median (Mdn = 0.0) in the stochastic harsh treatment as compared to the cyclic harsh (Mdn = 0.0058) (Wilcoxon Rank-Sum Test: Z = -6.19, p $<<$ 0.0001), indicating a lower probability of the population producing offspring that would switch phenotypes neutrally. In the Benign treatments, however, Stochastic environments fared slightly better than cyclic, though this result was only barely statistically significant (Wilcoxon Rank-Sum Test: Z = 2.2, p$<$0.03). (Fig~\ref{fig:CSE_diffusion_rate}) 
 
 %=[FIGURE - D_g/p]
 	\begin{figure}[!h] %% FIGURE 12
@@ -779,7 +779,7 @@ Few differences between the cyclic and stochastic treatments also appeared in th
 %=[FIGURE - func vestigial sites]
 	\begin{figure}[!h]
 	\includegraphics[width=0.75\columnwidth]{figures/CE/CSE_func_vest__filtered__box.png}
-	\caption{\textbf{Number of functional and vestigial sites by treatment} in a stochastic changing environment. The vestigial site counts for EQU-only performing organisms remain comparable to the cyclic environment (Wilcoxon Rank-Sum Z = 0.46, 1.45, and -1.10, p = 0.6, 0.14, and 0.2). The functional sites were also comparable, however, there was a slight, but statistically significant decrease in the number of XOR \& EQU overlapping sites in the stochastic vs cyclic environments (Wilcoxon Rank-Sum Test: Z = -3.05, p < 0.01).
+	\caption{\textbf{Number of functional and vestigial sites by treatment} in a stochastic changing environment. The vestigial site counts for EQU-only performing organisms remain comparable to the cyclic environment (Wilcoxon Rank-Sum Z = 0.46, 1.45, and -1.10, p = 0.6, 0.14, and 0.2). The functional sites were also comparable, however, there was a slight, but statistically significant decrease in the number of XOR \& EQU overlapping sites in the stochastic vs cyclic environments (Wilcoxon Rank-Sum Test: Z = -3.05, p$<$0.01).
 	}
 	\label{fig:CSE_func_vestigial} %% FIGURE 9
 	\end{figure}
@@ -995,14 +995,14 @@ We measured HGT fragment uptake in four conditions (see Table~\ref{hgt-treatment
 
 % MJW: Ding ding ding!  :)
 %@RCK: done
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.75\columnwidth]{figures/HGT/hgt_fragment_uptake.png}
-\caption{ \textbf{Number of HGT fragment uptakes} in static and changing environments, without a grazing bonus, with a grazing bonus, and a no HGT control, where the \texttt{HGT-Uptake} instruction is inert. HGT uptake increases in response to a changing environment, and also in response to a grazing bonus. Both a grazing environment and a changing environment result in an even larger increase of fragment uptakes than either the changing environment, or the bonus alone (Wilcoxon Rank Sum Test: Z = -4.93 and -7.47 respectively, p $<<$ 0.0001).
-%
-}\label{fig:hgt_fragment_uptake}
-\end{center}
-\end{figure}
+	\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[width=0.75\columnwidth]{figures/HGT/hgt_fragment_uptake.png}
+	\caption{ \textbf{Number of HGT fragment uptakes} in static and changing environments, without a grazing bonus, with a grazing bonus, and a no HGT control, where the \texttt{HGT-Uptake} instruction is inert. HGT uptake increases in response to a changing environment, and also in response to a grazing bonus. Both a grazing environment and a changing environment result in an even larger increase of fragment uptakes than either the changing environment, or the bonus alone (Wilcoxon Rank Sum Test: Z = -4.93 and -7.47 respectively, p $<<$ 0.0001).
+	%
+	}\label{fig:hgt_fragment_uptake}
+	\end{center}
+	\end{figure}
 
 %=measured fragment uptake wrl to bonus
 In order to investigate the relationship between the effects granted by a nutritive bonus and the benefit of fragment recombination in a changing environment, we selected a bonus level that increased fragment uptake in a static environment to a level comparable to the increase seen in changing environments without a bonus. We then combined these factors, giving a bonus, plus using a changing environment. We saw that the resulting uptake level increases largely additively. This indicates that the benefits granted by a grazing bonus are generally independent of the benefits conveyed by integrating new genetic material. 
@@ -1032,13 +1032,13 @@ We calculated the average fitness effects of fragments in a randomly selected re
 % MJW: Have we done this for only one replicate?
 %@RCK: yes. It's an example of what they look like. Maybe we don't care that they look this way, but I like the figure :P
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.75\columnwidth]{figures/HGT/fitness_effect_heatmap.png}
-\caption{\textbf{Origin and fitness effect distributions of HGT fragments}, sampled midway through the experiment at 100,000 updates, and aggregated across all replicates. We applied each fragment in each cell's reservoir, one at a time, to the organism in the cell, then recorded the fitness effect. The x-axis is the birth update of fragment's original donor organism. The y-axis is a fragment's fitness effect. The color of each point represents the number of fragments that originate in that birth update a given fitness value. Hotter values indicate more fragments from that time origin at that fitness effect. Most fragments with a positive fitness effect (the upper half of the figure) appear in bands that correspond with the matching phase of an earlier cycle. 
-}\label{fig:fitness_effect_heatmap}
-\end{center}
-\end{figure}
+	\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[width=0.75\columnwidth]{figures/HGT/fitness_effect_heatmap.png}
+	\caption{\textbf{Origin and fitness effect distributions of HGT fragments}, sampled midway through the experiment at 100,000 updates, and aggregated across all replicates. We applied each fragment in each cell's reservoir, one at a time, to the organism in the cell, then recorded the fitness effect. The x-axis is the birth update of fragment's original donor organism. The y-axis is a fragment's fitness effect. The color of each point represents the number of fragments that originate in that birth update a given fitness value. Hotter values indicate more fragments from that time origin at that fitness effect. Most fragments with a positive fitness effect (the upper half of the figure) appear in bands that correspond with the matching phase of an earlier cycle. 
+	}\label{fig:fitness_effect_heatmap}
+	\end{center}
+	\end{figure}
 
 
 %=manipuated reservoir to match or not match phase - measured effects 
@@ -1047,13 +1047,13 @@ To quantify this observation, we performed experiments where we replaced the fra
 %@RCK: fixed
 effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycle_phase_source}). We found that HGT mutations are, on average, neutral, or nearly neutral in all the treatments. Both the non-replaced control (Mdn = 0.0, 95\% CI [0, 0]) and the replaced-"both" treatment (Mdn = -0.008, 95\% CI [-0.009, -0.008]) were neutral or nearly neutral. The median fitness effect in the "on-phase" treatment was mildly deleterious (Mdn = -0.054, 95\% CI [-0.055, -0.052]), while the mean was more strongly beneficial (M = 1.19, SD = 19.7). In contrast, the "off-phase" treatment, the median fitness effect was, again, mildly deleterious (Mdn = -0.0005, 95\% CI [-0.0006, -0.0004]), but with a much more deleterious mean (M = -23.06, SD = 101.8). This suggests that while, on average, HGT mutations remain nearly neutral, a few fragments from the matching phase were strongly beneficial, while the opposite was the case for the non-matching phase.
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.95\columnwidth]{figures/HGT/fitness_effect_by_cycle_phase_source.png}
-\caption{\textbf{Mean and Median fitness effects of fragments} in reservoirs, with 95\% confidence intervals. Fragments in reservoirs are replaced by fragments based on the origin of donor organism. The On-Phase treatment only permits fragments in reservoirs that originate in matching phases of the current cycle. The Off-Phase treatment only permits fragments from non-matching phases. Plus two controls: first, where no filtration takes place, and "both" where fragments are injected from a mixed set of origins. The Off-Phase treatment has a significantly lower fitness effect than either of the controls (Wilcoxon Rank-Sum Test: Z = 143 and 31 respectively, p $<<$ 0.001), while the On-Phase treatment has a significantly higher fitness effect (Wilcoxon Rank-Sum Test: Z = 105 and 3 respectively, p $<$ 0.002). 
-}\label{fig:fitness_effect_by_cycle_phase_source}
-\end{center}
-\end{figure}
+	\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[width=0.95\columnwidth]{figures/HGT/fitness_effect_by_cycle_phase_source.png}
+	\caption{\textbf{Mean and Median fitness effects of fragments} in reservoirs, with 95\% confidence intervals. Fragments in reservoirs are replaced by fragments based on the origin of donor organism. The On-Phase treatment only permits fragments in reservoirs that originate in matching phases of the current cycle. The Off-Phase treatment only permits fragments from non-matching phases. Plus two controls: first, where no filtration takes place, and "both" where fragments are injected from a mixed set of origins. The Off-Phase treatment has a significantly lower fitness effect than either of the controls (Wilcoxon Rank-Sum Test: Z = 143 and 31 respectively, p $<<$ 0.001), while the On-Phase treatment has a significantly higher fitness effect (Wilcoxon Rank-Sum Test: Z = 105 and 3 respectively, p $<$ 0.002). 
+	}\label{fig:fitness_effect_by_cycle_phase_source}
+	\end{center}
+	\end{figure}
 
 % we performed a series of treatments where we replaced the fragments in the cell reservoirs with fragments that originated at the end of the matching phase of the cycle, the off-phase of the cycle, and from both phases, plus a non-replaced control. (Figures~\ref{fig:fitness_effect_heatmap}, \ref{fig:hgt_use_by_cycle_phase_source}, \ref{fig:fitness_effect_by_cycle_phase_source}, \ref{fig:beneficial_fraction_by_cycle_phase_source})
 % We then measured the levels of HGT use, the fitness effect of HGT mutations, as well as the fraction of beneficial phenotype-switching mutations. In the both-phase and non-replaced control, the mean fitness effect was largely neutral, while the on-phase fragments had a significantly positive mean fitness benefit as compared to both the both-phase and non-replaced controls\todo{stats}. The off-phase fragments were largely negative when compared to the both-phase and non-replaced controls\todo{stats}. Further, the control, both-phase and on-phase all had a larger fraction of beneficial phenotype-switching mutants
@@ -1071,13 +1071,13 @@ We quantified
 %@RCK: fixed
 the phenotypic effect of each fragment by counting the number of times that fragments produced a beneficial phenotype change, vs all HGT mutations (Figure~\ref{fig:beneficial_fraction_by_cycle_phase_source}). We see that a significantly larger proportion of fragments in the "on-phase" treatment produce beneficial phenotype changes (Mdn = 0.09, 95\% CI [0.07, 0.11]), as compared to fewer in the normal HGT control (Mdn = 0.03, 95\% CI [0.03, 0.04]) and "both" treatments (Mdn = 0.04, 95\% CI [0.035, 0.05]) (Wilcoxon Rank Sum Test: Z = -6.42 and -6.12 respectively, p $<<$ 0.001). In contrast, we observe virtually no beneficial phenotype changes originating in fragments from the "off-phase" treatment (Mdn = 0.009, 95\% CI [0.006, 0.01]). This result is significantly worse than both the control and the "both" treatments (Wilcoxon Rank-Sum Test: Z = 7.11 and 7.35 respectively, p $<<$ 0.001) 
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.75\columnwidth]{figures/HGT/beneficial_fraction_by_cycle_phase_source.png}
-\caption{\textbf{Fraction of all fragments that produced a beneficial phenotype changes}, with 95\% confidence intervals. The "On-Phase" treatment has significantly more fragments that convey a beneficial phenotype change than either of the controls (Wilcoxon Rank Sum Test: Z = -6.42 and -6.12 respectively, p $<<$ 0.001), while the "Off-Phase" has significantly fewer (Wilcoxon Rank-Sum Test: Z = 7.11 and 7.35 respectively, p $<<$ 0.001).
-}\label{fig:beneficial_fraction_by_cycle_phase_source}
-\end{center}
-\end{figure}
+	\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[width=0.75\columnwidth]{figures/HGT/beneficial_fraction_by_cycle_phase_source.png}
+	\caption{\textbf{Fraction of all fragments that produced a beneficial phenotype changes}, with 95\% confidence intervals. The "On-Phase" treatment has significantly more fragments that convey a beneficial phenotype change than either of the controls (Wilcoxon Rank Sum Test: Z = -6.42 and -6.12 respectively, p $<<$ 0.001), while the "Off-Phase" has significantly fewer (Wilcoxon Rank-Sum Test: Z = 7.11 and 7.35 respectively, p $<<$ 0.001).
+	}\label{fig:beneficial_fraction_by_cycle_phase_source}
+	\end{center}
+	\end{figure}
 
 %=benefit results from matching environment and information conveyed
 These results suggests that any direct benefit of using HGT derives from taking up fragments that match the cycle phase of the environment of the affected organism, and thus likely contains information that relates to that environment. %otherwise, it wouldn't matter where the fragment came from
@@ -1088,13 +1088,13 @@ Further, if fragments from the matching phase are indeed beneficial, we would ex
 %@RCK: fixed
 changing environments is most beneficial when the fragments in the environment contain information that would be beneficial in that environment. However, even when no such information is available, HGT use is not significantly depressed as compared to the control treatment. This suggests that despite the lack of exclusively matched environmental information, that fragments could still provide some benefit. 
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.75\columnwidth]{figures/HGT/hgt_use_by_cycle_phase_source.png}
-\caption{\textbf{Number of uptaken fragments} in the filtered reservoir treatments. The "On-Phase" treatment has a significantly larger number of HGT fragment uptakes, as compared to control, "both", and "off-phase" treatments (Wilcoxon Rank-Sum Test: Z = -3.9**, -3.2*, and -6.5**, respectively, p $<$ 0.002* and p $<<$ 0.001**) This shows that HGT is significantly more beneficial when fragments match the current phase of the cycle. Thus, this suggests that the primary benefit from HGT is not mutational disruption, but the information that fragments convey about the current environment.
-}\label{fig:hgt_use_by_cycle_phase_source}
-\end{center}
-\end{figure}
+	\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[width=0.75\columnwidth]{figures/HGT/hgt_use_by_cycle_phase_source.png}
+	\caption{\textbf{Number of uptaken fragments} in the filtered reservoir treatments. The "On-Phase" treatment has a significantly larger number of HGT fragment uptakes, as compared to control, "both", and "off-phase" treatments (Wilcoxon Rank-Sum Test: Z = -3.9**, -3.2*, and -6.5**, respectively, p $<$ 0.002* and p $<<$ 0.001**) This shows that HGT is significantly more beneficial when fragments match the current phase of the cycle. Thus, this suggests that the primary benefit from HGT is not mutational disruption, but the information that fragments convey about the current environment.
+	}\label{fig:hgt_use_by_cycle_phase_source}
+	\end{center}
+	\end{figure}
 
 
 %%%%%%%%%% EXTRA SECTION IF HAVE TIME
@@ -1263,16 +1263,15 @@ Our research shows that only mutations containing useful information are elevate
 %@RCK: fixed
 
 \subsection{Other mutation types are not elevated in response to HGT}
-\todo[inline]{polish figure}
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_execution.png}
-\caption{\textbf{Executions of mutagenic instructions}. In static environments, use of all mutagenic instructions was strongly suppressed (Wilcoxon Rank Sum Test: Z = -22.65, p << 0.001). In changing environment treatments, the \texttt{HGT} and \texttt{HGT-Shuffled} instructions were used at elevated rates, compared to the other mutagenic instructions, including the \texttt{Die} control (Wilcoxon Rank Sum Test:
-Z = 10.66, p << 0.001). The \texttt{HGT} instruction (Mdn = 87389.71, CI 95\% [82982.98, 96000.3]) is used more than the \texttt{HGT-Shuffle} instruction (Mdn = 52220.3, CI 95\% [45094.92, 57465.52]), which is used more than \texttt{HGT-Random} (Mdn
-= 25442.98, CI 95\% [22099.45, 30490.08]), indicating that the information content of the mutation matters. 
-}\label{fig:mutagen_execution}
-\end{center}
-\end{figure}
+	\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[width=0.95\columnwidth]{figures/HGT/mutagen_execution.png}
+	\caption{\textbf{Executions of mutagenic instructions}. In static environments, use of all mutagenic instructions was strongly suppressed (Wilcoxon Rank Sum Test: Z = -22.65, p$<<$0.001). In changing environment treatments, the \texttt{HGT} and \texttt{HGT-Shuffled} instructions were used at elevated rates, compared to the other mutagenic instructions, including the \texttt{Die} control (Wilcoxon Rank Sum Test:
+	Z = 10.66, p$<<$0.001). The \texttt{HGT} instruction (Mdn = 87389.71, CI 95\% [82982.98, 96000.3]) is used more than the \texttt{HGT-Shuffle} instruction (Mdn = 52220.3, CI 95\% [45094.92, 57465.52]), which is used more than \texttt{HGT-Random} (Mdn
+	= 25442.98, CI 95\% [22099.45, 30490.08]), indicating that the information content of the mutation matters. 
+	}\label{fig:mutagen_execution}
+	\end{center}
+	\end{figure}
 % Measured use of mutagen instruction in static and changing environments
 In order the compare the use of HGT against other kinds of mutation, we compared rates of non-bonus HGT fragment uptake against a execution of series of other mutation types, in both static and changing environments (Fig~\ref{fig:mutagen_execution}). As expected, in the static environment, endogenously-controlled performance of all types of mutation (including HGT) is strongly suppressed (Wilcoxon Rank Sum Test: Z = -22.65, p $<<$ 0.001). However, in harsh changing environments, use of HGT dominates the other mutation types (Wilcoxon Rank Sum Test: Z = 10.66, p $<<$ 0.001). Of particular interest is how the use of the HGT-like instructions are used most by order of information content. 
 \todo{fix wording above}
@@ -1298,15 +1297,14 @@ We speculate that this effect may synergize with the level of modularity in a ge
 
 
 \subsection{Mutation fitness effect correlate with mutagenic instruction use}
-\todo[inline]{polish figure - show fitness effect instead of uptake in left violin?}
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_use_vs_fitness_effect.png}
-\caption{\textbf{Mutagenic instruction use vs fitness effect of mutation}. The use of the mutagenic instruction correlates with the fitness effect of that instruction (Pearson’s R: $r_2$ = 0.35,
-p $<<$ 0.001). Because mutagenic instructions are integrated into the genomes, those instructions that produce a beneficial fitness effect are more likely to be selected for.
-}\label{fig:mutagen_use_vs_fitness_effect}
-\end{center}
-\end{figure}
+	\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[width=0.95\columnwidth]{figures/HGT/mutagen_use_vs_fitness_effect.png}
+	\caption{\textbf{Mutagenic instruction use vs fitness effect of mutation}. The use of the mutagenic instruction correlates with the fitness effect of that instruction (Pearson’s R: $r_2$ = 0.35,
+	p $<<$ 0.001). Because mutagenic instructions are integrated into the genomes, those instructions that produce a beneficial fitness effect are more likely to be selected for.
+	}\label{fig:mutagen_use_vs_fitness_effect}
+	\end{center}
+	\end{figure}
 % Measured HGT fragment uptake in four conditions - 0Static, BStatic, 0CE, BCE.
 % * Measured fitness effects of different types of mutagens
 %   * Spatially-Dispersed Mutation Event
@@ -1326,14 +1324,13 @@ Why should HGT mutations be different? In order to address this question, we mea
 %Fitness effects correlate with use of the mutagen.
 
 \subsection{HGT mutations increase evolved probability of beneficial phenotype switching}
-\todo[inline]{polish figure}
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/HGT/mutagen_use_vs_fraction_beneficial.png}
-\caption{\textbf{Fraction of beneficial phenotype-switching mutations vs mutagenic instruction use}. We observe a strong correlation between the fraction of mutations that produce beneficial phenotype switches, and the use of the mutagenic instruction (Pearson's R: $r_{2}$ = 0.61, p =  $<<$ 0.001). This correlation is much stronger than the correlation between fitness effect and mutagenic instruction use. This suggests that it is not only the absolute fitness effect that is selected for, but the evolvability benefit.
-}\label{fig:mutagen_use_vs_fraction_beneficial}
-\end{center}
-\end{figure}
+	\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[width=0.95\columnwidth]{figures/HGT/mutagen_use_vs_fraction_beneficial.png}
+	\caption{\textbf{Fraction of beneficial phenotype-switching mutations vs mutagenic instruction use}. We observe a strong correlation between the fraction of mutations that produce beneficial phenotype switches, and the use of the mutagenic instruction (Pearson's R: $r_{2}$ = 0.61, p =  $<<$ 0.001). This correlation is much stronger than the correlation between fitness effect and mutagenic instruction use. This suggests that it is not only the absolute fitness effect that is selected for, but the evolvability benefit.
+	}\label{fig:mutagen_use_vs_fraction_beneficial}
+	\end{center}
+	\end{figure}
 % Measured proportion of mutations that convey beneficial phenotype change (with an increase in fitness) for different types of mutagens
 % * Spatially-Dispersed Mutation Event
 % * Localized Mutation Event
@@ -1491,7 +1488,7 @@ evolved in a more complex cyclic changing environment.  As in the previous chapt
 	\label{lte-complex-treatments-logic9}
 	\end{table}
 
-\todo{fix this table to show the halves of the logic 9 split}
+
 	%=[TABLE - experimental treatments]
 	\begin{table}[]
 	\centering
@@ -1601,7 +1598,7 @@ Interestingly, in those populations where we removed the harsh environmental cha
 Also of interest
 % MJW: Careful.  It's one thing to call a result interesting; it's another to make a claim about how relatively interesting different findings are as if that is objectively measurable, rather than a personal decision.
 %@RCK: removed comparison
-is the comparison of task discovery rates between the benign changing environment populations BenignCE and BenignQuiescent.\todo{rename the populations A and B} The BenignCE populations continue to be subject to the benign changing environment, whereas the Benign Quiescent populations are only subject to directional selection toward the evolution of the original and the Logic-77 tasks. In both environment types, task discovery rate for the BenignCE population (Simple: Mdn = 37.0, CI 95\% [36.0, 38.0]; Complex: Mdn = 29.0, CI 95\% [26.0, 31.0]) is slightly higher than for BenignQuiescent(Simple: Mdn = 36.0, CI 95\% [34.0, 38.0]; Complex: Mdn = 24.0, CI 95\% [22.0, 27.0]), but the effect is not statistically significant in the simple environment (Complex: Wilcoxon Rank Sum Test: Z = 3.15, p $<$ 0.01; Simple: Wilcoxon Rank Sum Test: Z = 1.39, p = 0.16). Both, however, still perform better than the control treatment (Simple: Mdn = 34.5, CI 95\% [32.0, 38.0]; Complex: Mdn = 22.0, CI 95\% [21.0, 25.0]), though this effect is only statistically significant between the BenignCE and Control treatments in the complex environment (Wilcoxon Rank Sum Test: Z = -4.33, p $<$ 0.001). Thus, this result suggests that there may be architectural features conferred by evolution in the changing environment that are helpful for long-term evolvability, even after the environmental changes have stopped, and that this effect is distinct from the direct effects of the changing direction of selection. %Further research is needed to fully untangle these effects.
+is the comparison of task discovery rates between the benign changing environment populations BenignCE and BenignQuiescent. The BenignCE populations continue to be subject to the benign changing environment, whereas the Benign Quiescent populations are only subject to directional selection toward the evolution of the original and the Logic-77 tasks. In both environment types, task discovery rate for the BenignCE population (Simple: Mdn = 37.0, CI 95\% [36.0, 38.0]; Complex: Mdn = 29.0, CI 95\% [26.0, 31.0]) is slightly higher than for BenignQuiescent(Simple: Mdn = 36.0, CI 95\% [34.0, 38.0]; Complex: Mdn = 24.0, CI 95\% [22.0, 27.0]), but the effect is not statistically significant in the simple environment (Complex: Wilcoxon Rank Sum Test: Z = 3.15, p $<$ 0.01; Simple: Wilcoxon Rank Sum Test: Z = 1.39, p = 0.16). Both, however, still perform better than the control treatment (Simple: Mdn = 34.5, CI 95\% [32.0, 38.0]; Complex: Mdn = 22.0, CI 95\% [21.0, 25.0]), though this effect is only statistically significant between the BenignCE and Control treatments in the complex environment (Wilcoxon Rank Sum Test: Z = -4.33, p $<$ 0.001). Thus, this result suggests that there may be architectural features conferred by evolution in the changing environment that are helpful for long-term evolvability, even after the environmental changes have stopped, and that this effect is distinct from the direct effects of the changing direction of selection. %Further research is needed to fully untangle these effects.
 
 \todo[inline]{add note about how simple also perform more tasks than the complex. this is contrary to our expectation}
 
