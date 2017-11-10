@@ -1576,7 +1576,7 @@ In contrast, the benign environment, with its comparatively weaker strength of s
 
 	%=[FIGURE - postreward task discovery]
 	\begin{figure}[!h]
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-post_reward_task_discovery.png}
+	\includegraphics[width=0.95\columnwidth]{figures/LTE/lte-simple-post_reward_task_discovery.png}
 	\caption{\textbf{Number of new logic-77 tasks discovered in post-reward in the simple environments}. The left plot shows a time-series of the number of non-ephemeral tasks discovered by populations by each treatment. The right plot shows the number of tasks discovered at the end of the experiments. While the individual values overlap their neigbors, the top and bottom-most treatments (Benign and Harsh) are significantly different from each other (Wilcoxon Rank Sum Test: Z = 2.75, p $<$ 0.01). %
 	}
 	\label{fig:postreward_task_discovery}
@@ -1585,7 +1585,7 @@ In contrast, the benign environment, with its comparatively weaker strength of s
 	%=[FIGURE - complex environment task discovery]
 	\begin{figure}[!h]
 	%\missingfigure{Complex CCE Task Discovery}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-post_reward_task_discovery.png}
+	\includegraphics[width=0.95\columnwidth]{figures/LTE/lte-complex-post_reward_task_discovery.png}
 	\caption{\textbf{Number of new logic-77 tasks discovered post-reward in the complex environments}. The left plot shows a time-series of the number of non-ephemeral tasks discovered by populations in each treatment. The right plot shows the number of tasks discovered by the end of the experiments. Overall, the number of Logic-77 tasks discovered in the complex environments (Mdn = 24.0, CI 95\% [23.0, 25.0]) is significantly lower than those found in the simple environments (Mdn = 36.0, CI 95\% [35.0, 36.0]) (Wilcoxon Rank Sum Test: Z = -16.15, p $<<$ 0.001). However, the same pattern holds, where the benign changing environment treatment discovers significantly more tasks than the harsh changing environment (Wilcoxon Rank Sum Test: Z = 5.96, p $<<$ 0.001).%
 	}
 	\label{fig:complex-task_discovery}
@@ -1605,13 +1605,13 @@ is the comparison of task discovery rates between the benign changing environmen
 \subsubsection{Harsh changing environments drive populations across the mutational landscape}
 %=[FIGURE - overall task discovery]
 	\begin{figure}[!h]
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-overall_task_discovery.png}
+	\includegraphics[width=0.95\columnwidth]{figures/LTE/lte-simple-overall_task_discovery.png}
 	\caption{\textbf{Number of new logic-77 tasks discovered in simple environments, over the whole experiment}. The left plot shows a time-series of all new tasks discovered over the course of the entire run, including non-rewarded Logic-77 tasks. The right-hand plot shows the final count at the end of the run. Before we introduce rewards for performing Logic-77 tasks, the harsh changing environment discovers far more new tasks (Mdn = 28.0, CI 95\% [27.0, 30.0]) than either of the other treatments (Mdn = 22.0, CI 95\% [22.0, 23.0]) (Wilcoxon Rank Sum Test: Z = 8.61, p $<<$ 0.001). This occurs despite no reward being given for performing the Logic-77 tasks in the first part of the experiment. %
 	}
 	\label{fig:simple-overall_task_discovery}
 	\end{figure}
 	\begin{figure}[!h]
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-overall_task_discovery.png}
+	\includegraphics[width=0.95\columnwidth]{figures/LTE/lte-complex-overall_task_discovery.png}
 	\caption{\textbf{Number of new logic-77 tasks discovered in complex environments, over the whole experiment}. The left plot shows a time-series of all new tasks discovered over the course of the entire run, included non-rewarded Logic-77 tasks. The right-hand plot shows the final count of tasks discovered by the end of the run. Again, both sets of changing environments (BenignCE and HarshCE) randomly discover more Logic-77 tasks than the control treatment before rewards for those tasks are offered (Wilcoxon Rank Sum Test: Z = -4.32 and -3.73 respectively, p $<$ 0.001). This result suggests that the alternation of the direction of selection drives populations to explore new regions of the fitness landscape more effectively than directional selection alone.%
 	}
 	\label{fig:complex-overall_task_discovery}
@@ -1647,20 +1647,18 @@ In the first phase of the experiments, despite the logic-77 tasks not being rewa
 
 \subsubsection{Benign changing environments outperform harsh environments in task performance}
 
-	\todo[inline]{polish figure}
 	%=[FIGURE - postreward task performance]
 	\begin{figure}[!h]
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-simple-task_performance.png}
+	\includegraphics[width=0.95\columnwidth]{figures/LTE/lte-simple-task_performance.png}
 	%\missingfigure{Long Term Evolution Task Performance}
 	\caption{\textbf{Number of distinct tasks performed in simple environments}. The left plot shows a time-series of the number of distinct tasks performed by the treatment populations over time. The right-had plot shows the number of tasks performed at the end of the experiments. The harsh changing environment treatment performs substantially and significantly fewer tasks than any of the benign or control treatments (Wilcoxon Rank Sum Test: Z = -11.22 and -11.15 respectively, p $<<$ 0.001). The benign treatments perform best, but the differences are not statistically significant from the control (Kruskal Wallis: H(2) = 2.76, p = 0.25). %
 	}
 	\label{fig:lte-simple-task_performance}
 	\end{figure}  
 
-	\todo[inline]{polish figure}
 	%=[FIGURE - complex environment task performance]
 	\begin{figure}[!h]
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/LTE/lte-complex-task_performance.png}
+	\includegraphics[width=0.95\columnwidth]{figures/LTE/lte-complex-task_performance.png}
 	\caption{\textbf{Number of distinct tasks performed in complex environments}. The left plot shows a time-series of the number of distinct tasks performed by the treatment populations over time. The right-had plot shows the number of tasks performed at the end of the experiments. Similar to the simple environment, the harsh changing environment treatment performs substantially and significantly fewer tasks than any of the benign or control treatments (Wilcoxon Rank Sum Test: Z = -4.32 and -3.73 respectively, p $<<$ 0.001). Similarly to task discovery, the complex environment performs fewer tasks overall (Mdn = 11.0, CI 95\% [10.0, 12.0]), compared to the simple environment(Mdn = 17.0, CI 95\% [17.0, 18.0]) (Wilcoxon Rank Sum Test: Z = -9.25, p $<<$ 0.001). Interestingly, the Harsh Quiescent treatment performs the most tasks, though this effect is only slightly significantly different from the benign treatments (Wilcoxon Rank Sum Test: Control Z = 4.33, HarshCE Z = -9.3, p $<$ 0.001; BenignCE Z = 2.25, Benign Quiesce Z = 1.96, p $<$ 0.05).  %
 	}
 	\label{fig:complex-task_performance}
@@ -1907,12 +1905,11 @@ Cyclic changing environments have predictable cycles and thus have consistent pe
 In order to identify an optical cycle time to support our experiments, we surveyed a series of cycle lengths, and measured task performance rates in both benign and harsh changing environments (Fig~\ref{fig:a1-taskexpression}).
 
 %=[FIGURE - complex environment task discovery]
-\todo[inline]{polish figure}
 	\begin{figure}[!h]
 
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/A1/a1-taskexpression-control.png}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/A1/a1-taskexpression-benign.png}
-	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/A1/a1-taskexpression-harsh.png}
+	\includegraphics[width=0.85\columnwidth]{figures/A1/a1-taskexpression-control.png}
+	\includegraphics[width=0.85\columnwidth]{figures/A1/a1-taskexpression-benign.png}
+	\includegraphics[width=0.85\columnwidth]{figures/A1/a1-taskexpression-harsh.png}
 	\caption{\textbf{Survey of task execution} for a series of cycle-lengths. The top plots count the number of executions of the \texttt{EQU} instruction in the control treatment. Each organism only receives a bonus for executing \texttt{EQU} once. The seed population performed EQU, and it is never lost. The middle and lower plots show \texttt{EQU} execution in benign and harsh changing environments, respectively. Each line describes a different cycle-length treatment. The longer cycle lengths correspond with longer times to lose and regain EQU. Only treatments with cycles longer than 1000 updates achieve fixation, at a maximum value of 3600 \texttt{EQU} executions. %
 	}
 	\label{fig:a1-taskexpression}
@@ -1921,10 +1918,10 @@ In order to identify an optical cycle time to support our experiments, we survey
 We found that, of our surveyed values, a cycle time of 1,000 updates (roughly 30 generations) both provided adequate time for traits to evolve and fix (and thus be performed by the entire population), but also not enough time for drift to destroy alternate-phase traits, thus minimizing the time required to re-evolve the task. Cycle times that were too short never acquired and fixed adaptive traits in the entire population, while as cycles got longer, the fluctuating tasks would take much longer to re-evolve, indicating that the populations had drifted away from the regions of the mutational landscape that contained them (Fig~\ref{fig:a1-timetofixation}). 
 
 %=[FIGURE - complex environment task discovery]
-\todo[inline]{polish figure}
+
 	\begin{figure}[!h]
 
-	\includegraphics[trim={0 0 0 0}, clip, width=0.85\columnwidth]{figures/A1/a1-timetofixation-harsh.png}
+	\includegraphics[width=0.95\columnwidth]{figures/A1/a1-timetofixation-harsh.png}
 	\caption{\textbf{Survey of task time to \texttt{EQU} fixation for harsh changing environments} for a series of cycle-lengths. Only those treatments where \texttt{EQU} fixation occurs (cycle lengths greater than 1000 updates), were surveyed. The longer the cycle time, the longer it takes for fixation to occur.%
 	}
 	\label{fig:a1-timetofixation}
@@ -1936,9 +1933,8 @@ We found that, of our surveyed values, a cycle time of 1,000 updates (roughly 30
 \label{appendix:hgt_sweep}
 
 \section{Recombination Probability Sweep}
-\todo[inline]{polish figure}
 	\begin{figure}[!h]
-	\includegraphics[trim={0 0 0 0}, clip, width=0.85\columnwidth]{figures/A2/hgt-probabilitysweep-hgtuse.png}
+	\includegraphics[width=0.95\columnwidth]{figures/A2/hgt-probabilitysweep-hgtuse.png}
 	\caption{\textbf{Survey of \texttt{HGT} use} for a series of recombination probabilities in a static environment. The left-hand figure shows a time-series of fragment uptakes, with and without bonus values. The right-hand plot shows the final uptake counts at the end of the runs. Those values at a recombination probability of less than 0.1 are not meaningfully depressed as compared to the bonus values. Values greater than 0.1 showed more suppression, and ultimately reached mutational melt-downs with few surviving populations.  %
 	}
 	\label{fig:a2-hgt-probabilitysweep-hgtuse}
@@ -1955,7 +1951,6 @@ The goal was to identify a probability of recombination that would, without a gr
 
 \section{Bonus Sweep}
 %=[FIGURE - complex environment task discovery]
-\todo[inline]{polish figure}
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.85\columnwidth]{figures/A2/a2-hgt-bonussweep-hgtuse.png}
 	\caption{\textbf{Survey of \texttt{HGT} use} for a series of bonus values in a static environment. The left plot shows a time-series of HGT fragment uptakes, while the right-hand plot shows final uptake values at the end of the experimental runs. With recombination probability at 0.1, bonus values of zero depress HGT use. A bonus of 0.1 increases uptake dramatically, indicating a very high use. Bonuses at 0.5 and greater show diminishing returns in increasing HGT use.%
@@ -1968,8 +1963,6 @@ Similarly, in nature, the amount of nutritive benefit derived from taking up DNA
 
 
 \section{Comparable Bonus Values}
-For later experiments, in order to identify the relationship between HGT uptakes prompted by grazing bonus, and uptakes prompted by evolvability pressures in changing environments, we surveyed a series of bonuses to find a value that, in a static environment, would yield an HGT fragment uptake rate similar to that found in changing environments without a grazing bonus. We found that a bonus value of $2^{0.8}$ yielded similar HGT fragment uptake levels (Fig~\ref{fig:a2-hgt-bonusvsce-hgtuse}).
-%=[FIGURE - complex environment task discovery]
 \todo[inline]{polish figure - fix up figure to include CE uptake value, plus less terrible}
 	\begin{figure}[!h]
 	%\missingfigure{selection of hgt bonus value matching CE no-bonus HGT use}
@@ -1978,22 +1971,26 @@ For later experiments, in order to identify the relationship between HGT uptakes
 	}
 	\label{fig:a2-hgt-bonusvsce-hgtuse}
 	\end{figure}
+For later experiments, in order to identify the relationship between HGT uptakes prompted by grazing bonus, and uptakes prompted by evolvability pressures in changing environments, we surveyed a series of bonuses to find a value that, in a static environment, would yield an HGT fragment uptake rate similar to that found in changing environments without a grazing bonus. We found that a bonus value of $2^{0.8}$ yielded similar HGT fragment uptake levels (Fig~\ref{fig:a2-hgt-bonusvsce-hgtuse}).
+%=[FIGURE - complex environment task discovery]
+
 
 
 
 
 %%%%%%%% APPENDIX C
 \chapter{Changing Environments Elevate All Instruction Use Due to Repeated Bottlenecks}
+	\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[width=0.75\columnwidth]{figures/HGT/die_bottleneck.png}
+	\caption{\textbf{\texttt{Die} instruction executions} across a series of artificial bottlenecks. We observe that the \texttt{Die} instruction is elevated in a harsh changing environment as compared to a static environment. We apply a pair of bottlenecking procedures. In the "Serial Transfer" treatments, we kill the population, but select increasingly fewer organisms to seed from. As the number of seed organisms become fewer, the expression of the \texttt{Die} instruction increases. This indicates that founder effects are likely the cause of increasing expression of strongly deleterious traits in harsh changing environments. 
+	}\label{fig:bottlenecks}
+	\end{center}
+	\end{figure}
 In Chapter \ref{chap:hgt-preferred}, we observe that the Die mutagen control is also elevated in the changing environments treatment. This counterintuitive effect is due to the repeated bottlenecking of the populations subjected to the harsh changing environment.\ref{fig:bottlenecks}. We observe that under increasingly harsh bottlenecks, rates of execution of the "die" instruction increase to levels comparable to what is seen in the changing environment treatments. Because not all instructions contained in an organism's genome are necessarily executed (due to genetic flow-control structures), it is possible for any instruction to remain dormant. Thus, not all organisms with the "die" instruction in their genome will express it. Thus, the selective pressures of the environmental change may ultimately outweigh that of the die instruction if it is initially dormant in a genome that would survive a harsh environmental change and reproduce. 
 
-\todo{polish figure - remove non-working Bottlenecks from the figure}
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.7\columnwidth]{figures/HGT/die_bottleneck.png}
-\caption{\textbf{\texttt{Die} instruction executions} across a series of artificial bottlenecks. We observe that the \texttt{Die} instruction is elevated in a harsh changing environment as compared to a static environment. We apply a pair of bottlenecking procedures. In the "Serial Transfer" treatments, we kill the population, but select increasingly fewer organisms to seed from. As the number of seed organisms become fewer, the expression of the \texttt{Die} instruction increases. This indicates that founder effects are likely the cause of increasing expression of strongly deleterious traits in harsh changing environments. 
-}\label{fig:bottlenecks}
-\end{center}
-\end{figure}
+
+
 
 \end{appendices}
 
