@@ -1401,46 +1401,51 @@ Prior research has shown that...
 %@RCK: note to myself
 
 
-In this chapter, we examine how changing environments% or novel mutagens
-% MJW: As before, I'd change this to something like mutagenic instructions.
-affect long-term evolutionary potential. We introduce change-evolved populations from prior experiments with changing environments,
-% and the evolution of HGT,
-% MJW: For the dissertation, fine; for a manuscript, define HGT when first used.
-to an entirely new environment, where we can assess long-term variability generation in the form of new task discovery and exploration.
+In this chapter, we examine how different kinds of changing environments affect long-term evolutionary potential. We introduce change-evolved populations from prior experiments with changing environments, to an entirely new environment, where we can assess long-term variability generation in the form of new task discovery and exploration.
 
 \section{Methods}
-% For most experiments described in this chapter, we use populations of Avida organisms that were originally evolved in other experimental treatments with changing environments. We use populations evolved in Chapter~\ref{chap:ce-adaptation} to survey long-term evolutionary potential that originate in simple changing environments with a single fluctuating task. We use populations evolved in Chapter~\ref{chap:evo-hgt}, in a more complex changing environment, with the presence of the HGT instruction, evolved both with and without a bonus. And finally, we evolve a new set of populations that originate in a complex changing environment, but without exposure to HGT. 
+For most experiments described in this chapter, we used populations of Avida organisms that were originally evolved in other experimental treatments with changing environments. We used populations originally evolved in the simple environments described in Chapter~\ref{chap:ce-adaptation} to survey the long-term evolutionary potential of populations originating in environments with a single fluctuating task. For more complex environments, we also  
+%We use populations evolved in Chapter~\ref{chap:evo-hgt}, in a more complex changing environment, with the presence of the HGT instruction, evolved both with and without a bonus. And finally, 
+evolved a new set of populations that originate in a complex changing environment, with alternating sets of fluctuating tasks, and variable length genomes.
+%, but without exposure to HGT. 
 
 \subsection{Experimental Design}
 %=design for experimental environment (CCE vs SCE, and short vs long)
 %With these experiments, we will explore the characteristics of these populations, and how different kinds of environmental conditions do or do not produce long-term evolvability.
-In order to examine the long-term dynamics and mechanisms of evolving populations in changing environments, we performed two sets of experiments. For each set of experiments, we took 
-% MJW: Verb tense.  You switch from past to present here.  I have the impression most papers are written as "What we did" in past tense, and "What we find" in present tense, but can't swear to that off the top of my head.  But you switch pretty clearly here to present tense for quite a while.
-populations evolved in conditions where short-term evolvability pressures dominated, and we introduced the resulting populations to a completely new environment, with a new set of rewarded bitwise tasks to perform: Logic-77. These new tasks use up to three bitwise inputs rather than a maximum of two, and are each rewarded with a constant 1.2-fold bonus to execution. This reward structure provides a mild selective pressure to evolve these task, but the benefits to performing them do not overwhelm the existing selective pressure to continue performing the tasks rewarded by the original changing or static environment. 
+In order to examine the long-term dynamics and mechanisms of evolving populations in changing environments, we performed two sets of experiments. For each set of experiments, we took populations evolved in conditions where short-term evolvability pressures dominated, and introduced them to a completely new environment, with a new set of rewarded bitwise tasks to perform: Logic-77. Strictly speaking, the Logic-77 task set is a super-set of the basic Logic-9 task set, and includes all bitwise tasks for which there are up to 3 inputs. However, for the purposes of this chapter, we refer to those tasks which are only in the Logic-77 superset but not in the original Logic-9 task set, as "Logic-77".
+These new tasks use up to three bitwise inputs rather than a maximum of two in Logic-9.
+
 % MJW: I think you should have a short bit being very explicit about terminology.  From reading the rest of this chapter, I have the sense that you are using the "Logic-77 tasks" to refer to those tasks which are rewarded in Logic-77 but are not rewarded in Logic-9.  But the tasks that are rewarded in Logic-9 are a strict subset of those rewarded in Logic-77, right?  That is, if an organisms does XOR in Logic-77, it is still rewarded for doing so?  I don't think it's a problem to use Logic-77 tasks to mean this subset of things rewarded in Logic-77, but I think if you do choose to do that, you absolutely need to be explicit upfront that that is how you are using the term.
+%@RCK: added
 
+We performed two sets of experiments, with five environmental treatments per set, and each treatment divided into two parts.
 
-
-The first set of experiments examines the dynamics of populations
-% MJW: I'm honestly not sure what this means.  Population dynamics is fairly consistent term in evo., but dynamics of organisms....do you mean dynamics within the organism, like flow control, or the equivalent of metabolism?  More of population dynamics, such as rate of adaptation?  Something else?
-%@RCK: Nope, populations :P
-that originally evolved in simple changing environments, and are a continuation of the experiments described in Chapter~\ref{chap:ce-adaptation}. 
-
-The second set of experiments evolved population in a more complex changing environment where, rather than evolving to turn a single task on and off, we evolved populations that switch back and forth between performing two sets of task from the Logic-9 environment. The environment and genetic structure of the second set of experiments derives from the experiments described in \ref{chap:evo-hgt}. However, these populations were evolved without a working HGT instruction.
+The first set of experiments examines the evolutionary dynamics of populations in simple changing environments, with a single fluctuating task, and are a continuation of the experiments described in Chapter~\ref{chap:ce-adaptation}. For the second set of experiments, we evolved population in a more complex changing environment where rather than evolving to turn a single task on and off, we evolved populations that switch back and forth between performing two halves the Logic-9 environment. The environment and genetic structure of the second set of experiments derives from the experiments described in \ref{chap:evo-hgt}. However, these populations were evolved without a working HGT instruction.
 % MJW: This is more complex than the first set you talk about, but a less complex environment than you're moving them into.  I think that can be made clearer.
 
-\todo{grab sentence below and move to new chapter}
+The first part of each experiment is as described above, while the second part takes populations evolved in either the simple or complex changing environments, and adds the new Logic-77 tasks. Thus, the goal of our experiments is to evolve populations where short-term evolutionary pressures dominate, and then subject them to an entirely new environment, where we can measure their long-term evolutionary potential.
+
+%\todo{grab sentence below and move to new chapter}
 %For the final set of experiments, we take populations that evolved in a complex changing environment, similar to the second set, but with the addition of the HGT mutagenic instruction. These are a continuation of experiments described in Chapter~\ref{chap:evo-hgt}.
 
-\subsubsection{Simple Cyclic Changing Environments}
-%=explanation of the changing environment treatments - cyclic
-We took populations evolved under the experimental conditions detailed in Chapter \ref{chap:ce-adaptation}, and introduced them to an entirely new set of rewarded bitwise logical tasks: the Logic-77 environment. 
-% MJW: You're back to past tense here.  I agree with being in past tense here, just flagging the change.
-For the first phase (analogous to our earlier experiments), we rewarded a pair of two-input bitwise logical tasks: \texttt{XOR} and \texttt{EQU}. As in our earlier experiments, We rewarded \texttt{XOR} at a constant rate, with an 8-fold bonus to execution, and we alternated rewarding and punishing (or non-rewarding) of the \texttt{EQU} task with a reward that switches between 32-fold bonus to execution and either 0 reward for the benign treatments, or a -32-fold punishment in the harsh treatments. 
+\subsubsection{Environmental Treatments}
+For each of our experiment sets, we prepared four different types of changing environment treatments, plus a static control. The basic changing environment treatments are intended to examine how populations adapt to a brand new environment, while still juggling the alternating direction of selective pressures associated with cycling rewards and punishments. The quiescent treatments, in contrast, remove the reward alternation as we introduce rewards for performing the Logic-77 tasks. Thus, these treatments provide only directional selection for adaptation to the new environment. Therefore, we can isolate the effect of alternating directions of selection on adaptation to a new environment. 
 
-%\todo[inline, color=magenta]{CH5 methods - more details about each treatment}
-% MJW: Definitely agree.  In particular, I think it's important to explain the terminology of Quiesce.  I was able to infer what it meant from quiescent, but I did still had to look it up.
-%@RCK: done  
+\begin{itemize}
+	\item \textbf{Static (Control)}: For the first 200k updates (part 1), we reward populations for performing either XOR and EQU for the simple environment (Table~\ref{cel-treatments-simple}), or the whole Logic-9 task set (Table~\ref{cel-treatments-complex}). For the second 200k updates (part 2), we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution.
+
+	\item \textbf{Benign Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and not rewarding populations for performing either the EQU task (the simple environment - Table~\ref{cel-treatments-simple}), or we alternate rewarding each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and \ref{hgt-treatments-logic9}). For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
+
+	\item \textbf{Benign Quiescent Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and not rewarding populations, as in the Benign Changing Environment above. For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase stop at 200k updates, and we instead reward the tasks of the first phase as we did in the Static treatment (all constant reward).
+
+	\item \textbf{Harsh Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and \textbf{punishing} populations for performing either the EQU task (the simple environment) (Table~\ref{cel-treatments-simple}, or we alternate rewarding and punishing each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and \ref{hgt-treatments-logic9}). For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
+
+	\item \textbf{Harsh Quiescent Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and \textbf{punishing} populations, as in the Harsh Changing Environment above. For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase stop at 200k updates, and we instead reward the tasks of the first phase as we did in the Static treatment (all constant reward).
+\end{itemize}
+
+\subsubsection{Set 1 - Simple Cyclic Changing Environments}
+%=explanation of the changing environment treatments - cyclic
+As descibed above, the first set of experiments consisted of four treatments, plus a control, and each treatment was divided into two parts. In the first part, for a duration of 200,000 updates (analogous to our earlier experiments, detailed in Chapter \ref{chap:ce-adaptation}), we rewarded a pair of two-input bitwise logical tasks: \texttt{XOR} and \texttt{EQU}. We rewarded \texttt{XOR} at a constant rate, with an 8-fold bonus to execution, and we alternated rewarding and punishing (or non-rewarding) the \texttt{EQU} task with a reward that switches between 32-fold bonus to execution and either 0 reward for the benign treatments, or a -32-fold punishment in the harsh treatments. For the second part, lasting an additional 200,000 updates, we added a reward for executing the additional Logic-77 tasks. Each new Logic-77 task was rewarded with a constant 1.2-fold bonus to execution. This reward structure provided a mild selective pressure to evolve these task. However, the benefits to performing them do not overwhelm the existing selective pressure to continue performing the tasks rewarded by the original changing or static environment. 
 
 	%=[TABLE - experimental treatments]
 	\begin{table}[]
@@ -1474,13 +1479,12 @@ As in Chapter \ref{chap:ce-adaptation}, we held the individual genomes at a fixe
 %Again,
 % MJW: I would drop this "again"
 %@RCK: removed
-We configured the Avida world to have local interactions on a toroidal grid that is 60-by-60 cells (3600 cells in total), and continued the evolution of populations where we left off in Chapter~\ref{chap:ce-adaptation}.
+We configured the Avida world to have local interactions on a toroidal grid that is 60-by-60 cells (3600 cells in total).
 
 \subsubsection{Complex Cyclic Changing Environment}
-The second set of experiments looks at the evolution of populations of organisms with variable-length genomes, 
+The second set of experiments looked at the evolution of populations of organisms with variable-length genomes, 
 % MJW: I don't think this should be hyphenated, but am not positive.
-evolved in a more complex cyclic changing environment.  As in the previous chapter, we divided the Logic-9 tasks into two groups (Table~\ref{lte-complex-treatments-logic9}) and alternated reward and punishment between them. For the first phase of our experiments, we alternate rewards between one group and the other, or reward all of Logic-9 for the control treatment. For the benign treatments, rather than punish the alternate group, we simply do not reward the tasks. 
-% MJW: You're back to present tense here.
+evolved in a more complex cyclic changing environment. As in the simple environment experiments, we performed four experimental treatments, plus a static control (Table~\ref{cel-treatments-complex}). For the first part of the experiments, we divided the Logic-9 tasks into two groups (Table~\ref{lte-complex-treatments-logic9}) and alternated reward and punishment (or non-reward) between them. For the control treatment, we rewarded all of Logic-9. For the second part of our experimental treatments, we introduced rewards for performing the new Logic-77 tasks, either continuing alternating selection, or switching to constant reward. 
 
 	\begin{table}[]
 	\centering
@@ -1532,20 +1536,6 @@ evolved in a more complex cyclic changing environment.  As in the previous chapt
 	\label{cel-treatments-complex}
 	\end{table}
 
-\subsubsection{Environmental Treatments}
-In order to compare the effects of different kinds of alternating selective pressures on long-term evolvability, we prepared four different types of experimental treatment using changing environments, plus a static control, for both the simple and complex environmental treatments. 
-
-\begin{itemize}
-	\item \textbf{Static (Control)}: For the first 200k updates (part 1), we reward populations for performing either XOR and EQU for the simple environment (Table~\ref{cel-treatments-simple}), or the whole Logic-9 task set (Table~\ref{cel-treatments-complex}). For the second 200k updates (part 2), we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution.
-
-	\item \textbf{Benign Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and not rewarding populations for performing either the EQU task (the simple environment - Table~\ref{cel-treatments-simple}), or we alternate rewarding each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and \ref{hgt-treatments-logic9}). For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
-
-	\item \textbf{Benign Quiescent Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and not rewarding populations, as in the Benign Changing Environment above. For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase stop at 200k updates, and we instead reward the tasks of the first phase as we did in the Static treatment (all constant reward).
-
-	\item \textbf{Harsh Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and \textbf{punishing} populations for performing either the EQU task (the simple environment) (Table~\ref{cel-treatments-simple}, or we alternate rewarding and punishing each half of the Logic-9 task set (Tables~\ref{cel-treatments-complex} and \ref{hgt-treatments-logic9}). For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase continues through the end of the experiment.
-
-	\item \textbf{Harsh Quiescent Changing Environment}: For the first 200k updates (part 1), we alternate rewarding and \textbf{punishing} populations, as in the Harsh Changing Environment above. For the second part of the experiment, starting at 200k updates, we add constant rewards for each of the additional tasks for the larger Logic-77 task set, at a 1.2-fold bonus to task execution. The environmental fluctuation from the first phase stop at 200k updates, and we instead reward the tasks of the first phase as we did in the Static treatment (all constant reward).
-\end{itemize}
 
 \subsection{Measuring Task Discovery and Task Performance}
 Task discovery and task performance are important measures not only for the adaptation of digital organisms to their local environment, but they also indicate the extent to which populations are more or less evolvable. Populations that are more evolvable should be able to acquire new tasks at a faster rate than less evolvable populations. If the evolvability of our populations is affected by evolution in a changing environment, then this effect should result in differential rates of task discovery and performance.
@@ -1553,37 +1543,35 @@ Task discovery and task performance are important measures not only for the adap
 %@RCK: reworded
 
 \subsubsection{Task Discovery}
-We measure task discovery
-% MJW: You're missing the word "discovery" here, right?  Also, parallelism; you capitalized Task Performance, and are not capitalizing task in what I assume is Task Discovery.  I think it's probably better to capitalize neither, but both would be better than just one.
-by counting the number of unique non-ephemeral tasks that have been discovered by a population, starting at a defined point in time. Once a task is discovered, it may not become "undiscovered." Thus, task discovery counts will always increase monotonically. We measure "Overall" task discovery, counting all possible tasks - including Logic-77 
+We measured task discovery by counting the number of unique non-ephemeral tasks that have been discovered by a population, starting at a defined point in time. Once a task is discovered, it may not become "undiscovered." Thus, task discovery counts will always increase monotonically. We measure "Overall" task discovery, counting all possible tasks - including Logic-77 
 % MJW add "tasks" here, right?  Logic-77 is the environment.  Also, I'm going to just note here and not in all of the cases: you are inconsistent in whether it gets called Logic-77 or Logic 77, and whether or not the word Logic is capitalized.  I think you're more consistent with Logic-9, but I'd have to go through and count to determine if I'm right about that.
 which were available, but not rewarded in the first phase of experiments - and also "Post-Reward" task discovery, where we begin counting new tasks from the beginning of the second phase of the experiment, once Logic-77 rewards are applied. 
 % MJW: I'd rephrase this to "rewards for the Logic-77 tasks".  The way it is, it sounds like Logic-77 is not just an environment but also a specific reward scheme.
+\todo{reword above}
 
 \subsubsection{Task Performance}
-We measure task performance by counting the number of unique non-ephemeral tasks that a population performs.  Each task may be performed only once per organism, yielding a maximum task count of 3600 at any given time. Thus, we define a non-ephemeral task as one that a population is performing at equal to or more than 0.1\% level, or 3.6 times per sampling. 
+We measured task performance by counting the number of unique non-ephemeral tasks that a population performs.  Each task may be performed only once per organism, yielding a maximum task count of 3600 at any given time. Thus, we define a non-ephemeral task as one that a population is performing at equal to or more than 0.1\% level, or 3.6 times per sampling. 
 % MJW: I think this is confusingly phrased.  To the best of my understanding, you're saying that each task can only be performed once per organism.  Therefore, for any given task, the maximum number of times it could be performed in a given update (which I'm guessing is your sampling?) is 3,600 (because I'm assuming that if a specific organism gives birth during the update and then somehow has enough cycles to perform that task again, it's still only counted as having happened once?).  You therefore set a threshold at which tasks are only considered to be performed ephemerally, at 1 out of 100 organisms performing that task in the sampling.  Anything performed more often than that is not ephemeral; you count the unique non-ephemeral tasks from the population as your measure of task performance.  Introducing the term non-ephemeral several sentences before you define it is a bit confusing, and I'm still not entirely clear if you count whether organisms that are sampled *can* perform the task, or *do* perform the task at the point being sampled.
-
-
+\todo{reword above}
 
 \section{Results and Discussion}
 
 \subsection{Task Discovery}
-
-
-%\subsection{Long-Term Evolvability in Simple Cyclic Changing Environments}
 % MJW: I suggest a paragraph here about the fact that you looked {set of things comprising the sub-subsections}.  Jumping immediately into a sub-section within a subsection, without something general first, can be a little jarring.
+\todo{add something there}
 
 \subsubsection{Benign changing environments outperform harsh environments in task discovery}
 % MJW: Why do you switch between capitalizing the words in the subsections and not in the sub-subsections?  This might be something you do consistently but I only noticed here because they're stacked right next to each other, in which case it's probably a formatting thing, but it seemed worth asking when I noticed it.
 We found
 % MJW: This sets up tense weirdness.  "We found" is past tense; essentially everything else here is written as present tense.
-that once the Logic-77 reward structure is introduced, populations evolving in harsh changing environments discover many fewer tasks that those evolving in benign changing environments in both the simple environment (Wilcoxon Rank Sum Test: Z = 2.75, p $<$ 0.01) and the complex environment (Wilcoxon Rank Sum Test: Z = 5.96, p $<<$ 0.001) (Figs~\ref{fig:postreward_task_discovery}, \ref{fig:complex-task_discovery}). We hypothesize that this effect is due to the relative differences in the strength of selection between the harsh changing environment and the directional selection toward the logic-77 tasks.
+that once we began rewarding the Logic-77 tasks, populations evolving in harsh changing environments discovered many fewer tasks that those evolving in benign changing environments. This effect is consistent across both the simple (Wilcoxon Rank Sum Test: Z = 2.75, p $<$ 0.01) and the complex environment sets (Wilcoxon Rank Sum Test: Z = 5.96, p $<<$ 0.001) (Figs~\ref{fig:postreward_task_discovery}, \ref{fig:complex-task_discovery}). We hypothesize that this effect is due to the relative differences in the strength of selection between the harsh changing environment and the directional selection toward the logic-77 tasks. 
 % MJW: I am having a hard time tracking what the "relative differences" are here.  The plurality implies that there are multiple, but the sentence structure seems to indicate you're comparing strength of selection in the harsh changing environment and the directional selection toward Logic-77 tasks (by which I am assuming you are referring to the selective pressure towards acquiring tasks that are always rewarded, but conceptually it's hard to compare the strength of selection [essentially a measure of s in population genetics] to directional selection [a class of selective pressure]).
-The pressure to gain and lose the fluctuating task is much stronger than the pressure to acquire the logic-77 tasks, thereby depressing the rate at which they are found.
+The selective pressures to gain or lose the fluctuating tasks represent up to a $2 * 2^5$-fold bonus over the course of a single cycle, whereas the new Logic-77 tasks can individually only offer a 1.2-fold bonus to execution speed. Thus, those organisms that promptly gain or lose a fluctuating task are more likely to survive, regardless of whether or not they have gained one of the new Logic-77 tasks. Thus pressures to gain and lose the fluctuating tasks are much stronger than the pressure to acquire new Logic-77 tasks, thereby depressing the rate at which they are found.
 % MJW: I know that stats are TODO throughout this chapter, but this sentence in particular absolutely needs them, and it's the sort that would be easy to overlook so I'm flagging it.  Though, to be fair, you don't necessarily need the stats if you just lay out the raw numbers -- the selective benefit towards either gaining EQU when it starts being rewarded or lose it when it starts being punished is X, the benefit of acquiring a Logic-77 task is Y.
+%@RCK: added something to expand on the reasoning
+
 %and keeping it comparable to the pre-phase 2 rate. 
-In contrast, the benign environment, with its comparatively weaker strength of selection for EQU task gain and loss, experiences a comparatively stronger selective pressure to acquire logic-77 tasks, while still benefiting from the increased exploration rate conveyed by the benign changing environment.
+In contrast, the benign environment experiences a weaker strength of selection for EQU task gain and loss, in the form of a maximum $2^5$-fold bonus directional selection pressure to gain the tasks, a no direct pressure to lose the task. Thus, when compared to the harsh treatments, the fraction of the total selective pressure for gaining new Logic-77 tasks is greater in the benign treatment. This increased pressure, plus the benefit of an increased exploration rate conveyed by the benign changing environment, results in a higher overall task discovery rate.
 
 	%=[FIGURE - postreward task discovery]
 	\begin{figure}[!h]
