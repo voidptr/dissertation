@@ -570,7 +570,7 @@ In order to assess the potential of different regions of the fitness landscape t
 %=design for experimental environment (CCE vs SCE, and short vs long)
 In order to examine the dynamics and mechanisms of evolving populations in changing environments, we performed two sets of experiments. We subjected populations of evolving digital organisms to a set of cyclic changing environments, and a set stochastic changing environments. The cyclic environments were designed to simulate predictable cycles of change, such as day/night or seasonal cycles, whereas the stochastic environments represent less predictable oscillations in environmental states, such as random weather patterns, or climactic changes. These experiments allow organisms to adapt to a predictable set of environments, and explores short-term evolvability dynamics. See Table~\ref{ce-treatments-h}
 
-\todo{put in this figure if I have time}
+\todo[inline, color=yellow]{put in this figure if I have time}
 \missingfigure{A diagram of how the environments are placed. stochastic as jumbled, cyclic as periodic. Harsh is red/blue, Benign is white/blue.}
 
 %=[TABLE - experimental treatments]
@@ -759,7 +759,6 @@ We speculate that this effect is due to the availability of reservoirs of former
 
 %=measured D_g, D_p, found similarity in D_g, increase in D_p 
 As an overall measure of neutral exploration, we also measured the proportion of non-deleterious mutants in the nearby fitness landscape - the Genomic Diffusion Rate. We found that this proportion remained approximately the same between all treatments (Kruskal Wallis: H(2) = 1.44, p = 0.49). However, we found that the Phenotypic Diffusion Rate, the proportion of these mutants with different (and potentially adaptive) phenotypes, increased in the changing environment treatments as compared to the controls (Wilcoxon Rank Sum Test: Z = -8.02, -8.39, respectively, p $<<$ 0.001). In this way, the organisms from the changing environment treatments have an advantage over organisms from the control runs in the short-term evolvability of the fluctuating task. This result indicates real adaptation, not only to resources in their local environment, but a direct adaptation to the environmental change. (Fig~\ref{fig:CCE_diffusion_rate})
-\todo[inline, color=magenta]{TODO - add paragraph describing/speculating about why Benign loses EQU almost as well as Harsh}
 
 %=[FIGURE D_g D_p]
 	\begin{figure}[!h] %% FIGURE 8
@@ -770,31 +769,31 @@ As an overall measure of neutral exploration, we also measured the proportion of
 	\end{figure}
 
 \subsection{Stochastic Changing Environments}
-%= contrary to expectations, SCE weren't better at evolvability (D_g/p)
-Contrary to our expectations, stochastic changing environments were, overall, no more effective at
-%@CAO - Just "no more" effective, not less?
-%@RCK - It was a mixed bag. I don't feel confident enough to definitively say less.
-promoting evolvability than cyclically changing environments. Harsh environments performed slightly worse, whereas benign environments were slightly better, though neither result was consistently statistically significant. There was a slight but significant reduction in the Phenotypic Diffusion Rate ($D_p$) between the cyclic and stochastic harsh changing environments; $D_p$ settled on a lower median (Mdn = 0.0) in the stochastic harsh treatment as compared to the cyclic harsh (Mdn = 0.0058) (Wilcoxon Rank-Sum Test: Z = -6.19, p $<<$ 0.0001), indicating a lower probability of the population producing offspring that would switch phenotypes neutrally. In the Benign treatments, however, Stochastic environments fared slightly better than cyclic, though this result was only barely statistically significant (Wilcoxon Rank-Sum Test: Z = 2.2, p$<$0.03). (Fig~\ref{fig:CSE_diffusion_rate}) 
-
 %=[FIGURE - D_g/p]
 	\begin{figure}[!h] %% FIGURE 12
 	\includegraphics[width=0.75\columnwidth]{figures/CE/CSE_D_g_D_p__box.png}
 	\caption{\textbf{Genomic and Phenotypic Diffusion Rates} in stochastic changing environments, showing the probabilities of producing offspring that are genotypically and phenotypically different from the parent, while remaining fitness neutral or better. As in the cyclic environment, $D_g$ remains stable for the Benign treatment, but drops slightly in the Harsh as compared to the control, though this drop isn't statistically significant (Kruskal Wallis H(2) = 1.11, p = 0.57). Harsh $D_p$ however, is significantly lower than seen in the cyclic environment treatment (Wilcoxon Rank-Sum Test: Z = -6.19, p $<<$ 0.0001). This result shows that harsh stochastic environments may not be as effective as cyclic environments at increasing the probability that organisms will produce phenotypically different, yet neutral offspring.
 	}\label{fig:CSE_diffusion_rate}
 	\end{figure}
+%= contrary to expectations, SCE weren't better at evolvability (D_g/p)
+Contrary to our expectations, stochastic changing environments were, overall, no more effective at
+%@CAO - Just "no more" effective, not less?
+%@RCK - It was a mixed bag. I don't feel confident enough to definitively say less.
+promoting evolvability than cyclically changing environments. Harsh environments performed slightly worse, whereas benign environments were slightly better, though neither result was consistently statistically significant. There was a slight but significant reduction in the Phenotypic Diffusion Rate ($D_p$) between the cyclic and stochastic harsh changing environments; $D_p$ settled on a lower median (Mdn = 0.0) in the stochastic harsh treatment as compared to the cyclic harsh (Mdn = 0.0058) (Wilcoxon Rank-Sum Test: Z = -6.19, p $<<$ 0.0001), indicating a lower probability of the population producing offspring that would switch phenotypes neutrally. In the Benign treatments, however, Stochastic environments fared slightly better than cyclic, though this result was only barely statistically significant (Wilcoxon Rank-Sum Test: Z = 2.2, p$<$0.03). (Fig~\ref{fig:CSE_diffusion_rate}) 
 
 %=1 and 2-step, slightly reduced
-Despite the reduced $D_p$ in the harsh treatment, both the overall fraction of 1-step mutants that lost EQU, and the fraction of 2nd-step regaining of EQU, were only very slightly reduced in comparison to the cyclic treatments, and this effect was not statistically significant. This result indicates that stochastic harsh environments are certainly no more effective at promoting evolution toward areas of the mutational landscape where such mutations were common, and may, in fact perform worse. 
+Despite the reduced $D_p$ in the harsh treatment, both the overall fraction of 1-step mutants that lost EQU, and the fraction of 2nd-step regaining of EQU, were only very slightly reduced in comparison to the cyclic treatments, and this effect was not statistically significant(Fig~\ref{fig:CSE_single_step},~\ref{fig:CSE_two_step}). This result indicates that stochastic harsh environments are certainly no more effective at promoting evolution toward areas of the mutational landscape where such mutations were common, and may, in fact perform worse. 
 
-In contrast, we observed a very slight, but statistically significant increase in the fraction of 1-step mutants that lost EQU in the stochastic treatment versus the cyclic (Wilcoxon Rank-Sum Test: Z = -2.4, p = 0.015). This effect was matched by a slight increase in the fraction of 2-step mutants that regained EQU in the benign stochastic treatment vs cyclic (Wilcoxon Rank-Sum Test: Z = -18.42, p $<<$ 0.0001). This indicates that in stochastic changing environments, benign environments might possibly perform better than harsh environments for promoting evolvability. However, because the effect sizes were so small, we cannot conclusively find that stochastic environments performing any differently than cyclic at promoting evolvbility.
-(Fig~\ref{fig:CSE_single_step},~\ref{fig:CSE_two_step})
-
-%=[FIGURES - 1 & 2-step]
+%=[FIGURES - 1-step]
 	\begin{figure}[!h] %% FIGURE 10
 	\includegraphics[width=0.75\columnwidth]{figures/CE/CSE_frac_1step__filtered__box.png}
 	\caption{\textbf{A survey of the single-step mutational neighborhood} in the stochastic changing environment around organisms that performed the fluctuating task. Again, in the static and harsh treatments, values are comparable to the cyclic changing environment . However, in the benign treatment, the mean for the loss of the fluctuating task (\texttt{EQU}) was slightly higher in the stochastic treatment (Mdn = 0.2) than the cyclic (Mdn = 0.17), though the effect is barely statistically significant (Wilcoxon Rank-Sum Test: Z = -2.4, p = 0.015). This result indicates that stochastic environmental change is equivalently effective at moving organisms to areas of the fitness landscape where they can more easily switch task expression.%
 	}\label{fig:CSE_single_step}
 	\end{figure}
+
+In contrast, we observed a very slight, but statistically significant increase in the fraction of 1-step mutants that lost EQU in the stochastic treatment versus the cyclic (Wilcoxon Rank-Sum Test: Z = -2.4, p = 0.015). This effect was matched by a slight increase in the fraction of 2-step mutants that regained EQU in the benign stochastic treatment vs cyclic (Wilcoxon Rank-Sum Test: Z = -18.42, p $<<$ 0.0001). This indicates that in stochastic changing environments, benign environments might possibly perform better than harsh environments for promoting evolvability. However, because the effect sizes were so small, we cannot conclusively find that stochastic environments performing any differently than cyclic at promoting evolvbility.
+
+%=[FIGURES - 2-step]
 	\begin{figure}[!h] %% FIGURE 11
 	\includegraphics[width=0.75\columnwidth]{figures/CE/CSE_frac_2step__box.png}
 	\caption{\textbf{A survey of the two-step mutational neighborhood} in the stochastic changing environment of the organisms that lost EQU function in the one-step survey. We found that the fraction of organisms regaining the fluctuating task (EQU) from a single additional mutation in the harsh treatment (Mdn = 0.013) were reduced compared to the cyclic harsh treatment (Mdn = 0.01) (Wilcoxon Rank-Sum Test: Z = 12.75, p $<<$ 0.0001) The opposite, however, was true of the Benign treatments. As in Fig~\ref{fig:CSE_single_step}, we find that stochastic outperforms cyclic (Wilcoxon Rank-Sum Test: Z = -18.43, p $<<$ 0.0001) This result confirms that the harsh stochastic environment is probably less effective than the cyclic harsh at promoting evolvability, but that the opposite may be true for a benign environment.
@@ -823,11 +822,12 @@ Together, from these measures, we conclude that stochastic environments exert si
 %=direction of selection drives exploration and gathers history
 In cyclic changing environments, the direction of selection shifts frequently, and periodically drives populations to not only explore new regions of the genetic landscape, but also to carry with them vestigial genetic information about previous environmental conditions. Thus, the resulting populations are not only adapted to the current environment, but also to the meta-environment of cyclic change. Because of their evolutionary history, the genomes contain vestigial fragments of genetic material that were adapted to prior environments. As this exploration proceeds, mutations accumulate in the population, each creating a link to a new region of the mutational landscape. As these links accumulate, they form a reservoir of mobility for the population to quickly shift to new phenotypes as dictated by current selective conditions. In this way, the accumulation of vestigial or pseudogene-like regions acts as an indirect adaptation to the larger pattern of changing selective forces. 
 %@CAO - This argument clearly implies that evolvability is not actually selected for. It's merely a by-product of how changing environments naturally alter genomes by creating genetic reservoirs. I feel like this is a point that we might want to hilight further.
-%@RCK - agree. done.
-Thus, architectural features that help with evolvabilty are the result of repeated hitchhiking on adaptive mutants.
+%@RCK - agree. done, below.
 
 %=by constrast static environments don't
 By contrast, in static (non-changing) environments, the majority of neutral mutations do not connect to as many phenotypically-interesting regions of genotype-space. There are far fewer pseudogene-like regions available that could regain functionality should conditions change. Thus, populations evolved in static environments are less evolvable in the short-term.
+
+These results suggest, therefore, that architectural features that help with evolvabilty are more likely the result of repeated hitchhiking on adaptive mutants. In particular, we observed that much of the task-loss associated with the harsh changing environment could be attributed to increasing task length which is a result of the continuous addition of new mutations activating and deactivating the task. Despite this correlation, however, we observed a potential difference in robustness between the \texttt{XOR} and \texttt{EQU} tasks, which suggest that a kind of anti-robustness may also be selected for as a result of the changing environments.
 
 %=SCE not more effective
 Surprisingly, stochastically changing environments are not more effective at exploration
@@ -857,8 +857,9 @@ HGT has had a profound impact on the evolutionary history of both prokaryotes an
 However, the origins and evolution of HGT mechanisms remain unclear. 
 
 \subsection{Origins of Horizontal Gene Transfer in nature}
-\todo[inline, color=magenta]{More about how this question is still open}
+%\todo[inline, color=magenta]{More about how this question is still open}
 % MJW: In line with your todo, you can hammer here the same thing I mentioned in your conclusions for this chapter -- it's really hard, and possibly even impossible, to test these things in non-digital systems.
+
 
 %=natural competence in prokaryotes and why HGT happens
 In prokaryotes, ''transformation'' is an HGT mechanism by which organisms spontaneously uptake the DNA of dead organisms in the environment. Competent organisms benefit in several ways. 1) DNA is composed of a 5-carbon sugar, a phosphate, and nitrogenous bases, materials that are useful for DNA synthesis and repair. 2) The organisms may also benefit from taking up
@@ -868,20 +869,13 @@ gene fragments that confer new adaptive functionality into the genome~\cite{vos_
 % MJW: I suggest expanding on this last sentence: why is it that integrating these fragments is likely to be disruptive more often than it is beneficial?  Also, how do either of those probabilities compare to it having no effect?
 % @RCK: Added additional sentence explaining the reasoning from Redfield's paper for this claim.
 
+Although advances in molecular biology are allowing researchers to investigate the mechanisms of HGT and even reconstruct specific inferred cases of HGT (as reviewed in Bock 2015~\cite{bock_witnessing_2015}), the processes themselves are ancient and nearly ubiquitous~\cite{soucy_horizontal_2015}. This very ancientness makes studying the early evolution of HGT in physical organisms exceedingly challenging, as we lack easily tractable systems that differ only in whether or not HGT exists within them. Therefore, empirical studies in natural systems remain exceedingly rare.
+%@RCK: added Mike's citations here
+
 %=statement of hypotheses - grazing CE elevates HGT
-In order to test the Grazing Hypothesis,
-% MJW: Identify what hypothesis you are testing.
-%@RCK: fixed
-, and address the question of whether there are circumstances where gene fragment 
-% MJW: I don't think that gene fragment is hyphenated
-%@RCK: fixed
-integration may be beneficial, we subjected populations of evolving digital organisms to a harsh changing environment,
+In order to test the Grazing Hypothesis of the origin of HGT, and to address the question of whether there are circumstances where gene fragment integration may be beneficial, subjected populations of evolving digital organisms to a harsh changing environment,
 % MJW: For the dissertation, this is probably fine, since you have a chapter about changing environments immediately before this one.  For a paper, we'll need to define what we mean by a harsh changing environment -- it's pretty standard nomenclature in the field of people who look at changing environments, but not all readers will know it.
-where there is a strong selective pressure to quickly switch phenotype. We supplied organisms with an instruction that performs Horizontal Gene Transfer (\texttt{HGT-Uptake}).
-% MJW: I added the "(HGT)" because this is the first time you use the term.  However, I don't know if you'd rather include the specific command names, typeset in the way that we typically do for instructions.  But I think you either need an "(HGT)" or you need to the underline the appropriate captial letters, since you use the acronym in the last sentence of the paragraph.
-% MJW: UPDATE: I now see an HGT before this, though used without defining the acronym.
-%@RCK: fixed all
-That is, the instruction triggers uptake of a genetic fragment from the environment, and there is a probability that, rather than metabolizing the fragment for a bonus to execution speed, the fragment will instead be homologously recombined into the organism's genome. We show that in harsh changing environments, without any kind of bonus, organisms increase use of HGT as compared to execution in a static environment.
+where there is a strong selective pressure to quickly switch phenotype. We supplied organisms with an instruction that performs Horizontal Gene Transfer (\texttt{HGT-Uptake}). That is, the instruction triggers uptake of a genetic fragment from the environment, and there is a probability that, rather than metabolizing the fragment for a bonus to execution speed, the fragment will instead be homologously recombined into the organism's genome. We show that in harsh changing environments, without any kind of bonus, organisms increase use of HGT as compared to execution in a static environment.
 
 
 \section{Methods}
@@ -889,7 +883,7 @@ In this chapter, we use Avida to test hypotheses about the origins of Horizontal
 
 \subsection{HGT in Avida}
 %=HGT triggered by instruction, and uptakes
-In Avida, HGT is triggered by the \texttt{HGT-Uptake} instruction that, when executed, attempts to uptake a genome fragment from the individual cell reservoirs in the environment. As organisms die in Avida runs with HGT enabled, fragments of their genomes will accumulate in reservoirs. The fragments in the reservoirs will deteriorate over time, with older genomes disappearing from the reservoir as new ones enter. Fragments for uptake will be randomly selected from the reservoir.  
+In Avida, HGT is triggered by the \texttt{HGT-Uptake} instruction that, when executed, attempts to uptake a genome fragment from the individual cell reservoirs in the environment. As organisms die in Avida runs with HGT enabled, we collect fragments of their genomes in reservoirs. These fragments will deteriorate over time, with older genomes disappearing from the reservoir as new ones enter. Fragments for uptake will be randomly selected from the reservoir.  
 
 \todo[inline]{look for and hunt down passive voice}
 % MJW: I'll point out that the entire previous paragraph is passive voice. Because it's you, Rose, I offer that often the easiest way to test whether a sentence is passive voice is if you can append "by zombies" to the end of it.  "Fragments for uptake will be randomly selected from the reservoir...by zombies."  It's slightly tortured for a few of the sentences, but it's something that is likely to stick with you.
@@ -901,7 +895,6 @@ We have implemented a configurable probability that, when a fragment is taken up
 instead, homologous recombination may occur (Figure \ref{fig:hgtprocess}). We performed experiments to derive bonus levels, fragment sizes, and recombination probabilities to arrive at a maximum use level for the HGT instruction. See Appendix~\ref{appendix:hgt_sweep} for more details. 
 
 %=HGT and homologous recombination
-\todo{Citation TODOs}
 For all experiments described in this chapter, we used a 10\% recombination probability. Please refer to Appendix~\ref{appendix:hgt_sweep} for more information about the selection of this probability value. We also required three instructions as the minimal homologous match length on either side of the fragment. Three instructions on either side of the fragment ($26^3$ unique sequences) approximates the number of unique values keyed by 7 nucleotides ($4^7$ unique sequences). For the purposes of homologous recombination in plasmid cloning in E. coli, 20bp is enough to assume identity~\cite{jacobus_optimal_2015}.   
 
 % MJW: Beyond merely citing something about number of nucleotides needed, I think it's worth explaining how we therefore chose 3 instructions in Avida.  26^3 is ~ 4^7, so if you're talking about an average of 300 nucleotides matching on each end, that would be way more restrictive than what we're doing.  A recent citation you can use is Optimal Cloning of PCR Fragments by Homologous Recombination in Escherichia coli by Ana Paula Jacobus and Jefferson Gross in PLOS ONE.  https://doi.org/10.1371/journal.pone.0119221  That one mentions in its abstract how 20bp is enough to assume identity.
@@ -917,36 +910,33 @@ For all experiments described in this chapter, we used a 10\% recombination prob
 
 \subsubsection{Environmental Conditions}
 %=environmental rewards
-All experiments in this chapter compare outcomes between static environments, and harsh changing environments. In a similar manner to the experiments listed in the previous chapter (Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}), task rewards in the harsh changing environment switch from a positive to a negative reward. For the HGT experiments, we did not establish a backbone task that was always rewarded. Rather, we divided the Logic-9 environment into two halves, and alternated positive and negative rewards for each task in each set. There are four pairs of tasks of equivalent complexity, and we randomly allocated one from each pair to an experimental group. We also assigned \texttt{EQU}, which is the most complex task, and has no equivalent, to a random group. Thus, for the first phase of the cycle, we punished the \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU} instructions at $-2^1$, $-2^2$, $-2^3$, $-2^4$, and $-2^5$ respectively, while rewarding \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} at $2^1$, $2^2$, $2^3$, and $2^4$. In the second phase of the cycle, these rewards flip, such that we reward \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU}, and punish \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} (Table~\ref{hgt-treatments-logic9}).
+All experiments in this chapter compared outcomes between static environments, and harsh changing environments. In a similar manner to the experiments listed in the previous chapter (Chapter~\ref{chap:ce-adaptation}, Table~\ref{ce-treatments-h}), task rewards in the harsh changing environment switched from a positive to a negative reward. For the HGT experiments, we did not establish a backbone task that was always rewarded. Rather, we divided the Logic-9 environment into two halves, and alternated positive and negative rewards for each task in each set. There are four pairs of tasks of equivalent complexity, and we randomly allocated one from each pair to an experimental group. We also assigned \texttt{EQU}, which is the most complex task, and has no equivalent, to a random group. Thus, for the first phase of the cycle, we punished the \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU} instructions at $-2^1$, $-2^2$, $-2^3$, $-2^4$, and $-2^5$ respectively, while rewarding \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} at $2^1$, $2^2$, $2^3$, and $2^4$. In the second phase of the cycle, these rewards flipped, such that we rewarded \texttt{NOT}, \texttt{AND}, \texttt{OR}, \texttt{NOR}, and \texttt{EQU}, and punished \texttt{NAND}, \texttt{ORN}, \texttt{ANDN}, and \texttt{XOR} (Table~\ref{hgt-treatments-logic9}).
 % MJW: I suggest explaining how you chose to divide the tasks; ie, there are 4 pairs of tasks of equivalent complexity, and for each pair you arbitrarily assigned one task to set 1 and the other task to set 2, and then EQU had to go somewhere.  Also, you can switch "were/are punished" with "we punished" and the like to remove passive voice.
 %@RCK: fixed
 
-\begin{table}[]
-\centering
-\caption{\textbf{Logic-9 Rewarded Task Groupings}}
-\label{hgt-treatments-logic9-h}
+	\begin{table}[]
+	\centering
+	\caption{\textbf{Logic-9 Rewarded Task Groupings}}
+	\label{hgt-treatments-logic9-h}
 
-\begin{tabular}{|c|c|c|c|}
-\hline
- & \thead{Tasks} & \thead{Reward \\ Phase 1} & \thead{Reward \\ Phase 2} \\\hhline{|=|=|=|=|}
- Group 1 & \makecell{ \texttt{NOT} \\ \texttt{AND} \\ \texttt{OR} \\ \texttt{NOR} \\ \texttt{EQU} } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ \\ $2^5$ } & \makecell{ $-2^{1}$ \\ $-2^{2}$ \\ $-2^{3}$ \\ $-2^{4}$ \\ $-2^{5}$ } \\\hline
- Group 2 & \makecell{ \texttt{NAND} \\ \texttt{ORN} \\ \texttt{ANDN} \\ \texttt{XOR} } & \makecell{ $-2^{1}$ \\ $-2^{2}$ \\ $-2^{3}$ \\ $-2^{4}$ } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ } \\\hline
-\end{tabular} 
+	\begin{tabular}{|c|c|c|c|}
+	\hline
+	 & \thead{Tasks} & \thead{Reward \\ Phase 1} & \thead{Reward \\ Phase 2} \\\hhline{|=|=|=|=|}
+	 Group 1 & \makecell{ \texttt{NOT} \\ \texttt{AND} \\ \texttt{OR} \\ \texttt{NOR} \\ \texttt{EQU} } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ \\ $2^5$ } & \makecell{ $-2^{1}$ \\ $-2^{2}$ \\ $-2^{3}$ \\ $-2^{4}$ \\ $-2^{5}$ } \\\hline
+	 Group 2 & \makecell{ \texttt{NAND} \\ \texttt{ORN} \\ \texttt{ANDN} \\ \texttt{XOR} } & \makecell{ $-2^{1}$ \\ $-2^{2}$ \\ $-2^{3}$ \\ $-2^{4}$ } & \makecell{ $2^1$ \\ $2^2$ \\ $2^3$ \\ $2^4$ } \\\hline
+	\end{tabular} 
 
-\begin{flushleft}Logic-9 tasks are divided into to groups, with one task from each pair of tasks of equivalent complexity assigned to a group. The \texttt{EQU} task, which has no complexity equivalent, is assigned to the first group. During the first half of a cycle, we reward the first group of task and punish the second group (see Reward Phase 1). During the second half of the cycle, we reward the second group, and punish the first group (Reward Phase 2).  
-\end{flushleft}
-\label{hgt-treatments-logic9}
-\end{table}
+	\begin{flushleft}Logic-9 tasks were divided into to groups, with one task from each pair of tasks of equivalent complexity assigned to a group. The \texttt{EQU} task, which has no complexity equivalent, was arbitrarily assigned to the first group. During the first half of a cycle, we rewarded the first group of tasks and punished the second group (see Reward Phase 1). During the second half of the cycle, reversed the pattern, and rewarded the second group, and punished the first group (Reward Phase 2).  
+	\end{flushleft}
+	\label{hgt-treatments-logic9}
+	\end{table}
 
 
 
 %=cycle length
-Each complete cycle lasts 1,000 updates, and the whole experimental run continues for 200,000 updates.
-
+Each complete cycle lasted 1,000 updates, and the whole experimental run extended for 200,000 updates.
 %=static environment
-The static environment rewards executions of all the Logic-9 tasks at their default levels, with no reward switching.
-
-% MJW: Why are the cycle length, static environment, and last sentence of the preceding paragraph in present tense, when the chapter in general is in past tense?
+The static environment rewarded executions of all the Logic-9 tasks at their default levels, with no reward switching.
 
 \subsection{Experimental Design}
 %\subsubsection{Evolution of HGT - Alternatives to the Grazing Hypothesis}
@@ -957,55 +947,54 @@ For the treatments corresponding to the first set of hypotheses on the origins o
 
 %=[TABLE - experimental treatments part 1]
 
-\begin{table}[]
-\centering
-\caption{\textbf{Experimental Treatments - Evolution of HGT}}
-\label{hgt-treatments-h}
+	\begin{table}[]
+	\centering
+	\caption{\textbf{Experimental Treatments - Evolution of HGT}}
+	\label{hgt-treatments-h}
 
-\begin{tabular}{|c|c|c|c|}
-\hline
-\thead{Treatment} & \thead{Changing \\ Env. \\ Type} & \thead{HGT \\ Action} & \thead{Bonus} \\\hhline{|=|=|=|=|}
-%Control & Static & None & n/a \\\hline
-\makecell{Static Control \\ (no HGT)} & Static & None & n/a \\\hline
-\makecell{CE Control \\ (no HGT)} & Harsh Cyclic & None & n/a \\\hline
-\makecell{HGT \\ B0.0 \\ (Natural Competence \\ No Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probability} & n/a \\\hline
-\makecell{HGT \\ B0.0 \\ CE \\ (Natural Competence \\ No Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probability} & n/a \\\hline
-\makecell{HGT \\ B0.8 \\ (Natural Competence \\ with Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probability \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
-\makecell{HGT \\ B0.8 \\ CE \\ (Natural Competence \\ with Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probability \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
-\end{tabular} 
+	\begin{tabular}{|c|c|c|c|}
+	\hline
+	\thead{Treatment} & \thead{Changing \\ Env. \\ Type} & \thead{HGT \\ Action} & \thead{Bonus} \\\hhline{|=|=|=|=|}
+	%Control & Static & None & n/a \\\hline
+	\makecell{Static Control \\ (no HGT)} & Static & None & n/a \\\hline
+	\makecell{CE Control \\ (no HGT)} & Harsh Cyclic & None & n/a \\\hline
+	\makecell{HGT \\ B0.0 \\ (Natural Competence \\ No Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probability} & n/a \\\hline
+	\makecell{HGT \\ B0.0 \\ CE \\ (Natural Competence \\ No Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probability} & n/a \\\hline
+	\makecell{HGT \\ B0.8 \\ (Natural Competence \\ with Bonus)} & Static & \makecell{10\% \\ Recombination \\ Probability \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
+	\makecell{HGT \\ B0.8 \\ CE \\ (Natural Competence \\ with Bonus)} & \makecell{Harsh \\ Cyclic} & \makecell{10\% \\ Recombination \\ Probability \\ otherwise \\ Bonus \\ Allocation} & \makecell{$2^{0.8}$ per \\ Uptake} \\\hline
+	\end{tabular} 
 
-\begin{flushleft}Four treatments corresponding to the combination of two factors: Static vs Changing Environment, and Grazing Bonus vs No Grazing Bonus, plus a non-HGT control, where the HGT instruction is inert.  
-\end{flushleft}
-\label{hgt-treatments}
-\end{table}
+	\begin{flushleft}Four treatments corresponding to the combination of two factors: Static vs Changing Environment, and Grazing Bonus vs No Grazing Bonus, plus a non-HGT control, where the HGT instruction is inert.  
+	\end{flushleft}
+	\label{hgt-treatments}
+	\end{table}
 
 %=we test for the mechanisms of why CE promotes HGT
-For the second set of hypotheses, where we identify the mechanisms that promote the use of HGT, we manipulate the content of the reservoirs to contain fragments drawn from specific phases in the cyclically changing environment, such that fragments either match or do not match the environment (Table~\ref{hgt-treatments-h-reservoir}. We then measure HGT use, as well as average fitness effects of the HGT mutations, and the fraction of mutations that lead to beneficial phenotype switches.
+For the second set of hypotheses, where we identify the mechanisms that promote the use of HGT, we manipulated the content of the reservoirs to contain fragments drawn from specific phases in the cyclically changing environment, such that fragments either matched or did not match the environment (Table~\ref{hgt-treatments-h-reservoir}. We then measured HGT use, as well as average fitness effects of the HGT mutations, and the fraction of mutations that led to beneficial phenotype switches.
 
-%=[TABLE - experimental treatments]
-\todo{rename table}
-\begin{table}[]
-\centering
-\caption{\textbf{Experimental Treatments - Effects of HGT}}
-\label{hgt-treatments-h-reservoir}
+	%=[TABLE - experimental treatments]
+	\todo{rename table}
+	\begin{table}[]
+	\centering
+	\caption{\textbf{Experimental Treatments - Effects of HGT}}
+	\label{hgt-treatments-h-reservoir}
 
-\begin{tabular}{|c|c|}
-\hline
-\thead{Treatment} & \thead{Fragment\\Source} \\\hhline{|=|=|}
-HGT & organism death \\\hline
-\makecell{Both} & sampled from organisms from both phases \\\hline
-\makecell{OnPhase} & sampled from organisms from the matching phase \\\hline
-\makecell{OffPhase} & sampled from organisms from the non-matching phase \\\hline
-\end{tabular} 
+	\begin{tabular}{|c|c|}
+	\hline
+	\thead{Treatment} & \thead{Fragment\\Source} \\\hhline{|=|=|}
+	HGT & organism death \\\hline
+	\makecell{Both} & sampled from organisms from both phases \\\hline
+	\makecell{OnPhase} & sampled from organisms from the matching phase \\\hline
+	\makecell{OffPhase} & sampled from organisms from the non-matching phase \\\hline
+	\end{tabular} 
 
-\begin{flushleft} Four treatments corresponding to the sources of fragments. The first treatment uses the default fragment source (dead organisms from the environment). The second treatment samples a population for organisms corresponding to both phases, and injects those into the reservoirs. The third and fourth treatments sample the population, but only inject fragments from the matching and non-matching phases, respectively.  
-\end{flushleft}
-\label{hgt-treatments-reservoir}
-\end{table}
+	\begin{flushleft} Four treatments corresponding to the sources of fragments. The first treatment used the default fragment source (dead organisms from the environment). The second treatment sampled a population for organisms corresponding to both phases, and injected those into the reservoirs. The third and fourth treatments sampled the population, but only injected fragments from the matching and non-matching phases, respectively.  
+	\end{flushleft}
+	\label{hgt-treatments-reservoir}
+	\end{table}
 
 
 \section{Results and Discussion}
-\todo[inline]{clarify whether a summary paragraph like this is even useful. or if it should be framed differently}
 Our results, discussed in detail below, show that both an uptake bonus and changing environment promote the use of HGT, and that the increases in uptake are largely additive. Further, we found that while on average, HGT mutations are neutral, that the majority of the benefits conveyed by HGT in changing environments come from fragments originating in periods of the cycle where the environment matched the current environment. This result indicates that it is the information content of the fragment that is valuable. Finally, we find that providing only fragments from the matching cycle elevates uptake rates significantly.
 % MJW: This paragraph is essentially a bunch of numerical claims with no stats.  I'll be on the lookout for stats in the coming results -- I didn't see a statistical methods section in the methods -- but if they don't exist we need them; if they do, we probably want some sort of "(see below)".
 %@RCK: It's intended as the tip of the pyramid type summary paragraph. Should I even have something like this?
@@ -1021,46 +1010,40 @@ Our results, discussed in detail below, show that both an uptake bonus and chang
 %* Bonus, CE - uptake higher than either BonusStatic or NoBonusCE
 
 %=measured fragment uptake, results summary
-We measured HGT fragment uptake in four conditions (see Table~\ref{hgt-treatments-h}), plus of pair of non-HGT controls. Without a bonus, in a static environment, fragment uptake is depressed to a low level as compared to the rate of the non-HGT control, where the \texttt{HGT-Uptake} instruction does nothing (Wilcoxon Rank-Sum Test: Z = 9.74, p $<<$ 0.0001). This indicates that HGT in a static environment is largely deleterious (Figure~\ref{fig:hgt_fragment_uptake}). However, in a no-bonus harsh changing environment, fragment uptake is elevated compared to the static environment (Wilcoxon Rank Sum-Test: Z = -8.44, p $<<$ 0.0001). This shows that in the context of a harsh changing environment, the integration of new genetic material is more beneficial than in the static environment. We also found that, regardless of whether the environment is static or changing, when a bonus to fragment uptake is provided (analogous to the nutritive benefit granted by natural competence in biological organisms), fragment uptake also increases(Wilcoxon Rank Sum Test: Z = -8.44, and -7.47, p $<<$ 0.0001). 
+We measured HGT fragment uptake in four conditions (see Table~\ref{hgt-treatments-h}), plus of pair of non-HGT controls. Without a bonus, in a static environment, fragment uptake was depressed to a low level as compared to the rate of the non-HGT control, where the \texttt{HGT-Uptake} instruction does nothing (Wilcoxon Rank-Sum Test: Z = 9.74, p $<<$ 0.0001). This indicates that HGT in a static environment is largely deleterious (Figure~\ref{fig:hgt_fragment_uptake}). However, in a no-bonus harsh changing environment, fragment uptake was elevated compared to the static environment (Wilcoxon Rank Sum-Test: Z = -8.44, p $<<$ 0.0001). This shows that in the context of a harsh changing environment, the integration of new genetic material is more beneficial than in the static environment. We also found that, regardless of whether the environment is static or changing, when a bonus to fragment uptake was provided (analogous to the nutritive benefit granted by natural competence in biological organisms), fragment uptake also increased (Wilcoxon Rank Sum Test: Z = -8.44, and -7.47, p $<<$ 0.0001). 
 
 % MJW: Ding ding ding!  :)
 %@RCK: done
 	\begin{figure}[h!]
 	\begin{center}
 	\includegraphics[width=0.75\columnwidth]{figures/HGT/hgt_fragment_uptake.png}
-	\caption{ \textbf{Number of HGT fragment uptakes} in static and changing environments, without a grazing bonus, with a grazing bonus, and a no HGT control, where the \texttt{HGT-Uptake} instruction is inert. HGT uptake increases in response to a changing environment, and also in response to a grazing bonus. Both a grazing environment and a changing environment result in an even larger increase of fragment uptakes than either the changing environment, or the bonus alone (Wilcoxon Rank Sum Test: Z = -4.93 and -7.47 respectively, p $<<$ 0.0001).
+	\caption{ \textbf{Number of HGT fragment uptakes} in static and changing environments, without a grazing bonus, with a grazing bonus, and a no HGT control, where the \texttt{HGT-Uptake} instruction is inert. HGT uptake increased in response to a changing environment, and also in response to a grazing bonus. Both the grazing environment and a changing environment resulted in an even larger increase of fragment uptakes than either the changing environment, or the bonus alone (Wilcoxon Rank Sum Test: Z = -4.93 and -7.47 respectively, p $<<$ 0.0001).
 	%
 	}\label{fig:hgt_fragment_uptake}
 	\end{center}
 	\end{figure}
 
 %=measured fragment uptake wrl to bonus
-In order to investigate the relationship between the effects granted by a nutritive bonus and the benefit of fragment recombination in a changing environment, we selected a bonus level that increased fragment uptake in a static environment to a level comparable to the increase seen in changing environments without a bonus. We then combined these factors, giving a bonus, plus using a changing environment. We saw that the resulting uptake level increases largely additively. This indicates that the benefits granted by a grazing bonus are generally independent of the benefits conveyed by integrating new genetic material. 
+In order to investigate the relationship between the effects granted by a nutritive bonus and the benefit of fragment recombination in a changing environment, we selected a bonus level that increased fragment uptake in a static environment to a level comparable to the increase seen in changing environments without a bonus. We then combined these factors, giving a bonus, plus using a changing environment. We saw that the resulting uptake level increased largely additively. This indicates that the benefits granted by a grazing bonus are generally independent of the benefits conveyed by integrating new genetic material. 
 % MJW: The preceding paragraph reads like methods, no?
 %@RCK: Eh. I don't know. It's what we measured. Yes, we did a specific experiment, so that should be documented in methods. But I don't mind explaining the measure here.
 \todo[inline]{document the additive measuring thing in methods, per note}
-
 %We thus conclude that not only is HGT evolution possible absent a grazing bonus, but that should a changing environment occur, that there are additional incentives to perform HGT.
 %=conclusion sentence - hgt is promoted by HGT
 Thus, not only is HGT evolution possible absent a bonus, the benefit stacks with that of a grazing bonus, proving a more likely scenario by which HGT might evolve. %bleh
-
-
-
-
 
 
 \subsection{HGT derives most benefit from on-cycle fragments, but not all}
 %Measured fitness effects of HGT fragments that originated in a matching phase in a previous cycle vs fragments originating in the non-matching phase of the cycle.
 
 %=understanding why HGT is used
-
-
 \subsubsection{Fitness Effects}
 In order to understand the basis of the beneficial nature of HGT in changing environments, we measured the fitness effect of individual fragments on individual organisms within a population.
 %=measured fitness effect in normal HGT
-We calculated the average fitness effects of fragments in a randomly selected replicate of the non-replaced HGT control treatment at the end of the last environmental cycle, and generated a distribution of fragments sorted the fragments by age and fitness-effect (Figures~\ref{fig:fitness_effect_heatmap}). We can see a clear pattern of more beneficial fitness effects from fragments of organisms originating in the matching cycle phase. 
+We calculated the average fitness effects of fragments of the non-replaced HGT control treatment at the end of the last environmental cycle, and generated a distribution of fragments, and sorted the fragments by age and fitness-effect (Figures~\ref{fig:fitness_effect_heatmap}). We observe a clear pattern of more beneficial fitness effects from fragments of organisms originating in the matching cycle phase. 
 % MJW: Have we done this for only one replicate?
 %@RCK: yes. It's an example of what they look like. Maybe we don't care that they look this way, but I like the figure :P
+%@RCK: Actually, no, this is an aggregation of all replicates, but due to the nature of the analysis, which is an enumeration, there's no averaging or sampling here.
 
 	\begin{figure}[h!]
 	\begin{center}
@@ -1075,12 +1058,12 @@ We calculated the average fitness effects of fragments in a randomly selected re
 To quantify this observation, we performed experiments where we replaced the fragments in the reservoir with fragments originating in the matching phase, the off-phase, and mixture of both phases as a control. We measured the mean and median fitness 
 % MJW: Why "expected" fitness?
 %@RCK: fixed
-effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycle_phase_source}). We found that HGT mutations are, on average, neutral, or nearly neutral in all the treatments. Both the non-replaced control (Mdn = 0.0, 95\% CI [0, 0]) and the replaced-"both" treatment (Mdn = -0.008, 95\% CI [-0.009, -0.008]) were neutral or nearly neutral. The median fitness effect in the "on-phase" treatment was mildly deleterious (Mdn = -0.054, 95\% CI [-0.055, -0.052]), while the mean was more strongly beneficial (M = 1.19, SD = 19.7). In contrast, the "off-phase" treatment, the median fitness effect was, again, mildly deleterious (Mdn = -0.0005, 95\% CI [-0.0006, -0.0004]), but with a much more deleterious mean (M = -23.06, SD = 101.8). This suggests that while, on average, HGT mutations remain nearly neutral, a few fragments from the matching phase were strongly beneficial, while the opposite was the case for the non-matching phase.
+effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycle_phase_source}). We found that HGT mutations were, on average, neutral, or nearly neutral in all the treatments. Both the non-replaced control (Mdn = 0.0, 95\% CI [0, 0]) and the replaced-"both" treatment (Mdn = -0.008, 95\% CI [-0.009, -0.008]) were neutral or nearly neutral. The median fitness effect in the "on-phase" treatment was mildly deleterious (Mdn = -0.054, 95\% CI [-0.055, -0.052]), while the mean was more strongly beneficial (M = 1.19, SD = 19.7). In contrast, in the "off-phase" treatment, the median fitness effect was, again, mildly deleterious (Mdn = -0.0005, 95\% CI [-0.0006, -0.0004]), but with a much more deleterious mean (M = -23.06, SD = 101.8). This suggests that while, on average, HGT mutations remain nearly neutral, a few fragments from the matching phase were strongly beneficial, while the opposite was the case for the non-matching phase.
 
 	\begin{figure}[h!]
 	\begin{center}
 	\includegraphics[width=0.95\columnwidth]{figures/HGT/fitness_effect_by_cycle_phase_source.png}
-	\caption{\textbf{Mean and Median fitness effects of fragments} in reservoirs, with 95\% confidence intervals. Fragments in reservoirs are replaced by fragments based on the origin of donor organism. The On-Phase treatment only permits fragments in reservoirs that originate in matching phases of the current cycle. The Off-Phase treatment only permits fragments from non-matching phases. Plus two controls: first, where no filtration takes place, and "both" where fragments are injected from a mixed set of origins. The Off-Phase treatment has a significantly lower fitness effect than either of the controls (Wilcoxon Rank-Sum Test: Z = 143 and 31 respectively, p $<<$ 0.001), while the On-Phase treatment has a significantly higher fitness effect (Wilcoxon Rank-Sum Test: Z = 105 and 3 respectively, p $<$ 0.002). 
+	\caption{\textbf{Mean and Median fitness effects of fragments} in reservoirs, with 95\% confidence intervals. Fragments in reservoirs are replaced by fragments based on the origin of donor organism. For the On-Phase treatment, We only permitted fragments in reservoirs that originated in a matching phase of the current cycle. For the Off-Phase treatment, we only permitted fragments from non-matching phases. Plus two controls: first, where no filtration takes place, and "Both" where fragments are injected from a mixed set of origins. The Off-Phase treatment had a significantly lower fitness effect than either of the controls (Wilcoxon Rank-Sum Test: Z = 143 and 31 respectively, p $<<$ 0.001), while the On-Phase treatment had a significantly better fitness effect (Wilcoxon Rank-Sum Test: Z = 105 and 3 respectively, p $<$ 0.002). 
 	}\label{fig:fitness_effect_by_cycle_phase_source}
 	\end{center}
 	\end{figure}
@@ -1096,27 +1079,24 @@ effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycl
 In our environments, mutations that convey phenotypic change should have the largest impact. Specifically, the largest fitness benefits should occur when a mutation leads to the acquisition of a new rewarded task, or the loss of a punished task.  
 % MJW: Slightly redundant; you just specified which pheotypic changes have the largest impacts, and then said that things that result in phenotypic changes have the largest impacts.  If you change the order of these sentences, you can put the "In our environments" on what is currently the second sentence, and then lead in with "Specifically, " for what is currently the first sentence.
 %@RCK: fixed
-We quantified 
-% MJW: Isn't this quantification, not identification?
-%@RCK: fixed
-the phenotypic effect of each fragment by counting the number of times that fragments produced a beneficial phenotype change, vs all HGT mutations (Figure~\ref{fig:beneficial_fraction_by_cycle_phase_source}). We see that a significantly larger proportion of fragments in the "on-phase" treatment produce beneficial phenotype changes (Mdn = 0.09, 95\% CI [0.07, 0.11]), as compared to fewer in the normal HGT control (Mdn = 0.03, 95\% CI [0.03, 0.04]) and "both" treatments (Mdn = 0.04, 95\% CI [0.035, 0.05]) (Wilcoxon Rank Sum Test: Z = -6.42 and -6.12 respectively, p $<<$ 0.001). In contrast, we observe virtually no beneficial phenotype changes originating in fragments from the "off-phase" treatment (Mdn = 0.009, 95\% CI [0.006, 0.01]). This result is significantly worse than both the control and the "both" treatments (Wilcoxon Rank-Sum Test: Z = 7.11 and 7.35 respectively, p $<<$ 0.001) 
+We quantified the phenotypic effect of each fragment by counting the number of times that fragments produced a beneficial phenotype change, vs all HGT mutations (Figure~\ref{fig:beneficial_fraction_by_cycle_phase_source}). We saw that a significantly larger proportion of fragments in the "on-phase" treatment produced beneficial phenotype changes (Mdn = 0.09, 95\% CI [0.07, 0.11]), as compared to fewer in the normal HGT control (Mdn = 0.03, 95\% CI [0.03, 0.04]) and "both" treatments (Mdn = 0.04, 95\% CI [0.035, 0.05]) (Wilcoxon Rank Sum Test: Z = -6.42 and -6.12 respectively, p $<<$ 0.001). In contrast, we observed virtually no beneficial phenotype changes originating in fragments from the "off-phase" treatment (Mdn = 0.009, 95\% CI [0.006, 0.01]). This result was significantly worse than both the control and the "both" treatments, which produced non-zero beneficial phenotype switches (Wilcoxon Rank-Sum Test: Z = 7.11 and 7.35 respectively, p $<<$ 0.001) 
 
 	\begin{figure}[h!]
 	\begin{center}
 	\includegraphics[width=0.75\columnwidth]{figures/HGT/beneficial_fraction_by_cycle_phase_source.png}
-	\caption{\textbf{Fraction of all fragments that produced a beneficial phenotype changes}, with 95\% confidence intervals. The "On-Phase" treatment has significantly more fragments that convey a beneficial phenotype change than either of the controls (Wilcoxon Rank Sum Test: Z = -6.42 and -6.12 respectively, p $<<$ 0.001), while the "Off-Phase" has significantly fewer (Wilcoxon Rank-Sum Test: Z = 7.11 and 7.35 respectively, p $<<$ 0.001).
+	\caption{\textbf{Fraction of all fragments that produced a beneficial phenotype changes}, with 95\% confidence intervals. The "On-Phase" treatment had significantly more fragments that convey a beneficial phenotype change than either of the controls (Wilcoxon Rank Sum Test: Z = -6.42 and -6.12 respectively, p $<<$ 0.001), while the "Off-Phase" had significantly fewer (Wilcoxon Rank-Sum Test: Z = 7.11 and 7.35 respectively, p $<<$ 0.001).
 	}\label{fig:beneficial_fraction_by_cycle_phase_source}
 	\end{center}
 	\end{figure}
 
 %=benefit results from matching environment and information conveyed
-These results suggests that any direct benefit of using HGT derives from taking up fragments that match the cycle phase of the environment of the affected organism, and thus likely contains information that relates to that environment. %otherwise, it wouldn't matter where the fragment came from
+These results suggest that most direct benefit of using HGT derives from taking up fragments that match the cycle phase of the environment of the affected organism, and thus likely contains information that relates to that environment. %otherwise, it wouldn't matter where the fragment came from
 
 %=see uptick in use when fragments match phase only.
-Further, if fragments from the matching phase are indeed beneficial, we would expect to see an increase in HGT use in those treatments, as compared to those where the fitness effects are mixed or deleterious. And indeed (Figure~\ref{fig:hgt_use_by_cycle_phase_source}), we do observe just such an increase. Thus we can conclude that HGT in our
+Further, if fragments from the matching phase are indeed beneficial, we would expect to see an increase in HGT use in those treatments, as compared to those where the fitness effects are mixed or deleterious. And indeed (Figure~\ref{fig:hgt_use_by_cycle_phase_source}), we observed just such an increase. Thus we can conclude that HGT in our
 % MJW: I suggest adding the word "our" here; it's hard to conclude that this is a universal from studying one system.
 %@RCK: fixed
-changing environments is most beneficial when the fragments in the environment contain information that would be beneficial in that environment. However, even when no such information is available, HGT use is not significantly depressed as compared to the control treatment. This suggests that despite the lack of exclusively matched environmental information, that fragments could still provide some benefit. 
+changing environments is most beneficial when the fragments in the environment contain information that would be beneficial in that environment. However, even when no such information was available, HGT use was not significantly depressed as compared to the control treatment. This suggests that despite the lack of exclusively matched environmental information, that fragments could still provide some benefit. 
 
 	\begin{figure}[h!]
 	\begin{center}
