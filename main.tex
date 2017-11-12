@@ -486,7 +486,8 @@ Avida worlds can be space- or resource-constrained. Avida allows the experimente
 
 %=Avida and paper download information
 %=[ ] - TODO - populate the new git repos for the dis with data files, etc]
-Avida is available for download without cost from \url{http://avida.devosoft.org/}, and specific versions along with data-files to reproduce the experiments described in this dissertation may be found at \url{https://github.com/voidptr/avida} and \url{https://github.com/voidptr/dissertation}.
+\todo{git repos with data files and ipython notebooks}
+Avida is available for download without cost from \url{http://avida.devosoft.org/}, and specific versions along with data-files to reproduce the experiments described in this dissertation may be found at \url{https://github.com/voidptr/avida}, \url{https://github.com/voidptr/dissertation}, and \url{https://github.com/voidptr/dissertation_data}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -546,18 +547,17 @@ In the short-term, this kind of evolvability determines a population's response 
 Properties of genetic architectures such as evolvability and robustness are determined by the shape of the resulting mutational landscape (local fitness landscape around a genotype, accessible in a single mutation)~\cite{andreas_wagner_robustness_2008}. Robust genetic architectures that can tolerate more mutations without altering their phenotype reside in mutational landscapes that connect to more neutral mutants. Similarly, architectures that more easily switch phenotypes in response to mutation without substantial reduction in fitness, reside in more evolvable regions of genotype-space.
 
 %=not all regions equally accessible
-It is worth noting that not all regions of the mutational landscape are equally accessible. Some genome regions may be more resistant to mutation than others~\cite{lee_rate_2012}, thereby altering \todo[noinline]{clarify} the probabilities of mutations occurring that lead into certain regions of the mutational landscape. This kind of differential probability may therefore moderate a population's diffusion through the mutational landscape.
-
+It is worth noting that not all regions of the mutational landscape may be equally accessible. Some genome regions may be more resistant to mutation than others. For example, in E. coli, the mismatch repair (MMR) pathway has been shown to preferentially repair coding regions over non-coding regions~\cite{lee_rate_2012}. Alternately, some kinds of mutations may be more likely to occur than others. A mutation accumulation (MA) study of S. typhimurium found a strong bias toward GC-to-TA transversions rather than GC-to-AT transitions~\cite{lind_whole-genome_2008}. These kinds of effects thereby skew the probabilities of some kinds mutations occurring that might lead into certain regions of the mutational landscape. These kinds of differential probabilities may therefore moderate a population's diffusion through the mutational landscape.
 % @CAO: How would it be altered?  I'm not sure I understand the last couple of sentences here...
 % * <mjwiser@gmail.com> 2017-01-30T18:58:49.934Z:
 %
 % There are several ways I could interpret this sentence about the Lee paper, so I feel I need to read the paper.  Is it that there are certain regions of a genome that are harder to mutate, either because they are physically constrained or that they are more easily error-checked?  Is it that certain regions of the mutational landscape are more resistant to mutations?  If it's the latter, perhaps a rephrasing along the line of "Some regions of the mutational landscape are more resistant to mutations (preferably with some explanation of how).  As such, regions of the mutational landscape that are bordered by such mutation-resistant regions are less accessible, as the set of genotypes that are mutationally close to them are themselves resistant to mutations."
 %
 % ^.
-% @RCK: Will look into it and clarify.
+% @RCK: Added example of MMR preferentially repairing coding regions in E. coli, and how GC-to-TA is way more likely than GC-to-AT in Salmonella.
 
 %=response to selection may be weaker/stronger
-Further, response to selection is likely to be weaker in regions of the landscape where there are fewer available mutations that provide potentially adaptive traits, whereas response to selection will be stronger in regions where there are many adaptive variants available within a few mutational steps~\cite{alberch_genes_1991,carter_role_2005}. This differential response to selection therefore constrains the ability of populations to diffuse across a fitness landscape.
+Further, response to selection is likely to be weaker in regions of the landscape where there are fewer available mutations that provide potentially adaptive traits, whereas response to selection will be stronger in regions where there are many adaptive variants available within a few mutational steps~\cite{alberch_genes_1991,carter_role_2005}. This differential response to selection may therefore constrain the ability of populations to diffuse across a fitness landscape.
 
 In order to assess the potential of different regions of the fitness landscape to promote or hinder evolvability, we will use both the \textbf{Genomic Diffusion Rate} ($D_g$)\ref{eq:genomic_diffusion_rate} and the \textbf{Phenotypic Diffusion Rate} ($D_p$)\ref{eq:phenotypic_diffusion_rate}, as normalized across changing environments\ref{eq:expected_fitness_value}.
 
@@ -570,6 +570,7 @@ In order to assess the potential of different regions of the fitness landscape t
 %=design for experimental environment (CCE vs SCE, and short vs long)
 In order to examine the dynamics and mechanisms of evolving populations in changing environments, we performed two sets of experiments. We subjected populations of evolving digital organisms to a set of cyclic changing environments, and a set stochastic changing environments. The cyclic environments were designed to simulate predictable cycles of change, such as day/night or seasonal cycles, whereas the stochastic environments represent less predictable oscillations in environmental states, such as random weather patterns, or climactic changes. These experiments allow organisms to adapt to a predictable set of environments, and explores short-term evolvability dynamics. See Table~\ref{ce-treatments-h}
 
+\todo{put in this figure if I have time}
 \missingfigure{A diagram of how the environments are placed. stochastic as jumbled, cyclic as periodic. Harsh is red/blue, Benign is white/blue.}
 
 %=[TABLE - experimental treatments]
@@ -621,18 +622,29 @@ Our experiments demonstrate that digital organisms that were evolved in changing
 \subsection{Cyclic Changing Environments}
 We will begin by examining the characteristics of populations evolved in cyclic changing environments.
 
+\subsubsection{Performance of \texttt{EQU}}
+Each population was seeded with organisms that performed both the \texttt{EQU} fluctuating task, and the \texttt{XOR} backbone task. We measured the execution of the \texttt{EQU} task, and observed that in the static control treatment, \texttt{EQU} is fixed in the population and remains so throughout the run. In contrast, we observed a periodic dip in the execution of \texttt{EQU} in the benign changing environment during the non-rewarded phase of the cycle, followed by a rapid recovery when rewards are reinstated. Finally, in the harsh treatment, we observed abrupt disappearance of \texttt{EQU} performance, followed by rapid recoveries, coinciding with phases of reward and punishment. As expected, these results suggest that the populations are responding to the selective pressures to perform \texttt{EQU} when it is rewarded, and to lose functionality when it is not rewarded or when it is punished.
+
+%=[FIGURE - functional vs vestigial sites]
+	\begin{figure}[!h]
+	\includegraphics[width=0.75\columnwidth]{figures/CE/CCE_equ_execution.png}
+	\caption{\textbf{Number of organisms performing \texttt{EQU} task}. We measured the execution of the \texttt{EQU} task in all treatments. By the end of the run, we observed fixation in the control treatment. In the benign treatment, we observed periodic dips in execution that coincide with phases of non-reward. Finally, in the harsh treatment, we observed abrupt disappearance of EQU in the punishment phase, followed by rapid recovery of EQU performance during the reward phase.
+	}
+	\label{fig:CCE_equ_execution} %% FIGURE 5
+	\end{figure}
+
 \subsubsection{Evolutionary History and Population Structure}
 %=more phylogenetic depth
-Evolution in the harsh cyclic changing environment resulted in many more mutations fixing, and thus populations with substantially higher phylogenetic depth as compared to those evolved in static or benign environments. At each environmental shift, adaptive mutations rapidly swept and fixed in the populations. (Fig~\ref{fig:flamegraph})
+We then surveyed the evolutionary history and population structure of the evolving populations. Evolution in the harsh cyclic changing environment resulted in many more mutations fixing, and thus populations with substantially higher phylogenetic depth as compared to those evolved in static or benign environments. At each environmental shift, adaptive mutations rapidly swept and fixed in the populations. (Fig~\ref{fig:flamegraph})
 
-%=[FIGURE - flamegraph]
-\begin{figure}[!h]
-\includegraphics[trim={-0.88cm 0 0.25cm 0},clip,width=0.65\columnwidth]{figures/CE/control__phylodepth_with_coalescense.png}
-\includegraphics[trim={0.2cm 0 0.25cm 0},clip,width=0.65\columnwidth]{figures/CE/benign__phylodepth_with_coalescense.png}
-\includegraphics[trim={-0.63cm 0 0.25cm 0},clip,width=0.65\columnwidth]{figures/CE/harsh__phylodepth_with_coalescense.png}
-\caption{\textbf{Phylogenetic depth over time} of a sample population evolved in each of the three treatments of the cyclic changing environments. White horizontal lines mark the depth of the most recent common ancestor, and discontinuities in this line indicate that the most recent common ancestor has changed, and thus that a sweep occurred, or that a competing clade went extinct. The control treatments had a mean of 18 sweeps (STD=9.05), the benign treatments had a mean of 21 (STD=19.05), and the harsh treatments had a mean of 88 sweeps (STD=23.37). Note the difference in scales between y-axes: the control-evolved population has a maximum depth of 400 mutational steps from ancestor, while the harsh-evolved has upward of 1100. %
-}\label{fig:flamegraph}
-\end{figure}
+	%=[FIGURE - flamegraph]
+	\begin{figure}[!h]
+	\includegraphics[trim={-0.88cm 0 0.25cm 0},clip,width=0.65\columnwidth]{figures/CE/control__phylodepth_with_coalescense.png}
+	\includegraphics[trim={0.2cm 0 0.25cm 0},clip,width=0.65\columnwidth]{figures/CE/benign__phylodepth_with_coalescense.png}
+	\includegraphics[trim={-0.63cm 0 0.25cm 0},clip,width=0.65\columnwidth]{figures/CE/harsh__phylodepth_with_coalescense.png}
+	\caption{\textbf{Phylogenetic depth over time} of a sample population evolved in each of the three treatments of the cyclic changing environments. White horizontal lines mark the depth of the most recent common ancestor, and discontinuities in this line indicate that the most recent common ancestor has changed, and thus that a sweep occurred, or that a competing clade went extinct. The control treatments had a mean of 18 sweeps (STD=9.05), the benign treatments had a mean of 21 (STD=19.05), and the harsh treatments had a mean of 88 sweeps (STD=23.37). Note the difference in scales between y-axes: the control-evolved population has a maximum depth of 400 mutational steps from ancestor, while the harsh-evolved has upward of 1100. %
+	}\label{fig:flamegraph}
+	\end{figure}
 
 %=more genetic diversity
 The populations that evolved in the control and benign environments displayed more genetic diversity as compared to those evolved in the harsh cyclic environment, which underwent a bottleneck at each cycle shift. Because a selective sweep reduces current diversity within a population, the smaller number of sweeps
@@ -658,9 +670,9 @@ in the benign and control treatments led populations in them to have higher stan
 
 \subsubsection{Genetic Architecture}
 %=genetic architecture is different in benign and harsh vs control
-\todo{clarify wording}
-The selective shifts in both benign and harsh changing environments result in qualitatively different architectural styles from the static control environment. The task arrangements evolved under both experimental treatments are much more scattered throughout the genome than in the control. Specifically, the bulk of the sites responsible for performing the fluctuating task (EQU) did not overlap with the backbone task (XOR), except for a core region, which represents portions of the tasks that are shared between XOR and EQU. (Fig~\ref{fig:lineage})
+The alternating selection in both benign and harsh changing environments results in qualitatively different architectural styles as compared with those genomes evolved in the static environment. The task arrangements evolved under both experimental treatments are much more scattered throughout the genome than in the control, which is tightly compacted. Specifically, the bulk of the sites responsible for performing the fluctuating task (\texttt{EQU}) did not overlap with the backbone task (\texttt{XOR}), except for a small core region, which represents portions of the tasks that are shared between \texttt{XOR} and \texttt{EQU}. That is, in the changing environment treatments, we see many more sites that only code for a single task, whereas in the static treatment, the majority of functional tasks sites code for both \texttt{XOR} and \texttt{EQU}.  (Fig~\ref{fig:lineage})
 % @CAO: I'm not positive I understand this description for how things are laid out.  It might be worth putting a bit more detail here, and highlighting also that there is a lot more separation in the harsh environment (or so it seems).  Should we talk more here about why all of this is the case (highlighting that we are speculating) or will that come later?
+%@RCK: Reframed to clarify.
 
 \todo[inline]{polish this figure, task layout, make three separate figures}
 	\begin{figure}[!h]
@@ -675,53 +687,79 @@ The selective shifts in both benign and harsh changing environments result in qu
 	\end{figure}
 
 %=arch of control, scattered XOR
-In contrast, the architecture of XOR and EQU remain tightly intertwined in the control, and site positions do not change substantially over the course of the experiment. In the benign treatment, many more regions that perform the fluctuating task (XOR) are scattered throughout the genome, but site positions remain relatively fixed throughout the run after an initial adaptive phase. In the harsh treatment, not only are the active sites scattered, but the positions of active sites change and proliferate wildly over time.
+In terms of site placement over time, functional task site locations in the control treatment did not change substantially over the course of the experiment. In the benign treatment, many more regions that performed the fluctuating task (XOR) were scattered throughout the genome, but site positions remained relatively fixed throughout the run after an initial adaptive phase. In the harsh treatment, however, not only are the active sites scattered, but the positions of active sites change and proliferate wildly over time.
 
+%=site length
+In addition to the variation in site placement, populations in the benign and harsh changing environment treatments had significantly more functional sites devoted to performing just the EQU task (Wilcoxon Rank Sum Test: Z = -5.57 and -6.96, respectively, p $<<$ 0.001).
 %=reservoir of vestigial sites
-Interestingly, populations evolved in both the benign and harsh treatments also show development of a large reservoir of formerly functional, now vestigial, sites; that is, sites that remain unchanged from when they were previously active in performing a task, but were disabled by a mutation elsewhere and are thus now neutral. These vestigial pseudogene-like sites appear to be important for allowing the organisms to quickly re-adapt as the fluctuations in the environment restore the previously-rewarded functions. (Fig~\ref{fig:CCE_func_vestigial})
+Interestingly, populations evolved in both the benign and harsh treatments also show development of a large reservoir of formerly functional, now vestigial, sites; that is, sites that remain unchanged from when they were previously active in performing a task, but were disabled by a mutation elsewhere and are thus now neutral. These vestigial pseudogene-like sites may be important for allowing the organisms to quickly re-adapt as the fluctuations in the environment restore the previously-rewarded functions. (Fig~\ref{fig:CCE_func_vestigial})
 
 %=[FIGURE - functional vs vestigial sites]
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/CCE_func_vest__box.png}
-	\caption{\textbf{Number of functional and vestigial sites by treatment}. The harsh environment has a significantly larger number of vestigial sites for the fluctuating (EQU) task compared to the benign treatment or control (Wilcoxon Rank-Sum Z = -6.57 and -8.33, p $<<$ 0.0001).
+	\caption{\textbf{Number of functional and vestigial sites by treatment}. Both the benign and harsh changing environments had significantly more sites devoted to performing only the \texttt{EQU} function (Wilcoxon Rank Sum Test: Z = -5.57 and -6.96, respectively, p $<<$ 0.001). The harsh environment has a significantly larger number of vestigial sites for the fluctuating (EQU) task compared to the benign treatment or control (Wilcoxon Rank-Sum Z = -6.57 and -8.33, p $<<$ 0.0001).
 	}
 	\label{fig:CCE_func_vestigial} %% FIGURE 5
 	\end{figure}
 
 \subsubsection{Nearby mutational landscape}
-\todo[inline]{add figure of the nearby landscape showing how mutations relate 1 and 2 steps out., a couple of nice figures showing both changes in detrimental mutations and phenotypic distribution.}
+\todo[inline, color=yellow]{IF I HAVE TIME, add figure of the nearby landscape showing how mutations relate 1 and 2 steps out., a couple of nice figures showing both changes in detrimental mutations and phenotypic distribution.}
 
 %=one-step survey of the mutational landscape 
-\todo{fix wording to clarify}
-In order to identify the role that these pseudogene-like structures play, we performed a survey of the single-step mutational landscape surrounding the most abundant genotype at the end of the experiment for each replicate population. This landscape contained 3,025 distinct mutants (121 loci with 25 possible mutations per locus) in each of the 50 replicates per treatment, for a total of nearly 450,000 mutants surveyed. We found that the availability of reservoirs of vestigial sites shifted the change-evolved organisms' position in the mutational neighborhood, such that a task that was lost due to mutation remains more accessible via one or two additional mutational steps, beyond the single-step reversion mutation. (Fig~\ref{fig:CCE_single_step}, ~\ref{fig:CCE_two_step})
-% @CAO: This last part doesn't make a lot of sense -- CLEARLY if a single mutation causes a task loss, the corresponding reverse mutation would cause that task to be regained.  As such, do you mean that there a MORE paths back to the task in the changing-environment treatments as compared to the static control?
-% @RCK: Yes, that's what this means. "More often, above". I can clarify. -- TODO
-\todo[inline]{Todo, clarify per Charles's comment above}
+In order to identify the role that these larger functional site footprints and pseudogene-like structures play, we performed a survey of the single-step mutational neighborhood surrounding the most abundant genotype present at the end of the experiment for each replicate population. Each neighborhood contained 3,025 distinct mutants (121 loci with 25 possible mutations per locus) in each of the 50 replicates per treatment, for a total of nearly 450,000 mutants surveyed. We measured the fraction of mutants that lost each of the rewarded tasks. (Fig~\ref{fig:CCE_single_step}. 
 
 %=[FIGURE - Frac 1-step]
 	\begin{figure}[!h] %% FIGURE 6
 	\includegraphics[trim={0.2cm 0 0 0.2cm},clip,width=0.75\columnwidth]{figures/CE/CCE_frac_1step__box.png}
 	\caption{\textbf{A survey of the single-step mutational neighborhood} around organisms that performed the fluctuating task. Note that in both the benign and harsh treatments, there were significantly more mutants that lost the EQU task as compared to the control (Wilcoxon Rank Sum Test: Z = -5.46 and -7.80 respectively, p $<<$ 0.0001). This result indicates that it was easier for the organisms in both treatments to turn off the EQU task in response to one mutation. 
 	}\label{fig:CCE_single_step}
-
-	\end{figure}
-%=[FIGURE - Frac 2-step]
-%@CAO - I wonder if it would be interesting to list the number of ways that this happened to be clear that we're not just talking about undoing the changes that caused the loss in the first place.
-\todo[inline]{Add to caption per Charles's comment above}
-	\begin{figure}[!h] %% FIGURE 7
-	\includegraphics[width=0.75\columnwidth]{figures/CE/CCE_frac_2step__box.png}
-	\caption{\textbf{A survey of the two-step mutational neighborhood} of the organisms that lost EQU function in the one-step survey. We found that in both the harsh and benign treatments, there were significantly more organisms that regained function in response to mutation than the control. (Wilcoxon Rank Sum Test: Z = -47.9 and -57.82 respectively, p $<<$ 0.0001). This result indicates that it was easier for the organisms in both fluctuating environments to regain the task in response to one additional mutation, beyond a single reversion. 
-	}\label{fig:CCE_two_step}
 	\end{figure}
 
-%=measured D_g, D_p, found similarity in D_g, increase in D_p 
-We also measured the proportion of non-deleterious mutants in the nearby fitness landscape. We found that between all treatments, this proportion
-remained approximately the same (Kruskal Wallis: H(2) = 1.44, p = 0.49). However, we found that the proportion of these mutants with different (potentially adaptive) phenotypes increased in the changing environment treatments as compared to the controls (Wilcoxon Rank Sum Test: Z = -8.02, -8.39, respectively, p $<<$ 0.001). In this way, the organisms from the changing environment treatments have an advantage over organisms from the control runs in terms of the short-term evolvability of the fluctuating task. This result indicates real adaptation, not only to resources in their local environment, but a direct adaptation to the environmental change. (Fig~\ref{fig:CCE_diffusion_rate})
-\todo[inline, color=magenta]{TODO - add paragraph describing/speculating about why Benign loses EQU almost as well as Harsh}
+We found that in both the benign and harsh treatments, there were many more mutations that resulted in loss of the fluctuating task as compared to the control (Wilcoxon Rank Sum Test: Z = -5.46 and -7.80 respectively, p $<<$ 0.0001). An increase in task loss in the harsh treatment is to be expected, but why would the benign treatment lose \texttt{EQU} nearly as easily as the harsh treatment? One possibility is selective pressure to lose the task. There is no explicit pressure for task loss, merely an absence of reward. Even so, there is certainly an implicit penalty for performing a complex task for which there is no reward. Another possibility is drift. Indeed, in Figure~\ref{fig:CCE_equ_execution}, we observe a steady downward trend in execution of \texttt{EQU} when rewards are withdrawn. Then, as the reward returns, new mutations are applied that reactivate the task, and overall performance recovers quickly. This pattern of loss and regain would over time tend to increase the length of the task. Indeed, as noted in Figure~\ref{fig:lineage}, there is a rapid increase in task length as \texttt{EQU} is cyclically lost and regained. 
+
+However, is increased task length enough to account for increased task vulnerability to mutation? In order to begin to address this question, we calculated the correlation between task length and the fraction of mutants that lost each of the tasks. We discovered a strong correlation between the number of functional sites and the number of task-losing mutants for the \texttt{EQU} task, both alone, and overlapping with \texttt{XOR} (Pearson's R: $r_{2}$ = 8.77 and 7.94, respectively, p = $<<$ 0.001) (Fig~\ref{fig:CCE_func_vs_single_step}). We also found a weaker, but still significant correlation between the number of \texttt{XOR}-only functional sites and loss of the \texttt{XOR} task (Pearson's R: $r_{2}$ = 4.77, p $<<$ 0.001). This result confirms our intuition that the longer the task, the more targets there are for mutation to disable the task.
+
+%=[FIGURE - Frac 1-step vs task length]
+	\begin{figure}[!h] %% FIGURE 6
+	\includegraphics[trim={0.2cm 0 0 0.2cm},clip,width=0.95\columnwidth]{figures/CE/CCE_frac_1step_vs_func_sites.png}
+	\caption{\textbf{Correlation between task length and mutational task loss} in the 1-step neighborhood across all treatments. Note the strong correlation between the length of the \texttt{EQU} task and the fraction of mutants that lost \texttt{EQU} (Pearson's R: $r_{2}$ = 8.77, respectively, p $<<$ 0.001). Further, consider the weaker correlation between \texttt{XOR} task length, and fraction of mutants that lost \texttt{XOR}. This suggests that \texttt{EQU} is even less robust to mutation compared to \texttt{XOR} than can be accounted for by task length alone.  
+	}\label{fig:CCE_func_vs_single_step}
+	\end{figure}	
 % @CAO: I also get why we should expect to see EQU lost easily in the Harsh changing environment, but why is it also lost so easily in the benign environment.  Should we speculate here?  (Or do you below?)  More generally, why do you think this is the case?
 % @CAO: One other thought for how this result may happen.  Maybe in the control there is a pressure for EQU to evolve to be more robust, whereas the changing environment just doesn't give it time to evolve robustness.  I can't think of a way to easily disentangle those explanations though...
 % @RCK: clarify that benign are lost due to drift.
 % @RCK - NOTE TO SELF -- see about joining vestigial sites paper with Matt's bias work. Are vestigial sites useful because they are random building blocks available (equivalent to mutational bias), or is there a deeper functional structure. Does order matter?
+% @RCK: Performed a correlation between task length and task loss, and find a strong correlation. Because the EQU task is longer is both the changing environments, it'll be lost more easily in both cases.
+
+Further, the lower correlation between length and task loss for the \texttt{XOR} suggests that it is not only task length, but some other architectural feature that makes the \texttt{XOR} task more robust to mutation, and the \texttt{EQU} task more fragile. Even so, the question of what kinds of architectural features account for this differential robustness remains open.
+
+We then measured the proportion of second step mutants that regained EQU after having lost it in the single-step survey. We found that 
+%the availability of reservoirs of vestigial sites 
+changing environments shifted
+shifted the populations' position in the mutational landscape, such that when a task that was lost due to mutation, that task could be regained via one or two additional mutations elsewhere. That is, once a mutation caused the loss of a task, a different mutation could reactivate the task. (Fig~\ref{fig:CCE_two_step}). 
+% @CAO: This last part doesn't make a lot of sense -- CLEARLY if a single mutation causes a task loss, the corresponding reverse mutation would cause that task to be regained.  As such, do you mean that there a MORE paths back to the task in the changing-environment treatments as compared to the static control?
+% @RCK: Yes, that's what this means. "More often, above". I can clarify. 
+%@RCK: Clarified
+
+%=[FIGURE - Frac 2-step]
+%@CAO - I wonder if it would be interesting to list the number of ways that this happened to be clear that we're not just talking about undoing the changes that caused the loss in the first place.
+%@RCK: just clarified that we're not talking about reversions. More explanation provided above.
+	\begin{figure}[!h] %% FIGURE 7
+	\includegraphics[width=0.75\columnwidth]{figures/CE/CCE_frac_2step__box.png}
+	\caption{\textbf{A survey of the two-step mutational neighborhood} of the organisms that lost EQU function in the one-step survey. We found that in both the harsh and benign treatments, there were significantly more organisms that regained function in response to mutation than the control. (Wilcoxon Rank Sum Test: Z = -47.9 and -57.82 respectively, p $<<$ 0.0001). This result indicates that it was easier for the organisms in both fluctuating environments to regain the task in response to one additional, non-reversion mutation.   
+	}\label{fig:CCE_two_step}
+	\end{figure}
+
+We speculate that this effect is due to the availability of reservoirs of formerly vestigial sites. How such reservoirs might perform these functions remains an open question. New mutations may either re-enable the old functional sites, or recruit vestigial functionality to perform the task elsewhere. Potentially, these vestigial sites are not altogether dormant at all. They might individually appear vestigial in the context of a single knockout survey, but they might also be related to other sites in a network of backup functionality that becomes activated in response to mutation. More research is needed to explore what role these feature play. 
+
+
+
+
+
+
+%=measured D_g, D_p, found similarity in D_g, increase in D_p 
+As an overall measure of neutral exploration, we also measured the proportion of non-deleterious mutants in the nearby fitness landscape - the Genomic Diffusion Rate. We found that this proportion remained approximately the same between all treatments (Kruskal Wallis: H(2) = 1.44, p = 0.49). However, we found that the Phenotypic Diffusion Rate, the proportion of these mutants with different (and potentially adaptive) phenotypes, increased in the changing environment treatments as compared to the controls (Wilcoxon Rank Sum Test: Z = -8.02, -8.39, respectively, p $<<$ 0.001). In this way, the organisms from the changing environment treatments have an advantage over organisms from the control runs in the short-term evolvability of the fluctuating task. This result indicates real adaptation, not only to resources in their local environment, but a direct adaptation to the environmental change. (Fig~\ref{fig:CCE_diffusion_rate})
+\todo[inline, color=magenta]{TODO - add paragraph describing/speculating about why Benign loses EQU almost as well as Harsh}
 
 %=[FIGURE D_g D_p]
 	\begin{figure}[!h] %% FIGURE 8
@@ -730,9 +768,6 @@ remained approximately the same (Kruskal Wallis: H(2) = 1.44, p = 0.49). However
 	Note that while overall neutral exploration capacity remains relatively stable between treatments (Kruskal Wallis: H(2) = 1.44, p = 0.49), phenotypic exploration capacity is increased in both treatments, but especially in the Harsh treatment. (Wilcoxon Rank Sum Test: Z = -8.02, -8.39, respectively, p $<<$ 0.001). This result indicates that changing environments promote the phenotypic evolvability of populations.
 	}\label{fig:CCE_diffusion_rate}
 	\end{figure}
-
-
-
 
 \subsection{Stochastic Changing Environments}
 %= contrary to expectations, SCE weren't better at evolvability (D_g/p)
