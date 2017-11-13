@@ -47,19 +47,26 @@ I would never have gotten this far without you.}
 
 \begin{abstract}
 \todo[inline]{prep a layman's abstract if I have time}
-\todo[inline, color=magenta]{rework abstract}
-% The specific meaning of the term ``evolvability'' is heavily debated, but most definitions can be summarized as: the potential of populations and genomes to produce adaptive variation and complex structures in response to mutation and selection. Evolvability is thought to be created through the interplay of modularity and robustness. Indeed, modularity and robustness build upon each other, layer by layer, to form a framework that produces more powerful adaptive effects while reducing the impact of deleterious mutations.
+\todo[inline, color=magenta]{rework abstract bleh bleh}
+The specific meaning of the term ``evolvability'' is heavily debated, but most definitions can be summarized as: the potential of populations and genomes to produce adaptive variation and complex structures in response to mutation and selection. 
+Changing environments are thought to play a significant role in shaping and promoting evolvability through alternating selective pressures.
+%Evolvability is thought to be created through the interplay of modularity and robustness. Indeed, modularity and robustness build upon each other, layer by layer, to form a framework that produces more powerful adaptive effects while reducing the impact of deleterious mutations.
 
-% In this comprehensive exam, I will describe some research that I have completed and propose additional projects that explore the interplay among evolvability, robustness, and modularity. Before delving into my own research, however, I begin in the first chapter by providing a survey of current literature on each of these topics, with emphases on how they are believed to arise, how they affect subsequent evolution, and how they relate to each other.
+In this dissertation, I will discuss my recent research on the interplay between changing environments, evolvability, genetic architecture, and the evolution of horizontal gene transfer (HGT), an information-rich mutagenic function that is ubiquitous in nature. Before delving into my own research, however, I begin in the first chapter by providing a survey of  current literature on each of these topics, with emphases on how they are believed to arise, how they affect subsequent evolution, and how they relate to each other.
 
-% Modularity and robustness clearly have a complex interdependence in ongoing evolutionary dynamics, but they can evolve via simple mechanisms that are a byproduct of direct selection on other traits. Specifically, more modular and more robust genetic architectures are more likely to produce successful phenotypes, and thus they hitchhike to fixation in the population. In Chapter 2, I demonstrate how a cyclically changing environment provides a sufficient selective pressure to produce quasi-modular genetic architectures, independent of other features.
+\todo{refresh this paragraph to be relevant to the chapter 2}
+Modularity and robustness clearly have a complex interdependence in ongoing evolutionary dynamics, but they can evolve via simple mechanisms that are a byproduct of direct selection on other traits. Specifically, more modular and more robust genetic architectures are more likely to produce successful phenotypes, and thus they hitchhike to fixation in the population. In Chapter 2, I demonstrate how a cyclically changing environment provides a sufficient selective pressure to produce quasi-modular genetic architectures, independent of other features.
 
+Horizontal gene transfer is a highly regulated, ubiquitous, and ancient mechanism for exchanging genetic material between unrelated organisms. In the third chapter, I explore conditions which may have led to the evolution of horizontal gene transfer through transformation, and identify mechanisms that might support its continued performance.  
 % In the third chapter, I propose to study how modularity might also arise as a result of horizontal gene transfer. We hypothesize that organisms will choose to uptake gene fragments for food, even when there is a chance that those fragments might be integrated into the genome. Furthermore, we expect that this uptake will result in higher modularity and, in turn, evolvability over time.
 
+In Chapter 4, I compare the fitness and phenotypic effects of the HGT process against other types of increasingly less information rich mutational operators. I demonstrate that not only is HGT selected for in harsh changing environments, but that other mutagenic instructions that contain less information, or provide lesser fitness benefits are not similarly selected for.
 % In Chapter 4, I propose to study how modularity and robustness affect the character of the local mutational landscape around evolved organisms. We hypothesize that populations made up of organisms possessing a robust phenotype will not only display more genomic diversity within that phenotype (since so many mutational possibilities will arrive back to the same phenotype), but the non-neutral mutants appearing in that population will display greater variety of distinct phenotypes as well. 
 
+In the fifth chapter, I explore the long-term evolutionary potential of populations evolved in changing environments by evolving two different populations, one evolved in a very simple changing environment, and the other in a complex changing environment, and exposing them to a brand new environment. I demonstrate that while populations adapted to harsh changing environments are indeed able to adapt quickly to previously seen environmental changes, that these populations do not fare as well in brand new environments. Rather, benign changing environments perform best in measures of task discovery and exploration.
 % In the fifth chapter, we show that sexual selection facilitates speciation through reduced gene-flow across groups. Specifically, we demonstrate that sexual selection is a strong early facilitator of reproductive isolation, and that post-zygotic isolation is not required to reduce gene flow between populations. Thus, sexual selection may aid in the fixation of evolvable traits in isolated populations.
 
+In the final chapter, I conclude with a synthesis of my results, along with implications for the field, as well as identification of some new directions for pursuing my research into changing environments. 
 % In the final chapter, I conclude with a project plan, including a timeline for completion of the remaining experiments.
 \end{abstract}
 %
@@ -1299,7 +1306,7 @@ Die CE & Changing & \\\hline
 The goal of each treatment is to compare the use rates of each of the different mutagenic instruction across several factors. We can examine the effects of localization (concentrating mutations in a single area) by comparing the \texttt{HGT-Random} vs the \texttt{ME-Random} treatments. We can measure the effect of time-concentration (all mutations happening at once vs spread out over time) by comparing the \texttt{ME-Random} and \texttt{MRI} treatments. We can examine the effect of information content by comparing the \texttt{HGT}, \texttt{HGT-Shuffle}, and \texttt{ME-Sampled} treatments. We can identify a basement-level for mutagenic instruction use by comparing against the use of the entirely deleterious \texttt{Die} instruction.  Finally, we can compare all these factors with their environment by comparing the static vs changing environment treatments.
 
 \section{Results and Discussion}
-Our experimental results (detailed below) show that only mutagenic instructions containing useful information are elevated in response to changing environments. Intact-fragment HGT is used most, with shuffled-fragment (\texttt{HGT-Shuffle}) used less, and the other, non-information-bearing mutagen types used at the lowest levels.  Further, we find a positive correlation between expected fitness and mutagenic instruction use. That is, mutagenic instructions that have higher expected fitness effects are used more. Finally, we see a strong positive correlation between the fraction of mutations from a mutagenic instruction that provide a beneficial phenotype-altering change, and the resulting use of that instruction.
+Our experimental results (detailed below) show that only mutagenic instructions containing useful information are elevated in response to changing environments. Intact-fragment HGT is used most, with shuffled-fragment (\texttt{HGT-Shuffle}) used less, and the other, non-information-bearing mutagenic instruction types used at the lowest levels.  Further, we find a positive correlation between expected fitness and mutagenic instruction use. That is, mutagenic instructions that have higher expected fitness effects are used more. Finally, we see a strong positive correlation between the fraction of mutations from a mutagenic instruction that provide a beneficial phenotype-altering change, and the resulting use of that instruction.
 % MJW: I still think these are mutations, not mutagens.
 %@RCK: fixed
 %@CAO: Changed to "mutagenic instructions".
@@ -1590,47 +1597,35 @@ evolved in a more complex cyclic changing environment. As in the simple environm
 
 
 \subsection{Measuring Task Discovery and Task Performance}
-Task discovery and task performance are important measures not only for the adaptation of digital organisms to their local environment, but they also indicate the extent to which populations are more or less evolvable. Populations that are more evolvable should be able to acquire new tasks at a faster rate than less evolvable populations. If the evolvability of our populations is affected by evolution in a changing environment, then this effect should result in differential rates of task discovery and performance.
+Task discovery and task performance are important measures not only for the adaptation of digital organisms to their local environment, but they also indicate the extent to which populations are more or less evolvable. Populations that are more evolvable should be able to acquire new tasks at a faster rate than less evolvable populations. If the evolvability of our populations is affected by evolution in a changing environment, then this effect should result in differential rates of task discovery and performance. Task discovery and performance together describe the exploration and exploitation of the environment by a population. 
 % MJW: Added the "as detailed below" bit, because this is otherwise a bit abrupt.  I mean, it still is, just less so.
 %@RCK: reworded
 
 \subsubsection{Task Discovery}
-We measured task discovery by counting the number of unique non-ephemeral tasks that have been discovered by a population, starting at a defined point in time. Once a task is discovered, it may not become "undiscovered." Thus, task discovery counts will always increase monotonically. We measure "Overall" task discovery, counting all possible tasks - including Logic-77 
-% MJW add "tasks" here, right?  Logic-77 is the environment.  Also, I'm going to just note here and not in all of the cases: you are inconsistent in whether it gets called Logic-77 or Logic 77, and whether or not the word Logic is capitalized.  I think you're more consistent with Logic-9, but I'd have to go through and count to determine if I'm right about that.
-which were available, but not rewarded in the first phase of experiments - and also "Post-Reward" task discovery, where we begin counting new tasks from the beginning of the second phase of the experiment, once Logic-77 rewards are applied. 
+We measured task discovery by counting the number of unique non-ephemeral tasks that have been discovered by a population. Each task may be performed only once per organism, yielding a maximum task count of 3600 at any given time. Thus, we define a non-ephemeral task as one that a population is performing at equal to or more than 0.1\% level, or 3.6 times per sampling (rounded to 4). In order for a new task to be marked as discovered, it must appear 4 or more times when sampling is performed.
+
+Once a task is discovered, it may not become "undiscovered." Thus, task discovery counts will always increase monotonically. We measure "Overall" task discovery by beginning to collect unique tasks starting at the beginning of the run. For the overall measurement, we count all possible tasks - including the Logic-77 tasks, even thought they are not being rewarded in the first part of the experiment. We also measure "Post-Reward" task discovery, where we begin counting new tasks from the beginning of the second phase of the experiment, once we have begun rewarding execution of Logic-77 tasks. This measure represents the level of exploration of the fitness landscape. Task discovery can range anywhere from a minimum of zero tasks found, to a maximum of 77.
 % MJW: I'd rephrase this to "rewards for the Logic-77 tasks".  The way it is, it sounds like Logic-77 is not just an environment but also a specific reward scheme.
-\todo[inline]{reword measuring task discovery explanation above}
+%@RCK: reworded to be clearer
 
 \subsubsection{Task Performance}
-We measured task performance by counting the number of unique non-ephemeral tasks that a population performs.  Each task may be performed only once per organism, yielding a maximum task count of 3600 at any given time. Thus, we define a non-ephemeral task as one that a population is performing at equal to or more than 0.1\% level, or 3.6 times per sampling. 
+In addition to counting the number of unique task discovered, we also measure task performance. We measure task performance by counting the total number of unique, non-ephemeral tasks that a population is performing at each sampling point. This measure represents the level of exploitation of the fitness landscape. This measure can range from 0 to a maximum of 77 task being performed by the population. This value will always be either equal to, or smaller than the number of task discovered, since you can't perform a task you haven't discovered yet.   
 % MJW: I think this is confusingly phrased.  To the best of my understanding, you're saying that each task can only be performed once per organism.  Therefore, for any given task, the maximum number of times it could be performed in a given update (which I'm guessing is your sampling?) is 3,600 (because I'm assuming that if a specific organism gives birth during the update and then somehow has enough cycles to perform that task again, it's still only counted as having happened once?).  You therefore set a threshold at which tasks are only considered to be performed ephemerally, at 1 out of 100 organisms performing that task in the sampling.  Anything performed more often than that is not ephemeral; you count the unique non-ephemeral tasks from the population as your measure of task performance.  Introducing the term non-ephemeral several sentences before you define it is a bit confusing, and I'm still not entirely clear if you count whether organisms that are sampled *can* perform the task, or *do* perform the task at the point being sampled.
-\todo[inline]{reword measuring task performance above to explain the meaning of ephemeral more clearly}
+%RCK: No, it's the number of discovered tasks that the population has retained and is performing. Reworded for clarity.
 
 \section{Results and Discussion}
 
 \subsection{Task Discovery}
-% MJW: I suggest a paragraph here about the fact that you looked {set of things comprising the sub-subsections}.  Jumping immediately into a sub-section within a subsection, without something general first, can be a little jarring.
 Task discovery is an important measure of long-term evolvability, in that it quantifies the ability of populations to explore and adapt to entirely new environments. We measured task discovery in each of the changing environment treatments.
 
 \subsubsection{Benign changing environments outperform harsh environments in task discovery}
 % MJW: Why do you switch between capitalizing the words in the subsections and not in the sub-subsections?  This might be something you do consistently but I only noticed here because they're stacked right next to each other, in which case it's probably a formatting thing, but it seemed worth asking when I noticed it.
 \todo{normalize capitalization of headers}
-We found
-% MJW: This sets up tense weirdness.  "We found" is past tense; essentially everything else here is written as present tense.
-%@RCK: fixed
-that once we began rewarding the Logic-77 tasks, populations evolving in harsh changing environments discovered many fewer tasks that those evolving in benign changing environments. This effect is consistent across both the simple (Wilcoxon Rank Sum Test: Z = 2.75, p $<$ 0.01) and the complex environment sets (Wilcoxon Rank Sum Test: Z = 5.96, p $<<$ 0.001) (Figs~\ref{fig:postreward_task_discovery}, \ref{fig:complex-task_discovery}). We hypothesize that this effect is due to the relative differences in the strength of selection between the harsh changing environment and the directional selection toward the logic-77 tasks. 
-% MJW: I am having a hard time tracking what the "relative differences" are here.  The plurality implies that there are multiple, but the sentence structure seems to indicate you're comparing strength of selection in the harsh changing environment and the directional selection toward Logic-77 tasks (by which I am assuming you are referring to the selective pressure towards acquiring tasks that are always rewarded, but conceptually it's hard to compare the strength of selection [essentially a measure of s in population genetics] to directional selection [a class of selective pressure]).
-The selective pressures to gain or lose the fluctuating tasks represent up to a $2 * 2^5$-fold bonus over the course of a single cycle, whereas the new Logic-77 tasks can individually only offer a 1.2-fold bonus to execution speed. Thus, those organisms that promptly gain or lose a fluctuating task are more likely to survive, regardless of whether or not they have gained one of the new Logic-77 tasks. Thus pressures to gain and lose the fluctuating tasks are much stronger than the pressure to acquire new Logic-77 tasks, thereby depressing the rate at which they are found.
-% MJW: I know that stats are TODO throughout this chapter, but this sentence in particular absolutely needs them, and it's the sort that would be easy to overlook so I'm flagging it.  Though, to be fair, you don't necessarily need the stats if you just lay out the raw numbers -- the selective benefit towards either gaining EQU when it starts being rewarded or lose it when it starts being punished is X, the benefit of acquiring a Logic-77 task is Y.
-%@RCK: added something to expand on the reasoning
-
-%and keeping it comparable to the pre-phase 2 rate. 
-In contrast, the benign environment experiences a weaker strength of selection for EQU task gain and loss, in the form of a maximum $2^5$-fold bonus directional selection pressure to gain the tasks, a no direct pressure to lose the task. Thus, when compared to the harsh treatments, the fraction of the total selective pressure for gaining new Logic-77 tasks is greater in the benign treatment. This increased pressure, plus the benefit of an increased exploration rate conveyed by the benign changing environment, results in a higher overall task discovery rate.
-
-	%=[FIGURE - postreward task discovery]
+We found that once we began rewarding the Logic-77 tasks, populations evolving in harsh changing environments discovered many fewer tasks that those evolving in benign changing environments. This effect is consistent across both the simple (Wilcoxon Rank Sum Test: Z = 2.75, p $<$ 0.01) and the complex environment sets (Wilcoxon Rank Sum Test: Z = 5.96, p $<<$ 0.001) (Figs~\ref{fig:postreward_task_discovery}, \ref{fig:complex-task_discovery}). We hypothesize that this effect is due to the relative differences in the strength of selection between the harsh changing environment and the directional selection toward the Logic-77 tasks. 
+%=[FIGURE - postreward task discovery]
 	\begin{figure}[!h]
 	\includegraphics[width=0.95\columnwidth]{figures/LTE/lte-simple-post_reward_task_discovery.png}
-	\caption{\textbf{Number of new logic-77 tasks discovered in post-reward in the simple environments}. The left plot shows a time-series of the number of non-ephemeral tasks discovered by populations by each treatment. The right plot shows the number of tasks discovered at the end of the experiments. While the individual values overlap their neigbors, the top and bottom-most treatments (Benign and Harsh) are significantly different from each other (Wilcoxon Rank Sum Test: Z = 2.75, p $<$ 0.01). %
+	\caption{\textbf{Number of new Logic-77 tasks discovered in post-reward in the simple environments}. The left plot shows a time-series of the number of non-ephemeral tasks discovered by populations by each treatment. The right plot shows the number of tasks discovered at the end of the experiments. While the individual values overlap their neigbors, the top and bottom-most treatments (Benign and Harsh) are significantly different from each other (Wilcoxon Rank Sum Test: Z = 2.75, p $<$ 0.01). %
 	}
 	\label{fig:postreward_task_discovery}
 	\end{figure} 
@@ -1639,57 +1634,73 @@ In contrast, the benign environment experiences a weaker strength of selection f
 	\begin{figure}[!h]
 	%\missingfigure{Complex CCE Task Discovery}
 	\includegraphics[width=0.95\columnwidth]{figures/LTE/lte-complex-post_reward_task_discovery.png}
-	\caption{\textbf{Number of new logic-77 tasks discovered post-reward in the complex environments}. The left plot shows a time-series of the number of non-ephemeral tasks discovered by populations in each treatment. The right plot shows the number of tasks discovered by the end of the experiments. Overall, the number of Logic-77 tasks discovered in the complex environments (Mdn = 24.0, CI 95\% [23.0, 25.0]) is significantly lower than those found in the simple environments (Mdn = 36.0, CI 95\% [35.0, 36.0]) (Wilcoxon Rank Sum Test: Z = -16.15, p $<<$ 0.001). However, the same pattern holds, where the benign changing environment treatment discovers significantly more tasks than the harsh changing environment (Wilcoxon Rank Sum Test: Z = 5.96, p $<<$ 0.001).%
+	\caption{\textbf{Number of new Logic-77 tasks discovered post-reward in the complex environments}. The left plot shows a time-series of the number of non-ephemeral tasks discovered by populations in each treatment. The right plot shows the number of tasks discovered by the end of the experiments. Overall, the number of Logic-77 tasks discovered in the complex environments (Mdn = 24.0, CI 95\% [23.0, 25.0]) is significantly lower than those found in the simple environments (Mdn = 36.0, CI 95\% [35.0, 36.0]) (Wilcoxon Rank Sum Test: Z = -16.15, p $<<$ 0.001). However, the same pattern holds, where the benign changing environment treatment discovers significantly more tasks than the harsh changing environment (Wilcoxon Rank Sum Test: Z = 5.96, p $<<$ 0.001).%
 	}
 	\label{fig:complex-task_discovery}
 	\end{figure}
+% MJW: I am having a hard time tracking what the "relative differences" are here.  The plurality implies that there are multiple, but the sentence structure seems to indicate you're comparing strength of selection in the harsh changing environment and the directional selection toward Logic-77 tasks (by which I am assuming you are referring to the selective pressure towards acquiring tasks that are always rewarded, but conceptually it's hard to compare the strength of selection [essentially a measure of s in population genetics] to directional selection [a class of selective pressure]).
+%@RCK: added more detail below
+The selective pressures to gain or lose the fluctuating tasks represent up to a $2 * 2^5$-fold bonus over the course of a single cycle, whereas the new Logic-77 tasks can individually only offer a 1.2-fold bonus to execution speed. Thus, those organisms that promptly gain or lose a fluctuating task are more likely to survive, regardless of whether or not they have gained one of the new Logic-77 tasks. Thus pressures to gain and lose the fluctuating tasks are much stronger than the pressure to acquire new Logic-77 tasks, thereby depressing the rate at which they are found.
+% MJW: I know that stats are TODO throughout this chapter, but this sentence in particular absolutely needs them, and it's the sort that would be easy to overlook so I'm flagging it.  Though, to be fair, you don't necessarily need the stats if you just lay out the raw numbers -- the selective benefit towards either gaining EQU when it starts being rewarded or lose it when it starts being punished is X, the benefit of acquiring a Logic-77 task is Y.
+%@RCK: added something to expand on the reasoning
 
-Interestingly, in the quiescent treatments, where we removed the harsh environmental changes as we introduce Logic-77, we see that task exploration recovers somewhat and reaches a comparable level to the control (Wilcoxon Rank Sum Test: Z = -0.91, p = 0.37). This suggests that it is the alternating selective pressures of the harsh changing environment that depress task exploration, and not a penalty conveyed by architectural features that persist after selective pressures have changed.
+%and keeping it comparable to the pre-phase 2 rate. 
+In contrast, the benign environment experiences a weaker strength of selection for EQU task gain and loss, in the form of a maximum $2^5$-fold bonus directional selection pressure to gain the tasks, a no direct pressure to lose the task. Thus, when compared to the harsh treatments, the fraction of the total selective pressure for gaining new Logic-77 tasks is greater in the benign treatment. This increased pressure, plus the benefit of an increased exploration rate conveyed by the benign changing environment, results in a higher overall task discovery rate.
+
+\paragraph{HarshQuiescent treatment outperforms BenignQuiescent treatment in task discovery.}
+Interestingly, in the HarshQuiescent treatment (HarshQuiescent), when we removed the alternating selection, we saw that task exploration recovered and achieved a comparable level to the control (Wilcoxon Rank Sum Test: Z = -0.91, p = 0.37). What could account for this recovery? 
+
+One possibility is that the introduction of the new tasks provided sufficient selective pressure to cause the increase in the discovery rate. In this case, we would expect to see a similar increase in task exploration in the harsh changing environment treatment (HarshCE). 
+
+Another possibility is that the alternating environment in the first part of the experiment created a diversity disadvantage in populations in those treatments. If this were the case, we would expect HarshQuiescent's task discovery to initially grow more slowly than the control, which would have suffered from no such disadvantage. Then, as diversity recovered, we would expect to see task discovery grow at comparable rates.
+
+Finally, there is the possibility is that the alternating selection regime was directly responsible for depressing task exploration. In this case, once we stopped alternating task rewards, we would expect to see a significant difference in task discovery rates between the HarshQuiescent and HarshCE treatments. 
+
+Indeed, we found that the the HarshQuiescent treatment has a much higher task discovery rate than the HarshCE treatment. This is inconsistent with the hypothesis that the task rewards alone account for the recovery of the HarshQuiescent. Instead, this result is consistent with the possibility of a direct effect from the alternating selection. However, we also found that there was a lag in task discovery compared to the control. This suggests that there was, at least intially, some population-level disadvantage occuring in the HarshQuiescent populations. We also observed that, after the initially slow recovery phase, the quiescent treatment rapidly increases its task discovery rate, and exceeds that of the control. This is consistent with a recovery of diversity, plus, potentially some lingering architectural advantage for finding new tasks.
+ 
 % MJW: This is a really key finding of this chapter.  I feel you could highlight this more.  One writing strategy that Rich employs a lot that I find particularly effective is to structure something along the lines of "Here is a fact (either from our observation or from the literature).  What could account for this?  Possible explanation 1 would predict X.  Possible explanation 2 would predict Y.  Possible explanation 3 would predict Z.  We find N, which is inconsistent with X, and is more likely to be a result of Y than of Z, so we conclude that possible explanation 1 is not driving our results/this observation, and that possible explanation 2 is more likely than possible explanation 3".  Not saying you have three possible explanations here, just a general sort of approach to that way of writing a combined results and discussion section.
-\todo[inline, color=magenta]{expand result of quiescent recovery above per Mike's comment}
+%@RCK: Added more exposition along those lines.
 
+\paragraph{BenignCE treatment outperforms BenignQuiescent treatment in task discovery.}
 %=disentangling direct effects from architectural byproducts
 Also of interest
 % MJW: Careful.  It's one thing to call a result interesting; it's another to make a claim about how relatively interesting different findings are as if that is objectively measurable, rather than a personal decision.
 %@RCK: removed comparison
-is the comparison of task discovery rates between the benign changing environment populations BenignCE and BenignQuiescent. The BenignCE populations continue to be subject to the benign changing environment, whereas the Benign Quiescent populations are only subject to directional selection toward the evolution of the original and the Logic-77 tasks. In both environment types, task discovery rate for the BenignCE population (Simple: Mdn = 37.0, CI 95\% [36.0, 38.0]; Complex: Mdn = 29.0, CI 95\% [26.0, 31.0]) is slightly higher than for BenignQuiescent(Simple: Mdn = 36.0, CI 95\% [34.0, 38.0]; Complex: Mdn = 24.0, CI 95\% [22.0, 27.0]), but the effect is not statistically significant in the simple environment (Complex: Wilcoxon Rank Sum Test: Z = 3.15, p $<$ 0.01; Simple: Wilcoxon Rank Sum Test: Z = 1.39, p = 0.16). Both, however, still perform better than the control treatment (Simple: Mdn = 34.5, CI 95\% [32.0, 38.0]; Complex: Mdn = 22.0, CI 95\% [21.0, 25.0]), though this effect is only statistically significant between the BenignCE and Control treatments in the complex environment (Wilcoxon Rank Sum Test: Z = -4.33, p $<$ 0.001). Thus, this result suggests that there may be architectural features conferred by evolution in the changing environment that are helpful for long-term evolvability, even after the environmental changes have stopped, and that this effect is distinct from the direct effects of the changing direction of selection. %Further research is needed to fully untangle these effects.
+is the difference in task discovery rates between the benign environment populations BenignCE and BenignQuiescent. Once the Logic-77 task rewards are introduced, the BenignCE populations continue to be subject to a benign changing environment, whereas the BenignQuiescent populations are only subject to directional selection toward the evolution of the original and the Logic-77 tasks. In both environment types, task discovery rate for the BenignCE populations (Simple: Mdn = 37.0, CI 95\% [36.0, 38.0]; Complex: Mdn = 29.0, CI 95\% [26.0, 31.0]) are slightly higher than for BenignQuiescent (Simple: Mdn = 36.0, CI 95\% [34.0, 38.0]; Complex: Mdn = 24.0, CI 95\% [22.0, 27.0]), but the effect is not statistically significant in the simple environment (Complex: Wilcoxon Rank Sum Test: Z = 3.15, p $<$ 0.01; Simple: Wilcoxon Rank Sum Test: Z = 1.39, p = 0.16). Both, however, still perform better than the control treatment (Simple: Mdn = 34.5, CI 95\% [32.0, 38.0]; Complex: Mdn = 22.0, CI 95\% [21.0, 25.0]), though this effect is only statistically significant between the BenignCE and Control treatments in the complex environment (Wilcoxon Rank Sum Test: Z = -4.33, p $<$ 0.001). What could account for this reversal of the pattern observed between HarshCE and HarshQuiescent?
+
+%One possibility is that the difference in selective pressures is sufficient to create a reversal. In this case, we would predict 
+
+One possibility is that some population-level diversity advantage is being conveyed by the activity of the benign changing environment. In this case, we would expect the BenignQuiescent task discovery rates to initially closely track that of the BenignCE treatments, and then as diversity equalized, to drop down to rates comparable to the control.
+
+Another possibility is that the benign changing environment is directly promoting task exploration. In this case, we would expect to see a significant difference in task discovery rates between the BenignCE and BenignQuiescent treatments.
+
+We observe that following the introduction of the Logic-77 tasks, the BenignQuiescent treatment task rates quickly depart from the BenignCE task discovery rates. This result is inconsistent with the hypothesis of a population diversity advantage. If anything, task discovery levels lag behind the control treatment. Thus, we find that it is most likely that the benign changing environment is directly promoting task discovery, though the mechanism of this promotion remains unclear.  
+
+%Thus, this result suggests that there may be architectural features conferred by evolution in the changing environment that are helpful for long-term evolvability, even after the environmental changes have stopped, and that this effect is distinct from the direct effects of the changing direction of selection. %Further research is needed to fully untangle these effects.
 \todo[inline]{convert the Mdn and WRST stuff into a goddamned table ffs}
-\todo[inline]{add note about how simple also perform more tasks than the complex. this is contrary to our expectation}
+\todo[inline, color=yellow]{IF I HAVE TIME, add result about how simple also perform more tasks than the complex. this is contrary to our expectation}
 
 \subsubsection{Harsh changing environments drive populations across the mutational landscape}
 %=[FIGURE - overall task discovery]
 	\begin{figure}[!h]
 	\includegraphics[width=0.95\columnwidth]{figures/LTE/lte-simple-overall_task_discovery.png}
-	\caption{\textbf{Number of new logic-77 tasks discovered in simple environments, over the whole experiment}. The left plot shows a time-series of all new tasks discovered over the course of the entire run, including non-rewarded Logic-77 tasks. The right-hand plot shows the final count at the end of the run. Before we introduce rewards for performing Logic-77 tasks, the harsh changing environment discovers far more new tasks (Mdn = 28.0, CI 95\% [27.0, 30.0]) than either of the other treatments (Mdn = 22.0, CI 95\% [22.0, 23.0]) (Wilcoxon Rank Sum Test: Z = 8.61, p $<<$ 0.001). This occurs despite no reward being given for performing the Logic-77 tasks in the first part of the experiment. %
+	\caption{\textbf{Number of new Logic-77 tasks discovered in simple environments, over the whole experiment}. The left plot shows a time-series of all new tasks discovered over the course of the entire run, including non-rewarded Logic-77 tasks. The right-hand plot shows the final count at the end of the run. Before we introduce rewards for performing Logic-77 tasks, the harsh changing environment discovers far more new tasks (Mdn = 28.0, CI 95\% [27.0, 30.0]) than either of the other treatments (Mdn = 22.0, CI 95\% [22.0, 23.0]) (Wilcoxon Rank Sum Test: Z = 8.61, p $<<$ 0.001). This occurs despite no reward being given for performing the Logic-77 tasks in the first part of the experiment. %
 	}
 	\label{fig:simple-overall_task_discovery}
 	\end{figure}
 	\begin{figure}[!h]
 	\includegraphics[width=0.95\columnwidth]{figures/LTE/lte-complex-overall_task_discovery.png}
-	\caption{\textbf{Number of new logic-77 tasks discovered in complex environments, over the whole experiment}. The left plot shows a time-series of all new tasks discovered over the course of the entire run, included non-rewarded Logic-77 tasks. The right-hand plot shows the final count of tasks discovered by the end of the run. Again, both sets of changing environments (BenignCE and HarshCE) randomly discover more Logic-77 tasks than the control treatment before rewards for those tasks are offered (Wilcoxon Rank Sum Test: Z = -4.32 and -3.73 respectively, p $<$ 0.001). This result suggests that the alternation of the direction of selection drives populations to explore new regions of the fitness landscape more effectively than directional selection alone.%
+	\caption{\textbf{Number of new Logic-77 tasks discovered in complex environments, over the whole experiment}. The left plot shows a time-series of all new tasks discovered over the course of the entire run, included non-rewarded Logic-77 tasks. The right-hand plot shows the final count of tasks discovered by the end of the run. Again, both sets of changing environments (BenignCE and HarshCE) randomly discover more Logic-77 tasks than the control treatment before rewards for those tasks are offered (Wilcoxon Rank Sum Test: Z = -4.32 and -3.73 respectively, p $<$ 0.001). This result suggests that the alternation of the direction of selection drives populations to explore new regions of the fitness landscape more effectively than directional selection alone.%
 	}
 	\label{fig:complex-overall_task_discovery}
 	\end{figure}
 %=choice of CE has dramatic effects - forced march
-In the first phase of the experiments, despite the logic-77 tasks not being rewarded, both changing-environment treatments (BenignCE and HarshCE) discovered more new tasks than the control (Simple: Wilcoxon Rank Sum Test: Z = -5.75 and -11.15 respectively, p $<<$ 0.001; Complex: Wilcoxon Rank Sum Test: Z = -4.32 and -3.73 respectively, p $<$ 0.001). In the simple environment, the harsh treatment in particular discovered substantially and significantly more Logic-77 tasks than either the benign treatment(Wilcoxon Rank Sum Test: Z = -8.0, p $<<$ 0.001) or the control, despite these tasks not being rewarded (Fig~\ref{fig:simple-overall_task_discovery}. We hypothesize that this effect may be due to the large phylogenetic depth of the harsh-evolved populations, where the repeated bottlenecks drive the populations along a kind of forced march across the mutational landscape. However, as the experiment proceeds, and Logic-77 task rewards are introduced, this effect disappears, and task discovery rates converge (Kruskal Wallis: H(2) = 6.97, p = 0.03).
+In the first part of the experiments, despite the Logic-77 tasks not being rewarded, both changing-environment treatments (BenignCE and HarshCE) discovered more new tasks than the control (Simple: Wilcoxon Rank Sum Test: Z = -5.75 and -11.15 respectively, p $<<$ 0.001; Complex: Wilcoxon Rank Sum Test: Z = -4.32 and -3.73 respectively, p $<$ 0.001). In the simple environment, the harsh treatment in particular discovered substantially and significantly more Logic-77 tasks than either the benign treatment (Wilcoxon Rank Sum Test: Z = -8.0, p $<<$ 0.001) or the control, despite these tasks not being rewarded (Fig~\ref{fig:simple-overall_task_discovery}. We speculate that this effect may be due to the large phylogenetic depth of the harsh-evolved populations, where the repeated bottlenecks drive the populations along a kind of forced march across the mutational landscape. However, as the experiment proceeds, and Logic-77 task rewards are introduced, this effect disappears, and task discovery rates converge (Kruskal Wallis: H(2) = 6.97, p = 0.03).
 
 
 %=post-reward exploration - strength of selection differences
-% Despite the initial success of the harsh-evolved populations' random walk across the fitness landscape, once selection for the logic-77 tasks is engaged at the start of phase 2, the benign and control treatments out-perform the harsh-evolved populations in task discovery. In particular, those populations where the harsh changing environment continues, significantly under-perform in task exploration as compared to the benign-evolved populations, and are comparable to the control rate. (Fig~\ref{fig:postreward_task_discovery}). 
+% Despite the initial success of the harsh-evolved populations' random walk across the fitness landscape, once selection for the Logic-77 tasks is engaged at the start of phase 2, the benign and control treatments out-perform the harsh-evolved populations in task discovery. In particular, those populations where the harsh changing environment continues, significantly under-perform in task exploration as compared to the benign-evolved populations, and are comparable to the control rate. (Fig~\ref{fig:postreward_task_discovery}). 
 % (Fig~\ref{fig:composite_task_discovery} lower left)
-
-
-
-% %=[FIGURE - overall task discovery]
-% \todo[color=green]{stats}
-% \todo{caption}
-% \begin{figure}[!h]
-% \includegraphics[trim={0 0 0 0}, clip, width=1\columnwidth]{figures/CE/901_postreward_composites_task_discovery.png}
-% \caption{\textbf{Detail of task discovery rates over time}. %
-% }
-% \label{fig:composite_task_discovery}
-% \end{figure}
-
 
 
 
@@ -1718,8 +1729,9 @@ In additiona to task discovery, task performance is another an important measure
 	\label{fig:complex-task_performance}
 	\end{figure}
 
-Similar to task discovery, populations evolving in harsh changing environments performed far fewer distinct tasks than either the benign-evolved or control populations (Wilcoxon Rank Sum Test: Simple: Z = -11.22 and -11.15 respectively; Complex: Z = -4.32 and -3.73 respectively, p $<<$ 0.001) (Fig~\ref{fig:lte-simple-task_performance} and \ref{fig:complex-task_performance}). While both the benign changing environemtn and benign quiesce
+Similar to task discovery, populations evolving in harsh changing environments performed far fewer distinct tasks than either the control, or either benign populations (Wilcoxon Rank Sum Test: Simple: Z = -11.22 and -11.15 respectively; Complex: Z = -4.32 and -3.73 respectively, p $<<$ 0.001) (Fig~\ref{fig:lte-simple-task_performance} and \ref{fig:complex-task_performance}). While both the BenignCE and BenignQuiescent
 % MJW: Inconsistent capitalization w/r/t the previous sentence.
+%@RCK: fixed
 populations seemed to outperform the control, this effect was only statistically significant in the complex environment (Wilcoxon Rank Sum Test: Z = 2.42 and 2.37 respectively, p $<$ 0.05). In the simple environment, the differences were not statistically significant (Kruskal Wallis: H(2) = 2.76, p = 0.25).
 \todo{look for inconsistent capitalization of treatment names}
 
@@ -1736,33 +1748,36 @@ populations seemed to outperform the control, this effect was only statistically
 
 
 % below is speculative!!!
-Interestingly, in the complex environments, the harsh quiescent treatments %that were initially evolved in a harsh changing environment and then change ceased upon introduction of Logic-77 rewards (Harsh Quiescent)
+Interestingly, in the complex environments, the HarshQuiescent treatments %that were initially evolved in a harsh changing environment and then change ceased upon introduction of Logic-77 rewards (Harsh Quiescent)
 % MJW: "change ceased upon introduction..."?  I don't understand.  I'm unsure whether change ceased is an adjective of the populations, or if changed ceased (noun - verb) when you moved them to a different environment.
-seemed to out-perform all other environment types in task performance, though the differences between harsh quiescent and both benign treatments are only barely statistically significant (Wilcoxon Rank Sum Test: Control Z = 4.33, HarshCE Z = -9.3, p $<$ 0.001; BenignCE Z = 2.25, Benign Quiesce Z = 1.96, p $<$ 0.05). This effect may be due to a lingering architectural effect of evolving in harsh changing environments.
+%@RCK: fixed
+seemed to out-perform all other environment types in task performance, though the differences between HarshQuiescent and both benign treatments are only barely statistically significant (Wilcoxon Rank Sum Test: Control Z = 4.33, HarshCE Z = -9.3, p $<$ 0.001; BenignCE Z = 2.25, Benign Quiesce Z = 1.96, p $<$ 0.05). We speculate that this effect may be due to a lingering architectural effect of evolving in harsh changing environments. For example, because task length increases in changing environments, these tasks are more likely to experience mutations that could change their phenotype in a variety of ways. Thus, once the pressure to limit diversity is released, the population would be much more likely to produce a large amount of population variation in a short time. Thus, we would expect to see a significant increase in measures of task performance, but might also expect to see a relatively lower number of task being performed by the entire population.
 % MJW: I suggest that if you're going to speculate, speculate.  In other words, either expand this section with one or more examples of what sort of architectural effect you mean, or cut this sentence.
-\todo[inline]{expand speculation per mike's comment of why harsh quiescent outcompeted everyone in the complex treatment}
-Further research is needed to identify a mechanism for this effect.
-
-
+%@RCK: added moar speculation.
+Further research is needed to identify the mechanisms responsible for this effect.
 
 
 \section{Conclusion}
+ 
+Our experiments show that changing environments both directly and indirectly influence long-term evolvability by directly driving exploration across the fitness landscape, and also by creating genetic architectures that increase the rate of new task discovery in novel environments.
+We demonstrate that the harshness of fluctuation has a dramatic effect on long-term evolvability, landscape exploration and task discovery. 
+We hypothesize that these effects are driven by the presence of the accumulated pseudogene-like structures that provide cryptic functionality.
 
-Our experiments demonstrate that the harshness of fluctuation has a dramatic effect on long-term evolvability, landscape exploration and task discovery. We find that while harsh changing environments were most effective at driving short-term adaptation, these environments depress long-term evolvability once we introduce a new environment. In all experiments, we find that benign environments produce the highest levels of task discovery, far outperforming harsh changing environments.
-\todo[inline]{speculate - why does this happen?} 
-%We also find that the HGT mutagen
-% MJW: Flagging a use of mutagen.
-%, which helps with short-term evolvability in cyclic environments, does not appear to have a beneficial effect.
-% MJW: I'm not sure what your target for publishing this is, but this is a weird format for most science journal articles.  This paragraph reads essentially like a summary of the results, and therefore the sort of thing you might have in an abstract or a conclusion.  I am not used to seeing summaries of the results in the results section, before those things have been specifically laid out (figures, tables, statistical comparisons).  This might be fine for a dissertation; that's up to your committee.  But I'm flagging it as something that's strange for a journal article so that if it stays this way for the diss. you're aware it probably needs to change for publication.
-%@RCK: moved to conclusion, possibly for deletion
-\todo{clean this up (above)}
+We find that while harsh changing environments were most effective at driving short-term adaptation, these environments depress long-term evolvability once we introduce a new environment. 
+In all experiments, we find that benign environments produce the highest levels of task discovery, far outperforming harsh changing environments. 
+We demonstrate this effect in both the simple two-task fluctuating environments, and also in the complex Logic-9 fluctuating environments. 
 
+%This result is consistent with prior research on long-term evolvability which identifies population diversity as an important driver of evolvability. common features, such as the gentler strength of sel
+
+In our experiments, the increased rate of task discovery is significant, though relatively small, but we expect that future experiments focused on this specific effect might yield more conclusive results.
+
+We also observed that in all cases and measures, the Quiescent treatments compare favorably with the controls, and sometimes even outperform them in task discovery and task performance.  
 
 %=CE promotes task discovery
-Our experiments show that changing environments both directly and indirectly influence long-term evolvability by directly driving exploration across the fitness landscape, and also by creating genetic architectures that increase the rate of new task discovery in novel environments. We hypothesize that these effects are driven by the presence of the accumulated pseudogene-like structures that provide cryptic functionality. In our experiments, the increased rate of task discovery is significant, though relatively small, but we expect that future experiments focused on this specific effect might yield more conclusive results. 
-% MJW: This is a very short conclusion.  I suggest expanding it.  In particular, since your results and discussion section doesn't have much about big picture implications of the findings of this chapter, the conclusion section is a good place to expand upon that.  If this is a general finding across different systems, what does that mean?
 
-\todo[inline, color=magenta]{fill this conclusion in, recapitulating the argument and framing about balancing of fitness effects, see mike's note}
+ 
+% MJW: This is a very short conclusion.  I suggest expanding it.  In particular, since your results and discussion section doesn't have much about big picture implications of the findings of this chapter, the conclusion section is a good place to expand upon that.  If this is a general finding across different systems, what does that mean?
+\todo[inline, color=magenta]{clean up, and fill this conclusion in, recapitulating the argument and framing about balancing of fitness effects, see mike's note. review other conclusion sections for thoughts about how to construct it.}
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1832,9 +1847,9 @@ Our experiments show that changing environments both directly and indirectly inf
 % \todo[color=green]{stats}
 % \todo{caption}
 % 	\begin{figure}[!h]
-% 	\missingfigure{HGT Use Bonus 0, split by pre and post introduction of new logic-77 tasks}
+% 	\missingfigure{HGT Use Bonus 0, split by pre and post introduction of new Logic-77 tasks}
 % 	%\includegraphics[trim={0 0 0 0}, clip, width=0.75\columnwidth]{figures/CE/901_overall_task_discovery.png}
-% 	\caption{\textbf{HGT Use, pre and post introduction of new logic-77 tasks}. [TODO DESCRIPTION AND STATS]%
+% 	\caption{\textbf{HGT Use, pre and post introduction of new Logic-77 tasks}. [TODO DESCRIPTION AND STATS]%
 % 	}
 % 	\label{fig:lte-hgt_use}
 % 	\end{figure}
@@ -1939,10 +1954,6 @@ This result matches prior research that shows that populations will tend to depr
 %=In chapter 5... 
 This result is further evidence that selection tends to act in the short term. Thus, even though certain kinds of mutagens and architectural features may promote long-term evolvability, these features are hitchhiking on short-term adaptive benefits. Thus, our research shows that even though evolvability may evolve, it is not necessarily selected for in the long-term. 
 
-\todo[inline]{add section about the HGT bonus depressing task exploration in the long term evolution chapter}
-
-\section{Horizontal Gene Transfer and Long Term Evolvability}
-\todo[inline, color=magenta]{fill in this section with the single figure}
 \section{Limitations of Cyclic Changing Environments}
 %=CE can be a re-tread, but not as much as feared 
 Changing environments produce a set of selective pressures that speed up exploration of genotype space, while also building reservoirs of partial functionality that may be co-opted in the evolution of more complex structures. These features make changing environments useful for both their explanatory power in natural evolution, and as practical tools in the Artificial Life toolkit.
@@ -1955,6 +1966,37 @@ For example, perhaps repeated bottlenecking of populations could promote faster 
 %=understanding is vital, conclusion paragraph
 \todo{tweak below?}
 Understanding the mechanisms by which select environmental conditions alter fitness landscapes is vital to understanding the forces that promote evolvability and increase complexity. In particular, understanding the role of vestigial sites may help us untangle how robustness can promote evolvability. Are these vestigial sites inactive remnants, reservoirs of function, or are they part of a complex compensatory framework supporting and buffering the expression of the phenotype? Or both? Changing environments provide one view into these dynamics, but we must explore further to find other mechanisms for exploring and exploiting genotype space.
+
+\section{Future Directions - Horizontal Gene Transfer and Long Term Evolvability}
+Our work in understanding how changing environments interact with evolvability and different kinds of mutations is obviously by no means complete. In particular, the question of how mutational operators like  horizontal gene transfer or sexual reproduction interact with long-term evolutionary potential remain open.
+
+%For example, the interaction between the HGT grazing bonuses and changing environments is complex, 
+%and the interface between adaptation pressures and food rewards i. . 
+
+In addition to our experiments characterizing the long-term evolutionary potential of populations evolved in simple and complex changing environments, we also subjected HGT-evolved populations to the same Logic-77 environments as described in Chapter~\ref{chap:ce-longterm}.
+%Overall, we found no significant differences between the number of tasks discovered between treatments with and without a grazing bonus. 
+%Further, the task discovery levels were comparable to those in the complex environment. 
+	%=[FIGURE - complex environment task discovery]
+	\begin{figure}[!h]
+	%\missingfigure{HGT Use}
+	\includegraphics[trim={0 0 0 0}, clip, width=0.95\columnwidth]{figures/LTE/lte-hgt_bonus_vs_no_bonus_task_discovery.png}
+	\caption{\textbf{Task Discovery, with and without HGT Grazing Bonus}. Populations evolving with a grazing bonus had significantly reduced task performance as compared to populations without a grazing bonus. MWW%
+	}
+	\label{fig:lte-hgt_bonus_vs_no_bonus_task_discovery}
+	\end{figure}
+Intruigingly, we found a strong negative correlation between the use of a grazing HGT instruction and rates of task discovery (Pearson's R: $r_{2}$ = -0.64, p $<<$ 0.001). 
+%That is, we found that in replicates where grazing HGT use was higher, task discovery was lower. 
+In contrast, we found a much weaker and less robust correlation when no grazing bonus was given for HGT (Pearson's R: $r_{2}$ = -0.23, p $<$ 0.001) (Fig~\ref{fig:lte-hgt_bonus_vs_no_bonus_task_discovery}). This result is surprising because we would expect that an information rich mutation operator would promote the discovery of new tasks by combining existing functionality in novel ways. Thus, we would expect that in a context where selection pressures for adaptation are present, that use of HGT would increase. However, in the case of the grazing bonus, HGT does use generally increases, but we observed that this increase was negatively associated with discovery of new tasks. Why should mutation by HGT reduce task discovery? There are several factors that may account for this counterintuitive result. 
+
+First, HGT with a grazing bonus may lead to fundamentally different genetic architectures than those found in treatments where HGT use is promoted by a changing environment. Because the HGT instruction is relatively simple to acquire and confers a substantial execution bonus, those genetic architectures that use it might have evolved features that are more robust against HGT, while still being able to reap the benefits of using it. This very robustness might then make these architectures slower to adapt to new environments. 
+
+Another possibility is that this correlation is related to treatment use patterns, where treatments under harsh alternating selection not only use HGT more, but also exhibit lower amounts of task discovery. In fact, this is the pattern that appears in the non-bonus HGT treatments. However, in the grazing bonus treatments, we observed an overall increase in the use of HGT across all treatment types. This relationship would therefore suggest that HGT does not fundamentally have a significant effect on task discovery at all, and that instead this correlation is related purely to the fact that HGT levels increase because there is a bonus, and have no strong effect on task discovery one way or another. If so, then this might also provide evidence for the possibility of architectural adaptation to HGT with a grazing bonus.
+
+This result underlines how much we have yet to learn about how changing environments interact with different kinds of mutations that affect genetic architectures in different ways. Evolvability remains a complex and rich topic of study, and there is still much to learn.
+\todo{awkward repetition. revise}
+
+
+
 
 
 \begin{appendices}
