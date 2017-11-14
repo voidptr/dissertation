@@ -654,43 +654,76 @@ We then surveyed the evolutionary history and population structure of the evolvi
 	\end{figure}
 
 %=more genetic diversity
-The populations that evolved in the control and benign environments displayed more genetic diversity as compared to those evolved in the harsh cyclic environment, which underwent a bottleneck at each cycle shift. Because a selective sweep reduces current diversity within a population, the smaller number of sweeps
+The populations that evolved in the control and benign environments displayed more genetic diversity as compared to those evolved in the harsh cyclic environment, which underwent a bottleneck at each cycle shift (see Fig~\ref{fig:population-entropy}). Because a selective sweep reduces current diversity within a population, the smaller number of sweeps
 % @CAO it looks like it wasn't just a smaller number of sweeps, but that the sweeps took MUCH longer to occur, to the point where it's hard to even dub them sweeps at all... more fixation events?  Mike should weigh in here too.
-in the benign and control treatments led populations in them to have higher standing diversity for most of their evolutionary history than those populations from the harsh changing environment. Despite this higher standing diversity in the benign and control treatments, regions of low diversity are still evident in the genomes of these populations, implying purifying selection on the traits encoded at these sites (see Fig~\ref{fig:entropy}).
+in the benign and control treatments led populations in them to have higher standing diversity for most of their evolutionary history than those populations from the harsh changing environment. Despite this higher standing diversity in the benign and control treatments, regions of low diversity are still evident in the genomes of these populations, implying purifying selection on the traits encoded at these sites (see Fig~\ref{fig:by-site-entropy}).
 % * <mjwiser@gmail.com> 2017-01-30T19:39:00.542Z:
 %
 % I feel like this figure would be easier to talk about if you split it into three panels, and mention that each panel has both an upper and a lower part. It would also probably be easier to read if the axes on the left were on the top panel, rather than the middle one; since you have two graphs in each panel, it doesn't make sense to just have a single axis label off to the side. However, you probably *can* have only a single x axis label, since the axes are the same for all the panels, and for both graphs within a panel.
 %
 % ^.
 
-\todo[inline]{fix figure below so that it's two separate figures. Separate the mean entropy to its own figure.}
 	\begin{figure}[!h]
 	%\includegraphics{figures/CE/control__entropy}
-	\includegraphics[trim={-0.85cm 0 0.1cm 0.2cm},clip,width=0.5\columnwidth]{figures/CE/control__entropy}
-	%\includegraphics{figures/CE/benign__entropy}
-	\includegraphics[trim={0.25cm 0 0.1cm 0},clip,width=0.5\columnwidth]{figures/CE/benign__entropy}
-	\includegraphics[trim={-0.85cm 0 0.1cm 0},clip,width=0.5\columnwidth]{figures/CE/harsh__entropy}
-	\caption{\textbf{Population Per-site Entropy over time} of a representative sample population. Each vertical slice represents the per-site entropy of the population at each update, both by genetic locus (upper), and overall population mean (lower). Hotter colors (red/orange/yellow) indicate greater diversity at this locus, while cooler colors (blues) indicate the a locus is more consistent across the population. Mean population entropy indicates the relative diversity of the population at any given time, while the per-site entropy shows where in the genomes the population diversity is located.   %@CAO: I'm agreeing with Mike that we might want to make this two graphs. I added a bit in the description about the cooler colors just to lead the reader by the hand as much as possible.
-	}\label{fig:entropy}
+	\includegraphics[width=0.75\columnwidth]{figures/CE/by_site_entropy}
+	\caption{\textbf{Per-site Entropy over time} of a representative sample population. Each vertical slice represents the per-site entropy of the population at each update by genetic locus. Hotter colors (red/orange/yellow) indicate greater diversity at this locus, while cooler colors (blues) indicate the a locus is more consistent across the population.   %@CAO: I'm agreeing with Mike that we might want to make this two graphs. I added a bit in the description about the cooler colors just to lead the reader by the hand as much as possible.
+	}\label{fig:by-site-entropy}
 	\end{figure}
+
+	\begin{figure}[!h]
+	%\includegraphics{figures/CE/control__entropy}
+	\includegraphics[width=0.75\columnwidth]{figures/CE/population_entropy}
+	\caption{\textbf{Population Entropy over time} of the representative sample population in Figure~\ref{fig:by-site-entropy}. Mean population entropy indicates the relative diversity of the population at any given time, while the per-site entropy (see Fig~\ref{fig:by-site-entropy}) shows where in the genomes the population diversity is located.   %@CAO: I'm agreeing with Mike that we might want to make this two graphs. I added a bit in the description about the cooler colors just to lead the reader by the hand as much as possible.
+	}\label{fig:population-entropy}
+	\end{figure}
+
+% \todo[inline]{fix figure below so that it's two separate figures. Separate the mean entropy to its own figure.}
+% 	\begin{figure}[!h]
+% 	%\includegraphics{figures/CE/control__entropy}
+% 	\includegraphics[trim={-0.85cm 0 0.1cm 0.2cm},clip,width=0.5\columnwidth]{figures/CE/control__entropy}
+% 	%\includegraphics{figures/CE/benign__entropy}
+% 	\includegraphics[trim={0.25cm 0 0.1cm 0},clip,width=0.5\columnwidth]{figures/CE/benign__entropy}
+% 	\includegraphics[trim={-0.85cm 0 0.1cm 0},clip,width=0.5\columnwidth]{figures/CE/harsh__entropy}
+% 	\caption{\textbf{Population Per-site Entropy over time} of a representative sample population. Each vertical slice represents the per-site entropy of the population at each update, both by genetic locus (upper), and overall population mean (lower). Hotter colors (red/orange/yellow) indicate greater diversity at this locus, while cooler colors (blues) indicate the a locus is more consistent across the population. Mean population entropy indicates the relative diversity of the population at any given time, while the per-site entropy shows where in the genomes the population diversity is located.   %@CAO: I'm agreeing with Mike that we might want to make this two graphs. I added a bit in the description about the cooler colors just to lead the reader by the hand as much as possible.
+% 	}\label{fig:entropy}
+% 	\end{figure}
 
 
 \subsubsection{Genetic Architecture}
 %=genetic architecture is different in benign and harsh vs control
-The alternating selection in both benign and harsh changing environments results in qualitatively different architectural styles as compared with those genomes evolved in the static environment. The task arrangements evolved under both experimental treatments are much more scattered throughout the genome than in the control, which is tightly compacted. Specifically, the bulk of the sites responsible for performing the fluctuating task (\texttt{EQU}) did not overlap with the backbone task (\texttt{XOR}), except for a small core region, which represents portions of the tasks that are shared between \texttt{XOR} and \texttt{EQU}. That is, in the changing environment treatments, we see many more sites that only code for a single task, whereas in the static treatment, the majority of functional tasks sites code for both \texttt{XOR} and \texttt{EQU}.  (Fig~\ref{fig:lineage})
+The alternating selection in both benign and harsh changing environments results in qualitatively different architectural styles as compared with those genomes evolved in the static environment. The task arrangements evolved under both experimental treatments are much more scattered throughout the genome than in the control, which is tightly compacted. Specifically, the bulk of the sites responsible for performing the fluctuating task (\texttt{EQU}) did not overlap with the backbone task (\texttt{XOR}), except for a small core region, which represents portions of the tasks that are shared between \texttt{XOR} and \texttt{EQU}. That is, in the changing environment treatments, we see many more sites that only code for a single task, whereas in the static treatment, the majority of functional tasks sites code for both \texttt{XOR} and \texttt{EQU}. (See Figs~\ref{fig:lineage-control}, \ref{fig:lineage-benign}, and \ref{fig:lineage-harsh})
 % @CAO: I'm not positive I understand this description for how things are laid out. It might be worth putting a bit more detail here, and highlighting also that there is a lot more separation in the harsh environment (or so it seems). Should we talk more here about why all of this is the case (highlighting that we are speculating) or will that come later?
 %@RCK: Reframed to clarify.
 
-\todo[inline]{polish this figure, task layout, make three separate figures}
+% \todo[inline]{polish this figure, task layout, make three separate figures}
+% 	\begin{figure}[!h]
+% 	\setlength{\fboxsep}{0pt}%
+% 	\setlength{\fboxrule}{0pt}%
+% 	\fbox{\includegraphics[width=0.5625\columnwidth,trim={-0.82cm 0 5.5cm 0.25cm},clip]{figures/CE/control__whole_taskmap.png}}\fbox{\includegraphics[width=0.1875\columnwidth,trim={9.1cm 0.15cm 1.3cm 0},clip]{figures/CE/legend__whole_taskmap.png}}
+% 	\fbox{\includegraphics[width=0.75\columnwidth,trim={0.2cm 0 2.3cm 0},clip]{figures/CE/benign__whole_taskmap.png}}
+% 	\fbox{\includegraphics[width=0.5\columnwidth,trim={-0.82cm 0 5.2cm 0},clip]{figures/CE/harsh__whole_taskmap.png}}
+% 	\caption{\textbf{Varying genetic architecture of XOR and EQU over time} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant.
+% 	Positions along the Y-axis represent each genome locus; loci in an organism are colored based on the tasks that they code for. Sites in \textbf{red} are active sites that code for the XOR task only, sites in \textbf{blue} are active sites for the EQU task only, and \textbf{purple} sites code for both XOR and EQU. Knockouts to the sites in black are lethal to the organism. Sites in the lighter colors (tan, light blue, lavender) represent vestigial sites for XOR only, EQU only, or both tasks, respectively. As we proceed from left to right, we can see the evolutionary history of the final dominant genotype.}
+% 	\label{fig:lineage}
+% 	\end{figure}
+
 	\begin{figure}[!h]
-	\setlength{\fboxsep}{0pt}%
-	\setlength{\fboxrule}{0pt}%
-	\fbox{\includegraphics[width=0.5625\columnwidth,trim={-0.82cm 0 5.5cm 0.25cm},clip]{figures/CE/control__whole_taskmap.png}}\fbox{\includegraphics[width=0.1875\columnwidth,trim={9.1cm 0.15cm 1.3cm 0},clip]{figures/CE/legend__whole_taskmap.png}}
-	\fbox{\includegraphics[width=0.75\columnwidth,trim={0.2cm 0 2.3cm 0},clip]{figures/CE/benign__whole_taskmap.png}}
-	\fbox{\includegraphics[width=0.5\columnwidth,trim={-0.82cm 0 5.2cm 0},clip]{figures/CE/harsh__whole_taskmap.png}}
-	\caption{\textbf{Varying genetic architecture of XOR and EQU over time} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant.
-	Positions along the Y-axis represent each genome locus; loci in an organism are colored based on the tasks that they code for. Sites in \textbf{red} are active sites that code for the XOR task only, sites in \textbf{blue} are active sites for the EQU task only, and \textbf{purple} sites code for both XOR and EQU. Knockouts to the sites in black are lethal to the organism. Sites in the lighter colors (tan, light blue, lavender) represent vestigial sites for XOR only, EQU only, or both tasks, respectively. As we proceed from left to right, we can see the evolutionary history of the final dominant genotype.}
-	\label{fig:lineage}
+	\includegraphics[width=0.75\columnwidth]{figures/CE/control__whole_taskmap.png}
+	\caption{\textbf{Genetic Architecture of XOR and EQU Over Time in Static Environment} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant.
+	Positions along the Y-axis represent each genome locus; loci in an organism are colored based on the tasks that they code for. Sites in \textbf{red} are active sites that code for the XOR task only, sites in \textbf{blue} are active sites for the EQU task only, and \textbf{purple} sites code for both XOR and EQU. Knockouts to the sites in black are lethal to the organism. Sites in the lighter colors (tan, light blue, lavender) represent vestigial sites for XOR only, EQU only, or both tasks, respectively. As we proceed from left to right, we can see the evolutionary history of the final dominant genotype. \texttt{XOR} and \texttt{EQU} overlap almost completely throughout the run.}
+	\label{fig:lineage-control}
+	\end{figure}
+
+	\begin{figure}[!h]
+	\includegraphics[width=0.75\columnwidth]{figures/CE/benign__whole_taskmap.png}
+	\caption{\textbf{Genetic Architecture of XOR and EQU Over Time in Benign Environment} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant, and as in Figure~\ref{fig:lineage-control}, colors represent tasks performed by each genome locus. In this genome, \texttt{XOR} and \texttt{EQU} evolve to overlap much less than in the control.}
+	\label{fig:lineage-benign}
+	\end{figure}
+
+	\begin{figure}[!h]
+	\includegraphics[width=0.75\columnwidth]{figures/CE/harsh__whole_taskmap.png}
+	\caption{\textbf{Genetic Architecture of XOR and EQU Over Time in Harsh Environment} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant, and as in Figures~\ref{fig:lineage-control} and \ref{fig:lineage-benign}, colors represent tasks performed by each genome locus. In this genome, \texttt{XOR} and \texttt{EQU} evolve to overlap even less than in the control and benign treatments, with the \texttt{EQU}-only task sites becoming increasingly scattered throughout the genome.}
+	\label{fig:lineage-harsh}
 	\end{figure}
 
 %=arch of control, scattered XOR
@@ -710,10 +743,10 @@ Interestingly, populations evolved in both the benign and harsh treatments also 
 	\end{figure}
 
 \subsubsection{Nearby mutational landscape}
-\todo[inline, color=yellow]{IF I HAVE TIME, add figure of the nearby landscape showing how mutations relate 1 and 2 steps out., a couple of nice figures showing both changes in detrimental mutations and phenotypic distribution.}
+%\todo[inline, color=yellow]{IF I HAVE TIME, add figure of the nearby landscape showing how mutations relate 1 and 2 steps out., a couple of nice figures showing both changes in detrimental mutations and phenotypic distribution.}
 
 %=one-step survey of the mutational landscape 
-In order to identify the role that these larger functional site footprints and pseudogene-like structures play, we performed a survey of the single-step mutational neighborhood surrounding the most abundant genotype present at the end of the experiment for each replicate population. Each neighborhood contained 3,025 distinct mutants (121 loci with 25 possible mutations per locus) in each of the 50 replicates per treatment, for a total of nearly 450,000 mutants surveyed. We measured the fraction of mutants that lost each of the rewarded tasks. (Fig~\ref{fig:CCE_single_step}. 
+In order to identify the role that these longer task footprints and pseudogene-like structures play, we performed a survey of the single-step mutational neighborhood surrounding the most abundant genotype present at the end of the experiment for each replicate population. Each neighborhood contained 3,025 distinct mutants (121 loci with 25 possible mutations per locus) in each of the 50 replicates per treatment, for a total of nearly 450,000 mutants surveyed. We measured the fraction of mutants that lost each of the rewarded tasks. (Fig~\ref{fig:CCE_single_step}. 
 
 %=[FIGURE - Frac 1-step]
 	\begin{figure}[!h] %% FIGURE 6
@@ -722,7 +755,8 @@ In order to identify the role that these larger functional site footprints and p
 	}\label{fig:CCE_single_step}
 	\end{figure}
 
-We found that in both the benign and harsh treatments, there were many more mutations that resulted in loss of the fluctuating task as compared to the control (Wilcoxon Rank Sum Test: Z = -5.46 and -7.80 respectively, p $<<$ 0.0001). An increase in task loss in the harsh treatment is to be expected, but why would the benign treatment lose \texttt{EQU} nearly as easily as the harsh treatment? One possibility is selective pressure to lose the task. There is no explicit pressure for task loss, merely an absence of reward. Even so, there is certainly an implicit penalty for performing a complex task for which there is no reward. Another possibility is drift. Indeed, in Figure~\ref{fig:CCE_equ_execution}, we observe a steady downward trend in execution of \texttt{EQU} when rewards are withdrawn. Then, as the reward returns, new mutations are applied that reactivate the task, and overall performance recovers quickly. This pattern of loss and regain would over time tend to increase the length of the task. Indeed, as noted in Figure~\ref{fig:lineage}, there is a rapid increase in task length as \texttt{EQU} is cyclically lost and regained. 
+
+We found that in both the benign and harsh treatments, there were many more mutations that resulted in loss of the fluctuating task as compared to the control (Wilcoxon Rank Sum Test: Z = -5.46 and -7.80 respectively, p $<<$ 0.0001). An increase in task loss in the harsh treatment is to be expected, but why would the benign treatment lose \texttt{EQU} nearly as easily as the harsh treatment? One possibility is selective pressure to lose the task. There is no explicit pressure for task loss, merely an absence of reward. Even so, there is certainly an implicit penalty for performing a complex task for which there is no reward. Another possibility is drift. Indeed, in Figure~\ref{fig:CCE_equ_execution}, we observe a steady downward trend in execution of \texttt{EQU} when rewards are withdrawn. Then, as the reward returns, new mutations are applied that reactivate the task, and overall performance recovers quickly. This pattern of loss and regain would, over time tend, to increase the length of the task. Indeed, as noted in Figure~\ref{fig:lineage-harsh}, there is a rapid increase in task length as \texttt{EQU} is cyclically lost and regained. 
 
 However, is increased task length enough to account for increased task vulnerability to mutation? In order to begin to address this question, we calculated the correlation between task length and the fraction of mutants that lost each of the tasks. We discovered a strong correlation between the number of functional sites and the number of task-losing mutants for the \texttt{EQU} task, both alone, and overlapping with \texttt{XOR} (Pearson's R: $r_{2}$ = 8.77 and 7.94, respectively, p = $<<$ 0.001) (Fig~\ref{fig:CCE_func_vs_single_step}). We also found a weaker, but still significant correlation between the number of \texttt{XOR}-only functional sites and loss of the \texttt{XOR} task (Pearson's R: $r_{2}$ = 4.77, p $<<$ 0.001). This result confirms our intuition that the longer the task, the more targets there are for mutation to disable the task.
 
