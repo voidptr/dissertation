@@ -1979,25 +1979,32 @@ Our results are consistent across both the minimal and rich environment types. T
 
 \chapter{Conclusion and Future Directions}
 \label{chap:conclusion}
-\todo[color=magenta,inline]{FILL THIS IN - Synthesis of all results and how it all fits together to paint a picture of how CE works.}
+In this dissertation, we explore the evolutionary dynamics of changing environments, along with their impact on both short and long-term evolvability. We find that changing environments promote short-term adaptation by driving populations to regions of genotype space where more adaptive mutants are available in one or two mutational steps.
+%Changing environments accomplish this by creating selective pressures to switch phenotypes, rather than selecting purely for increasing fitness.
 
-%=thesis sentence
-%=In chapter 2
-%=In chapter 3
-%=In chapter 4...
-This result matches prior research that shows that populations will tend to depress the use of mutagens, even though, in the long-term, higher mutation rates are likely better~\cite{clune_natural_2008}.  
+Harsh changing environments create selective pressures to switch phenotypes, rather than selecting purely for increasing fitness.
+These kinds of selective pressures are well suited to promoting the evolution of information-rich mutation types like horizontal gene transfer via transformation. HGT in particular is an excellent adaptation to harsh changing environments, where there is a strong selective pressure for phenotype switching. Indeed, we observe that HGT is much more strongly selected for than other types of mutation operators with similar associated mutation rates.
 
-%=In chapter 5... 
-This result is further evidence that selection tends to act in the short term. Thus, even though certain kinds of mutagens and architectural features may promote long-term evolvability, these features are hitchhiking on short-term adaptive benefits. Thus, our research shows that even though evolvability may evolve, it is not necessarily selected for in the long-term. 
+In the context of long-term evolutionary potential, the benefits of changing environments are less clear. Benign changing environments appear to perform at least, if not more efficiently, than purely directional selection at acquiring traits in a novel environment. While benign changing environments appear to convey some architectural advantages in terms of task discovery and performance, the effects are slight. This result may be due to the types of selection at play in our changing environments. The selective pressures in our changing environments are largely adaptive selective pressures, rather than divergent selective pressures. Divergent selection pressures, such as negative frequency dependence, have been shown to outperform adaptive selection pressures in measures of population-level evolvability~\cite{wilder_reconciling_2015}. Our results are consistent with these findings, and suggest that changing environments alone are insufficient for promoting long-term population-level evolvability. 
+
+
+% %=thesis sentence
+% %=In chapter 2
+% %=In chapter 3
+% %=In chapter 4...
+% This result matches prior research that shows that populations will tend to depress the use of mutagens, even though, in the long-term, higher mutation rates are likely better~\cite{clune_natural_2008}.  
+
+% %=In chapter 5... 
+% This result is further evidence that selection tends to act in the short term. Thus, even though certain kinds of mutagens and architectural features may promote long-term evolvability, these features are hitchhiking on short-term adaptive benefits. Thus, our research shows that even though evolvability may evolve, it is not necessarily selected for in the long-term. 
 
 \section{Limitations of Cyclic Changing Environments}
 %=CE can be a re-tread, but not as much as feared 
-Changing environments produce a set of selective pressures that speed up exploration of genotype space, while also building reservoirs of partial functionality that may be co-opted in the evolution of more complex structures. These features make changing environments useful for both their explanatory power in natural evolution, and as practical tools in the Artificial Life toolkit.
-Ultimately, however, cyclic changing environments only re-tread existing phenotypic ground, and though genotypic exploration is faster than under purely directional or stabilizing selection, the space explored remains constrained by the type of phenotypes that are selected. Despite this constraint, however, we see that, particularly under harsh conditions, a lot of novel genotypic ground may be explored, even without direct selection for novelty. 
+Changing environments produce a set of selective pressures that speed up exploration of genotype space, while also building reservoirs of partial functionality that may be co-opted in the evolution of more complex structures. These features make changing environments useful for both their exploratory power in natural evolution, and as practical tools in the Artificial Life toolkit.
+Ultimately, however, as alluded to above, cyclic changing environments only re-tread existing phenotypic ground, and though genotypic exploration can be faster than under purely directional or stabilizing selection, the space explored remains constrained by the type of phenotypes that are selected. Despite this constraint, however, we see that, particularly under harsh conditions, a lot of novel genotypic ground may be explored, even without direct selection for novelty. 
 
 %=better/different methods
 Even so, there must exist methods of exploring genotype space that do not suffer from these limitations at all.
-For example, perhaps repeated bottlenecking of populations could promote faster traversal of the fitness landscape in quasi-random directions. More ambitiously, perhaps these kinds of environments could be coupled with dynamically increasing open-ended complexity goals.
+For example, perhaps repeated bottlenecking of populations could promote faster traversal of the fitness landscape in quasi-random directions. More ambitiously, perhaps these kinds of environments could be coupled with dynamically increasing open-ended complexity goals, or divergent selection mechanisms such as negative frequency dependence to promote the maintenance of diversity in evolving populations.
 
 %=understanding is vital, conclusion paragraph
 Understanding the mechanisms by which select environmental conditions alter fitness landscapes is vital to understanding the forces that promote evolvability and increase complexity. In particular, understanding the role of vestigial sites may help us untangle how robustness can promote evolvability. Are these vestigial sites inactive remnants, reservoirs of function, or are they part of a complex compensatory framework supporting and buffering the expression of the phenotype? Or both? Changing environments provide one view into these dynamics, but we must explore further to find other mechanisms for exploring and exploiting genotype space.
