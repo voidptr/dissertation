@@ -1787,25 +1787,33 @@ Further research is needed to identify the mechanisms responsible for this effec
 
 \section{Conclusion}
  
-Our experiments show that changing environments both directly and indirectly influence long-term evolvability by directly driving exploration across the fitness landscape, and also by creating genetic architectures that increase the rate of new task discovery in novel environments.
-We demonstrate that the harshness of fluctuation has a dramatic effect on long-term evolvability, landscape exploration and task discovery. 
-We hypothesize that these effects are driven by the presence of the accumulated pseudogene-like structures that provide cryptic functionality.
+The relationship between short and long term evolvability is non-obvious. Architectural features and selective pressures that promote repeated re-adaptation to a known set of environments may not be beneficial for the acquisition of entirely new adaptive traits. For example, harsh changing environments act to depress both fitness and population diversity, which might make these populations less effective at adaptation when introduced into a new environment.
 
-We find that while harsh changing environments were most effective at driving short-term adaptation, these environments depress long-term evolvability once we introduce a new task set. 
-In all experiments, we find that benign environments produce the highest levels of task discovery, far outperforming harsh changing environments. 
-We demonstrate this effect in both the minimal two-task fluctuating environments, and also in the rich Logic-9 fluctuating environments. 
+Indeed, our experiments show that harsh changing environments, with their strong selective pressures, suppress the ability of populations to acquire new, weakly-selected traits. However, benign changing environments, with their milder set of selective pressures, are able to leverage their accumulated heritage of dormant vestigial sites to rapidly respond to selection, and acquire new tasks at a faster rate than either harsh or non-change-evolved populations. However, despite the direct negative effects of harsh changing environments, populations initially evolved in these environments are able to rapidly acquire new tasks if alternating selection is removed. This result suggests that there are important architectural features conveyed by these environments that are beneficial for new task acquisition.
 
-%This result is consistent with prior research on long-term evolvability which identifies population diversity as an important driver of evolvability. common features, such as the gentler strength of sel
+Our results are consistent across both the minimal and rich environment types. This suggests that regardless of environmental and genomic complexity, changing environments are important drivers of adaptation and long-term evolvability, either directly by driving populations to move across the fitness landscape, or indirectly, by conveying lingering architectural advantages. 
 
-In our experiments, the increased rate of task discovery is significant, though relatively small, but we expect that future experiments focused on this specific effect might yield more conclusive results.
 
-We also observed that in all cases and measures, the Quiescent treatments compare favorably with the controls, and sometimes even outperform them in task discovery and task performance.  
 
-%=CE promotes task discovery
+% Our experiments show that changing environments both directly and indirectly influence long-term evolvability by directly driving exploration across the fitness landscape, and also by creating genetic architectures that increase the rate of new task discovery in novel environments.
+% We demonstrate that the harshness of fluctuation has a dramatic effect on long-term evolvability, landscape exploration and task discovery. 
+% We hypothesize that these effects are driven by the presence of the accumulated pseudogene-like structures that provide cryptic functionality.
+
+% We find that while harsh changing environments were most effective at driving short-term adaptation, these environments depress long-term evolvability once we introduce a new task set. 
+% In all experiments, we find that benign environments produce the highest levels of task discovery, far outperforming harsh changing environments. 
+% We demonstrate this effect in both the minimal two-task fluctuating environments, and also in the rich Logic-9 fluctuating environments. 
+
+% %This result is consistent with prior research on long-term evolvability which identifies population diversity as an important driver of evolvability. common features, such as the gentler strength of sel
+
+% In our experiments, the increased rate of task discovery is significant, though relatively small, but we expect that future experiments focused on this specific effect might yield more conclusive results.
+
+% We also observed that in all cases and measures, the Quiescent treatments compare favorably with the controls, and sometimes even outperform them in task discovery and task performance.  
+
+% %=CE promotes task discovery
 
  
-% MJW: This is a very short conclusion. I suggest expanding it. In particular, since your results and discussion section doesn't have much about big picture implications of the findings of this chapter, the conclusion section is a good place to expand upon that. If this is a general finding across different systems, what does that mean?
-\todo[inline, color=magenta]{clean up, and fill this conclusion in, recapitulating the argument and framing about balancing of fitness effects, see mike's note. review other conclusion sections for thoughts about how to construct it.}
+% % MJW: This is a very short conclusion. I suggest expanding it. In particular, since your results and discussion section doesn't have much about big picture implications of the findings of this chapter, the conclusion section is a good place to expand upon that. If this is a general finding across different systems, what does that mean?
+% \todo[inline, color=magenta]{clean up, and fill this conclusion in, recapitulating the argument and framing about balancing of fitness effects, see mike's note. review other conclusion sections for thoughts about how to construct it.}
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
