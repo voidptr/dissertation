@@ -1,5 +1,5 @@
 %make the document class option "PhD,final" to remove todo list items
-\documentclass[PhD]{msu-thesis}
+\documentclass[PhD,final]{msu-thesis}
 
 
 % Your extra packages here
@@ -47,15 +47,16 @@ I would never have gotten this far without you.}
 
 \begin{abstract}
 \todo[inline]{prep a layman's abstract if I have time}
-\todo[inline, color=magenta]{rework abstract bleh bleh}
 The specific meaning of the term ``evolvability'' is heavily debated, but most definitions can be summarized as: the potential of populations and genomes to produce adaptive variation and complex structures in response to mutation and selection. 
 Changing environments are thought to play a significant role in shaping and promoting evolvability through alternating selective pressures.
 %Evolvability is thought to be created through the interplay of modularity and robustness. Indeed, modularity and robustness build upon each other, layer by layer, to form a framework that produces more powerful adaptive effects while reducing the impact of deleterious mutations.
 
 In this dissertation, I will discuss my recent research on the interplay between changing environments, evolvability, genetic architecture, and the evolution of horizontal gene transfer (HGT), an information-rich mutagenic function that is ubiquitous in nature. Before delving into my own research, however, I begin in the first chapter by providing a survey of current literature on each of these topics, with emphases on how they are believed to arise, how they affect subsequent evolution, and how they relate to each other.
 
-\todo{refresh this paragraph to be relevant to the chapter 2}
-Modularity and robustness clearly have a complex interdependence in ongoing evolutionary dynamics, but they can evolve via simple mechanisms that are a byproduct of direct selection on other traits. Specifically, more modular and more robust genetic architectures are more likely to produce successful phenotypes, and thus they hitchhike to fixation in the population. In Chapter 2, I demonstrate how a cyclically changing environment provides a sufficient selective pressure to produce quasi-modular genetic architectures, independent of other features.
+Genetic architecture and population dynamics clearly have a complex interplay in ongoing envolutionary dynamics. Evolutionary history, population diversity, modularity, and task size all play a role in determining the location and characteristics of populations in genotype space, and alter the genotype to phenotype map that permits neutral genetic variation. All of these features contribute to evolvability. In Chapter 2, I demonstrate how changing environments provided a sufficient selective pressure to produce quasi-modular genetic architectures that allow for rapid adaptation to the meta-environment of environmental change.
+
+% \todo{refresh this paragraph to be relevant to the chapter 2}
+% Modularity and robustness clearly have a complex interdependence in ongoing evolutionary dynamics, but they can evolve via simple mechanisms that are a byproduct of direct selection on other traits. Specifically, more modular and more robust genetic architectures are more likely to produce successful phenotypes, and thus they hitchhike to fixation in the population. In Chapter 2, I demonstrate how a cyclically changing environment provides a sufficient selective pressure to produce quasi-modular genetic architectures, independent of other features.
 
 Horizontal gene transfer is a highly regulated, ubiquitous, and ancient mechanism for exchanging genetic material between unrelated organisms. In the third chapter, I explore conditions which may have led to the evolution of horizontal gene transfer through transformation, and identify mechanisms that might support its continued performance.  
 % In the third chapter, I propose to study how modularity might also arise as a result of horizontal gene transfer. We hypothesize that organisms will choose to uptake gene fragments for food, even when there is a chance that those fragments might be integrated into the genome. Furthermore, we expect that this uptake will result in higher modularity and, in turn, evolvability over time.
@@ -675,14 +676,14 @@ in the benign and control treatments led populations in them to have higher stan
 	\begin{figure}[!h]
 	%\includegraphics{figures/CE/control__entropy}
 	\includegraphics[width=0.75\columnwidth]{figures/CE/by_site_entropy}
-	\caption{\textbf{Per-site Entropy over time} of a representative sample population. Each vertical slice represents the per-site entropy of the population at each update by genetic locus. Hotter colors (red/orange/yellow) indicate greater diversity at this locus, while cooler colors (blues) indicate the a locus is more consistent across the population.   %@CAO: I'm agreeing with Mike that we might want to make this two graphs. I added a bit in the description about the cooler colors just to lead the reader by the hand as much as possible.
+	\caption{\textbf{Per-site entropy over time} of a representative sample population. Each vertical slice represents the per-site entropy of the population at each update by genetic locus. Hotter colors (red/orange/yellow) indicate greater diversity at this locus, while cooler colors (blues) indicate the a locus is more consistent across the population.   %@CAO: I'm agreeing with Mike that we might want to make this two graphs. I added a bit in the description about the cooler colors just to lead the reader by the hand as much as possible.
 	}\label{fig:by-site-entropy}
 	\end{figure}
 
 	\begin{figure}[!h]
 	%\includegraphics{figures/CE/control__entropy}
 	\includegraphics[width=0.75\columnwidth]{figures/CE/population_entropy}
-	\caption{\textbf{Population Entropy over time} of the representative sample population in Figure~\ref{fig:by-site-entropy}. Mean population entropy indicates the relative diversity of the population at any given time, while the per-site entropy (see Fig~\ref{fig:by-site-entropy}) shows where in the genomes the population diversity is located.   %@CAO: I'm agreeing with Mike that we might want to make this two graphs. I added a bit in the description about the cooler colors just to lead the reader by the hand as much as possible.
+	\caption{\textbf{Population entropy over time} of the representative sample population in Figure~\ref{fig:by-site-entropy}. Mean population entropy indicates the relative diversity of the population at any given time, while the per-site entropy (see Fig~\ref{fig:by-site-entropy}) shows where in the genomes the population diversity is located.   %@CAO: I'm agreeing with Mike that we might want to make this two graphs. I added a bit in the description about the cooler colors just to lead the reader by the hand as much as possible.
 	}\label{fig:population-entropy}
 	\end{figure}
 
@@ -718,20 +719,20 @@ The alternating selection in both benign and harsh changing environments results
 
 	\begin{figure}[!h]
 	\includegraphics[width=0.75\columnwidth]{figures/CE/control__whole_taskmap.png}
-	\caption{\textbf{Genetic Architecture of XOR and EQU Over Time in Static Environment} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant.
+	\caption{\textbf{Genetic architecture of XOR and EQU over time in static environment} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant.
 	Positions along the Y-axis represent each genome locus; loci in an organism are colored based on the tasks that they code for. Sites in \textbf{red} are active sites that code for the XOR task only, sites in \textbf{blue} are active sites for the EQU task only, and \textbf{purple} sites code for both XOR and EQU. Knockouts to the sites in black are lethal to the organism. Sites in the lighter colors (tan, light blue, lavender) represent vestigial sites for XOR only, EQU only, or both tasks, respectively. As we proceed from left to right, we can see the evolutionary history of the final dominant genotype. \texttt{XOR} and \texttt{EQU} overlap almost completely throughout the run.}
 	\label{fig:lineage-control}
 	\end{figure}
 
 	\begin{figure}[!h]
 	\includegraphics[width=0.75\columnwidth]{figures/CE/benign__whole_taskmap.png}
-	\caption{\textbf{Genetic Architecture of XOR and EQU Over Time in Benign Environment} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant, and as in Figure~\ref{fig:lineage-control}, colors represent tasks performed by each genome locus. In this genome, \texttt{XOR} and \texttt{EQU} evolve to overlap much less than in the control.}
+	\caption{\textbf{Genetic architecture of XOR and EQU over time in benign environment} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant, and as in Figure~\ref{fig:lineage-control}, colors represent tasks performed by each genome locus. In this genome, \texttt{XOR} and \texttt{EQU} evolve to overlap much less than in the control.}
 	\label{fig:lineage-benign}
 	\end{figure}
 
 	\begin{figure}[!h]
 	\includegraphics[width=0.75\columnwidth]{figures/CE/harsh__whole_taskmap.png}
-	\caption{\textbf{Genetic Architecture of XOR and EQU Over Time in Harsh Environment} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant, and as in Figures~\ref{fig:lineage-control} and \ref{fig:lineage-benign}, colors represent tasks performed by each genome locus. In this genome, \texttt{XOR} and \texttt{EQU} evolve to overlap even less than in the control and benign treatments, with the \texttt{EQU}-only task sites becoming increasingly scattered throughout the genome.}
+	\caption{\textbf{Genetic architecture of XOR and EQU over time in harsh environment} for the final dominant genotype in a randomly selected replicate. Proceeding from the left of each figure, each vertical slice represents an organism along the line-of-descent to the final dominant, and as in Figures~\ref{fig:lineage-control} and \ref{fig:lineage-benign}, colors represent tasks performed by each genome locus. In this genome, \texttt{XOR} and \texttt{EQU} evolve to overlap even less than in the control and benign treatments, with the \texttt{EQU}-only task sites becoming increasingly scattered throughout the genome.}
 	\label{fig:lineage-harsh}
 	\end{figure}
 
@@ -751,7 +752,7 @@ Interestingly, populations evolved in both the benign and harsh treatments also 
 	\label{fig:CCE_func_vestigial} %% FIGURE 5
 	\end{figure}
 
-\subsubsection{Nearby mutational landscape}
+\subsubsection{Nearby Mutational Landscape}
 %\todo[inline, color=yellow]{IF I HAVE TIME, add figure of the nearby landscape showing how mutations relate 1 and 2 steps out., a couple of nice figures showing both changes in detrimental mutations and phenotypic distribution.}
 
 %=one-step survey of the mutational landscape 
@@ -813,7 +814,7 @@ As an overall measure of neutral exploration, we also measured the proportion of
 %=[FIGURE D_g D_p]
 	\begin{figure}[!h] %% FIGURE 8
 	\includegraphics[width=0.75\columnwidth]{figures/CE/CCE_D_g_D_p__box.png}
-	\caption{\textbf{Genomic and Phenotypic Diffusion Rates}, showing the probabilities of producing offspring that are genotypically ($D_g$) or phenotypically ($D_p$) distinct from the parent, while not reducing fitness.
+	\caption{\textbf{Genomic and phenotypic diffusion rates}, showing the probabilities of producing offspring that are genotypically ($D_g$) or phenotypically ($D_p$) distinct from the parent, while not reducing fitness.
 	Note that while overall neutral exploration capacity remains relatively stable between treatments (Kruskal Wallis: H(2) = 1.44, p = 0.49), phenotypic exploration capacity is increased in both treatments, but especially in the Harsh treatment. (Wilcoxon Rank Sum Test: Z = -8.02, -8.39, respectively, p $<<$ 0.001). This result is consistent with changing environments promoting the phenotypic evolvability of populations.
 	}\label{fig:CCE_diffusion_rate}
 	\end{figure}
@@ -822,7 +823,7 @@ As an overall measure of neutral exploration, we also measured the proportion of
 %=[FIGURE - D_g/p]
 	\begin{figure}[!h] %% FIGURE 12
 	\includegraphics[width=0.75\columnwidth]{figures/CE/CSE_D_g_D_p__box.png}
-	\caption{\textbf{Genomic and Phenotypic Diffusion Rates} in stochastic changing environments, showing the probabilities of producing offspring that are genotypically and phenotypically different from the parent, while remaining fitness neutral or better. As in the cyclic environment, $D_g$ remains stable for the Benign treatment, but drops slightly in the Harsh as compared to the control, though this drop isn't statistically significant (Kruskal Wallis H(2) = 1.11, p = 0.57). Harsh $D_p$ however, is significantly lower than seen in the cyclic environment treatment (Wilcoxon Rank-Sum Test: Z = -6.19, p $<<$ 0.0001). This result shows that harsh stochastic environments may not be as effective as cyclic environments at increasing the probability that organisms will produce phenotypically different, yet neutral offspring.
+	\caption{\textbf{Genomic and phenotypic diffusion rates} in stochastic changing environments, showing the probabilities of producing offspring that are genotypically and phenotypically different from the parent, while remaining fitness neutral or better. As in the cyclic environment, $D_g$ remains stable for the Benign treatment, but drops slightly in the Harsh as compared to the control, though this drop isn't statistically significant (Kruskal Wallis H(2) = 1.11, p = 0.57). Harsh $D_p$ however, is significantly lower than seen in the cyclic environment treatment (Wilcoxon Rank-Sum Test: Z = -6.19, p $<<$ 0.0001). This result shows that harsh stochastic environments may not be as effective as cyclic environments at increasing the probability that organisms will produce phenotypically different, yet neutral offspring.
 	}\label{fig:CSE_diffusion_rate}
 	\end{figure}
 %= contrary to expectations, SCE weren't better at evolvability (D_g/p)
@@ -1116,7 +1117,7 @@ effects of fragments in these treatments (Figure~\ref{fig:fitness_effect_by_cycl
 	\begin{figure}[h!]
 	\begin{center}
 	\includegraphics[width=0.95\columnwidth]{figures/HGT/fitness_effect_by_cycle_phase_source.png}
-	\caption{\textbf{Mean and Median fitness effects of fragments} in reservoirs, with 95\% confidence intervals. Fragments in reservoirs are replaced by fragments based on the origin of donor organism. For the On-Phase treatment, We only permitted fragments in reservoirs that originated in a matching phase of the current cycle. For the Off-Phase treatment, we only permitted fragments from non-matching phases. Plus two controls: first, where no filtration takes place, and "Both" where fragments are injected from a mixed set of origins. The Off-Phase treatment had a significantly lower fitness effect than either of the controls (Wilcoxon Rank-Sum Test: Z = 143 and 31 respectively, p $<<$ 0.001), while the On-Phase treatment had a significantly better fitness effect (Wilcoxon Rank-Sum Test: Z = 105 and 3 respectively, p $<$ 0.002). 
+	\caption{\textbf{Mean and median fitness effects of fragments} in reservoirs, with 95\% confidence intervals. Fragments in reservoirs are replaced by fragments based on the origin of donor organism. For the On-Phase treatment, We only permitted fragments in reservoirs that originated in a matching phase of the current cycle. For the Off-Phase treatment, we only permitted fragments from non-matching phases. Plus two controls: first, where no filtration takes place, and "Both" where fragments are injected from a mixed set of origins. The Off-Phase treatment had a significantly lower fitness effect than either of the controls (Wilcoxon Rank-Sum Test: Z = 143 and 31 respectively, p $<<$ 0.001), while the On-Phase treatment had a significantly better fitness effect (Wilcoxon Rank-Sum Test: Z = 105 and 3 respectively, p $<$ 0.002). 
 	}\label{fig:fitness_effect_by_cycle_phase_source}
 	\end{center}
 	\end{figure}
@@ -1700,7 +1701,6 @@ Task discovery is an important measure of long-term evolvability in that it quan
 
 \subsubsection{Benign changing environments outperform harsh environments in task discovery}
 % MJW: Why do you switch between capitalizing the words in the subsections and not in the sub-subsections?  This might be something you do consistently but I only noticed here because they're stacked right next to each other, in which case it's probably a formatting thing, but it seemed worth asking when I noticed it.
-\todo{normalize capitalization of headers}
 We found that once we began rewarding the expanded task set, populations evolving in harsh changing environments discovered many fewer tasks that those evolving in benign changing environments. This effect is consistent across both the minimal (Wilcoxon Rank Sum Test: Z = 2.75, p $<$ 0.01) and the rich environment sets (Wilcoxon Rank Sum Test: Z = 5.96, p $<<$ 0.001) (Figs~\ref{fig:postreward_task_discovery}, \ref{fig:complex-task_discovery}). We hypothesize that this effect is due to the relative differences in the strength of selection between the harsh changing environment and the directional selection toward the expanded task set. 
 %=[FIGURE - postreward task discovery]
 	\begin{figure}[!h]
@@ -1727,7 +1727,7 @@ In the harsh changing environments, the selective pressure to gain or lose the f
 %and keeping it comparable to the pre-phase 2 rate. 
 In contrast, the benign environment experiences a weaker strength of selection for EQU task gain and loss, in the form of a maximum $2^5$-fold bonus directional selection pressure to gain the tasks, and no direct pressure to lose the task. Thus, when compared to the harsh treatments, the fraction of the total selective pressure for gaining new expanded tasks is greater in the benign treatment. This increased pressure, plus the benefit of an increased exploration rate conveyed by the benign changing environment, result in a higher overall task discovery rates.
 
-\paragraph{HarshQuiescent treatment outperforms BenignQuiescent treatment in task discovery.}
+%\subsubsection{HarshQuiescent treatment outperforms BenignQuiescent treatment in task discovery.}
 Interestingly, in the harsh quiescent treatment (HarshQuiescent) beginning in stage 2, we saw that task exploration recovered and achieved a comparable level to the control (Wilcoxon Rank Sum Test: Z = -0.91, p = 0.37). What could account for this recovery? 
 
 One possibility is that the introduction of the new tasks provided sufficient selective pressure to cause the increase in the discovery rate. In this case, we would expect to see a similar increase in task exploration in the harsh changing environment treatment (HarshCE). 
@@ -1740,7 +1740,7 @@ Indeed, we found that the the HarshQuiescent treatment has a much higher task di
 % MJW: This is a really key finding of this chapter. I feel you could highlight this more. One writing strategy that Rich employs a lot that I find particularly effective is to structure something along the lines of "Here is a fact (either from our observation or from the literature). What could account for this?  Possible explanation 1 would predict X. Possible explanation 2 would predict Y. Possible explanation 3 would predict Z. We find N, which is inconsistent with X, and is more likely to be a result of Y than of Z, so we conclude that possible explanation 1 is not driving our results/this observation, and that possible explanation 2 is more likely than possible explanation 3". Not saying you have three possible explanations here, just a general sort of approach to that way of writing a combined results and discussion section.
 %@RCK: Added more exposition along those lines.
 
-\paragraph{BenignCE treatment outperforms BenignQuiescent treatment in task discovery.}
+%\subsubsection{BenignCE treatment outperforms BenignQuiescent treatment in task discovery.}
 %=disentangling direct effects from architectural byproducts
 Also of interest
 % MJW: Careful. It's one thing to call a result interesting; it's another to make a claim about how relatively interesting different findings are as if that is objectively measurable, rather than a personal decision.
@@ -2030,10 +2030,10 @@ Our results are consistent across both the minimal and rich environment types. T
 
 \chapter{Conclusion and Future Directions}
 \label{chap:conclusion}
-In this dissertation, we explore the evolutionary dynamics of changing environments, along with their impact on both short and long-term evolvability. We find that changing environments promote short-term adaptation by driving populations to regions of genotype space where more adaptive mutants are available in one or two mutational steps.
+In this dissertation, we explore the evolutionary dynamics of changing environments, along with their impact on both short and long-term evolvability. We find that changing environments promote short-term adaptation by driving populations to regions of genotype space where more adaptive mutants are available within one or two mutational steps.
 %Changing environments accomplish this by creating selective pressures to switch phenotypes, rather than selecting purely for increasing fitness.
 
-Harsh changing environments create selective pressures to switch phenotypes, rather than selecting purely for increasing fitness.
+Harsh changing environments create selective pressures to switch phenotypes, rather than selecting only for increasing fitness.
 These kinds of selective pressures are well suited to promoting the evolution of information-rich mutation types like horizontal gene transfer via transformation. HGT in particular is an excellent adaptation to harsh changing environments, where there is a strong selective pressure for phenotype switching. Indeed, we observe that HGT is much more strongly selected for than other types of mutation operators with similar associated mutation rates.
 
 In the context of long-term evolutionary potential, the benefits of changing environments are less clear. Benign changing environments appear to perform at least, if not more efficiently, than purely directional selection at acquiring traits in a novel environment. While benign changing environments appear to convey some architectural advantages in terms of task discovery and performance, the effects are slight. This result may be due to the types of selection at play in our changing environments. The selective pressures in our changing environments are largely adaptive selective pressures, rather than divergent selective pressures. Divergent selection pressures, such as negative frequency dependence, have been shown to outperform adaptive selection pressures in measures of population-level evolvability~\cite{wilder_reconciling_2015}. Our results are consistent with these findings, and suggest that changing environments alone are insufficient for promoting long-term population-level evolvability. 
@@ -2058,7 +2058,7 @@ Even so, there must exist methods of exploring genotype space that do not suffer
 For example, perhaps repeated bottlenecking of populations could promote faster traversal of the fitness landscape in quasi-random directions. More ambitiously, perhaps these kinds of environments could be coupled with dynamically increasing open-ended complexity goals, or divergent selection mechanisms such as negative frequency dependence to promote the maintenance of diversity in evolving populations.
 
 %=understanding is vital, conclusion paragraph
-Understanding the mechanisms by which select environmental conditions alter fitness landscapes is vital to understanding the forces that promote evolvability and increase complexity. In particular, understanding the role of vestigial sites may help us untangle how robustness can promote evolvability. Are these vestigial sites inactive remnants, reservoirs of function, or are they part of a complex compensatory framework supporting and buffering the expression of the phenotype? Or both? Changing environments provide one view into these dynamics, but we must explore further to find other mechanisms for exploring and exploiting genotype space.
+Understanding the mechanisms by which select environmental conditions alter fitness landscapes is vital to understanding the forces that promote evolvability and increase complexity. In particular, understanding the role of vestigial sites may help us untangle how robustness can promote evolvability. Are these vestigial sites merely inactive remnants, reservoirs of function, or are they part of a complex compensatory framework supporting and buffering the expression of the phenotype? Or all of these things? Changing environments provide one view into these dynamics, but we must explore further to find other mechanisms for exploring and exploiting genotype space.
 
 \section{Future Directions - Horizontal Gene Transfer and Long Term Evolvability}
 Our work in understanding how changing environments interact with evolvability and different kinds of mutations is obviously by no means complete. In particular, questions of how mutational operators like horizontal gene transfer or sexual reproduction interact with long-term evolutionary potential remain open.
@@ -2073,7 +2073,7 @@ In addition to our experiments characterizing the long-term evolutionary potenti
 	\begin{figure}[!h]
 	%\missingfigure{HGT Use}
 	\includegraphics[trim={0 0 0 0}, clip, width=0.95\columnwidth]{figures/LTE/lte-hgt_bonus_vs_no_bonus_task_discovery.png}
-	\caption{\textbf{Task Discovery, with and without HGT Grazing Bonus}. Populations evolving with a grazing bonus had a strong negative correlation between task discovery and HGT use (Spearman's Rho: $r_{s}$ = -0.71, p $<<$ 0.001).  %
+	\caption{\textbf{Task discovery, with and without HGT grazing bonus}. Populations evolving with a grazing bonus had a strong negative correlation between task discovery and HGT use (Spearman's Rho: $r_{s}$ = -0.71, p $<<$ 0.001).  %
 	}
 	\label{fig:lte-hgt_bonus_vs_no_bonus_task_discovery}
 	\end{figure}
@@ -2132,7 +2132,7 @@ We found that, of our surveyed values, a cycle time of 1000 updates (roughly 30 
 \section{Recombination Probability Sweep}
 	\begin{figure}[!h]
 	\includegraphics[width=0.95\columnwidth]{figures/A2/hgt-probabilitysweep-hgtuse.png}
-	\caption{\textbf{Survey of \texttt{HGT} use} for a series of recombination probabilities in a static environment. The left-hand figure shows a time-series of fragment uptakes, with and without bonus values. The right-hand plot shows the final uptake counts at the end of the runs. Those values at a recombination probability of less than 0.1 are not meaningfully depressed as compared to the bonus values. Values greater than 0.1 showed more suppression, and ultimately reached mutational melt-downs with few surviving populations.  %
+	\caption{\textbf{Survey of \texttt{HGT} use for a series of recombination probabilities} in a static environment. The left-hand figure shows a time-series of fragment uptakes, with and without bonus values. The right-hand plot shows the final uptake counts at the end of the runs. Those values at a recombination probability of less than 0.1 are not meaningfully depressed as compared to the bonus values. Values greater than 0.1 showed more suppression, and ultimately reached mutational melt-downs with few surviving populations.  %
 	}
 	\label{fig:a2-hgt-probabilitysweep-hgtuse}
 	\end{figure}
@@ -2150,7 +2150,7 @@ The goal was to identify a probability of recombination that would, without a gr
 %=[FIGURE - complex environment task discovery]
 	\begin{figure}[!h]
 	\includegraphics[trim={0 0 0 0}, clip, width=0.85\columnwidth]{figures/A2/a2-hgt-bonussweep-hgtuse.png}
-	\caption{\textbf{Survey of \texttt{HGT} use} for a series of bonus values in a static environment. The left plot shows a time-series of HGT fragment uptakes, while the right-hand plot shows final uptake values at the end of the experimental runs. With recombination probability at 0.1, bonus values of zero depress HGT use. A bonus of 0.1 increases uptake dramatically, indicating a very high use. Bonuses at 0.5 and greater show diminishing returns in increasing HGT use.%
+	\caption{\textbf{Survey of \texttt{HGT} use for a series of bonus values} in a static environment. The left plot shows a time-series of HGT fragment uptakes, while the right-hand plot shows final uptake values at the end of the experimental runs. With recombination probability at 0.1, bonus values of zero depress HGT use. A bonus of 0.1 increases uptake dramatically, indicating a very high use. Bonuses at 0.5 and greater show diminishing returns in increasing HGT use.%
 	}
 	\label{fig:a2-hgt-bonussweep-hgtuse}
 	\end{figure}
