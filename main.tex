@@ -45,8 +45,14 @@ I would never have gotten this far without you.}
 \maketitlepage
 %
 
+% %\todo[inline]{prep a layman's abstract if I have time}
+% %Layman's abstract
+% \begin{abstract}
+% The specific meaning of the term ``evolvability'' is heavily debated, but most definitions can be summarized as: the potential of populations and genomes to produce adaptive variation and complex structures in response to mutation and selection. Changing environments are thought to play a significant role in shaping and promoting evolvability through alternating selective pressures. In this dissertation, I will discuss my recent research on the interplay between changing environments, evolvability, genetic architecture, and the evolution of horizontal gene transfer (HGT), an information-rich mutagenic function that is ubiquitous in nature. I show that changing environments promote short-term evolvability, and move populations to regions of the genotype landscape where new beneficial phenotypes are abundant. I also show that changing environments promote evolution of information-rich mutational operators like horizontal gene transfer. Finally, I show that while changing environments promote long-term evolvability, that other factors such as selection for diversity are also important.
+% \end{abstract}
+% \clearpage
+
 \begin{abstract}
-\todo[inline]{prep a layman's abstract if I have time}
 The specific meaning of the term ``evolvability'' is heavily debated, but most definitions can be summarized as: the potential of populations and genomes to produce adaptive variation and complex structures in response to mutation and selection. 
 Changing environments are thought to play a significant role in shaping and promoting evolvability through alternating selective pressures.
 %Evolvability is thought to be created through the interplay of modularity and robustness. Indeed, modularity and robustness build upon each other, layer by layer, to form a framework that produces more powerful adaptive effects while reducing the impact of deleterious mutations.
@@ -818,6 +824,53 @@ As an overall measure of neutral exploration, we also measured the proportion of
 	Note that while overall neutral exploration capacity remains relatively stable between treatments (Kruskal Wallis: H(2) = 1.44, p = 0.49), phenotypic exploration capacity is increased in both treatments, but especially in the Harsh treatment. (Wilcoxon Rank Sum Test: Z = -8.02, -8.39, respectively, p $<<$ 0.001). This result is consistent with changing environments promoting the phenotypic evolvability of populations.
 	}\label{fig:CCE_diffusion_rate}
 	\end{figure}
+
+What might account for this adaptation? Similar to the relationship between the number of functional sites of a task, and the number of single-step mutants that lost that task (See Fig~\ref{fig:CCE_func_vs_single_step}), we hypothesize that the reacquisition of tasks in the 2nd-step survey may be mediated by the amount of useful task material present in the genome. We performed a multiple linear regression, predicting the mean fraction of mutants that regained EQU, by the number of functional and vestigial sites contained in the original genome (See Table~\ref{ce-olsregression-2ndstep} and Fig~\ref{fig:CCE_2step_vs_func_vest_sites}).
+
+	%=[FIGURE 2nd-Step ~ Func + Vest]
+	\begin{figure}[!h] %% FIGURE 8
+	\includegraphics[width=0.75\columnwidth]{figures/CE/CCE_2step_vs_func_vest_sites.png}
+	\caption{\textbf{Multiple linear regression predicting mean fraction of second-step mutants} from the number of functional and vestigial sites in the original organism. See Table~\ref{ce-olsregression-2ndstep}.
+	}\label{fig:CCE_2step_vs_func_vest_sites}
+	\end{figure}
+
+We can predict approximately 47\% of the variation in mean number of second step mutants that regained EQU based on the number of functional and vestigial sites. Most of the variation is predicted by the number of functional sites, though vestigial sites do contribute a small amount. This result is consistent with the role of task length, and thus the number of informational sites, being important for regaining task function. We could not, however, account for all variation, indicating that there are other factors, possibly in robustness or modular architecture of tasks, that are important to this kind evolvability.
+
+	\begin{table}[h]
+	\centering
+	\caption{\textbf{OLS Regression Results - Mean Fraction of Mutants Regained EQU vs Number of Functional and Vestigial Sites}}
+	\label{ce-olsregression-2ndstep-h}
+	\begin{tabular}{lclc}
+	\toprule
+	\textbf{Dep. Variable:}    &  Mean\_Fraction  & \textbf{  R-squared:         } &     0.472   \\
+	\textbf{Model:}            &       OLS        & \textbf{  Adj. R-squared:    } &     0.464   \\
+	\textbf{Method:}           &  Least Squares   & \textbf{  F-statistic:       } &     61.65   \\
+	\textbf{No. Observations:} &         141      & \textbf{  Prob (F-statistic):} &  7.39e-20   \\
+	\textbf{Df Residuals:}     &         138      & \textbf{  Log-Likelihood:    } &    467.28   \\
+	\textbf{Df Model:}         &           2      & \textbf{  AIC:               } &    -928.6   \\
+	                           &                  & \textbf{  BIC:               } &    -919.7   \\
+	\bottomrule
+	\end{tabular}
+	\begin{tabular}{lcccccc}
+	                     & \textbf{coef} & \textbf{std err} & \textbf{t} & \textbf{P$>$$|$t$|$} & \textbf{[0.025} & \textbf{0.975]}  \\
+	\midrule
+	\textbf{Intercept}   &       0.0003  &        0.001     &     0.243  &         0.808        &       -0.002    &        0.003     \\
+	\textbf{Func\_Sites} &       0.0016  &        0.000     &     8.115  &         0.000        &        0.001    &        0.002     \\
+	\textbf{Vest\_Sites} &       0.0005  &        0.000     &     3.180  &         0.002        &        0.000    &        0.001     \\
+	\bottomrule
+	\end{tabular}
+	\begin{tabular}{lclc}
+	\textbf{Omnibus:}       & 79.316 & \textbf{  Durbin-Watson:     } &    1.928  \\
+	\textbf{Prob(Omnibus):} &  0.000 & \textbf{  Jarque-Bera (JB):  } &  437.211  \\
+	\textbf{Skew:}          &  1.970 & \textbf{  Prob(JB):          } & 1.15e-95  \\
+	\textbf{Kurtosis:}      & 10.675 & \textbf{  Cond. No.          } &     15.0  \\
+	\bottomrule
+	\end{tabular}
+	\begin{flushleft}Multiple linear regression, predicting Mean fraction of second-step mutants that regained EQU, based on the number of Functional and Vestigial sites in the original genome.  
+	\end{flushleft}
+	\label{ce-olsregression-2ndstep}
+	\end{table}
+
 
 \subsection{Stochastic Changing Environments}
 %=[FIGURE - D_g/p]
